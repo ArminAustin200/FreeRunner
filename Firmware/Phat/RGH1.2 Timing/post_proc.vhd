@@ -1,4 +1,4 @@
--- RGH1.2 Code for Altera MAX V 5M160Z Falcon/Jasper Version
+-- RGH1.2 Code for Altera MAX V 5M160Z Falcon/Jasper/Tonasket Motherboards
 -- 15432, GliGli, Octal450, ArminAustin200
 
 library IEEE;
