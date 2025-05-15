@@ -1,5 +1,5 @@
--- RGH1.2 Code for Matrix/Coolrunner, Trinity/Corona Version
--- 15432, GliGli, Octal450
+-- RGH1.2 Code for Altera MAXV, Trinity/Corona/Waitsburg/Stingray motherboards
+-- 15432, GliGli, Octal450, ArminAustin200
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -14,24 +14,22 @@ entity post_proc is
 		CLK : in STD_LOGIC;
 		to_slow : out STD_LOGIC := '0';
 		DBG : out STD_LOGIC := '0';
-		RST0 : inout STD_LOGIC := 'Z';
-		RST1 : inout STD_LOGIC := 'Z'
+		RST : inout STD_LOGIC := 'Z'
 	);
 end post_proc;
 
 architecture arch of post_proc is
 
-constant R_LEN : integer := 12;
-constant R_STA : integer := 1749095; -- 90 - 95 best for STBY_CLK, if using oscilator adjust value as needed, check slower.vhd values
-constant T_BUF : integer := 10000;
+constant R_LEN : integer := 6;
+constant R_STA : integer := 910995; -- 90 - 95 best for STBY_CLK, if using oscilator adjust value as needed, check slower.vhd values
+constant T_BUF : integer := 5208;
 constant T_END : integer := R_STA + R_LEN + T_BUF;
 
 constant post_rgh : integer := 11;
-constant post_s_max : integer := 15;
-signal post_r_cnt : integer range 0 to post_s_max := 0; --Creating a constant to count all rising edges of POST
-signal post_f_cnt : integer range 0 to post_s_max := 0; --Creating a constant to count all falling edges of POST
+constant post_s_max : integer := 7;
+signal post_r_cnt : integer range 0 to post_s_max := 0; --Counter for the rising edge of the post counter
+signal post_f_cnt : integer range 0 to post_s_max := 0; --COunter for the falling edge of the post counter
 signal cnt : integer range 0 to T_END := 0;
-signal post_cnt : integer range 0 to post_s_max := 0;
 signal timeout : STD_LOGIC := '0';
 
 begin
@@ -39,9 +37,8 @@ begin
 -- post counter
 process (POST) is
 begin
-	--Counting POST on rising edges
-	if (rising_edge(POST)) then
-		if (RST0 = '0' and RST1 = '0') then
+		if (rising_edge(POST)) then
+		if (RST = '0') then
 			post_r_cnt <= 0;
 		else
 			if (post_r_cnt < post_s_max) then
@@ -49,11 +46,9 @@ begin
 			end if;
 		end if;
 	end if;
-	
-	--Counting POST on falling edges
 	if (falling_edge(POST)) then
-		if (RST0 = '0' and RST1 = '0') then 
-			post_f_cnt <= 0; 
+		if (RST = '0') then
+			post_f_cnt <= 0;
 		else
 			if (post_f_cnt < post_s_max) then
 				post_f_cnt <= post_f_cnt + 1;
@@ -81,17 +76,15 @@ begin
 		end if;
 		
 		if (cnt >= R_STA and cnt < R_STA + R_LEN and callback = '1') then
-			RST0 <= '0';
-			RST1 <= '0';
+			RST <= '0';
 		else
-			RST0 <= 'Z';
-			RST1 <= 'Z';
+			RST <= 'Z';
 		end if;
 	end if;
 end process;
 
 -- slowdown
-process (post_cnt, timeout) is
+process (post_r_cnt, post_f_cnt, timeout) is
 begin
 	if (post_r_cnt + post_f_cnt >= post_rgh - 1 and timeout = '0') then
 		to_slow <= '1';

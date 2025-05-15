@@ -62,16 +62,9 @@ agreement for further details.
 	(port
 		(pt 160 64)
 		(bidir)
-		(text "RST0" (rect 0 0 24 12)(font "Arial" ))
-		(text "RST0" (rect 115 59 139 71)(font "Arial" ))
+		(text "RST" (rect 0 0 20 12)(font "Arial" ))
+		(text "RST" (rect 119 59 139 71)(font "Arial" ))
 		(line (pt 160 64)(pt 144 64)(line_width 1))
-	)
-	(port
-		(pt 160 80)
-		(bidir)
-		(text "RST1" (rect 0 0 23 12)(font "Arial" ))
-		(text "RST1" (rect 116 75 139 87)(font "Arial" ))
-		(line (pt 160 80)(pt 144 80)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 144 96)(line_width 1))

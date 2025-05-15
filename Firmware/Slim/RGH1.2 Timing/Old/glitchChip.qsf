@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE 5M160ZE64C5
-set_global_assignment -name TOP_LEVEL_ENTITY post_proc
+set_global_assignment -name TOP_LEVEL_ENTITY FreeRunner
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:40:51  MAY 13, 2025"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
@@ -51,3 +51,17 @@ set_global_assignment -name VHDL_FILE post_proc.vhd
 set_global_assignment -name VHDL_FILE divider_slow.vhd
 set_global_assignment -name VHDL_FILE slower.vhd
 set_global_assignment -name BDF_FILE glitchChip.bdf
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name BDF_FILE FreeRunner.bdf
+set_instance_assignment -name IO_STANDARD "1.5 V" -to RST
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PLL
+set_instance_assignment -name IO_STANDARD "1.8 V" -to POST
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLK
+set_location_assignment PIN_3 -to CLK
+set_location_assignment PIN_64 -to DBG
+set_location_assignment PIN_1 -to PLL
+set_location_assignment PIN_35 -to POST
+set_location_assignment PIN_34 -to RST
+set_global_assignment -name VECTOR_WAVEFORM_FILE "../../../../FreeRunner Modchip/FreeRunner Project (5M80Z)/halfCLK Timings/pentanand_test.vwf"
+set_global_assignment -name VHDL_FILE "SVF Timings/main.vhd"
