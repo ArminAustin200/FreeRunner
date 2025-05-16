@@ -15,7 +15,7 @@ end slower;
 
 architecture arch of slower is
 
-constant delay_val : integer := 6639; -- Trinity: 6639, Corona: 6820, Winbond Corona: 7999
+constant delay_val : integer := 6374; -- Trinity: 6374, Corona: 6547, Winbond Corona: 7679
 signal cnt : integer range 0 to delay_val := 0;
 signal slow : STD_LOGIC := '0';
 

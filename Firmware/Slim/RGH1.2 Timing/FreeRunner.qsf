@@ -37,7 +37,6 @@
 # -------------------------------------------------------------------------- #
 
 
-set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE 5M160ZE64C5
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name TOP_LEVEL_ENTITY glitchChip
@@ -50,7 +49,6 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
 set_location_assignment PIN_1 -to PLL
 set_location_assignment PIN_3 -to CLK
-set_instance_assignment -name IO_STANDARD "1.8 V" -to POST
 set_location_assignment PIN_35 -to POST
 set_location_assignment PIN_64 -to DBG
 set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
@@ -75,14 +73,16 @@ set_global_assignment -name VHDL_FILE divider_slow.vhd
 set_global_assignment -name VHDL_FILE post_proc.vhd
 set_global_assignment -name VHDL_FILE slower.vhd
 set_global_assignment -name BDF_FILE glitchChip.bdf
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PLL
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLK
 set_global_assignment -name OPTIMIZATION_MODE BALANCED
 set_global_assignment -name VHDL_FILE main.vhd
 set_location_assignment PIN_34 -to RST0
+set_location_assignment PIN_37 -to RST1
+set_global_assignment -name BDF_FILE glitchChip_dualnand.bdf
+set_instance_assignment -name IO_STANDARD "1.8 V" -to POST
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PLL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLK
 set_instance_assignment -name IO_STANDARD "1.8 V" -to RST0
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to RST0
-set_location_assignment PIN_37 -to RST1
 set_instance_assignment -name IO_STANDARD "1.8 V" -to RST1
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to RST1

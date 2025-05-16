@@ -258,10 +258,6 @@ agreement for further details.
 	(pt 1056 232)
 )
 (connector
-	(pt 656 416)
-	(pt 864 416)
-)
-(connector
 	(pt 864 416)
 	(pt 864 296)
 )
@@ -304,5 +300,9 @@ agreement for further details.
 (connector
 	(pt 672 328)
 	(pt 656 328)
+)
+(connector
+	(pt 656 416)
+	(pt 864 416)
 )
 (junction (pt 472 312))
