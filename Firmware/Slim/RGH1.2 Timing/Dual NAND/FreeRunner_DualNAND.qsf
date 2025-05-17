@@ -54,16 +54,22 @@ set_location_assignment PIN_35 -to POST
 set_instance_assignment -name IO_STANDARD "1.8 V" -to POST
 set_instance_assignment -name IO_STANDARD "1.8 V" -to RST0
 set_instance_assignment -name IO_STANDARD "1.8 V" -to RST1
-set_instance_assignment -name IO_STANDARD "1.8 V" -to SMC_RST
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SMC_RST
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to RST0
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to RST1
 set_location_assignment PIN_1 -to PLL
 set_location_assignment PIN_64 -to DBG
 set_location_assignment PIN_3 -to CLK
-set_location_assignment PIN_42 -to SMC_RST
-set_location_assignment PIN_43 -to CES
-set_location_assignment PIN_44 -to CED
-set_location_assignment PIN_45 -to BUTTON
-set_instance_assignment -name IO_STANDARD "1.8 V" -to CES
-set_instance_assignment -name IO_STANDARD "1.8 V" -to CED
-set_instance_assignment -name IO_STANDARD "1.8 V" -to BUTTON
+set_location_assignment PIN_19 -to SMC_RST
+set_location_assignment PIN_30 -to CES
+set_location_assignment PIN_32 -to CED
+set_location_assignment PIN_21 -to BUTTON
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CES
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CED
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to BUTTON
+set_global_assignment -name VHDL_FILE dualnand.vhd
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PLL
+set_global_assignment -name VECTOR_WAVEFORM_FILE "../SVF Timings (Trinity)/dualNAND_test.vwf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE dualnand_test.vwf

@@ -54,7 +54,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 672 288 848 304)
+	(rect 680 288 856 304)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "DBG" (rect 90 0 113 12)(font "Arial" ))
 	(pt 0 8)
@@ -70,7 +70,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1056 288 1232 304)
+	(rect 1064 288 1240 304)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "PLL" (rect 90 0 108 12)(font "Arial" ))
 	(pt 0 8)
@@ -86,7 +86,7 @@ agreement for further details.
 )
 (pin
 	(bidir)
-	(rect 672 304 848 320)
+	(rect 680 304 856 320)
 	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "RST0" (rect 90 0 117 12)(font "Arial" ))
 	(pt 0 8)
@@ -103,7 +103,7 @@ agreement for further details.
 )
 (pin
 	(bidir)
-	(rect 672 320 848 336)
+	(rect 680 320 856 336)
 	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "RST1" (rect 90 0 114 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -119,7 +119,7 @@ agreement for further details.
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
 )
 (symbol
-	(rect 880 248 1040 328)
+	(rect 888 248 1048 328)
 	(text "slower" (rect 5 0 35 12)(font "Arial" ))
 	(text "inst9" (rect 8 64 30 81)(font "Intel Clear" ))
 	(port
@@ -155,7 +155,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 504 384 656 464)
+	(rect 512 376 664 456)
 	(text "divider_slow" (rect 5 0 65 12)(font "Arial" ))
 	(text "inst10" (rect 8 64 36 81)(font "Intel Clear" ))
 	(port
@@ -177,7 +177,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 496 248 656 360)
+	(rect 504 248 664 360)
 	(text "post_proc" (rect 5 0 53 12)(font "Arial" ))
 	(text "inst" (rect 8 96 25 108)(font "Arial" ))
 	(port
@@ -234,75 +234,75 @@ agreement for further details.
 	)
 )
 (connector
-	(pt 504 416)
-	(pt 472 416)
-)
-(connector
-	(pt 472 416)
-	(pt 472 312)
-)
-(connector
-	(pt 1040 296)
-	(pt 1056 296)
-)
-(connector
-	(pt 480 232)
-	(pt 1056 232)
-)
-(connector
-	(pt 1040 280)
-	(pt 1056 280)
-)
-(connector
-	(pt 1056 280)
-	(pt 1056 232)
-)
-(connector
-	(pt 864 416)
-	(pt 864 296)
-)
-(connector
-	(pt 880 296)
-	(pt 864 296)
-)
-(connector
-	(pt 880 280)
-	(pt 656 280)
-)
-(connector
 	(pt 480 232)
 	(pt 480 280)
 )
 (connector
-	(pt 672 296)
-	(pt 656 296)
+	(pt 504 296)
+	(pt 448 296)
 )
 (connector
-	(pt 672 312)
-	(pt 656 312)
+	(pt 504 280)
+	(pt 480 280)
+)
+(connector
+	(pt 664 328)
+	(pt 680 328)
+)
+(connector
+	(pt 664 312)
+	(pt 680 312)
+)
+(connector
+	(pt 664 296)
+	(pt 680 296)
+)
+(connector
+	(pt 472 408)
+	(pt 512 408)
+)
+(connector
+	(pt 472 312)
+	(pt 472 408)
 )
 (connector
 	(pt 448 312)
 	(pt 472 312)
 )
 (connector
-	(pt 480 280)
-	(pt 496 280)
-)
-(connector
-	(pt 448 296)
-	(pt 496 296)
-)
-(connector
 	(pt 472 312)
-	(pt 496 312)
+	(pt 504 312)
 )
 (connector
-	(pt 672 328)
-	(pt 656 328)
+	(pt 872 296)
+	(pt 872 408)
 )
 (connector
-	(pt 656 416)
-	(pt 864 416)
+	(pt 664 408)
+	(pt 872 408)
+)
+(connector
+	(pt 664 280)
+	(pt 888 280)
+)
+(connector
+	(pt 1048 296)
+	(pt 1064 296)
+)
+(connector
+	(pt 480 232)
+	(pt 1064 232)
+)
+(connector
+	(pt 1048 280)
+	(pt 1064 280)
+)
+(connector
+	(pt 1064 232)
+	(pt 1064 280)
+)
+(connector
+	(pt 888 296)
+	(pt 872 296)
 )
 (junction (pt 472 312))

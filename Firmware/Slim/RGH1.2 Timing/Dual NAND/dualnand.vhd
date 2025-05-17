@@ -18,7 +18,7 @@ end dualnand;
 
 architecture arch of dualnand is
 
-signal counter : integer range 0 to 7 := 0;
+signal counter : integer range 0 to 10 := 0; --10 works for me
 signal counter_smc : integer range 0 to 1 := 0;
 signal counter_dbg : unsigned(3 downto 0) := (others => '0');
 signal switch : STD_LOGIC := '1';
@@ -31,13 +31,13 @@ begin
 process (m_CES, m_CED) is
 begin
 	if (m_CES = '0') then
-		CES <= 'Z';
+		CES <= '1';
 	else
 		CES <= '0';
 	end if;
 	
 	if (m_CED = '0') then
-		CED <= 'Z';
+		CED <= '1';
 	else
 		CED <= '0';
 	end if;
