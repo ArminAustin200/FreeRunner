@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dF:/Austin/Documents/FreeRunner Project/Firmware/Slim/RGH1.2 Timing/Dual NAND/simulation/qsim
+vdualnand
+Z1 !s110 1747437117
+!i10b 1
+!s100 2OlNS7l@C5kfYVX2]Vz4`2
+ID4BmzLfATe0noZQadIcLR1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1747437116
+8FreeRunner_DualNAND.vo
+FFreeRunner_DualNAND.vo
+L0 32
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1747437117.000000
+!s107 FreeRunner_DualNAND.vo|
+!s90 -work|work|FreeRunner_DualNAND.vo|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vdualnand_vlg_vec_tst
+R1
+!i10b 1
+!s100 :YXaLPDeC7]O6SWn?z5AO3
+INA;=9IhO359zzWbR]jRgT2
+R2
+R0
+R3
+8dualnand_test.vwf.vt
+Fdualnand_test.vwf.vt
+L0 30
+R4
+r1
+!s85 0
+31
+R5
+!s107 dualnand_test.vwf.vt|
+!s90 -work|work|dualnand_test.vwf.vt|
+!i113 1
+R6
+R7
