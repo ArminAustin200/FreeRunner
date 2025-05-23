@@ -12,6 +12,6 @@ F - Pin 37 (PLL) - PLL point for Slim consoles
 DBG0 - Pin 64  
 DBG1 - Pin 2  
 DBG2 - Pin 1  
-**NOTE:** For SMC RST and BTN used for NAND switching, __3.3V GPIO pins are required__
+**NOTE:** For SMC RST and BTN used for NAND switching, <ins>3.3V GPIO pins are required</ins>
 
 For more info on pinouts click [here](https://www.intel.com/content/www/us/en/content-details/656843/pin-information-for-the-max-v-5m160z-device-pdf-format.html?wapkw=5m160z)
