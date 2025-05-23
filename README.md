@@ -12,12 +12,12 @@ F - Pin 37 (PLL) - PLL point for Slim consoles
 DBG0 - Pin 64  
 DBG1 - Pin 2  
 DBG2 - Pin 1  
-**NOTE:** For SMC RST and BTN used for NAND switching, <ins>3.3V GPIO pins are required</ins>
+**NOTE:** For SMC RST and BTN used for NAND switching, <ins>3.3V GPIO pins are required<ins> 
 
-###Dual NAND Pinout (**Will be present on final board revision**)  
+## Dual NAND Pinout (**Will be present on final board revision**)  
 CES - Pin 42  
 CED - Pin 43  
-**For further multinand logic, pins 44-48 can be used**
+**For further multinand logic:** <ins>pins 44-48 can be used<ins>
 
 SMC_RST - Pin 29
 BUTTON - Pin 30  
