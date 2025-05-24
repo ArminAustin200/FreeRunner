@@ -7,7 +7,7 @@ A - Pin 31 (PLL)
 B - Pin 32 (CLK)  
 C - Pin 34 (POST)  
 D - Pin 35 (RST0) - RST point for Phat consoles  
-E - Pin 36/33 (RST1) - RST point for Slim consoles **Note:** RST1 will have 2 GPIO pins dedicated in order to be able to sink enough current for RST   
+E - Pin 36/33 (RST1) - RST point for Slim consoles **Note:** <ins>RST1 will have 2 GPIO pins dedicated in order to be able to sink enough current for RST</ins>   
 F - Pin 37 (PLL) - PLL point for Slim consoles  
 
 <ins>**Debug LED Pins:**</ins>  
