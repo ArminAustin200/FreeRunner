@@ -7,8 +7,8 @@ A - Pin 31 (PLL)
 B - Pin 32 (CLK)  
 C - Pin 34 (POST)  
 D - Pin 35 (RST) - RST point for Phat consoles  
-E - Pin 36 & 33 (RST0 & RST1) - RST point for Slim consoles **Note:** <ins>Slim RST will have 2 GPIO pins dedicated in order to be able to sink enough current</ins>   
-F - Pin 37 (PLL) - PLL point for Slim consoles  
+E - Pin 36 & 37 (RST0 & RST1) - RST point for Slim consoles **Note:** <ins>Slim RST will have 2 GPIO pins dedicated in order to be able to sink enough current</ins>   
+F - Pin 30 (PLL) - PLL point for Slim consoles  
 
 <ins>**Also Note:** For FreeRunner PROTOTYPE 1.0 board, use A, B, C, D for RGH1.2. Use pins 35 and 33 instead.</ins>  
 
