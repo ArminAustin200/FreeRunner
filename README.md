@@ -21,7 +21,7 @@ DBG2 - Pin 1
 CES - Pin 42  
 CED - Pin 43 - **For further multinand logic:** <ins>pins 44-48 can be used</ins>  
 SMC_RST - Pin 29  
-BUTTON - Pin 30  
+BUTTON - Pin 28  
 
 **NOTE:** For SMC RST and BTN used for NAND switching, <ins>3.3V GPIO pins are required</ins>  
 **ALSO NOTE:** <ins>Multinand GPIO pins are not yet finalized and may be subject to change in the future</ins>    
