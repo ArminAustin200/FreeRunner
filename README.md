@@ -19,7 +19,7 @@ DBG2 - Pin 1
 
 <ins>**Multinand GPIO Pins:**</ins>  
 CES - Pin 42  
-CED - Pin 43 - **For further multinand logic:** <ins>pins 44-48 can be used</ins>  
+CED - Pin 43 - **For further multinand logic:** <ins>pins 44-51 can be used</ins>  
 SMC_RST - Pin 29  
 BUTTON - Pin 28  
 
