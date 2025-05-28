@@ -93,3 +93,5 @@ set_location_assignment PIN_28 -to BUTTON
 set_location_assignment PIN_42 -to CES
 set_location_assignment PIN_43 -to CED
 set_location_assignment PIN_29 -to SMC_RST
+set_location_assignment PIN_44 -to CET
+set_instance_assignment -name IO_STANDARD "1.5 V" -to CET
