@@ -12,8 +12,6 @@ F - Pin 30 (PLL) - PLL point for Slim consoles
 
 **Note:** <ins>The oscillator for Corona/Waitsburg/Stingray slim consoles is on Pin 27.</ins>     
 
-~~<ins>**Also Note:** For FreeRunner PROTOTYPE 1.0 board, When using on a Slim use A, B, C, D instead of A, B, E, F for RGH1.2. Use pins 35 and 33 instead.</ins>~~     
-
 <ins>**Debug LED Pins:**</ins>  
 DBG0 - Pin 64  
 DBG1 - Pin 2  
