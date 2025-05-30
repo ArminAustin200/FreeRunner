@@ -10,7 +10,9 @@ D - Pin 35 (RST) - RST point for Phat consoles
 E - Pin 36 & 37 (RST0 & RST1) - RST point for Slim consoles **Note:** <ins>Slim RST will have 2 GPIO pins dedicated in order to be able to sink enough current</ins>   
 F - Pin 30 (PLL) - PLL point for Slim consoles  
 
-<ins>**Also Note:** For FreeRunner PROTOTYPE 1.0 board, When using on a Slim use A, B, C, D instead of A, B, E, F for RGH1.2. Use pins 35 and 33 instead.</ins>  
+**Note:** <ins>The oscillator for Corona/Waitsburg/Stingray slim consoles is on Pin 27.</ins>     
+
+~~<ins>**Also Note:** For FreeRunner PROTOTYPE 1.0 board, When using on a Slim use A, B, C, D instead of A, B, E, F for RGH1.2. Use pins 35 and 33 instead.</ins>~~     
 
 <ins>**Debug LED Pins:**</ins>  
 DBG0 - Pin 64  
