@@ -79,3 +79,4 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PLL
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLK
 set_global_assignment -name OPTIMIZATION_MODE BALANCED
 set_location_assignment PIN_64 -to DBG0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG0
