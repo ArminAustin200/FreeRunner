@@ -47,9 +47,9 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
-set_location_assignment PIN_1 -to PLL
-set_location_assignment PIN_3 -to CLK
-set_location_assignment PIN_35 -to POST
+set_location_assignment PIN_31 -to PLL
+set_location_assignment PIN_27 -to CLK
+set_location_assignment PIN_34 -to POST
 set_location_assignment PIN_64 -to DBG
 set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
 set_global_assignment -name ENABLE_OCT_DONE OFF
@@ -75,7 +75,7 @@ set_global_assignment -name VHDL_FILE slower.vhd
 set_global_assignment -name BDF_FILE glitchChip.bdf
 set_global_assignment -name OPTIMIZATION_MODE BALANCED
 set_global_assignment -name VHDL_FILE main.vhd
-set_location_assignment PIN_34 -to RST0
+set_location_assignment PIN_36 -to RST0
 set_location_assignment PIN_37 -to RST1
 set_global_assignment -name BDF_FILE glitchChip_dualnand.bdf
 set_instance_assignment -name IO_STANDARD "1.8 V" -to POST
