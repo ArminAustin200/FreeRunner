@@ -3,15 +3,13 @@ The FreeRunner Project aims to replace old glitch Xilinx based glitch chips with
 
 ## CPLD Pinout: (**This pinout applies to the "PROTOTYPE 1.0 PCB" as well as all future revisions**)
 <ins>**Main GPIO Pins:**</ins>  
-A - Pin 31 (PLL)  
+A - Pin 31 (PLL) - PLL Point for Phat consoles  
 B - Pin 32 (CLK)  
 C - Pin 34 (POST)  
 D - Pin 35 (RST) - RST point for Phat consoles  
 E - Pin 36 & 37 (RST0 & RST1) - RST point for Slim consoles **Note:** <ins>Slim RST will have 2 GPIO pins dedicated in order to be able to sink enough current</ins>   
 F - Pin 30 (PLL) - PLL point for Slim consoles  
-
-SDA - Pin 18     
-SCL - Pin 19     
+    
 
 **Note:** <ins>The oscillator for Corona/Waitsburg/Stingray slim consoles is on Pin 27.</ins>     
 
