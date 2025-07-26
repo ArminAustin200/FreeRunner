@@ -8,7 +8,7 @@ B - Pin 32 (CLK)
 C - Pin 34 (POST)  
 D - Pin 35 (RST) - RST point for Phat consoles  
 E - Pin 36 & 37 (RST0 & RST1) - RST point for Slim consoles **Note:** <ins>Slim RST will have 2 GPIO pins dedicated in order to be able to sink enough current</ins>   
-F - Pin 30 (PLL) - PLL point for Slim consoles  
+F - Pin 30 (PLL) - PLL point for Slim consoles/GPIO Point for MUFAS  
     
 
 **Note:** <ins>The oscillator for Corona/Waitsburg/Stingray slim consoles is on Pin 27.</ins>     
