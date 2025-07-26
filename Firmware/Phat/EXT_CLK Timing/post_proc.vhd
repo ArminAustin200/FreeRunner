@@ -27,10 +27,14 @@ constant T_END : integer := R_END + T_BUF;
 
 constant post_rgh : integer := 24;
 constant post_s_max : integer := 31;
-signal cnt : integer range 0 to T_END := 0;
 signal post_r_cnt : integer range 0 to post_s_max := 0; --Creating a constant to count all rising edges of POST
 signal post_f_cnt : integer range 0 to post_s_max := 0; --Creating a constant to count all falling edges of POST
-signal timeout : STD_LOGIC := '0';
+
+signal cnt_r : integer range 0 to T_END := 0; --Creating a constant to count all rising edges of CLK
+signal cnt_f : integer range 0 to T_END := 0; --Creating a constant to count all falling edges of CLK
+
+signal timeout_r : STD_LOGIC := '0'; --Creating a timeout for rising edges of CLK
+signal timeout_f : STD_LOGIC := '0'; --Creating a timeout for falling edges of CLK
 
 begin
 
@@ -69,35 +73,49 @@ end process;
 -- timing counter + reset
 process (CLK) is
 begin
-	if (CLK'event) then -- 96 MHz
+	if (rising_edge(CLK)) then --Counting the rising edges of CLK (96MHz)
 		if (post_r_cnt + post_f_cnt >= post_rgh) then
-			if (cnt < T_END) then
-				cnt <= cnt + 1;
-				timeout <= '0';
+			if (cnt_r < T_END) then
+				cnt_r <= cnt_r + 1;
+				timeout_r <= '0';
 			else
-				timeout <= '1';
+				timeout_r <= '1';
 			end if;
 		else
-			cnt <= 0;
-			timeout <= '0';
+			cnt_r <= 0;
+			timeout_r <= '0';
 		end if;
-		
-		if (cnt >= R_END - R_LEN and cnt < R_END and callback = '1') then
-			RST <= '0';
-		else
-			if (cnt = R_END) then
-				RST <= '1';
+	end if;
+	
+	if (falling_edge(CLK)) then --Counting the falling edges of CLK (96MHz)
+		if (post_r_cnt + post_f_cnt >= post_rgh) then
+			if (cnt_f < T_END) then
+				cnt_f <= cnt_f + 1;
+				timeout_f <= '0';
 			else
-				RST <= 'Z';
+				timeout_f <= '1';
 			end if;
+		else
+			cnt_f <= 0;
+			timeout_f <= '0';
+		end if;
+	end if;
+		
+	if (cnt_r + cnt_f >= R_END - R_LEN and cnt_r + cnt_f < R_END and callback = '1') then
+		RST <= '0';
+	else
+		if (cnt_r + cnt_f = R_END) then
+			RST <= '1';
+		else
+			RST <= 'Z';
 		end if;
 	end if;
 end process;
 
 -- slowdown
-process (post_r_cnt, post_f_cnt, timeout) is
+process (post_r_cnt, post_f_cnt, timeout_r, timeout_f) is
 begin
-	if (post_r_cnt + post_f_cnt >= post_rgh - 1 and timeout = '0') then
+	if (post_r_cnt + post_f_cnt >= post_rgh - 1 and timeout_r = '0' and timeout_f = '0') then
 		to_slow <= '1';
 	else
 		to_slow <= '0';
