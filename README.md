@@ -1,7 +1,7 @@
 # FreeRunner
 The FreeRunner Project aims to replace old glitch Xilinx based glitch chips with a more modern Altera MAXV based CPLD
 
-## CPLD Pinout: (**This pinout applies to the "PROTOTYPE 1.0 PCB" as well as all future revisions**)
+## FreeRunner CPLD Pinout:
 <ins>**Main GPIO Pins:**</ins>  
 A - Pin 31 (PLL) - PLL/EXT_CLK Point for Phat consoles  
 B - Pin 32 (CLK)  
