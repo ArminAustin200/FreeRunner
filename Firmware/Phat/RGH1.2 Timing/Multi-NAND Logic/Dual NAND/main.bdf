@@ -22,9 +22,9 @@ agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 296 288 464 304)
+	(rect 144 264 312 280)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "POST" (rect 5 0 33 12)(font "Arial" ))
+	(text "POST" (rect 5 0 34 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -38,9 +38,9 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 296 304 464 320)
+	(rect 144 280 312 296)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "CLK" (rect 5 0 25 17)(font "Intel Clear" ))
+	(text "CLK" (rect 5 0 26 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -54,9 +54,9 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 688 520 856 536)
+	(rect 544 480 712 496)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "BUTTON" (rect 5 0 48 12)(font "Arial" ))
+	(text "BUTTON" (rect 5 0 49 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -70,9 +70,9 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1096 288 1272 304)
+	(rect 912 264 1088 280)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "PLL" (rect 90 0 108 12)(font "Arial" ))
+	(text "PLL" (rect 90 0 108 17)(font "Intel Clear" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -86,7 +86,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 680 288 856 304)
+	(rect 520 264 696 280)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "DBG0" (rect 90 0 119 12)(font "Arial" ))
 	(pt 0 8)
@@ -102,9 +102,9 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1032 504 1208 520)
+	(rect 904 464 1080 480)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "CES" (rect 90 0 112 12)(font "Arial" ))
+	(text "CES" (rect 90 0 108 17)(font "Intel Clear" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -118,7 +118,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1032 520 1208 536)
+	(rect 904 480 1080 496)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "CED" (rect 90 0 110 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -134,9 +134,9 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1032 536 1208 552)
+	(rect 904 496 1080 512)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "SMC_RST" (rect 90 0 140 12)(font "Arial" ))
+	(text "SMC_RST" (rect 90 0 137 17)(font "Intel Clear" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -150,9 +150,9 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1032 552 1208 568)
+	(rect 904 512 1080 528)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "DBG1" (rect 90 0 119 12)(font "Arial" ))
+	(text "DBG1" (rect 90 0 117 17)(font "Intel Clear" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -166,7 +166,7 @@ agreement for further details.
 )
 (pin
 	(bidir)
-	(rect 680 304 856 320)
+	(rect 520 280 696 296)
 	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "RST" (rect 90 0 111 12)(font "Arial" ))
 	(pt 0 8)
@@ -182,7 +182,7 @@ agreement for further details.
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
 )
 (symbol
-	(rect 496 248 656 360)
+	(rect 336 224 496 336)
 	(text "post_proc" (rect 5 0 53 12)(font "Arial" ))
 	(text "inst" (rect 8 96 25 108)(font "Arial" ))
 	(port
@@ -232,31 +232,9 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 496 400 648 480)
-	(text "divider_slow" (rect 5 0 65 12)(font "Arial" ))
-	(text "inst2" (rect 8 64 30 81)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
-		(text "CLK" (rect 21 27 42 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 152 32)
-		(output)
-		(text "CLK_S" (rect 0 0 34 12)(font "Arial" ))
-		(text "CLK_S" (rect 103 27 137 39)(font "Arial" ))
-		(line (pt 152 32)(pt 136 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 136 64))
-	)
-)
-(symbol
-	(rect 896 248 1056 328)
+	(rect 728 224 888 304)
 	(text "slower" (rect 5 0 35 12)(font "Arial" ))
-	(text "inst3" (rect 8 64 30 81)(font "Intel Clear" ))
+	(text "inst2" (rect 8 64 30 81)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -290,9 +268,31 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 496 512 648 592)
+	(rect 336 360 488 440)
+	(text "divider_slow" (rect 5 0 65 12)(font "Arial" ))
+	(text "inst3" (rect 8 64 30 81)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 27 42 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "CLK_S" (rect 0 0 34 12)(font "Arial" ))
+		(text "CLK_S" (rect 103 27 137 39)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 64))
+	)
+)
+(symbol
+	(rect 336 472 488 552)
 	(text "divider_dual" (rect 5 0 64 12)(font "Arial" ))
-	(text "inst1" (rect 8 64 30 81)(font "Intel Clear" ))
+	(text "inst4" (rect 8 64 30 81)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -312,9 +312,9 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 872 480 1016 592)
+	(rect 736 440 880 552)
 	(text "dualnand" (rect 5 0 48 12)(font "Arial" ))
-	(text "inst4" (rect 8 96 30 113)(font "Intel Clear" ))
+	(text "inst5" (rect 8 96 30 113)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -369,137 +369,129 @@ agreement for further details.
 	)
 )
 (connector
-	(pt 680 296)
-	(pt 656 296)
+	(pt 496 272)
+	(pt 520 272)
 )
 (connector
-	(pt 656 280)
-	(pt 896 280)
+	(pt 728 256)
+	(pt 496 256)
 )
 (connector
-	(pt 1056 296)
-	(pt 1096 296)
+	(pt 912 272)
+	(pt 888 272)
 )
 (connector
-	(pt 1056 280)
-	(pt 1080 280)
+	(pt 312 272)
+	(pt 336 272)
 )
 (connector
-	(pt 496 280)
-	(pt 472 280)
+	(pt 336 256)
+	(pt 320 256)
 )
 (connector
-	(pt 896 296)
-	(pt 864 296)
+	(pt 320 256)
+	(pt 320 208)
 )
 (connector
-	(pt 864 296)
-	(pt 864 432)
+	(pt 320 208)
+	(pt 904 208)
 )
 (connector
-	(pt 1080 280)
-	(pt 1080 224)
+	(pt 888 256)
+	(pt 904 256)
 )
 (connector
-	(pt 1080 224)
-	(pt 472 224)
+	(pt 904 256)
+	(pt 904 208)
 )
 (connector
-	(pt 472 280)
-	(pt 472 224)
+	(pt 336 392)
+	(pt 320 392)
 )
 (connector
-	(pt 496 432)
-	(pt 480 432)
+	(pt 320 392)
+	(pt 320 288)
 )
 (connector
-	(pt 480 312)
-	(pt 480 432)
+	(pt 312 288)
+	(pt 320 288)
 )
 (connector
-	(pt 496 296)
-	(pt 464 296)
+	(pt 320 288)
+	(pt 336 288)
 )
 (connector
-	(pt 464 312)
-	(pt 480 312)
+	(pt 712 392)
+	(pt 712 272)
 )
 (connector
-	(pt 480 312)
-	(pt 496 312)
+	(pt 728 272)
+	(pt 712 272)
 )
 (connector
-	(pt 480 544)
-	(pt 496 544)
+	(pt 336 504)
+	(pt 320 504)
 )
 (connector
-	(pt 480 496)
-	(pt 480 544)
+	(pt 320 504)
+	(pt 320 456)
 )
 (connector
-	(pt 480 496)
-	(pt 664 496)
+	(pt 320 456)
+	(pt 504 456)
 )
 (connector
-	(pt 664 496)
-	(pt 664 432)
+	(pt 504 456)
+	(pt 504 392)
 )
 (connector
-	(pt 648 432)
-	(pt 664 432)
+	(pt 488 392)
+	(pt 504 392)
 )
 (connector
-	(pt 664 432)
-	(pt 864 432)
+	(pt 504 392)
+	(pt 712 392)
 )
 (connector
-	(pt 672 336)
-	(pt 672 312)
+	(pt 488 504)
+	(pt 736 504)
 )
 (connector
-	(pt 680 312)
-	(pt 672 312)
+	(pt 736 472)
+	(pt 512 472)
 )
 (connector
-	(pt 672 312)
-	(pt 656 312)
+	(pt 512 472)
+	(pt 512 288)
 )
 (connector
-	(pt 672 336)
-	(pt 848 336)
+	(pt 496 288)
+	(pt 512 288)
 )
 (connector
-	(pt 648 544)
-	(pt 872 544)
+	(pt 512 288)
+	(pt 520 288)
 )
 (connector
-	(pt 848 336)
-	(pt 848 512)
+	(pt 712 488)
+	(pt 736 488)
 )
 (connector
-	(pt 848 512)
-	(pt 872 512)
+	(pt 904 472)
+	(pt 880 472)
 )
 (connector
-	(pt 856 528)
-	(pt 872 528)
+	(pt 880 488)
+	(pt 904 488)
 )
 (connector
-	(pt 1016 512)
-	(pt 1032 512)
+	(pt 880 504)
+	(pt 904 504)
 )
 (connector
-	(pt 1016 528)
-	(pt 1032 528)
+	(pt 880 520)
+	(pt 904 520)
 )
-(connector
-	(pt 1016 544)
-	(pt 1032 544)
-)
-(connector
-	(pt 1016 560)
-	(pt 1032 560)
-)
-(junction (pt 480 312))
-(junction (pt 664 432))
-(junction (pt 672 312))
+(junction (pt 320 288))
+(junction (pt 504 392))
+(junction (pt 512 288))
