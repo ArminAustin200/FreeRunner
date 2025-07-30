@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|f:\\austin\\documents\\freerunner project\\software\\freerunner flashing utility\\freerunner flashing utility\\classes\\updateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|solutionrelative:classes\\updateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|f:\\austin\\documents\\freerunner project\\software\\freerunner flashing utility\\freerunner flashing utility\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\panels\\topheader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|solutionrelative:panels\\topheader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -11,8 +19,12 @@
       "RelativeMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|f:\\austin\\documents\\freerunner project\\software\\freerunner flashing utility\\freerunner flashing utility\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|f:\\austin\\documents\\freerunner project\\software\\freerunner flashing utility\\freerunner flashing utility\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|f:\\austin\\documents\\freerunner project\\software\\freerunner flashing utility\\freerunner flashing utility\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0354E039-3006-47FE-9514-1A3ABD712942}|FreeRunner Flashing Utility.csproj|solutionrelative:mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,23 +34,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 285,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "UpdateService.cs",
+              "DocumentMoniker": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\Classes\\UpdateService.cs",
+              "RelativeDocumentMoniker": "Classes\\UpdateService.cs",
+              "ToolTip": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\Classes\\UpdateService.cs",
+              "RelativeToolTip": "Classes\\UpdateService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T00:43:13.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "MainForm.Designer.cs",
+              "ToolTip": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\MainForm.Designer.cs",
+              "RelativeToolTip": "MainForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T04:12:13.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T04:12:09.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
               "ToolTip": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\MainForm.cs [Design]",
               "RelativeToolTip": "MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T20:49:00.085Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-07-28T20:49:00.085Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "topHeader.cs [Design]",
+              "DocumentMoniker": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\Panels\\topHeader.cs",
+              "RelativeDocumentMoniker": "Panels\\topHeader.cs",
+              "ToolTip": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\Panels\\topHeader.cs [Design]",
+              "RelativeToolTip": "Panels\\topHeader.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T21:33:02.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainForm.cs",
               "DocumentMoniker": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
@@ -46,20 +105,7 @@
               "RelativeToolTip": "MainForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T20:48:32.464Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "topHeader.cs [Design]",
-              "DocumentMoniker": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\Panels\\topHeader.cs",
-              "RelativeDocumentMoniker": "Panels\\topHeader.cs",
-              "ToolTip": "F:\\Austin\\Documents\\FreeRunner Project\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility\\Panels\\topHeader.cs [Design]",
-              "RelativeToolTip": "Panels\\topHeader.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T21:33:02.59Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-07-28T20:48:32.464Z"
             }
           ]
         },

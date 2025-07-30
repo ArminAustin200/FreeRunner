@@ -36,10 +36,14 @@ namespace FreeRunner_Flashing_Utility
             textBox1 = new TextBox();
             progressBar = new ProgressBar();
             label1 = new Label();
+            panel1 = new Panel();
+            groupBox2 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             groupBox1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -55,6 +59,10 @@ namespace FreeRunner_Flashing_Utility
             splitContainer1.Panel1.Controls.Add(returnConsole);
             splitContainer1.Panel1.Controls.Add(topPanel);
             splitContainer1.Panel1.Controls.Add(groupBox1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(panel1);
             splitContainer1.Size = new Size(804, 451);
             splitContainer1.SplitterDistance = 408;
             splitContainer1.TabIndex = 0;
@@ -125,6 +133,26 @@ namespace FreeRunner_Flashing_Utility
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.Click += label1_Click;
             // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(groupBox2);
+            panel1.Location = new Point(-3, -2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(393, 451);
+            panel1.TabIndex = 1;
+            // 
+            // groupBox2
+            // 
+            groupBox2.BackColor = SystemColors.Control;
+            groupBox2.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.Location = new Point(4, 3);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(200, 238);
+            groupBox2.TabIndex = 0;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Falcon/Jasper/Tonasket RGH1.2v2";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -136,10 +164,12 @@ namespace FreeRunner_Flashing_Utility
             Text = "FreeRunner Flashing Utility";
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
+            splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -162,5 +192,7 @@ namespace FreeRunner_Flashing_Utility
         private TextBox textBox1;
         private Panel topPanel;
         private TextBox returnConsole;
+        private Panel panel1;
+        private GroupBox groupBox2;
     }
 }
