@@ -2,9 +2,9 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
--- dualnand module
+-- quadnand module
 
-entity dualnand is
+entity quadnand is
 	Port (
 		RST : in STD_LOGIC;
 		BUT : in STD_LOGIC;
@@ -16,9 +16,9 @@ entity dualnand is
 		SMC : out STD_LOGIC := 'Z';
 		DBG : out STD_LOGIC := '0'
 	);
-end dualnand;
+end quadnand;
 
-architecture arch of dualnand is
+architecture arch of quadnand is
 
 signal counter : integer range 0 to 10 := 0; --10 works for me
 signal counter_smc : integer range 0 to 1 := 0;
