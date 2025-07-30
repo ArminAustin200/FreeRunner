@@ -22,9 +22,9 @@ agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 296 288 464 304)
+	(rect 96 232 264 248)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "POST" (rect 5 0 33 12)(font "Arial" ))
+	(text "POST" (rect 5 0 34 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -38,9 +38,9 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 296 304 464 320)
+	(rect 96 248 264 264)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "CLK" (rect 5 0 25 17)(font "Intel Clear" ))
+	(text "CLK" (rect 5 0 26 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -54,9 +54,9 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1096 288 1272 304)
+	(rect 896 232 1072 248)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "PLL" (rect 90 0 108 12)(font "Arial" ))
+	(text "PLL" (rect 90 0 108 17)(font "Intel Clear" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -70,7 +70,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 680 288 856 304)
+	(rect 488 232 664 248)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "DBG0" (rect 90 0 119 12)(font "Arial" ))
 	(pt 0 8)
@@ -86,7 +86,7 @@ agreement for further details.
 )
 (pin
 	(bidir)
-	(rect 680 304 856 320)
+	(rect 488 248 664 264)
 	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "RST" (rect 90 0 111 12)(font "Arial" ))
 	(pt 0 8)
@@ -102,7 +102,7 @@ agreement for further details.
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
 )
 (symbol
-	(rect 496 248 656 360)
+	(rect 320 192 480 304)
 	(text "post_proc" (rect 5 0 53 12)(font "Arial" ))
 	(text "inst" (rect 8 96 25 108)(font "Arial" ))
 	(port
@@ -152,7 +152,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 496 400 648 480)
+	(rect 320 344 472 424)
 	(text "divider_slow" (rect 5 0 65 12)(font "Arial" ))
 	(text "inst2" (rect 8 64 30 81)(font "Intel Clear" ))
 	(port
@@ -174,7 +174,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 896 248 1056 328)
+	(rect 712 192 872 272)
 	(text "slower" (rect 5 0 35 12)(font "Arial" ))
 	(text "inst3" (rect 8 64 30 81)(font "Intel Clear" ))
 	(port
@@ -210,71 +210,71 @@ agreement for further details.
 	)
 )
 (connector
-	(pt 680 312)
-	(pt 656 312)
+	(pt 264 240)
+	(pt 320 240)
 )
 (connector
-	(pt 680 296)
-	(pt 656 296)
+	(pt 320 376)
+	(pt 288 376)
 )
 (connector
-	(pt 656 280)
-	(pt 896 280)
+	(pt 288 376)
+	(pt 288 256)
 )
 (connector
-	(pt 1056 296)
-	(pt 1096 296)
+	(pt 264 256)
+	(pt 288 256)
 )
 (connector
-	(pt 1056 280)
-	(pt 1080 280)
+	(pt 288 256)
+	(pt 320 256)
 )
 (connector
-	(pt 496 280)
-	(pt 472 280)
+	(pt 480 240)
+	(pt 488 240)
 )
 (connector
-	(pt 648 432)
-	(pt 864 432)
+	(pt 480 256)
+	(pt 488 256)
 )
 (connector
-	(pt 896 296)
-	(pt 864 296)
+	(pt 320 224)
+	(pt 296 224)
 )
 (connector
-	(pt 864 296)
-	(pt 864 432)
+	(pt 296 224)
+	(pt 296 168)
 )
 (connector
-	(pt 1080 280)
-	(pt 1080 224)
+	(pt 872 240)
+	(pt 896 240)
 )
 (connector
-	(pt 1080 224)
-	(pt 472 224)
+	(pt 896 168)
+	(pt 896 224)
 )
 (connector
-	(pt 472 280)
-	(pt 472 224)
+	(pt 296 168)
+	(pt 896 168)
 )
 (connector
-	(pt 496 432)
-	(pt 480 432)
+	(pt 480 224)
+	(pt 712 224)
 )
 (connector
-	(pt 480 312)
-	(pt 480 432)
+	(pt 872 224)
+	(pt 896 224)
 )
 (connector
-	(pt 496 296)
-	(pt 464 296)
+	(pt 472 376)
+	(pt 688 376)
 )
 (connector
-	(pt 464 312)
-	(pt 480 312)
+	(pt 688 376)
+	(pt 688 240)
 )
 (connector
-	(pt 480 312)
-	(pt 496 312)
+	(pt 712 240)
+	(pt 688 240)
 )
-(junction (pt 480 312))
+(junction (pt 288 256))
