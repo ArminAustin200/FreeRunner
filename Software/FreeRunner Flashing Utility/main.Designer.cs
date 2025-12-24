@@ -34,6 +34,8 @@
             progressBar1 = new ProgressBar();
             optionsPanel = new TabControl();
             tabPage1 = new TabPage();
+            exitButton = new Button();
+            clearButton = new Button();
             label8 = new Label();
             label6 = new Label();
             label7 = new Label();
@@ -41,38 +43,76 @@
             zephyrTimings = new GroupBox();
             tableLayoutPanel4 = new TableLayoutPanel();
             label3 = new Label();
-            radioButton19 = new RadioButton();
-            radioButton20 = new RadioButton();
-            radioButton21 = new RadioButton();
-            radioButton22 = new RadioButton();
+            rbZ192_2 = new RadioButton();
+            rbZ192_1 = new RadioButton();
+            rbZ96_2 = new RadioButton();
+            rbZ96_1 = new RadioButton();
             label4 = new Label();
             nandSelection = new GroupBox();
             tableLayoutPanel3 = new TableLayoutPanel();
-            radioButton13 = new RadioButton();
-            radioButton14 = new RadioButton();
-            radioButton15 = new RadioButton();
-            radioButton16 = new RadioButton();
-            radioButton17 = new RadioButton();
-            radioButton18 = new RadioButton();
+            multiNAND1 = new RadioButton();
+            multiNAND2 = new RadioButton();
+            multiNAND3 = new RadioButton();
+            multiNAND4 = new RadioButton();
+            multiNAND5 = new RadioButton();
+            multiNAND6 = new RadioButton();
             xenonTimings = new GroupBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             label2 = new Label();
-            radioButton12 = new RadioButton();
-            radioButton11 = new RadioButton();
-            radioButton10 = new RadioButton();
-            radioButton9 = new RadioButton();
+            rbX192_2 = new RadioButton();
+            rbX192_1 = new RadioButton();
+            rbX96_2 = new RadioButton();
+            rbX96_1 = new RadioButton();
             label1 = new Label();
             fjTimings = new GroupBox();
             tableLayoutPanel1 = new TableLayoutPanel();
-            radioButton8 = new RadioButton();
-            radioButton7 = new RadioButton();
-            radioButton6 = new RadioButton();
-            radioButton5 = new RadioButton();
-            radioButton4 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            rbFJ24 = new RadioButton();
+            rbFJ23 = new RadioButton();
+            rbFJ22 = new RadioButton();
+            rbFJ21 = new RadioButton();
+            rbFJ20 = new RadioButton();
+            rbFJ19 = new RadioButton();
+            rbFJ18 = new RadioButton();
+            rbFJ17 = new RadioButton();
             tabPage2 = new TabPage();
+            label13 = new Label();
+            label12 = new Label();
+            groupBox3 = new GroupBox();
+            tableLayoutPanel7 = new TableLayoutPanel();
+            multiNAND11 = new RadioButton();
+            multiNAND21 = new RadioButton();
+            multiNAND31 = new RadioButton();
+            multiNAND41 = new RadioButton();
+            multiNAND51 = new RadioButton();
+            multiNAND61 = new RadioButton();
+            label11 = new Label();
+            label10 = new Label();
+            groupBox2 = new GroupBox();
+            tableLayoutPanel6 = new TableLayoutPanel();
+            boardTr = new RadioButton();
+            boardCor = new RadioButton();
+            boardCorWB = new RadioButton();
+            label9 = new Label();
+            groupBox1 = new GroupBox();
+            tableLayoutPanel5 = new TableLayoutPanel();
+            slim100 = new RadioButton();
+            slim105 = new RadioButton();
+            slim110 = new RadioButton();
+            slim115 = new RadioButton();
+            slim120 = new RadioButton();
+            slim125 = new RadioButton();
+            slim130 = new RadioButton();
+            slim135 = new RadioButton();
+            slim60 = new RadioButton();
+            slim65 = new RadioButton();
+            slim70 = new RadioButton();
+            slim75 = new RadioButton();
+            slim80 = new RadioButton();
+            slim85 = new RadioButton();
+            slim90 = new RadioButton();
+            slim95 = new RadioButton();
+            exitButton1 = new Button();
+            clearButton1 = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             button1 = new Button();
             progressPanel.SuspendLayout();
@@ -86,6 +126,13 @@
             tableLayoutPanel2.SuspendLayout();
             fjTimings.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            tableLayoutPanel7.SuspendLayout();
+            groupBox2.SuspendLayout();
+            tableLayoutPanel6.SuspendLayout();
+            groupBox1.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
             SuspendLayout();
             // 
             // debugConsole
@@ -99,7 +146,7 @@
             debugConsole.ScrollBars = RichTextBoxScrollBars.Vertical;
             debugConsole.Size = new Size(477, 299);
             debugConsole.TabIndex = 0;
-            debugConsole.Text = "This is the console:";
+            debugConsole.Text = "";
             // 
             // progressPanel
             // 
@@ -149,6 +196,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(exitButton);
+            tabPage1.Controls.Add(clearButton);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label6);
             tabPage1.Controls.Add(label7);
@@ -164,6 +213,26 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Phat Timings";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // exitButton
+            // 
+            exitButton.Location = new Point(84, 382);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(75, 23);
+            exitButton.TabIndex = 10;
+            exitButton.Text = "Exit";
+            exitButton.UseVisualStyleBackColor = true;
+            exitButton.Click += exitBtn_Click;
+            // 
+            // clearButton
+            // 
+            clearButton.Location = new Point(3, 382);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(75, 23);
+            clearButton.TabIndex = 9;
+            clearButton.Text = "Clear";
+            clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += clrBtn_Click;
             // 
             // label8
             // 
@@ -203,7 +272,7 @@
             label5.Name = "label5";
             label5.Size = new Size(95, 60);
             label5.TabIndex = 5;
-            label5.Text = "Select None if you are not using Multi-NAND";
+            label5.Text = "Select None if you are not using NAND-wich";
             label5.TextAlign = ContentAlignment.TopCenter;
             // 
             // zephyrTimings
@@ -223,10 +292,10 @@
             tableLayoutPanel4.ColumnCount = 1;
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel4.Controls.Add(label3, 0, 3);
-            tableLayoutPanel4.Controls.Add(radioButton19, 0, 5);
-            tableLayoutPanel4.Controls.Add(radioButton20, 0, 4);
-            tableLayoutPanel4.Controls.Add(radioButton21, 0, 2);
-            tableLayoutPanel4.Controls.Add(radioButton22, 0, 1);
+            tableLayoutPanel4.Controls.Add(rbZ192_2, 0, 5);
+            tableLayoutPanel4.Controls.Add(rbZ192_1, 0, 4);
+            tableLayoutPanel4.Controls.Add(rbZ96_2, 0, 2);
+            tableLayoutPanel4.Controls.Add(rbZ96_1, 0, 1);
             tableLayoutPanel4.Controls.Add(label4, 0, 0);
             tableLayoutPanel4.Location = new Point(4, 17);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -252,49 +321,53 @@
             label3.Text = "192MHz";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // radioButton19
+            // rbZ192_2
             // 
-            radioButton19.AutoSize = true;
-            radioButton19.Location = new Point(3, 132);
-            radioButton19.Name = "radioButton19";
-            radioButton19.Size = new Size(64, 19);
-            radioButton19.TabIndex = 5;
-            radioButton19.TabStop = true;
-            radioButton19.Text = "62.5 1.0";
-            radioButton19.UseVisualStyleBackColor = true;
+            rbZ192_2.AutoSize = true;
+            rbZ192_2.Location = new Point(3, 132);
+            rbZ192_2.Name = "rbZ192_2";
+            rbZ192_2.Size = new Size(64, 19);
+            rbZ192_2.TabIndex = 5;
+            rbZ192_2.TabStop = true;
+            rbZ192_2.Tag = "Zephyr 192";
+            rbZ192_2.Text = "62.5 1.0";
+            rbZ192_2.UseVisualStyleBackColor = true;
             // 
-            // radioButton20
+            // rbZ192_1
             // 
-            radioButton20.AutoSize = true;
-            radioButton20.Location = new Point(3, 109);
-            radioButton20.Name = "radioButton20";
-            radioButton20.Size = new Size(64, 17);
-            radioButton20.TabIndex = 4;
-            radioButton20.TabStop = true;
-            radioButton20.Text = "62.5 0.9";
-            radioButton20.UseVisualStyleBackColor = true;
+            rbZ192_1.AutoSize = true;
+            rbZ192_1.Location = new Point(3, 109);
+            rbZ192_1.Name = "rbZ192_1";
+            rbZ192_1.Size = new Size(64, 17);
+            rbZ192_1.TabIndex = 4;
+            rbZ192_1.TabStop = true;
+            rbZ192_1.Tag = "Zephyr 192";
+            rbZ192_1.Text = "62.5 0.9";
+            rbZ192_1.UseVisualStyleBackColor = true;
             // 
-            // radioButton21
+            // rbZ96_2
             // 
-            radioButton21.AutoSize = true;
-            radioButton21.Location = new Point(3, 56);
-            radioButton21.Name = "radioButton21";
-            radioButton21.Size = new Size(64, 17);
-            radioButton21.TabIndex = 1;
-            radioButton21.TabStop = true;
-            radioButton21.Text = "62.5 1.0";
-            radioButton21.UseVisualStyleBackColor = true;
+            rbZ96_2.AutoSize = true;
+            rbZ96_2.Location = new Point(3, 56);
+            rbZ96_2.Name = "rbZ96_2";
+            rbZ96_2.Size = new Size(64, 17);
+            rbZ96_2.TabIndex = 1;
+            rbZ96_2.TabStop = true;
+            rbZ96_2.Tag = "Zephyr 96";
+            rbZ96_2.Text = "62.5 1.0";
+            rbZ96_2.UseVisualStyleBackColor = true;
             // 
-            // radioButton22
+            // rbZ96_1
             // 
-            radioButton22.AutoSize = true;
-            radioButton22.Location = new Point(3, 33);
-            radioButton22.Name = "radioButton22";
-            radioButton22.Size = new Size(64, 17);
-            radioButton22.TabIndex = 0;
-            radioButton22.TabStop = true;
-            radioButton22.Text = "62.5 0.9";
-            radioButton22.UseVisualStyleBackColor = true;
+            rbZ96_1.AutoSize = true;
+            rbZ96_1.Location = new Point(3, 33);
+            rbZ96_1.Name = "rbZ96_1";
+            rbZ96_1.Size = new Size(64, 17);
+            rbZ96_1.TabIndex = 0;
+            rbZ96_1.TabStop = true;
+            rbZ96_1.Tag = "Zephyr 96";
+            rbZ96_1.Text = "62.5 0.9";
+            rbZ96_1.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -322,12 +395,12 @@
             // 
             tableLayoutPanel3.ColumnCount = 1;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Controls.Add(radioButton13, 0, 0);
-            tableLayoutPanel3.Controls.Add(radioButton14, 0, 1);
-            tableLayoutPanel3.Controls.Add(radioButton15, 0, 2);
-            tableLayoutPanel3.Controls.Add(radioButton16, 0, 3);
-            tableLayoutPanel3.Controls.Add(radioButton17, 0, 4);
-            tableLayoutPanel3.Controls.Add(radioButton18, 0, 5);
+            tableLayoutPanel3.Controls.Add(multiNAND1, 0, 0);
+            tableLayoutPanel3.Controls.Add(multiNAND2, 0, 1);
+            tableLayoutPanel3.Controls.Add(multiNAND3, 0, 2);
+            tableLayoutPanel3.Controls.Add(multiNAND4, 0, 3);
+            tableLayoutPanel3.Controls.Add(multiNAND5, 0, 4);
+            tableLayoutPanel3.Controls.Add(multiNAND6, 0, 5);
             tableLayoutPanel3.Location = new Point(19, 19);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 6;
@@ -340,72 +413,68 @@
             tableLayoutPanel3.Size = new Size(61, 138);
             tableLayoutPanel3.TabIndex = 0;
             // 
-            // radioButton13
+            // multiNAND1
             // 
-            radioButton13.AutoSize = true;
-            radioButton13.Location = new Point(3, 3);
-            radioButton13.Name = "radioButton13";
-            radioButton13.Size = new Size(54, 17);
-            radioButton13.TabIndex = 0;
-            radioButton13.TabStop = true;
-            radioButton13.Text = "None";
-            radioButton13.UseVisualStyleBackColor = true;
+            multiNAND1.AutoSize = true;
+            multiNAND1.Checked = true;
+            multiNAND1.Location = new Point(3, 3);
+            multiNAND1.Name = "multiNAND1";
+            multiNAND1.Size = new Size(54, 17);
+            multiNAND1.TabIndex = 0;
+            multiNAND1.TabStop = true;
+            multiNAND1.Text = "None";
+            multiNAND1.UseVisualStyleBackColor = true;
             // 
-            // radioButton14
+            // multiNAND2
             // 
-            radioButton14.AutoSize = true;
-            radioButton14.Location = new Point(3, 26);
-            radioButton14.Name = "radioButton14";
-            radioButton14.Size = new Size(31, 17);
-            radioButton14.TabIndex = 1;
-            radioButton14.TabStop = true;
-            radioButton14.Text = "2";
-            radioButton14.UseVisualStyleBackColor = true;
+            multiNAND2.AutoSize = true;
+            multiNAND2.Location = new Point(3, 26);
+            multiNAND2.Name = "multiNAND2";
+            multiNAND2.Size = new Size(31, 17);
+            multiNAND2.TabIndex = 1;
+            multiNAND2.Text = "2";
+            multiNAND2.UseVisualStyleBackColor = true;
             // 
-            // radioButton15
+            // multiNAND3
             // 
-            radioButton15.AutoSize = true;
-            radioButton15.Location = new Point(3, 49);
-            radioButton15.Name = "radioButton15";
-            radioButton15.Size = new Size(31, 17);
-            radioButton15.TabIndex = 2;
-            radioButton15.TabStop = true;
-            radioButton15.Text = "3";
-            radioButton15.UseVisualStyleBackColor = true;
+            multiNAND3.AutoSize = true;
+            multiNAND3.Location = new Point(3, 49);
+            multiNAND3.Name = "multiNAND3";
+            multiNAND3.Size = new Size(31, 17);
+            multiNAND3.TabIndex = 2;
+            multiNAND3.Text = "3";
+            multiNAND3.UseVisualStyleBackColor = true;
             // 
-            // radioButton16
+            // multiNAND4
             // 
-            radioButton16.AutoSize = true;
-            radioButton16.Location = new Point(3, 72);
-            radioButton16.Name = "radioButton16";
-            radioButton16.Size = new Size(31, 17);
-            radioButton16.TabIndex = 3;
-            radioButton16.TabStop = true;
-            radioButton16.Text = "4";
-            radioButton16.UseVisualStyleBackColor = true;
+            multiNAND4.AutoSize = true;
+            multiNAND4.Location = new Point(3, 72);
+            multiNAND4.Name = "multiNAND4";
+            multiNAND4.Size = new Size(31, 17);
+            multiNAND4.TabIndex = 3;
+            multiNAND4.Text = "4";
+            multiNAND4.UseVisualStyleBackColor = true;
             // 
-            // radioButton17
+            // multiNAND5
             // 
-            radioButton17.AutoSize = true;
-            radioButton17.Location = new Point(3, 95);
-            radioButton17.Name = "radioButton17";
-            radioButton17.Size = new Size(31, 17);
-            radioButton17.TabIndex = 4;
-            radioButton17.TabStop = true;
-            radioButton17.Text = "5";
-            radioButton17.UseVisualStyleBackColor = true;
+            multiNAND5.AutoSize = true;
+            multiNAND5.Location = new Point(3, 95);
+            multiNAND5.Name = "multiNAND5";
+            multiNAND5.Size = new Size(31, 17);
+            multiNAND5.TabIndex = 4;
+            multiNAND5.Text = "5";
+            multiNAND5.UseVisualStyleBackColor = true;
             // 
-            // radioButton18
+            // multiNAND6
             // 
-            radioButton18.AutoSize = true;
-            radioButton18.Enabled = false;
-            radioButton18.Location = new Point(3, 118);
-            radioButton18.Name = "radioButton18";
-            radioButton18.Size = new Size(51, 17);
-            radioButton18.TabIndex = 5;
-            radioButton18.TabStop = true;
-            radioButton18.Text = "MAX";
-            radioButton18.UseVisualStyleBackColor = true;
+            multiNAND6.AutoSize = true;
+            multiNAND6.Enabled = false;
+            multiNAND6.Location = new Point(3, 118);
+            multiNAND6.Name = "multiNAND6";
+            multiNAND6.Size = new Size(51, 17);
+            multiNAND6.TabIndex = 5;
+            multiNAND6.Text = "MAX";
+            multiNAND6.UseVisualStyleBackColor = true;
             // 
             // xenonTimings
             // 
@@ -424,10 +493,10 @@
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(label2, 0, 3);
-            tableLayoutPanel2.Controls.Add(radioButton12, 0, 5);
-            tableLayoutPanel2.Controls.Add(radioButton11, 0, 4);
-            tableLayoutPanel2.Controls.Add(radioButton10, 0, 2);
-            tableLayoutPanel2.Controls.Add(radioButton9, 0, 1);
+            tableLayoutPanel2.Controls.Add(rbX192_2, 0, 5);
+            tableLayoutPanel2.Controls.Add(rbX192_1, 0, 4);
+            tableLayoutPanel2.Controls.Add(rbX96_2, 0, 2);
+            tableLayoutPanel2.Controls.Add(rbX96_1, 0, 1);
             tableLayoutPanel2.Controls.Add(label1, 0, 0);
             tableLayoutPanel2.Location = new Point(4, 17);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -453,49 +522,53 @@
             label2.Text = "192MHz";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // radioButton12
+            // rbX192_2
             // 
-            radioButton12.AutoSize = true;
-            radioButton12.Location = new Point(3, 132);
-            radioButton12.Name = "radioButton12";
-            radioButton12.Size = new Size(64, 19);
-            radioButton12.TabIndex = 5;
-            radioButton12.TabStop = true;
-            radioButton12.Text = "59.4 1.0";
-            radioButton12.UseVisualStyleBackColor = true;
+            rbX192_2.AutoSize = true;
+            rbX192_2.Location = new Point(3, 132);
+            rbX192_2.Name = "rbX192_2";
+            rbX192_2.Size = new Size(64, 19);
+            rbX192_2.TabIndex = 5;
+            rbX192_2.TabStop = true;
+            rbX192_2.Tag = "Xenon 192";
+            rbX192_2.Text = "59.4 1.0";
+            rbX192_2.UseVisualStyleBackColor = true;
             // 
-            // radioButton11
+            // rbX192_1
             // 
-            radioButton11.AutoSize = true;
-            radioButton11.Location = new Point(3, 109);
-            radioButton11.Name = "radioButton11";
-            radioButton11.Size = new Size(64, 17);
-            radioButton11.TabIndex = 4;
-            radioButton11.TabStop = true;
-            radioButton11.Text = "59.4 0.9";
-            radioButton11.UseVisualStyleBackColor = true;
+            rbX192_1.AutoSize = true;
+            rbX192_1.Location = new Point(3, 109);
+            rbX192_1.Name = "rbX192_1";
+            rbX192_1.Size = new Size(64, 17);
+            rbX192_1.TabIndex = 4;
+            rbX192_1.TabStop = true;
+            rbX192_1.Tag = "Xenon 192";
+            rbX192_1.Text = "59.4 0.9";
+            rbX192_1.UseVisualStyleBackColor = true;
             // 
-            // radioButton10
+            // rbX96_2
             // 
-            radioButton10.AutoSize = true;
-            radioButton10.Location = new Point(3, 56);
-            radioButton10.Name = "radioButton10";
-            radioButton10.Size = new Size(64, 17);
-            radioButton10.TabIndex = 1;
-            radioButton10.TabStop = true;
-            radioButton10.Text = "59.4 1.0";
-            radioButton10.UseVisualStyleBackColor = true;
+            rbX96_2.AutoSize = true;
+            rbX96_2.Location = new Point(3, 56);
+            rbX96_2.Name = "rbX96_2";
+            rbX96_2.Size = new Size(64, 17);
+            rbX96_2.TabIndex = 1;
+            rbX96_2.TabStop = true;
+            rbX96_2.Tag = "Xenon 96";
+            rbX96_2.Text = "59.4 1.0";
+            rbX96_2.UseVisualStyleBackColor = true;
             // 
-            // radioButton9
+            // rbX96_1
             // 
-            radioButton9.AutoSize = true;
-            radioButton9.Location = new Point(3, 33);
-            radioButton9.Name = "radioButton9";
-            radioButton9.Size = new Size(64, 17);
-            radioButton9.TabIndex = 0;
-            radioButton9.TabStop = true;
-            radioButton9.Text = "59.4 0.9";
-            radioButton9.UseVisualStyleBackColor = true;
+            rbX96_1.AutoSize = true;
+            rbX96_1.Location = new Point(3, 33);
+            rbX96_1.Name = "rbX96_1";
+            rbX96_1.Size = new Size(64, 17);
+            rbX96_1.TabIndex = 0;
+            rbX96_1.TabStop = true;
+            rbX96_1.Tag = "Xenon 96";
+            rbX96_1.Text = "59.4 0.9";
+            rbX96_1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -519,21 +592,20 @@
             fjTimings.TabIndex = 1;
             fjTimings.TabStop = false;
             fjTimings.Text = "Falcon/Jasper";
-            fjTimings.Enter += groupBox1_Enter;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(radioButton8, 0, 7);
-            tableLayoutPanel1.Controls.Add(radioButton7, 0, 6);
-            tableLayoutPanel1.Controls.Add(radioButton6, 0, 5);
-            tableLayoutPanel1.Controls.Add(radioButton5, 0, 4);
-            tableLayoutPanel1.Controls.Add(radioButton4, 0, 3);
-            tableLayoutPanel1.Controls.Add(radioButton3, 0, 2);
-            tableLayoutPanel1.Controls.Add(radioButton2, 0, 1);
-            tableLayoutPanel1.Controls.Add(radioButton1, 0, 0);
+            tableLayoutPanel1.Controls.Add(rbFJ24, 0, 7);
+            tableLayoutPanel1.Controls.Add(rbFJ23, 0, 6);
+            tableLayoutPanel1.Controls.Add(rbFJ22, 0, 5);
+            tableLayoutPanel1.Controls.Add(rbFJ21, 0, 4);
+            tableLayoutPanel1.Controls.Add(rbFJ20, 0, 3);
+            tableLayoutPanel1.Controls.Add(rbFJ19, 0, 2);
+            tableLayoutPanel1.Controls.Add(rbFJ18, 0, 1);
+            tableLayoutPanel1.Controls.Add(rbFJ17, 0, 0);
             tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
             tableLayoutPanel1.Location = new Point(23, 22);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -549,105 +621,122 @@
             tableLayoutPanel1.Size = new Size(51, 184);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // radioButton8
+            // rbFJ24
             // 
-            radioButton8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            radioButton8.AutoSize = true;
-            radioButton8.Location = new Point(7, 164);
-            radioButton8.Name = "radioButton8";
-            radioButton8.Size = new Size(37, 17);
-            radioButton8.TabIndex = 7;
-            radioButton8.TabStop = true;
-            radioButton8.Text = "24";
-            radioButton8.UseVisualStyleBackColor = true;
+            rbFJ24.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            rbFJ24.AutoSize = true;
+            rbFJ24.Location = new Point(7, 164);
+            rbFJ24.Name = "rbFJ24";
+            rbFJ24.Size = new Size(37, 17);
+            rbFJ24.TabIndex = 7;
+            rbFJ24.TabStop = true;
+            rbFJ24.Tag = "Falcon/Jasper";
+            rbFJ24.Text = "24";
+            rbFJ24.UseVisualStyleBackColor = true;
             // 
-            // radioButton7
+            // rbFJ23
             // 
-            radioButton7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            radioButton7.AutoSize = true;
-            radioButton7.Location = new Point(7, 141);
-            radioButton7.Name = "radioButton7";
-            radioButton7.Size = new Size(37, 17);
-            radioButton7.TabIndex = 6;
-            radioButton7.TabStop = true;
-            radioButton7.Text = "23";
-            radioButton7.UseVisualStyleBackColor = true;
+            rbFJ23.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            rbFJ23.AutoSize = true;
+            rbFJ23.Location = new Point(7, 141);
+            rbFJ23.Name = "rbFJ23";
+            rbFJ23.Size = new Size(37, 17);
+            rbFJ23.TabIndex = 6;
+            rbFJ23.TabStop = true;
+            rbFJ23.Tag = "Falcon/Jasper";
+            rbFJ23.Text = "23";
+            rbFJ23.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rbFJ22
             // 
-            radioButton6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            radioButton6.AutoSize = true;
-            radioButton6.Location = new Point(7, 118);
-            radioButton6.Name = "radioButton6";
-            radioButton6.Size = new Size(37, 17);
-            radioButton6.TabIndex = 5;
-            radioButton6.TabStop = true;
-            radioButton6.Text = "22";
-            radioButton6.UseVisualStyleBackColor = true;
+            rbFJ22.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            rbFJ22.AutoSize = true;
+            rbFJ22.Location = new Point(7, 118);
+            rbFJ22.Name = "rbFJ22";
+            rbFJ22.Size = new Size(37, 17);
+            rbFJ22.TabIndex = 5;
+            rbFJ22.TabStop = true;
+            rbFJ22.Tag = "Falcon/Jasper";
+            rbFJ22.Text = "22";
+            rbFJ22.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // rbFJ21
             // 
-            radioButton5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(7, 95);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(37, 17);
-            radioButton5.TabIndex = 4;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "21";
-            radioButton5.UseVisualStyleBackColor = true;
+            rbFJ21.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            rbFJ21.AutoSize = true;
+            rbFJ21.Location = new Point(7, 95);
+            rbFJ21.Name = "rbFJ21";
+            rbFJ21.Size = new Size(37, 17);
+            rbFJ21.TabIndex = 4;
+            rbFJ21.TabStop = true;
+            rbFJ21.Tag = "Falcon/Jasper";
+            rbFJ21.Text = "21";
+            rbFJ21.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rbFJ20
             // 
-            radioButton4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(7, 72);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(37, 17);
-            radioButton4.TabIndex = 3;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "20";
-            radioButton4.UseVisualStyleBackColor = true;
+            rbFJ20.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            rbFJ20.AutoSize = true;
+            rbFJ20.Location = new Point(7, 72);
+            rbFJ20.Name = "rbFJ20";
+            rbFJ20.Size = new Size(37, 17);
+            rbFJ20.TabIndex = 3;
+            rbFJ20.TabStop = true;
+            rbFJ20.Tag = "Falcon/Jasper";
+            rbFJ20.Text = "20";
+            rbFJ20.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbFJ19
             // 
-            radioButton3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(7, 49);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(37, 17);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "19";
-            radioButton3.UseVisualStyleBackColor = true;
+            rbFJ19.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            rbFJ19.AutoSize = true;
+            rbFJ19.Location = new Point(7, 49);
+            rbFJ19.Name = "rbFJ19";
+            rbFJ19.Size = new Size(37, 17);
+            rbFJ19.TabIndex = 2;
+            rbFJ19.TabStop = true;
+            rbFJ19.Tag = "Falcon/Jasper";
+            rbFJ19.Text = "19";
+            rbFJ19.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbFJ18
             // 
-            radioButton2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(7, 26);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(37, 17);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "18";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbFJ18.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            rbFJ18.AutoSize = true;
+            rbFJ18.Location = new Point(7, 26);
+            rbFJ18.Name = "rbFJ18";
+            rbFJ18.Size = new Size(37, 17);
+            rbFJ18.TabIndex = 1;
+            rbFJ18.TabStop = true;
+            rbFJ18.Tag = "Falcon/Jasper";
+            rbFJ18.Text = "18";
+            rbFJ18.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbFJ17
             // 
-            radioButton1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(7, 3);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(37, 17);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "17";
-            radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
+            rbFJ17.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            rbFJ17.AutoSize = true;
+            rbFJ17.Location = new Point(7, 3);
+            rbFJ17.Name = "rbFJ17";
+            rbFJ17.Size = new Size(37, 17);
+            rbFJ17.TabIndex = 0;
+            rbFJ17.TabStop = true;
+            rbFJ17.Tag = "Falcon/Jasper";
+            rbFJ17.Text = "17";
+            rbFJ17.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(label13);
+            tabPage2.Controls.Add(label12);
+            tabPage2.Controls.Add(groupBox3);
+            tabPage2.Controls.Add(label11);
+            tabPage2.Controls.Add(label10);
+            tabPage2.Controls.Add(groupBox2);
+            tabPage2.Controls.Add(label9);
+            tabPage2.Controls.Add(groupBox1);
+            tabPage2.Controls.Add(exitButton1);
+            tabPage2.Controls.Add(clearButton1);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -655,6 +744,469 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Slim Timings";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(112, 207);
+            label13.Name = "label13";
+            label13.Size = new Size(129, 33);
+            label13.TabIndex = 20;
+            label13.Text = "Use WB if your system has WB2K RAM";
+            label13.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label12
+            // 
+            label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(100, 247);
+            label12.Name = "label12";
+            label12.Size = new Size(95, 60);
+            label12.TabIndex = 19;
+            label12.Text = "Select None if you are not using NAND-wich";
+            label12.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(tableLayoutPanel7);
+            groupBox3.Location = new Point(197, 245);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(94, 164);
+            groupBox3.TabIndex = 18;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Multi-NAND";
+            // 
+            // tableLayoutPanel7
+            // 
+            tableLayoutPanel7.ColumnCount = 1;
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel7.Controls.Add(multiNAND11, 0, 0);
+            tableLayoutPanel7.Controls.Add(multiNAND21, 0, 1);
+            tableLayoutPanel7.Controls.Add(multiNAND31, 0, 2);
+            tableLayoutPanel7.Controls.Add(multiNAND41, 0, 3);
+            tableLayoutPanel7.Controls.Add(multiNAND51, 0, 4);
+            tableLayoutPanel7.Controls.Add(multiNAND61, 0, 5);
+            tableLayoutPanel7.Location = new Point(19, 19);
+            tableLayoutPanel7.Name = "tableLayoutPanel7";
+            tableLayoutPanel7.RowCount = 6;
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel7.Size = new Size(61, 138);
+            tableLayoutPanel7.TabIndex = 0;
+            // 
+            // multiNAND11
+            // 
+            multiNAND11.AutoSize = true;
+            multiNAND11.Checked = true;
+            multiNAND11.Location = new Point(3, 3);
+            multiNAND11.Name = "multiNAND11";
+            multiNAND11.Size = new Size(54, 17);
+            multiNAND11.TabIndex = 0;
+            multiNAND11.TabStop = true;
+            multiNAND11.Text = "None";
+            multiNAND11.UseVisualStyleBackColor = true;
+            // 
+            // multiNAND21
+            // 
+            multiNAND21.AutoSize = true;
+            multiNAND21.Location = new Point(3, 26);
+            multiNAND21.Name = "multiNAND21";
+            multiNAND21.Size = new Size(31, 17);
+            multiNAND21.TabIndex = 1;
+            multiNAND21.Text = "2";
+            multiNAND21.UseVisualStyleBackColor = true;
+            // 
+            // multiNAND31
+            // 
+            multiNAND31.AutoSize = true;
+            multiNAND31.Location = new Point(3, 49);
+            multiNAND31.Name = "multiNAND31";
+            multiNAND31.Size = new Size(31, 17);
+            multiNAND31.TabIndex = 2;
+            multiNAND31.Text = "3";
+            multiNAND31.UseVisualStyleBackColor = true;
+            // 
+            // multiNAND41
+            // 
+            multiNAND41.AutoSize = true;
+            multiNAND41.Location = new Point(3, 72);
+            multiNAND41.Name = "multiNAND41";
+            multiNAND41.Size = new Size(31, 17);
+            multiNAND41.TabIndex = 3;
+            multiNAND41.Text = "4";
+            multiNAND41.UseVisualStyleBackColor = true;
+            // 
+            // multiNAND51
+            // 
+            multiNAND51.AutoSize = true;
+            multiNAND51.Location = new Point(3, 95);
+            multiNAND51.Name = "multiNAND51";
+            multiNAND51.Size = new Size(31, 17);
+            multiNAND51.TabIndex = 4;
+            multiNAND51.Text = "5";
+            multiNAND51.UseVisualStyleBackColor = true;
+            // 
+            // multiNAND61
+            // 
+            multiNAND61.AutoSize = true;
+            multiNAND61.Enabled = false;
+            multiNAND61.Location = new Point(3, 118);
+            multiNAND61.Name = "multiNAND61";
+            multiNAND61.Size = new Size(51, 17);
+            multiNAND61.TabIndex = 5;
+            multiNAND61.Text = "MAX";
+            multiNAND61.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(112, 175);
+            label11.Name = "label11";
+            label11.Size = new Size(129, 33);
+            label11.TabIndex = 17;
+            label11.Text = "This is due to a UI size constraint :)";
+            label11.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label10
+            // 
+            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(112, 114);
+            label10.Name = "label10";
+            label10.Size = new Size(129, 64);
+            label10.TabIndex = 16;
+            label10.Text = "Note: Waitsburg/Stingray motherboards fall under \"Corona\"";
+            label10.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(tableLayoutPanel6);
+            groupBox2.Location = new Point(114, 18);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(102, 95);
+            groupBox2.TabIndex = 15;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Board Type";
+            // 
+            // tableLayoutPanel6
+            // 
+            tableLayoutPanel6.ColumnCount = 1;
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel6.Controls.Add(boardTr, 0, 0);
+            tableLayoutPanel6.Controls.Add(boardCor, 0, 1);
+            tableLayoutPanel6.Controls.Add(boardCorWB, 0, 2);
+            tableLayoutPanel6.Location = new Point(5, 14);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 3;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel6.Size = new Size(92, 75);
+            tableLayoutPanel6.TabIndex = 0;
+            // 
+            // boardTr
+            // 
+            boardTr.AutoSize = true;
+            boardTr.Checked = true;
+            boardTr.Enabled = false;
+            boardTr.Location = new Point(3, 3);
+            boardTr.Name = "boardTr";
+            boardTr.Size = new Size(58, 19);
+            boardTr.TabIndex = 0;
+            boardTr.TabStop = true;
+            boardTr.Text = "Trinity";
+            boardTr.UseVisualStyleBackColor = true;
+            // 
+            // boardCor
+            // 
+            boardCor.AutoSize = true;
+            boardCor.Enabled = false;
+            boardCor.Location = new Point(3, 28);
+            boardCor.Name = "boardCor";
+            boardCor.Size = new Size(64, 19);
+            boardCor.TabIndex = 1;
+            boardCor.Text = "Corona";
+            boardCor.UseVisualStyleBackColor = true;
+            // 
+            // boardCorWB
+            // 
+            boardCorWB.AutoSize = true;
+            boardCorWB.Enabled = false;
+            boardCorWB.Location = new Point(3, 53);
+            boardCorWB.Name = "boardCorWB";
+            boardCorWB.Size = new Size(85, 19);
+            boardCorWB.TabIndex = 2;
+            boardCorWB.Text = "Corona WB";
+            boardCorWB.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label9.Location = new Point(6, 3);
+            label9.Name = "label9";
+            label9.Size = new Size(98, 17);
+            label9.TabIndex = 14;
+            label9.Text = "RGH1.2 Timings";
+            label9.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(tableLayoutPanel5);
+            groupBox1.Location = new Point(2, 18);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(110, 210);
+            groupBox1.TabIndex = 13;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Trinity/Corona";
+            // 
+            // tableLayoutPanel5
+            // 
+            tableLayoutPanel5.ColumnCount = 2;
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel5.Controls.Add(slim100, 1, 0);
+            tableLayoutPanel5.Controls.Add(slim105, 1, 1);
+            tableLayoutPanel5.Controls.Add(slim110, 1, 2);
+            tableLayoutPanel5.Controls.Add(slim115, 1, 3);
+            tableLayoutPanel5.Controls.Add(slim120, 1, 4);
+            tableLayoutPanel5.Controls.Add(slim125, 1, 5);
+            tableLayoutPanel5.Controls.Add(slim130, 1, 6);
+            tableLayoutPanel5.Controls.Add(slim135, 1, 7);
+            tableLayoutPanel5.Controls.Add(slim60, 0, 0);
+            tableLayoutPanel5.Controls.Add(slim65, 0, 1);
+            tableLayoutPanel5.Controls.Add(slim70, 0, 2);
+            tableLayoutPanel5.Controls.Add(slim75, 0, 3);
+            tableLayoutPanel5.Controls.Add(slim80, 0, 4);
+            tableLayoutPanel5.Controls.Add(slim85, 0, 5);
+            tableLayoutPanel5.Controls.Add(slim90, 0, 6);
+            tableLayoutPanel5.Controls.Add(slim95, 0, 7);
+            tableLayoutPanel5.Location = new Point(6, 20);
+            tableLayoutPanel5.Name = "tableLayoutPanel5";
+            tableLayoutPanel5.RowCount = 8;
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.Size = new Size(100, 184);
+            tableLayoutPanel5.TabIndex = 0;
+            // 
+            // slim100
+            // 
+            slim100.AutoSize = true;
+            slim100.Location = new Point(53, 3);
+            slim100.Name = "slim100";
+            slim100.Size = new Size(43, 17);
+            slim100.TabIndex = 8;
+            slim100.TabStop = true;
+            slim100.Tag = "Slim";
+            slim100.Text = "100";
+            slim100.UseVisualStyleBackColor = true;
+            // 
+            // slim105
+            // 
+            slim105.AutoSize = true;
+            slim105.Location = new Point(53, 26);
+            slim105.Name = "slim105";
+            slim105.Size = new Size(43, 17);
+            slim105.TabIndex = 9;
+            slim105.TabStop = true;
+            slim105.Tag = "Slim";
+            slim105.Text = "105";
+            slim105.UseVisualStyleBackColor = true;
+            // 
+            // slim110
+            // 
+            slim110.AutoSize = true;
+            slim110.Location = new Point(53, 49);
+            slim110.Name = "slim110";
+            slim110.Size = new Size(43, 17);
+            slim110.TabIndex = 10;
+            slim110.TabStop = true;
+            slim110.Tag = "Slim";
+            slim110.Text = "110";
+            slim110.UseVisualStyleBackColor = true;
+            // 
+            // slim115
+            // 
+            slim115.AutoSize = true;
+            slim115.Location = new Point(53, 72);
+            slim115.Name = "slim115";
+            slim115.Size = new Size(43, 17);
+            slim115.TabIndex = 11;
+            slim115.TabStop = true;
+            slim115.Tag = "Slim";
+            slim115.Text = "115";
+            slim115.UseVisualStyleBackColor = true;
+            // 
+            // slim120
+            // 
+            slim120.AutoSize = true;
+            slim120.Location = new Point(53, 95);
+            slim120.Name = "slim120";
+            slim120.Size = new Size(43, 17);
+            slim120.TabIndex = 12;
+            slim120.TabStop = true;
+            slim120.Tag = "Slim";
+            slim120.Text = "120";
+            slim120.UseVisualStyleBackColor = true;
+            // 
+            // slim125
+            // 
+            slim125.AutoSize = true;
+            slim125.Location = new Point(53, 118);
+            slim125.Name = "slim125";
+            slim125.Size = new Size(43, 17);
+            slim125.TabIndex = 13;
+            slim125.TabStop = true;
+            slim125.Tag = "Slim";
+            slim125.Text = "125";
+            slim125.UseVisualStyleBackColor = true;
+            // 
+            // slim130
+            // 
+            slim130.AutoSize = true;
+            slim130.Location = new Point(53, 141);
+            slim130.Name = "slim130";
+            slim130.Size = new Size(43, 17);
+            slim130.TabIndex = 14;
+            slim130.TabStop = true;
+            slim130.Tag = "Slim";
+            slim130.Text = "130";
+            slim130.UseVisualStyleBackColor = true;
+            // 
+            // slim135
+            // 
+            slim135.AutoSize = true;
+            slim135.Location = new Point(53, 164);
+            slim135.Name = "slim135";
+            slim135.Size = new Size(43, 17);
+            slim135.TabIndex = 15;
+            slim135.TabStop = true;
+            slim135.Tag = "Slim";
+            slim135.Text = "135";
+            slim135.UseVisualStyleBackColor = true;
+            // 
+            // slim60
+            // 
+            slim60.AutoSize = true;
+            slim60.Location = new Point(3, 3);
+            slim60.Name = "slim60";
+            slim60.Size = new Size(37, 17);
+            slim60.TabIndex = 16;
+            slim60.TabStop = true;
+            slim60.Tag = "Slim";
+            slim60.Text = "60";
+            slim60.UseVisualStyleBackColor = true;
+            // 
+            // slim65
+            // 
+            slim65.AutoSize = true;
+            slim65.Location = new Point(3, 26);
+            slim65.Name = "slim65";
+            slim65.Size = new Size(37, 17);
+            slim65.TabIndex = 17;
+            slim65.TabStop = true;
+            slim65.Tag = "Slim";
+            slim65.Text = "65";
+            slim65.UseVisualStyleBackColor = true;
+            // 
+            // slim70
+            // 
+            slim70.AutoSize = true;
+            slim70.Location = new Point(3, 49);
+            slim70.Name = "slim70";
+            slim70.Size = new Size(37, 17);
+            slim70.TabIndex = 18;
+            slim70.TabStop = true;
+            slim70.Tag = "Slim";
+            slim70.Text = "70";
+            slim70.UseVisualStyleBackColor = true;
+            // 
+            // slim75
+            // 
+            slim75.AutoSize = true;
+            slim75.Location = new Point(3, 72);
+            slim75.Name = "slim75";
+            slim75.Size = new Size(37, 17);
+            slim75.TabIndex = 19;
+            slim75.TabStop = true;
+            slim75.Tag = "Slim";
+            slim75.Text = "75";
+            slim75.UseVisualStyleBackColor = true;
+            // 
+            // slim80
+            // 
+            slim80.AutoSize = true;
+            slim80.Location = new Point(3, 95);
+            slim80.Name = "slim80";
+            slim80.Size = new Size(37, 17);
+            slim80.TabIndex = 20;
+            slim80.TabStop = true;
+            slim80.Tag = "Slim";
+            slim80.Text = "80";
+            slim80.UseVisualStyleBackColor = true;
+            // 
+            // slim85
+            // 
+            slim85.AutoSize = true;
+            slim85.Location = new Point(3, 118);
+            slim85.Name = "slim85";
+            slim85.Size = new Size(37, 17);
+            slim85.TabIndex = 21;
+            slim85.TabStop = true;
+            slim85.Tag = "Slim";
+            slim85.Text = "85";
+            slim85.UseVisualStyleBackColor = true;
+            // 
+            // slim90
+            // 
+            slim90.AutoSize = true;
+            slim90.Location = new Point(3, 141);
+            slim90.Name = "slim90";
+            slim90.Size = new Size(37, 17);
+            slim90.TabIndex = 22;
+            slim90.TabStop = true;
+            slim90.Tag = "Slim";
+            slim90.Text = "90";
+            slim90.UseVisualStyleBackColor = true;
+            // 
+            // slim95
+            // 
+            slim95.AutoSize = true;
+            slim95.Location = new Point(3, 164);
+            slim95.Name = "slim95";
+            slim95.Size = new Size(37, 17);
+            slim95.TabIndex = 23;
+            slim95.TabStop = true;
+            slim95.Tag = "Slim";
+            slim95.Text = "95";
+            slim95.UseVisualStyleBackColor = true;
+            // 
+            // exitButton1
+            // 
+            exitButton1.Location = new Point(84, 382);
+            exitButton1.Name = "exitButton1";
+            exitButton1.Size = new Size(75, 23);
+            exitButton1.TabIndex = 12;
+            exitButton1.Text = "Exit";
+            exitButton1.UseVisualStyleBackColor = true;
+            exitButton1.Click += exitBtn_Click;
+            // 
+            // clearButton1
+            // 
+            clearButton1.Location = new Point(3, 382);
+            clearButton1.Name = "clearButton1";
+            clearButton1.Size = new Size(75, 23);
+            clearButton1.TabIndex = 11;
+            clearButton1.Text = "Clear";
+            clearButton1.UseVisualStyleBackColor = true;
+            clearButton1.Click += clrBtn_Click;
             // 
             // button1
             // 
@@ -678,6 +1230,7 @@
             MaximizeBox = false;
             Name = "main";
             Text = "FreeRunner Flashing Utility";
+            Load += main_Load;
             progressPanel.ResumeLayout(false);
             progressPanel.PerformLayout();
             optionsPanel.ResumeLayout(false);
@@ -694,6 +1247,16 @@
             fjTimings.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            tableLayoutPanel7.ResumeLayout(false);
+            tableLayoutPanel7.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            tableLayoutPanel6.ResumeLayout(false);
+            tableLayoutPanel6.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            tableLayoutPanel5.ResumeLayout(false);
+            tableLayoutPanel5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -708,43 +1271,83 @@
         private TabPage tabPage2;
         private TableLayoutPanel tableLayoutPanel1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
-        private RadioButton radioButton4;
-        private RadioButton radioButton5;
-        private RadioButton radioButton6;
-        private RadioButton radioButton7;
-        private RadioButton radioButton8;
+        private RadioButton rbFJ17;
+        private RadioButton rbFJ18;
+        private RadioButton rbFJ19;
+        private RadioButton rbFJ20;
+        private RadioButton rbFJ21;
+        private RadioButton rbFJ22;
+        private RadioButton rbFJ23;
+        private RadioButton rbFJ24;
         private GroupBox fjTimings;
         private GroupBox xenonTimings;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label2;
-        private RadioButton radioButton12;
-        private RadioButton radioButton11;
-        private RadioButton radioButton10;
-        private RadioButton radioButton9;
+        private RadioButton rbX192_2;
+        private RadioButton rbX192_1;
+        private RadioButton rbX96_2;
+        private RadioButton rbX96_1;
         private Label label1;
         private Button button1;
         private GroupBox nandSelection;
         private TableLayoutPanel tableLayoutPanel3;
-        private RadioButton radioButton13;
-        private RadioButton radioButton14;
-        private RadioButton radioButton15;
-        private RadioButton radioButton16;
-        private RadioButton radioButton17;
-        private RadioButton radioButton18;
+        private RadioButton multiNAND1;
+        private RadioButton multiNAND2;
+        private RadioButton multiNAND3;
+        private RadioButton multiNAND4;
+        private RadioButton multiNAND5;
+        private RadioButton multiNAND6;
         private GroupBox zephyrTimings;
         private TableLayoutPanel tableLayoutPanel4;
         private Label label3;
-        private RadioButton radioButton19;
-        private RadioButton radioButton20;
-        private RadioButton radioButton21;
-        private RadioButton radioButton22;
+        private RadioButton rbZ192_2;
+        private RadioButton rbZ192_1;
+        private RadioButton rbZ96_2;
+        private RadioButton rbZ96_1;
         private Label label4;
         private Label label5;
         private Label label6;
         private Label label7;
         private Label label8;
+        private Button clearButton;
+        private Button exitButton;
+        private Button exitButton1;
+        private Button clearButton1;
+        private GroupBox groupBox1;
+        private TableLayoutPanel tableLayoutPanel5;
+        private RadioButton slim100;
+        private RadioButton slim105;
+        private RadioButton slim110;
+        private RadioButton slim115;
+        private RadioButton slim120;
+        private RadioButton slim125;
+        private RadioButton slim130;
+        private RadioButton slim135;
+        private RadioButton slim60;
+        private RadioButton slim65;
+        private RadioButton slim70;
+        private RadioButton slim75;
+        private RadioButton slim80;
+        private RadioButton slim85;
+        private RadioButton slim90;
+        private RadioButton slim95;
+        private Label label9;
+        private GroupBox groupBox2;
+        private TableLayoutPanel tableLayoutPanel6;
+        private RadioButton boardTr;
+        private RadioButton boardCor;
+        private RadioButton boardCorWB;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private GroupBox groupBox3;
+        private TableLayoutPanel tableLayoutPanel7;
+        private RadioButton multiNAND11;
+        private RadioButton multiNAND21;
+        private RadioButton multiNAND31;
+        private RadioButton multiNAND41;
+        private RadioButton multiNAND51;
+        private RadioButton multiNAND61;
+        private Label label13;
     }
 }

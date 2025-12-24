@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# CS8622: Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+dotnet_diagnostic.CS8622.severity = none
+
+# CS8981: The type name only contains lower-cased ascii characters. Such names may become reserved for the language.
+dotnet_diagnostic.CS8981.severity = none
