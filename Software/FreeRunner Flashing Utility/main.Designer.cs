@@ -34,10 +34,11 @@
             progressBar1 = new ProgressBar();
             optionsPanel = new TabControl();
             tabPage1 = new TabPage();
+            groupBox5 = new GroupBox();
+            label6 = new Label();
             exitButton = new Button();
             clearButton = new Button();
             label8 = new Label();
-            label6 = new Label();
             label7 = new Label();
             label5 = new Label();
             zephyrTimings = new GroupBox();
@@ -75,7 +76,10 @@
             rbFJ18 = new RadioButton();
             rbFJ17 = new RadioButton();
             tabPage2 = new TabPage();
+            groupBox4 = new GroupBox();
+            label10 = new Label();
             label13 = new Label();
+            label11 = new Label();
             label12 = new Label();
             groupBox3 = new GroupBox();
             tableLayoutPanel7 = new TableLayoutPanel();
@@ -85,8 +89,6 @@
             multiNAND41 = new RadioButton();
             multiNAND51 = new RadioButton();
             multiNAND61 = new RadioButton();
-            label11 = new Label();
-            label10 = new Label();
             groupBox2 = new GroupBox();
             tableLayoutPanel6 = new TableLayoutPanel();
             boardTr = new RadioButton();
@@ -115,9 +117,12 @@
             clearButton1 = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             button1 = new Button();
+            pictureBox1 = new PictureBox();
+            label14 = new Label();
             progressPanel.SuspendLayout();
             optionsPanel.SuspendLayout();
             tabPage1.SuspendLayout();
+            groupBox5.SuspendLayout();
             zephyrTimings.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             nandSelection.SuspendLayout();
@@ -127,12 +132,14 @@
             fjTimings.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tabPage2.SuspendLayout();
+            groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
             groupBox2.SuspendLayout();
             tableLayoutPanel6.SuspendLayout();
             groupBox1.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // debugConsole
@@ -196,10 +203,10 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(groupBox5);
             tabPage1.Controls.Add(exitButton);
             tabPage1.Controls.Add(clearButton);
             tabPage1.Controls.Add(label8);
-            tabPage1.Controls.Add(label6);
             tabPage1.Controls.Add(label7);
             tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(zephyrTimings);
@@ -213,6 +220,26 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Phat Timings";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(label6);
+            groupBox5.Location = new Point(193, 358);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(98, 51);
+            groupBox5.TabIndex = 11;
+            groupBox5.TabStop = false;
+            // 
+            // label6
+            // 
+            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.ControlText;
+            label6.Location = new Point(3, 11);
+            label6.Name = "label6";
+            label6.Size = new Size(89, 33);
+            label6.TabIndex = 6;
+            label6.Text = "Recommended Timing: 18-21 for RGH1.2";
+            label6.TextAlign = ContentAlignment.TopCenter;
             // 
             // exitButton
             // 
@@ -244,17 +271,6 @@
             label8.Text = "RGH1.2 Timings";
             label8.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label6
-            // 
-            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = SystemColors.ControlText;
-            label6.Location = new Point(195, 372);
-            label6.Name = "label6";
-            label6.Size = new Size(93, 35);
-            label6.TabIndex = 6;
-            label6.Text = "Recommended Timing: 18-21 for RGH1.2";
-            label6.TextAlign = ContentAlignment.TopCenter;
-            // 
             // label7
             // 
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
@@ -268,7 +284,7 @@
             // label5
             // 
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(195, 137);
+            label5.Location = new Point(195, 141);
             label5.Name = "label5";
             label5.Size = new Size(95, 60);
             label5.TabIndex = 5;
@@ -384,7 +400,7 @@
             // nandSelection
             // 
             nandSelection.Controls.Add(tableLayoutPanel3);
-            nandSelection.Location = new Point(195, 197);
+            nandSelection.Location = new Point(195, 201);
             nandSelection.Name = "nandSelection";
             nandSelection.Size = new Size(94, 164);
             nandSelection.TabIndex = 3;
@@ -727,11 +743,9 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(label13);
+            tabPage2.Controls.Add(groupBox4);
             tabPage2.Controls.Add(label12);
             tabPage2.Controls.Add(groupBox3);
-            tabPage2.Controls.Add(label11);
-            tabPage2.Controls.Add(label10);
             tabPage2.Controls.Add(groupBox2);
             tabPage2.Controls.Add(label9);
             tabPage2.Controls.Add(groupBox1);
@@ -745,20 +759,53 @@
             tabPage2.Text = "Slim Timings";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox4
+            // 
+            groupBox4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            groupBox4.Controls.Add(label10);
+            groupBox4.Controls.Add(label13);
+            groupBox4.Controls.Add(label11);
+            groupBox4.Location = new Point(2, 230);
+            groupBox4.Margin = new Padding(0);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(130, 145);
+            groupBox4.TabIndex = 21;
+            groupBox4.TabStop = false;
+            // 
+            // label10
+            // 
+            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(3, 19);
+            label10.Name = "label10";
+            label10.Size = new Size(129, 64);
+            label10.TabIndex = 16;
+            label10.Text = "Note: Waitsburg/Stingray motherboards fall under \"Corona\"";
+            label10.TextAlign = ContentAlignment.TopCenter;
+            // 
             // label13
             // 
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(112, 207);
+            label13.Location = new Point(3, 112);
             label13.Name = "label13";
             label13.Size = new Size(129, 33);
             label13.TabIndex = 20;
             label13.Text = "Use WB if your system has WB2K RAM";
             label13.TextAlign = ContentAlignment.TopCenter;
             // 
+            // label11
+            // 
+            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(3, 80);
+            label11.Name = "label11";
+            label11.Size = new Size(129, 33);
+            label11.TabIndex = 17;
+            label11.Text = "This is due to a UI size constraint :)";
+            label11.TextAlign = ContentAlignment.TopCenter;
+            // 
             // label12
             // 
             label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(100, 247);
+            label12.Location = new Point(195, 182);
             label12.Name = "label12";
             label12.Size = new Size(95, 60);
             label12.TabIndex = 19;
@@ -860,26 +907,6 @@
             multiNAND61.Text = "MAX";
             multiNAND61.UseVisualStyleBackColor = true;
             // 
-            // label11
-            // 
-            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(112, 175);
-            label11.Name = "label11";
-            label11.Size = new Size(129, 33);
-            label11.TabIndex = 17;
-            label11.Text = "This is due to a UI size constraint :)";
-            label11.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label10
-            // 
-            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(112, 114);
-            label10.Name = "label10";
-            label10.Size = new Size(129, 64);
-            label10.TabIndex = 16;
-            label10.Text = "Note: Waitsburg/Stingray motherboards fall under \"Corona\"";
-            label10.TextAlign = ContentAlignment.TopCenter;
-            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(tableLayoutPanel6);
@@ -918,6 +945,7 @@
             boardTr.TabStop = true;
             boardTr.Text = "Trinity";
             boardTr.UseVisualStyleBackColor = true;
+            boardTr.CheckedChanged += boardTypeSelect;
             // 
             // boardCor
             // 
@@ -929,6 +957,7 @@
             boardCor.TabIndex = 1;
             boardCor.Text = "Corona";
             boardCor.UseVisualStyleBackColor = true;
+            boardCor.CheckedChanged += boardTypeSelect;
             // 
             // boardCorWB
             // 
@@ -940,6 +969,7 @@
             boardCorWB.TabIndex = 2;
             boardCorWB.Text = "Corona WB";
             boardCorWB.UseVisualStyleBackColor = true;
+            boardCorWB.CheckedChanged += boardTypeSelect;
             // 
             // label9
             // 
@@ -1217,11 +1247,31 @@
             button1.Text = "Program Timing File";
             button1.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(15, 25);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(75, 75);
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
+            // label14
+            // 
+            label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.Location = new Point(9, -1);
+            label14.Name = "label14";
+            label14.Size = new Size(85, 24);
+            label14.TabIndex = 10;
+            label14.Text = "Programmer:";
+            label14.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label14);
+            Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(optionsPanel);
             Controls.Add(progressPanel);
@@ -1235,6 +1285,7 @@
             progressPanel.PerformLayout();
             optionsPanel.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
             zephyrTimings.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
@@ -1248,6 +1299,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tabPage2.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             tableLayoutPanel7.ResumeLayout(false);
             tableLayoutPanel7.PerformLayout();
@@ -1257,6 +1309,7 @@
             groupBox1.ResumeLayout(false);
             tableLayoutPanel5.ResumeLayout(false);
             tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1349,5 +1402,9 @@
         private RadioButton multiNAND51;
         private RadioButton multiNAND61;
         private Label label13;
+        private GroupBox groupBox4;
+        private GroupBox groupBox5;
+        private PictureBox pictureBox1;
+        private Label label14;
     }
 }

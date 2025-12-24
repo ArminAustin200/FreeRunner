@@ -7,6 +7,15 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>True</UseWPF>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Huddly.LibUsbDotNet" Version="2.2.34" />
+    <PackageReference Include="LibUsbDfu" Version="1.1.4" />
+    <PackageReference Include="LibUsbDotNet" Version="2.2.75" />
+    <PackageReference Include="PresentationFramework" Version="4.6.0" />
+    <PackageReference Include="System.Management" Version="10.0.1" />
+  </ItemGroup>
 
 </Project>

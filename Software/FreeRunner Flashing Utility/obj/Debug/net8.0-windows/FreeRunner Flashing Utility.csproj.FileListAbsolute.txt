@@ -49,3 +49,12 @@ F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\D
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows\FreeRunner Flashing Utility.pdb
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows\FreeRunner Flashing Utility.genruntimeconfig.cache
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows\ref\FreeRunner Flashing Utility.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows\System.CodeDom.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows\System.Management.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Management.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows\FreeRunner Flashing Utility.csproj.AssemblyReference.cache
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows\FreeRunn.ACD42F51.Up2Date
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows\LibUsbDotNet.LibUsbDotNet.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows\DeviceProgramming.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows\Huddly.LibUsbDotNet.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows\LibUsbDfu.dll

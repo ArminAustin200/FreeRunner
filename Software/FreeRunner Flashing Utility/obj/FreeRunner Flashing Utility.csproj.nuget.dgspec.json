@@ -49,6 +49,28 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Huddly.LibUsbDotNet": {
+              "target": "Package",
+              "version": "[2.2.34, )"
+            },
+            "LibUsbDfu": {
+              "target": "Package",
+              "version": "[1.1.4, )"
+            },
+            "LibUsbDotNet": {
+              "target": "Package",
+              "version": "[2.2.75, )"
+            },
+            "PresentationFramework": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "System.Management": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -64,7 +86,7 @@
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             },
-            "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "Microsoft.WindowsDesktop.App": {
               "privateAssets": "none"
             }
           },

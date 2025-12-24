@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|f:\\austin\\documents\\github\\freerunner\\software\\freerunner flashing utility\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|f:\\austin\\documents\\github\\freerunner\\software\\freerunner flashing utility\\classes\\xflasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:classes\\xflasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "xFlasher.cs",
+              "DocumentMoniker": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\Classes\\xFlasher.cs",
+              "RelativeDocumentMoniker": "Classes\\xFlasher.cs",
+              "ToolTip": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\Classes\\xFlasher.cs",
+              "RelativeToolTip": "Classes\\xFlasher.cs",
+              "ViewState": "AgIAAMgAAAAAAAAAAAAowOAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T05:22:44.932Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,7 +45,7 @@
               "RelativeDocumentMoniker": "main.cs",
               "ToolTip": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\main.cs",
               "RelativeToolTip": "main.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAgwH0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAgwDkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-23T22:21:09.277Z",
               "EditorCaption": ""
@@ -42,7 +59,7 @@
               "ToolTip": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\main.cs [Design]",
               "RelativeToolTip": "main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T01:17:42.975Z",
+              "WhenOpened": "2025-12-24T04:53:04.598Z",
               "EditorCaption": " [Design]"
             }
           ]
