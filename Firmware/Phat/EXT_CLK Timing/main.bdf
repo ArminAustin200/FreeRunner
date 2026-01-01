@@ -24,7 +24,7 @@ agreement for further details.
 	(input)
 	(rect 192 256 360 272)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "POST" (rect 5 0 34 12)(font "Arial" ))
+	(text "POST" (rect 5 0 33 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -40,7 +40,7 @@ agreement for further details.
 	(input)
 	(rect 192 272 360 288)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "CLK" (rect 5 0 26 17)(font "Intel Clear" ))
+	(text "CLK" (rect 5 0 25 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -102,56 +102,6 @@ agreement for further details.
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
 )
 (symbol
-	(rect 416 216 576 328)
-	(text "post_proc" (rect 5 0 53 12)(font "Arial" ))
-	(text "inst" (rect 8 96 25 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "callback" (rect 0 0 40 12)(font "Arial" ))
-		(text "callback" (rect 21 27 61 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "POST" (rect 0 0 28 12)(font "Arial" ))
-		(text "POST" (rect 21 43 49 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
-		(text "CLK" (rect 21 59 42 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 160 32)
-		(output)
-		(text "to_slow" (rect 0 0 36 12)(font "Arial" ))
-		(text "to_slow" (rect 109 27 145 39)(font "Arial" ))
-		(line (pt 160 32)(pt 144 32))
-	)
-	(port
-		(pt 160 48)
-		(output)
-		(text "DBG" (rect 0 0 23 12)(font "Arial" ))
-		(text "DBG" (rect 120 43 143 55)(font "Arial" ))
-		(line (pt 160 48)(pt 144 48))
-	)
-	(port
-		(pt 160 64)
-		(bidir)
-		(text "RST" (rect 0 0 21 12)(font "Arial" ))
-		(text "RST" (rect 119 59 140 71)(font "Arial" ))
-		(line (pt 160 64)(pt 144 64))
-	)
-	(drawing
-		(rectangle (rect 16 16 144 96))
-	)
-)
-(symbol
 	(rect 424 344 576 424)
 	(text "divider_slow" (rect 5 0 65 12)(font "Arial" ))
 	(text "inst2" (rect 8 64 30 81)(font "Intel Clear" ))
@@ -209,13 +159,55 @@ agreement for further details.
 		(rectangle (rect 16 16 144 64))
 	)
 )
-(connector
-	(pt 416 248)
-	(pt 384 248)
-)
-(connector
-	(pt 384 248)
-	(pt 384 200)
+(symbol
+	(rect 408 216 568 328)
+	(text "post_proc" (rect 5 0 53 12)(font "Arial" ))
+	(text "inst" (rect 8 96 25 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "callback" (rect 0 0 40 12)(font "Arial" ))
+		(text "callback" (rect 21 27 61 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "POST" (rect 0 0 28 12)(font "Arial" ))
+		(text "POST" (rect 21 43 49 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 59 42 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 160 32)
+		(output)
+		(text "to_slow" (rect 0 0 36 12)(font "Arial" ))
+		(text "to_slow" (rect 109 27 145 39)(font "Arial" ))
+		(line (pt 160 32)(pt 144 32))
+	)
+	(port
+		(pt 160 48)
+		(output)
+		(text "DBG" (rect 0 0 23 12)(font "Arial" ))
+		(text "DBG" (rect 120 43 143 55)(font "Arial" ))
+		(line (pt 160 48)(pt 144 48))
+	)
+	(port
+		(pt 160 64)
+		(bidir)
+		(text "RST" (rect 0 0 21 12)(font "Arial" ))
+		(text "RST" (rect 119 59 140 71)(font "Arial" ))
+		(line (pt 160 64)(pt 144 64))
+	)
+	(drawing
+		(rectangle (rect 16 16 144 96))
+	)
 )
 (connector
 	(pt 424 376)
@@ -224,18 +216,6 @@ agreement for further details.
 (connector
 	(pt 368 376)
 	(pt 368 280)
-)
-(connector
-	(pt 360 280)
-	(pt 368 280)
-)
-(connector
-	(pt 368 280)
-	(pt 416 280)
-)
-(connector
-	(pt 360 264)
-	(pt 416 264)
 )
 (connector
 	(pt 384 200)
@@ -250,10 +230,6 @@ agreement for further details.
 	(pt 1000 248)
 )
 (connector
-	(pt 576 248)
-	(pt 808 248)
-)
-(connector
 	(pt 576 376)
 	(pt 776 376)
 )
@@ -266,15 +242,39 @@ agreement for further details.
 	(pt 776 264)
 )
 (connector
-	(pt 576 280)
-	(pt 592 280)
+	(pt 968 264)
+	(pt 984 264)
 )
 (connector
-	(pt 576 264)
+	(pt 384 248)
+	(pt 408 248)
+)
+(connector
+	(pt 384 200)
+	(pt 384 248)
+)
+(connector
+	(pt 360 264)
+	(pt 408 264)
+)
+(connector
+	(pt 360 280)
+	(pt 368 280)
+)
+(connector
+	(pt 368 280)
+	(pt 408 280)
+)
+(connector
+	(pt 568 248)
+	(pt 808 248)
+)
+(connector
+	(pt 568 264)
 	(pt 592 264)
 )
 (connector
-	(pt 968 264)
-	(pt 984 264)
+	(pt 568 280)
+	(pt 592 280)
 )
 (junction (pt 368 280))

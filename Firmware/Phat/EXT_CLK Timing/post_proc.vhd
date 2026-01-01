@@ -26,22 +26,20 @@ constant T_BUF : integer := 25000;
 constant T_END : integer := R_END + T_BUF;
 
 constant post_rgh : integer := 24;
-constant post_s_max : integer := 31;
-signal post_r_cnt : integer range 0 to post_s_max := 0; --Creating a constant to count all rising edges of POST
-signal post_f_cnt : integer range 0 to post_s_max := 0; --Creating a constant to count all falling edges of POST
-
-signal cnt_r : integer range 0 to T_END := 0; --Creating a constant to count all rising edges of CLK
-signal cnt_f : integer range 0 to T_END := 0; --Creating a constant to count all falling edges of CLK
-
-signal timeout_r : STD_LOGIC := '0'; --Creating a timeout for rising edges of CLK
-signal timeout_f : STD_LOGIC := '0'; --Creating a timeout for falling edges of CLK
+constant post_s_max : integer := 31; --Sum of both rising and falling edges of POST
+signal cnt_r : integer range 0 to T_END := 0; --Counts on rising edges of CLK
+signal cnt_f : integer range 0 to T_END := 0; --Counts on falling edges of CLK
+signal post_r_cnt : integer range 0 to post_s_max := 0; --Creating a constant to count all rising edges of post
+signal post_f_cnt : integer range 0 to post_s_max := 0; --Creating a constant to count all falling edges of post
+signal timeout_r : STD_LOGIC := '0'; --Rising edge timeout
+signal timeout_f : STD_LOGIC := '0'; --Falling edge timeout
 
 begin
 
 -- post counter
 process (POST, post_r_cnt, post_f_cnt) is
 begin
-	--Counting POST on rising edges
+	--Processing rising edges of POST
 	if (rising_edge(POST)) then
 		if (RST = '0') then
 			post_r_cnt <= 0;
@@ -52,8 +50,8 @@ begin
 		end if;
 	end if;
 	
-	--Counting POST on falling edges
-	if (falling_edge(POST)) then 
+	--Processing falling edges of POST
+	if (falling_edge(POST)) then
 		if (RST = '0') then
 			post_f_cnt <= 0;
 		else
@@ -73,7 +71,7 @@ end process;
 -- timing counter + reset
 process (CLK) is
 begin
-	if (rising_edge(CLK)) then --Counting the rising edges of CLK (96MHz)
+	if (rising_edge(CLK)) then -- 96 MHz
 		if (post_r_cnt + post_f_cnt >= post_rgh) then
 			if (cnt_r < T_END) then
 				cnt_r <= cnt_r + 1;
@@ -87,7 +85,7 @@ begin
 		end if;
 	end if;
 	
-	if (falling_edge(CLK)) then --Counting the falling edges of CLK (96MHz)
+	if (falling_edge(CLK)) then -- 96 MHz
 		if (post_r_cnt + post_f_cnt >= post_rgh) then
 			if (cnt_f < T_END) then
 				cnt_f <= cnt_f + 1;

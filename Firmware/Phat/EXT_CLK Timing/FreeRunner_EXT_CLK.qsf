@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE 5M160ZE64C5
-set_global_assignment -name TOP_LEVEL_ENTITY ext_clk_main
+set_global_assignment -name TOP_LEVEL_ENTITY main
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:57:57  JULY 04, 2025"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
@@ -51,13 +51,14 @@ set_global_assignment -name VHDL_FILE slower.vhd
 set_global_assignment -name VHDL_FILE divider_slow.vhd
 set_global_assignment -name VHDL_FILE post_proc.vhd
 set_global_assignment -name BDF_FILE ext_clk_main.bdf
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLK
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG0
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to EXT_CLK
-set_instance_assignment -name IO_STANDARD "1.2 V" -to POST
-set_instance_assignment -name IO_STANDARD "1.2 V" -to RST
 set_location_assignment PIN_32 -to CLK
 set_location_assignment PIN_64 -to DBG0
 set_location_assignment PIN_31 -to EXT_CLK
 set_location_assignment PIN_34 -to POST
 set_location_assignment PIN_35 -to RST
+set_global_assignment -name BDF_FILE main.bdf
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to EXT_CLK
+set_instance_assignment -name IO_STANDARD "1.2 V" -to POST
+set_instance_assignment -name IO_STANDARD "1.2 V" -to RST
