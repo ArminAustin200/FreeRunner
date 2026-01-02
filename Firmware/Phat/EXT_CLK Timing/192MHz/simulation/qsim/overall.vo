@@ -1,0 +1,75 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Intel and sold by Intel or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
+
+// DATE "01/02/2026 01:55:23"
+
+// 
+// Device: Altera 5M160ZE64C5 Package EQFP64
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module clk_doubler (
+	CLK_D,
+	CLK);
+output 	CLK_D;
+input 	CLK;
+
+// Design Ports Information
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \CLK~combout ;
+
+
+// Location: PIN_32,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
+maxv_io \CLK~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\CLK~combout ),
+	.padio(CLK));
+// synopsys translate_off
+defparam \CLK~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_33,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxv_io \CLK_D~I (
+	.datain(\CLK~combout ),
+	.oe(vcc),
+	.combout(),
+	.padio(CLK_D));
+// synopsys translate_off
+defparam \CLK_D~I .operation_mode = "output";
+// synopsys translate_on
+
+endmodule

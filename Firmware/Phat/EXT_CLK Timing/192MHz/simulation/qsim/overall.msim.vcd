@@ -1,0 +1,98 @@
+$comment
+	File created using the following command:
+		vcd file overall.msim.vcd -direction
+$end
+$date
+	Fri Jan 02 01:55:24 2026
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module clk_doubler_vlg_vec_tst $end
+$var reg 1 ! CLK $end
+$var wire 1 " CLK_D $end
+
+$scope module i1 $end
+$var wire 1 # gnd $end
+$var wire 1 $ vcc $end
+$var wire 1 % unknown $end
+$var tri1 1 & devclrn $end
+$var tri1 1 ' devpor $end
+$var tri1 1 ( devoe $end
+$var wire 1 ) CLK~combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+1$
+x%
+1&
+1'
+1(
+0)
+$end
+#10000
+1!
+1)
+1"
+#40000
+0!
+0)
+0"
+#70000
+1!
+1)
+1"
+#100000
+0!
+0)
+0"
+#130000
+1!
+1)
+1"
+#160000
+0!
+0)
+0"
+#190000
+1!
+1)
+1"
+#220000
+0!
+0)
+0"
+#250000
+1!
+1)
+1"
+#280000
+0!
+0)
+0"
+#310000
+1!
+1)
+1"
+#340000
+0!
+0)
+0"
+#370000
+1!
+1)
+1"
+#400000
+0!
+0)
+0"
+#1000000

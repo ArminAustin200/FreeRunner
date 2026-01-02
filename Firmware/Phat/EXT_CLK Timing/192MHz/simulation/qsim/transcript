@@ -1,0 +1,30 @@
+# do overall.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:55:24 on Jan 02,2026
+# vlog -work work overall.vo 
+# -- Compiling module clk_doubler
+# 
+# Top level modules:
+# 	clk_doubler
+# End time: 01:55:24 on Jan 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:55:24 on Jan 02,2026
+# vlog -work work clk_doubler.vwf.vt 
+# -- Compiling module clk_doubler_vlg_vec_tst
+# 
+# Top level modules:
+# 	clk_doubler_vlg_vec_tst
+# End time: 01:55:24 on Jan 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L maxv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.clk_doubler_vlg_vec_tst 
+# Start time: 01:55:24 on Jan 02,2026
+# Loading work.clk_doubler_vlg_vec_tst
+# Loading work.clk_doubler
+# Loading maxv_ver.maxv_io
+# after#25
+# ** Note: $finish    : clk_doubler.vwf.vt(45)
+#    Time: 1 us  Iteration: 0  Instance: /clk_doubler_vlg_vec_tst
+# End time: 01:55:24 on Jan 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

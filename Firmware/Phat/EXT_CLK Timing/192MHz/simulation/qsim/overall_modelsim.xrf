@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/EXT_CLK Timing/192MHz Xenon/divider_slow.vhd
+source_file = 1, F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/EXT_CLK Timing/192MHz Xenon/post_proc.vhd
+source_file = 1, F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/EXT_CLK Timing/192MHz Xenon/slower.vhd
+source_file = 1, F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/EXT_CLK Timing/192MHz Xenon/main.bdf
+source_file = 1, clock_doubler.bdf
+source_file = 1, F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/EXT_CLK Timing/192MHz Xenon/clk_doubler.bdf
+source_file = 1, F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/EXT_CLK Timing/192MHz Xenon/clk_doubler.vwf
+source_file = 1, c:/intelfpga_lite/17.0/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/intelfpga_lite/17.0/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/intelfpga_lite/17.0/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/intelfpga_lite/17.0/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/EXT_CLK Timing/192MHz Xenon/db/overall.cbx.xml
+design_name = clk_doubler
+instance = comp, \CLK~I , CLK, clk_doubler, 1
+instance = comp, \CLK_D~I , CLK_D, clk_doubler, 1

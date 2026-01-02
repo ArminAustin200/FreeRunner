@@ -19,14 +19,14 @@
 #
 # Quartus Prime
 # Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-# Date created = 20:57:57  July 04, 2025
+# Date created = 00:38:21  January 02, 2026
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		FreeRunner_EXT_CLK_assignment_defaults.qdf
+#		overall_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -41,24 +41,23 @@ set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE 5M160ZE64C5
 set_global_assignment -name TOP_LEVEL_ENTITY main
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:57:57  JULY 04, 2025"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "00:38:21  JANUARY 02, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
-set_global_assignment -name VHDL_FILE slower.vhd
 set_global_assignment -name VHDL_FILE divider_slow.vhd
 set_global_assignment -name VHDL_FILE post_proc.vhd
-set_global_assignment -name BDF_FILE ext_clk_main.bdf
+set_global_assignment -name VHDL_FILE slower.vhd
+set_global_assignment -name BDF_FILE main.bdf
 set_location_assignment PIN_32 -to CLK
 set_location_assignment PIN_64 -to DBG0
 set_location_assignment PIN_31 -to EXT_CLK
 set_location_assignment PIN_34 -to POST
 set_location_assignment PIN_35 -to RST
-set_global_assignment -name BDF_FILE main.bdf
+set_instance_assignment -name IO_STANDARD "1.2 V" -to POST
+set_instance_assignment -name IO_STANDARD "1.2 V" -to RST
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG0
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to EXT_CLK
-set_instance_assignment -name IO_STANDARD "1.2 V" -to POST
-set_instance_assignment -name IO_STANDARD "1.2 V" -to RST
