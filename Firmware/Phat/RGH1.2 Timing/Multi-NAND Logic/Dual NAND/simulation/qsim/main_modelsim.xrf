@@ -9,6 +9,7 @@ source_file = 1, F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timi
 source_file = 1, F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Dual NAND/mux2_sim.vwf
 source_file = 1, F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Dual NAND/dualnand_sim.vwf
 source_file = 1, F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Dual NAND/mux_dual.bdf
+source_file = 1, F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Dual NAND/mux_dual.vwf
 source_file = 1, c:/intelfpga_lite/17.0/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/17.0/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/intelfpga_lite/17.0/quartus/libraries/vhdl/ieee/timing_b.vhd

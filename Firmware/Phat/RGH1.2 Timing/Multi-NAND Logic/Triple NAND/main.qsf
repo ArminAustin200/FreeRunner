@@ -75,3 +75,10 @@ set_location_assignment PIN_31 -to PLL
 set_location_assignment PIN_34 -to POST
 set_location_assignment PIN_35 -to RST
 set_location_assignment PIN_29 -to SMC_RST
+set_global_assignment -name BDF_FILE mux_triple.bdf
+set_global_assignment -name VHDL_FILE mux3.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE mux3_sim.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE mux_triple.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE triplenand_sim.vwf
+set_location_assignment PIN_1 -to DBG2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG2

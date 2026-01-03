@@ -9,9 +9,8 @@ entity triplenand is
 		RST : in STD_LOGIC;
 		BUT : in STD_LOGIC;
 		CLK : in STD_LOGIC;
-		CES : out STD_LOGIC := '1';
-		CED : out STD_LOGIC := '1';
-		CET : out STD_LOGIC := '1';
+		S1 : out STD_LOGIC := '1';
+		S2 : out STD_LOGIC := '1';
 		SMC : out STD_LOGIC := 'Z';
 		DBG : out STD_LOGIC := '0'
 	);
@@ -32,22 +31,20 @@ begin
 
 process (m_CES, m_CED, m_CET) is
 begin
-	if (m_CES = '0') then
-		CES <= '1';
-	else
-		CES <= '0';
+	if (m_CES = '1' and m_CED = '0' and m_CET = '0') then
+		S2 <= '0';
+		S1 <= '1';
 	end if;
 	
-	if (m_CED = '0') then
-		CED <= '1';
-	else
-		CED <= '0';
+	
+	if (m_CES = '0' and m_CED = '1' and m_CET = '0') then
+		S2 <= '1';
+		S1 <= '0';
 	end if;
 	
-	if (m_CET = '0') then
-		CET <= '1';
-	else
-		CET <= '0';
+	if (m_CES = '0' and m_CED = '0' and m_CET = '1') then
+		S2 <= '1';
+		S1 <= '1';
 	end if;
 end process;
 
@@ -79,14 +76,14 @@ begin
 		-- blinking processing
 		if (pre_sw /= switch) then
 			if (switch = 0) then
-				m_CED <= '1';
-				m_CES <= '0';
+				m_CED <= '0';
+				m_CES <= '1';
 				m_CET <= '0';
 				counter_dbg <= b"00111";
 				counter_smc <= 1;
 			elsif (switch = 1) then
-				m_CED <= '0';
-				m_CES <= '1';
+				m_CED <= '1';
+				m_CES <= '0';
 				m_CET <= '0';
 				counter_dbg <= b"01111";
 				counter_smc <= 1;
