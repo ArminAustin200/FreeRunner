@@ -19,60 +19,78 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "01/03/2026 00:24:59"
+// Generated on "01/03/2026 01:19:15"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          mux2
+// Verilog Test Bench (with test vectors) for design :                          mux_dual
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module mux2_vlg_vec_tst();
+module mux_dual_vlg_vec_tst();
 // constants                                           
 // general purpose registers
+reg BUT;
 reg CE_IN;
-reg SEL;
+reg CLK_D;
+reg RST;
 // wires                                               
 wire CED;
 wire CES;
+wire DBG;
+wire SMC_RST;
 
 // assign statements (if any)                          
-mux2 i1 (
+mux_dual i1 (
 // port map - connection between master ports and signals/registers   
+	.BUT(BUT),
 	.CE_IN(CE_IN),
 	.CED(CED),
 	.CES(CES),
-	.SEL(SEL)
+	.CLK_D(CLK_D),
+	.DBG(DBG),
+	.RST(RST),
+	.SMC_RST(SMC_RST)
 );
 initial 
 begin 
 #1000000 $finish;
 end 
 
+// BUT
+initial
+begin
+	BUT = 1'b1;
+end 
+
 // CE_IN
 initial
 begin
 	CE_IN = 1'b1;
-	CE_IN = #70000 1'b0;
-	CE_IN = #30000 1'b1;
-	CE_IN = #40000 1'b0;
-	CE_IN = #30000 1'b1;
-	CE_IN = #110000 1'b0;
-	CE_IN = #110000 1'b1;
 	CE_IN = #50000 1'b0;
-	CE_IN = #30000 1'b1;
-	CE_IN = #150000 1'b0;
+	CE_IN = #70000 1'b1;
+	CE_IN = #200000 1'b0;
 	CE_IN = #40000 1'b1;
-	CE_IN = #60000 1'b0;
-	CE_IN = #40000 1'b1;
-	CE_IN = #40000 1'b0;
+	CE_IN = #30000 1'b0;
 	CE_IN = #30000 1'b1;
+	CE_IN = #130000 1'b0;
+	CE_IN = #50000 1'b1;
+	CE_IN = #70000 1'b0;
+	CE_IN = #40000 1'b1;
 end 
 
-// SEL
+// CLK_D
+always
+begin
+	CLK_D = 1'b0;
+	CLK_D = #5000 1'b1;
+	#5000;
+end 
+
+// RST
 initial
 begin
-	SEL = 1'b1;
+	RST = 1'b0;
 end 
 endmodule
 

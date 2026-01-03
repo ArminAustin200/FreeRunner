@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE 5M160ZE64C5
-set_global_assignment -name TOP_LEVEL_ENTITY dualnand
+set_global_assignment -name TOP_LEVEL_ENTITY main
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:42:34  JULY 30, 2025"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
@@ -63,6 +63,10 @@ set_location_assignment PIN_31 -to PLL
 set_location_assignment PIN_34 -to POST
 set_location_assignment PIN_35 -to RST
 set_location_assignment PIN_29 -to SMC_RST
+set_global_assignment -name VHDL_FILE mux2.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE mux2_sim.vwf
+set_location_assignment PIN_1 -to DBG_2
+set_global_assignment -name VECTOR_WAVEFORM_FILE dualnand_sim.vwf
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to BUTTON
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CED
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CES
@@ -73,8 +77,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PLL
 set_instance_assignment -name IO_STANDARD "1.5 V" -to POST
 set_instance_assignment -name IO_STANDARD "1.5 V" -to RST
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SMC_RST
-set_global_assignment -name VHDL_FILE mux2.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE mux2_sim.vwf
-set_location_assignment PIN_1 -to DBG_2
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG_2
-set_global_assignment -name VECTOR_WAVEFORM_FILE dualnand_sim.vwf
+set_global_assignment -name BDF_FILE mux_dual.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE mux_dual.vwf
