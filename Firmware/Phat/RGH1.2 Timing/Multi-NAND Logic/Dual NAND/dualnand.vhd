@@ -9,8 +9,7 @@ entity dualnand is
 		RST : in STD_LOGIC;
 		BUT : in STD_LOGIC;
 		CLK : in STD_LOGIC;
-		CES : out STD_LOGIC := '1';
-		CED : out STD_LOGIC := '1';
+		S : out STD_LOGIC := '1'; --MUX select pin
 		SMC : out STD_LOGIC := 'Z';
 		DBG : out STD_LOGIC := '0'
 	);
@@ -31,15 +30,9 @@ begin
 process (m_CES, m_CED) is
 begin
 	if (m_CES = '0') then
-		CES <= '1';
+		S <= '1';
 	else
-		CES <= '0';
-	end if;
-	
-	if (m_CED = '0') then
-		CED <= '1';
-	else
-		CED <= '0';
+		S <= '0';
 	end if;
 end process;
 

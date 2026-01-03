@@ -1,0 +1,172 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dF:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Dual NAND/simulation/qsim
+vdualnand
+Z1 !s110 1767407818
+!i10b 1
+!s100 7d[VMGDShDV:KZMiJ@hiW3
+IW6mnb=EGCMh]HR@k[[XHI1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1767407817
+Z3 8main.vo
+Z4 Fmain.vo
+Z5 L0 32
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1767407818.000000
+Z8 !s107 main.vo|
+Z9 !s90 -work|work|main.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+Edualnand_vhd_vec_tst
+Z12 w1767407391
+Z13 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z14 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z15 8mux2_sim.vwf.vht
+Z16 Fmux2_sim.vwf.vht
+l0
+L32
+V_>@SBLZ>NZRVA2W<UhdAR0
+!s100 _LL[f^Ri8<UUC2b:2oZcf3
+Z17 OV;C;10.5b;63
+32
+Z18 !s110 1767407393
+!i10b 1
+Z19 !s108 1767407393.000000
+Z20 !s90 -work|work|mux2_sim.vwf.vht|
+Z21 !s107 mux2_sim.vwf.vht|
+!i113 1
+R10
+Z22 tExplicit 1 CvgOpt 0
+Adualnand_arch
+R13
+R14
+DEx4 work 20 dualnand_vhd_vec_tst 0 22 _>@SBLZ>NZRVA2W<UhdAR0
+l53
+L34
+V0kAHJTRV2RK`ZJDTM8WDm3
+!s100 _Jj]D633Qi?imTOc4X58c2
+R17
+32
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R10
+R22
+vdualnand_vlg_vec_tst
+R1
+!i10b 1
+!s100 QZHjkW3:No7WbDH1OjQgb2
+ICk9`HOKeKJ^@Y1>i[3Y8@1
+R2
+R0
+w1767407816
+8dualnand_sim.vwf.vt
+Fdualnand_sim.vwf.vt
+Z23 L0 30
+R6
+r1
+!s85 0
+31
+R7
+!s107 dualnand_sim.vwf.vt|
+!s90 -work|work|dualnand_sim.vwf.vt|
+!i113 1
+R10
+R11
+vmux2
+Z24 !s110 1767407511
+!i10b 1
+!s100 Cel<@UfCoJA][ITd10Ko^0
+IDOnS_jGcF?hc_=P9iNRS:3
+R2
+R0
+Z25 w1767407510
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z26 !s108 1767407511.000000
+R8
+R9
+!i113 1
+R10
+R11
+Emux2_vhd_vec_tst
+Z27 w1767407423
+R13
+R14
+R0
+R15
+R16
+l0
+L32
+VkfQM`=]AP_=KCD_O;FM;j3
+!s100 Pb@@ITfF[F=Zm5FRgUM@^0
+R17
+32
+Z28 !s110 1767407425
+!i10b 1
+Z29 !s108 1767407425.000000
+R20
+R21
+!i113 1
+R10
+R22
+Amux2_arch
+R13
+R14
+DEx4 work 16 mux2_vhd_vec_tst 0 22 kfQM`=]AP_=KCD_O;FM;j3
+l49
+L34
+Ve_MSl_?UJFJHL`Na>VBaE1
+!s100 ji?]5m88X``onPh3c5K<g3
+R17
+32
+R28
+!i10b 1
+R29
+R20
+R21
+!i113 1
+R10
+R22
+vmux2_vlg_vec_tst
+R24
+!i10b 1
+!s100 PSJC6d?VXcDl[5^V3JJZj1
+I6mOFiO7C`9GiV@h:K:Y^U1
+R2
+R0
+R25
+8mux2_sim.vwf.vt
+Fmux2_sim.vwf.vt
+R23
+R6
+r1
+!s85 0
+31
+R26
+!s107 mux2_sim.vwf.vt|
+!s90 -work|work|mux2_sim.vwf.vt|
+!i113 1
+R10
+R11
