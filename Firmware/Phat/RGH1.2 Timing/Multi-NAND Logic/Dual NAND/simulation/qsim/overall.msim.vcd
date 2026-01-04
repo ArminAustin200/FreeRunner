@@ -3,7 +3,7 @@ $comment
 		vcd file overall.msim.vcd -direction
 $end
 $date
-	Sat Jan 03 01:38:29 2026
+	Sat Jan 03 04:27:07 2026
 $end
 $version
 	ModelSim Version 10.5b
@@ -30,22 +30,22 @@ $var tri1 1 , devclrn $end
 $var tri1 1 - devpor $end
 $var tri1 1 . devoe $end
 $var wire 1 / CLK_D~combout $end
-$var wire 1 0 BUT~combout $end
-$var wire 1 1 RST~combout $end
-$var wire 1 2 inst|pre_sw~regout $end
-$var wire 1 3 inst|process_1~0 $end
+$var wire 1 0 RST~combout $end
+$var wire 1 1 BUT~combout $end
+$var wire 1 2 inst|process_0~0 $end
+$var wire 1 3 inst|Equal2~0_combout $end
 $var wire 1 4 inst|Add2~0_combout $end
-$var wire 1 5 inst|Equal2~0_combout $end
-$var wire 1 6 inst|Equal2~1_combout $end
+$var wire 1 5 inst|Equal2~1_combout $end
+$var wire 1 6 inst|counter[0]~1_combout $end
 $var wire 1 7 inst|counter[0]~0_combout $end
-$var wire 1 8 inst|counter[0]~1_combout $end
-$var wire 1 9 inst|Equal1~1_combout $end
-$var wire 1 : inst|Equal1~0_combout $end
-$var wire 1 ; inst|switch~regout $end
+$var wire 1 8 inst|Equal1~1_combout $end
+$var wire 1 9 inst|Equal1~0_combout $end
+$var wire 1 : inst|switch~regout $end
+$var wire 1 ; inst|pre_sw~regout $end
 $var wire 1 < inst|counter_smc~regout $end
 $var wire 1 = inst|SMC~en_regout $end
 $var wire 1 > CE_IN~combout $end
-$var wire 1 ? inst|m_CES~regout $end
+$var wire 1 ? inst|S~regout $end
 $var wire 1 @ inst2|CES~0_combout $end
 $var wire 1 A inst2|CED~0_combout $end
 $var wire 1 B inst|counter_dbg [3] $end
@@ -76,13 +76,13 @@ x+
 1-
 1.
 0/
-10
-01
+00
+11
 02
-03
+13
 14
 15
-16
+06
 07
 08
 09
@@ -134,10 +134,10 @@ $end
 0!
 0"
 0#
-00
+01
 0>
 0/
-18
+16
 0@
 0&
 #55000
@@ -159,7 +159,7 @@ $end
 1#
 1/
 1I
-19
+18
 #80000
 0#
 0/
@@ -169,7 +169,7 @@ $end
 1G
 0H
 0I
-09
+08
 #90000
 0#
 0/
@@ -192,9 +192,9 @@ $end
 1#
 1/
 1I
-1:
 19
-08
+18
+06
 #120000
 1"
 0#
@@ -205,14 +205,14 @@ $end
 #125000
 1#
 1/
-1;
+1:
 0G
 0H
 0I
-13
-0:
+12
 09
-18
+08
+16
 #130000
 0#
 0/
@@ -222,18 +222,18 @@ $end
 1?
 1<
 1I
-1B
 1C
+1B
 1D
+1;
 1E
-12
-06
 05
-04
 03
+04
+02
 1'
-08
 17
+06
 #140000
 0#
 0/
@@ -247,7 +247,7 @@ $end
 #150000
 1!
 0#
-10
+11
 0/
 07
 #155000
@@ -299,19 +299,19 @@ z(
 1#
 1/
 0E
-15
 14
+13
 #210000
 0#
 0/
 #215000
 1#
 1/
-0B
 1C
+0B
 1D
 1E
-05
+03
 04
 1'
 #220000
@@ -370,9 +370,9 @@ z(
 1#
 1/
 0E
-16
 15
 14
+13
 #290000
 0#
 0/
@@ -396,10 +396,10 @@ z(
 0!
 0#
 0>
-00
+01
 0/
 0A
-18
+16
 0%
 #325000
 1#
@@ -420,7 +420,7 @@ z(
 1#
 1/
 1I
-19
+18
 #350000
 0#
 0/
@@ -430,7 +430,7 @@ z(
 1G
 0H
 0I
-09
+08
 #360000
 1"
 0#
@@ -457,9 +457,9 @@ z(
 1#
 1/
 1I
-1:
 19
-08
+18
+06
 #390000
 0"
 0#
@@ -470,14 +470,14 @@ z(
 #395000
 1#
 1/
-0;
+0:
 0G
 0H
 0I
-13
-0:
+12
 09
-18
+08
+16
 #400000
 0#
 0/
@@ -489,17 +489,17 @@ z(
 1I
 1C
 1D
+0;
 1E
-02
 1A
 0@
-06
 05
-04
 03
+04
+02
 1'
-08
 17
+06
 1%
 0&
 #410000
@@ -516,7 +516,7 @@ z(
 1!
 1"
 0#
-10
+11
 1>
 0/
 07
@@ -571,9 +571,9 @@ z(
 1#
 1/
 0E
-16
 15
 14
+13
 #480000
 0#
 0/

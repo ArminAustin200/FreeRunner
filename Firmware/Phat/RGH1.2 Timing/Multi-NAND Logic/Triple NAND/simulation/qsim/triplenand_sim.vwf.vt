@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "01/03/2026 02:26:29"
+// Generated on "01/04/2026 17:54:20"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          triplenand
 // 
@@ -31,23 +31,27 @@ module triplenand_vlg_vec_tst();
 // constants                                           
 // general purpose registers
 reg BUT;
+reg CE_IN;
 reg CLK;
 reg RST;
 // wires                                               
+wire CED;
+wire CES;
+wire CET;
 wire DBG;
-wire S1;
-wire S2;
 wire SMC;
 
 // assign statements (if any)                          
 triplenand i1 (
 // port map - connection between master ports and signals/registers   
 	.BUT(BUT),
+	.CE_IN(CE_IN),
+	.CED(CED),
+	.CES(CES),
+	.CET(CET),
 	.CLK(CLK),
 	.DBG(DBG),
 	.RST(RST),
-	.S1(S1),
-	.S2(S2),
 	.SMC(SMC)
 );
 initial 
@@ -58,7 +62,11 @@ end
 // BUT
 initial
 begin
-	BUT = 1'b0;
+	BUT = 1'b1;
+	BUT = #10000 1'b0;
+	BUT = #100000 1'b1;
+	BUT = #160000 1'b0;
+	BUT = #100000 1'b1;
 end 
 
 // CLK
@@ -73,6 +81,29 @@ end
 initial
 begin
 	RST = 1'b0;
+end 
+
+// CE_IN
+initial
+begin
+	CE_IN = 1'b1;
+	CE_IN = #70000 1'b0;
+	CE_IN = #40000 1'b1;
+	CE_IN = #100000 1'b0;
+	CE_IN = #30000 1'b1;
+	CE_IN = #40000 1'b0;
+	CE_IN = #30000 1'b1;
+	CE_IN = #120000 1'b0;
+	CE_IN = #70000 1'b1;
+	CE_IN = #40000 1'b0;
+	CE_IN = #30000 1'b1;
+	CE_IN = #30000 1'b0;
+	CE_IN = #30000 1'b1;
+	CE_IN = #50000 1'b0;
+	CE_IN = #30000 1'b1;
+	CE_IN = #130000 1'b0;
+	CE_IN = #50000 1'b1;
+	CE_IN = #60000 1'b0;
 end 
 endmodule
 
