@@ -53,17 +53,6 @@ set_global_assignment -name VHDL_FILE divider_dual.vhd
 set_global_assignment -name VHDL_FILE slower.vhd
 set_global_assignment -name VHDL_FILE triplenand.vhd
 set_global_assignment -name BDF_FILE main.bdf
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to BUTTON
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CED
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CES
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CET
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLK
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG0
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG1
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PLL
-set_instance_assignment -name IO_STANDARD "1.5 V" -to POST
-set_instance_assignment -name IO_STANDARD "1.5 V" -to RST
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SMC_RST
 set_location_assignment PIN_28 -to BUTTON
 set_location_assignment PIN_4 -to CED
 set_location_assignment PIN_3 -to CES
@@ -81,4 +70,15 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE mux3_sim.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE mux_triple.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE triplenand_sim.vwf
 set_location_assignment PIN_1 -to DBG2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to BUTTON
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CED
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CES
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CET
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PLL
+set_instance_assignment -name IO_STANDARD "1.5 V" -to POST
+set_instance_assignment -name IO_STANDARD "1.5 V" -to RST
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SMC_RST
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG2

@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "01/04/2026 17:54:20"
+// Generated on "01/04/2026 18:24:48"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          triplenand
 // 
@@ -63,9 +63,9 @@ end
 initial
 begin
 	BUT = 1'b1;
-	BUT = #10000 1'b0;
-	BUT = #100000 1'b1;
-	BUT = #160000 1'b0;
+	BUT = #40000 1'b0;
+	BUT = #90000 1'b1;
+	BUT = #140000 1'b0;
 	BUT = #100000 1'b1;
 end 
 

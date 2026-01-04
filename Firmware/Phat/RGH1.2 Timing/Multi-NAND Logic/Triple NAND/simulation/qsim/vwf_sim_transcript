@@ -26,7 +26,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Sun Jan 04 17:54:19 2026
+    Info: Processing started: Sun Jan 04 18:24:47 2026
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off overall -c main --vector_source="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/triplenand_sim.vwf" --testbench_file="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/triplenand_sim.vwf.vt"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -55,13 +55,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Sun Jan 04 17:54:20 2026
+    Info: Processing started: Sun Jan 04 18:24:48 2026
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/" overall -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file main.vo in folder "F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4616 megabytes
-    Info: Processing ended: Sun Jan 04 17:54:21 2026
+    Info: Processing ended: Sun Jan 04 18:24:49 2026
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -86,27 +86,27 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:54:21 on Jan 04,2026
+# Start time: 18:24:49 on Jan 04,2026
 # vlog -work work main.vo 
 # -- Compiling module triplenand
 # 
 # Top level modules:
 # 	triplenand
-# End time: 17:54:22 on Jan 04,2026, Elapsed time: 0:00:01
+# End time: 18:24:49 on Jan 04,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:54:22 on Jan 04,2026
+# Start time: 18:24:49 on Jan 04,2026
 # vlog -work work triplenand_sim.vwf.vt 
 # -- Compiling module triplenand_vlg_vec_tst
 # 
 # Top level modules:
 # 	triplenand_vlg_vec_tst
-# End time: 17:54:22 on Jan 04,2026, Elapsed time: 0:00:00
+# End time: 18:24:49 on Jan 04,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L maxv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.triplenand_vlg_vec_tst 
-# Start time: 17:54:22 on Jan 04,2026
+# Start time: 18:24:50 on Jan 04,2026
 # Loading work.triplenand_vlg_vec_tst
 # Loading work.triplenand
 # Loading maxv_ver.maxv_io
@@ -116,7 +116,7 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # after#25
 # ** Note: $finish    : triplenand_sim.vwf.vt(59)
 #    Time: 1 us  Iteration: 0  Instance: /triplenand_vlg_vec_tst
-# End time: 17:54:22 on Jan 04,2026, Elapsed time: 0:00:00
+# End time: 18:24:50 on Jan 04,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
@@ -129,7 +129,7 @@ Reading F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-
 
 Processing channel transitions... 
 
-Writing the resulting VWF to F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/overall_20260104175422.sim.vwf
+Writing the resulting VWF to F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/overall_20260104182450.sim.vwf
 
 Finished VCD to VWF conversion.
 

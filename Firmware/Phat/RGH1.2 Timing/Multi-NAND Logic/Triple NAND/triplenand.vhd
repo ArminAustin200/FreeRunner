@@ -11,8 +11,8 @@ entity triplenand is
 		CLK : in STD_LOGIC;
 		CE_IN : in STD_LOGIC;
 		CES : out STD_LOGIC := CE_IN;
-		CED : out STD_LOGIC;
-		CET : out STD_LOGIC;
+		CED : out STD_LOGIC := '1';
+		CET : out STD_LOGIC := '1';
 		SMC : out STD_LOGIC := 'Z';
 		DBG : out STD_LOGIC := '0'
 	);
