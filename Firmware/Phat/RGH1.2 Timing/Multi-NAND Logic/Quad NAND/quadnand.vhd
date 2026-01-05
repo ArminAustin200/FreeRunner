@@ -9,7 +9,8 @@ entity quadnand is
 		RST : in STD_LOGIC;
 		BUT : in STD_LOGIC;
 		CLK : in STD_LOGIC;
-		CES : out STD_LOGIC := '1';
+		CE_IN : in STD_LOGIC;
+		CES : out STD_LOGIC := CE_IN;
 		CED : out STD_LOGIC := '1';
 		CET : out STD_LOGIC := '1';
 		CEQ : out STD_LOGIC := '1';
@@ -37,25 +38,25 @@ begin
 	if (m_CES = '0') then
 		CES <= '1';
 	else
-		CES <= '0';
+		CES <= CE_IN;
 	end if;
 	
 	if (m_CED = '0') then
 		CED <= '1';
 	else
-		CED <= '0';
+		CED <= CE_IN;
 	end if;
 	
 	if (m_CET = '0') then
 		CET <= '1';
 	else
-		CET <= '0';
+		CET <= CE_IN;
 	end if;
 	
 	if (m_CEQ = '0') then
 		CEQ <= '1';
 	else
-		CEQ <= '0';
+		CEQ <= CE_IN;
 	end if;
 
 end process;

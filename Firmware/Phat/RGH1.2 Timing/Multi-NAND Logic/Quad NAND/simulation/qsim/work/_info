@@ -1,0 +1,96 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dF:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Quad NAND/simulation/qsim
+Equadnand
+Z1 w1767570760
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx4 maxv 14 maxv_atom_pack 0 22 39g:CI3G^iCAkQ?1ZZ[]c0
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx4 maxv 15 maxv_components 0 22 :UQ<8e<ZCQKb;[hYM6T`K2
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z8 8main.vho
+Z9 Fmain.vho
+l0
+L35
+VnCYS[aQbdNE<z1eK0nlDP0
+!s100 C>jDm7ajUOMXSB]Cbz`8H2
+Z10 OV;C;10.5b;63
+32
+Z11 !s110 1767570761
+!i10b 1
+Z12 !s108 1767570761.000000
+Z13 !s90 -work|work|main.vho|
+Z14 !s107 main.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 8 quadnand 0 22 nCYS[aQbdNE<z1eK0nlDP0
+l113
+L53
+VWGO=YbIbe_1`2A`A_nE^[2
+!s100 Gd6nZc7<1=h8SzYP^GKE<0
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Equadnand_vhd_vec_tst
+Z17 w1767570759
+R6
+R7
+R0
+Z18 8quadnand_sim.vwf.vht
+Z19 Fquadnand_sim.vwf.vht
+l0
+L32
+VV1;IBET7GVzgfGELik<4g2
+!s100 N?Odmdk;D;UVhaU9z?Rm20
+R10
+32
+R11
+!i10b 1
+R12
+Z20 !s90 -work|work|quadnand_sim.vwf.vht|
+Z21 !s107 quadnand_sim.vwf.vht|
+!i113 1
+R15
+R16
+Aquadnand_arch
+R6
+R7
+Z22 DEx4 work 20 quadnand_vhd_vec_tst 0 22 V1;IBET7GVzgfGELik<4g2
+l61
+L34
+VkbJL82:1g8@`SQ^>^if6z2
+!s100 AHai]cj0J]N6dV87DDMXz0
+R10
+32
+R11
+!i10b 1
+R12
+R20
+R21
+!i113 1
+R15
+R16

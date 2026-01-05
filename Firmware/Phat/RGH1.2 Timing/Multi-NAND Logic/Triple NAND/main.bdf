@@ -214,56 +214,6 @@ agreement for further details.
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
 )
 (symbol
-	(rect 328 200 488 312)
-	(text "post_proc" (rect 5 0 53 12)(font "Arial" ))
-	(text "inst" (rect 8 96 25 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "callback" (rect 0 0 40 12)(font "Arial" ))
-		(text "callback" (rect 21 27 61 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "POST" (rect 0 0 28 12)(font "Arial" ))
-		(text "POST" (rect 21 43 49 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
-		(text "CLK" (rect 21 59 42 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 160 32)
-		(output)
-		(text "to_slow" (rect 0 0 36 12)(font "Arial" ))
-		(text "to_slow" (rect 109 27 145 39)(font "Arial" ))
-		(line (pt 160 32)(pt 144 32))
-	)
-	(port
-		(pt 160 48)
-		(output)
-		(text "DBG" (rect 0 0 23 12)(font "Arial" ))
-		(text "DBG" (rect 120 43 143 55)(font "Arial" ))
-		(line (pt 160 48)(pt 144 48))
-	)
-	(port
-		(pt 160 64)
-		(bidir)
-		(text "RST" (rect 0 0 21 12)(font "Arial" ))
-		(text "RST" (rect 119 59 140 71)(font "Arial" ))
-		(line (pt 160 64)(pt 144 64))
-	)
-	(drawing
-		(rectangle (rect 16 16 144 96))
-	)
-)
-(symbol
 	(rect 728 200 888 280)
 	(text "slower" (rect 5 0 35 12)(font "Arial" ))
 	(text "inst2" (rect 8 64 30 81)(font "Intel Clear" ))
@@ -346,7 +296,7 @@ agreement for further details.
 (symbol
 	(rect 800 408 952 552)
 	(text "triplenand" (rect 5 0 52 12)(font "Arial" ))
-	(text "inst1" (rect 8 128 30 145)(font "Intel Clear" ))
+	(text "inst5" (rect 8 128 30 145)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -412,6 +362,56 @@ agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 136 128))
+	)
+)
+(symbol
+	(rect 328 200 488 312)
+	(text "post_proc" (rect 5 0 53 12)(font "Arial" ))
+	(text "inst0" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "callback" (rect 0 0 40 12)(font "Arial" ))
+		(text "callback" (rect 21 27 61 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "POST" (rect 0 0 28 12)(font "Arial" ))
+		(text "POST" (rect 21 43 49 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 59 42 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 160 32)
+		(output)
+		(text "to_slow" (rect 0 0 36 12)(font "Arial" ))
+		(text "to_slow" (rect 109 27 145 39)(font "Arial" ))
+		(line (pt 160 32)(pt 144 32))
+	)
+	(port
+		(pt 160 48)
+		(output)
+		(text "DBG" (rect 0 0 23 12)(font "Arial" ))
+		(text "DBG" (rect 120 43 143 55)(font "Arial" ))
+		(line (pt 160 48)(pt 144 48))
+	)
+	(port
+		(pt 160 64)
+		(bidir)
+		(text "RST" (rect 0 0 21 12)(font "Arial" ))
+		(text "RST" (rect 119 59 140 71)(font "Arial" ))
+		(line (pt 160 64)(pt 144 64))
+	)
+	(drawing
+		(rectangle (rect 16 16 144 96))
 	)
 )
 (connector

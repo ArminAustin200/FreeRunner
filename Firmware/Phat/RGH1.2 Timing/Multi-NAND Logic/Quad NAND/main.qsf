@@ -77,3 +77,6 @@ set_location_assignment PIN_34 -to POST
 set_location_assignment PIN_35 -to RST
 set_location_assignment PIN_29 -to SMC_RST
 set_location_assignment PIN_28 -to BUTTON
+set_global_assignment -name VECTOR_WAVEFORM_FILE quadnand_sim.vwf
+set_location_assignment PIN_1 -to DBG2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG2
