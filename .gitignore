@@ -65,7 +65,7 @@
 */*_sim/
 incremental_db/
 db/
-_output_files/
+*/output_files/
 PLLJ_PLLSPE_INFO.txt
 
 # For PCBs designed using KiCad: http://www.kicad-pcb.org/
