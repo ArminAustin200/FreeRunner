@@ -8,207 +8,233 @@ z2
 !i10f 100
 cModel Technology
 Z0 dF:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Dual NAND/simulation/qsim
-vdualnand
-Z1 !s110 1767432385
-!i10b 1
-!s100 fBAg;J0m4Egh2eT]eKVi^0
-IjXdJ_0Y>Q7A8S;5ck8:S62
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
-w1767432384
-Z3 8main.vo
-Z4 Fmain.vo
-Z5 L0 32
-Z6 OV;L;10.5b;63
-r1
-!s85 0
-31
-Z7 !s108 1767432385.000000
-Z8 !s107 main.vo|
-Z9 !s90 -work|work|main.vo|
-!i113 1
-Z10 o-work work
-Z11 tCvgOpt 0
-Edualnand_vhd_vec_tst
-Z12 w1767407391
-Z13 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z14 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-R0
-Z15 8mux2_sim.vwf.vht
-Z16 Fmux2_sim.vwf.vht
+Edualnand
+Z1 w1767654837
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx4 maxv 14 maxv_atom_pack 0 22 39g:CI3G^iCAkQ?1ZZ[]c0
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx4 maxv 15 maxv_components 0 22 :UQ<8e<ZCQKb;[hYM6T`K2
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z8 dC:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Dual NAND/simulation/qsim
+Z9 8main.vho
+Z10 Fmain.vho
 l0
-L32
-V_>@SBLZ>NZRVA2W<UhdAR0
-!s100 _LL[f^Ri8<UUC2b:2oZcf3
-Z17 OV;C;10.5b;63
+L35
+V:DLjAN6LZDmz8_0L9_TQa3
+!s100 Z>3CWeJ_Z2zWDlNKKOJz`2
+Z11 OV;C;10.5b;63
 32
-Z18 !s110 1767407393
+Z12 !s110 1767654839
 !i10b 1
-Z19 !s108 1767407393.000000
-Z20 !s90 -work|work|mux2_sim.vwf.vht|
-Z21 !s107 mux2_sim.vwf.vht|
+Z13 !s108 1767654839.000000
+Z14 !s90 -work|work|main.vho|
+Z15 !s107 main.vho|
 !i113 1
-R10
-Z22 tExplicit 1 CvgOpt 0
-Adualnand_arch
-R13
-R14
-DEx4 work 20 dualnand_vhd_vec_tst 0 22 _>@SBLZ>NZRVA2W<UhdAR0
-l53
-L34
-V0kAHJTRV2RK`ZJDTM8WDm3
-!s100 _Jj]D633Qi?imTOc4X58c2
-R17
-32
-R18
-!i10b 1
-R19
-R20
-R21
-!i113 1
-R10
-R22
-vdualnand_vlg_vec_tst
-R1
-!i10b 1
-!s100 QZHjkW3:No7WbDH1OjQgb2
-ICk9`HOKeKJ^@Y1>i[3Y8@1
+Z16 o-work work
+Z17 tExplicit 1 CvgOpt 0
+Astructure
 R2
-R0
-w1767432383
-8dualnand_sim.vwf.vt
-Fdualnand_sim.vwf.vt
-Z23 L0 30
-R6
-r1
-!s85 0
-31
-R7
-!s107 dualnand_sim.vwf.vt|
-!s90 -work|work|dualnand_sim.vwf.vt|
-!i113 1
-R10
-R11
-vmux2
-Z24 !s110 1767417900
-!i10b 1
-!s100 Cel<@UfCoJA][ITd10Ko^0
-IDOnS_jGcF?hc_=P9iNRS:3
-R2
-R0
-Z25 w1767417899
 R3
 R4
 R5
 R6
+R7
+DEx4 work 8 dualnand 0 22 :DLjAN6LZDmz8_0L9_TQa3
+l92
+L51
+V<?L[SIVgE2SI1:Dz3mQAB3
+!s100 8<UmeX7:dU`[A0bLWh2LG1
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 1
+R16
+R17
+Edualnand_vhd_vec_tst
+Z18 w1767654835
+R6
+R7
+R8
+Z19 8dualnand_sim.vwf.vht
+Z20 Fdualnand_sim.vwf.vht
+l0
+L32
+V_>@SBLZ>NZRVA2W<UhdAR0
+!s100 _LL[f^Ri8<UUC2b:2oZcf3
+R11
+32
+R12
+!i10b 1
+R13
+Z21 !s90 -work|work|dualnand_sim.vwf.vht|
+Z22 !s107 dualnand_sim.vwf.vht|
+!i113 1
+R16
+R17
+Adualnand_arch
+R6
+R7
+Z23 DEx4 work 20 dualnand_vhd_vec_tst 0 22 _>@SBLZ>NZRVA2W<UhdAR0
+l57
+L34
+VEbn0[0cYNRgW;XoTOci8H2
+!s100 6[Dl5b;`;AM4ZEFXC<_5f2
+R11
+32
+R12
+!i10b 1
+R13
+R21
+R22
+!i113 1
+R16
+R17
+vdualnand_vlg_vec_tst
+!s110 1767432385
+!i10b 1
+!s100 QZHjkW3:No7WbDH1OjQgb2
+ICk9`HOKeKJ^@Y1>i[3Y8@1
+Z24 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1767432383
+8dualnand_sim.vwf.vt
+Fdualnand_sim.vwf.vt
+Z25 L0 30
+Z26 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z26 !s108 1767417900.000000
-R8
-R9
+!s108 1767432385.000000
+!s107 dualnand_sim.vwf.vt|
+!s90 -work|work|dualnand_sim.vwf.vt|
 !i113 1
-R10
-R11
-Emux2_vhd_vec_tst
-Z27 w1767407423
-R13
-R14
-R0
-R15
 R16
+Z27 tCvgOpt 0
+vmux2
+Z28 !s110 1767417900
+!i10b 1
+!s100 Cel<@UfCoJA][ITd10Ko^0
+IDOnS_jGcF?hc_=P9iNRS:3
+R24
+R0
+Z29 w1767417899
+Z30 8main.vo
+Z31 Fmain.vo
+Z32 L0 32
+R26
+r1
+!s85 0
+31
+Z33 !s108 1767417900.000000
+Z34 !s107 main.vo|
+Z35 !s90 -work|work|main.vo|
+!i113 1
+R16
+R27
+Emux2_vhd_vec_tst
+Z36 w1767407423
+R6
+R7
+R0
+Z37 8mux2_sim.vwf.vht
+Z38 Fmux2_sim.vwf.vht
 l0
 L32
 VkfQM`=]AP_=KCD_O;FM;j3
 !s100 Pb@@ITfF[F=Zm5FRgUM@^0
-R17
+R11
 32
-Z28 !s110 1767407425
+Z39 !s110 1767407425
 !i10b 1
-Z29 !s108 1767407425.000000
-R20
-R21
+Z40 !s108 1767407425.000000
+Z41 !s90 -work|work|mux2_sim.vwf.vht|
+Z42 !s107 mux2_sim.vwf.vht|
 !i113 1
-R10
-R22
+R16
+R17
 Amux2_arch
-R13
-R14
+R6
+R7
 DEx4 work 16 mux2_vhd_vec_tst 0 22 kfQM`=]AP_=KCD_O;FM;j3
 l49
 L34
 Ve_MSl_?UJFJHL`Na>VBaE1
 !s100 ji?]5m88X``onPh3c5K<g3
-R17
+R11
 32
-R28
+R39
 !i10b 1
-R29
-R20
-R21
+R40
+R41
+R42
 !i113 1
-R10
-R22
+R16
+R17
 vmux2_vlg_vec_tst
-R24
+R28
 !i10b 1
 !s100 PSJC6d?VXcDl[5^V3JJZj1
 I6mOFiO7C`9GiV@h:K:Y^U1
-R2
+R24
 R0
-R25
+R29
 8mux2_sim.vwf.vt
 Fmux2_sim.vwf.vt
-R23
-R6
+R25
+R26
 r1
 !s85 0
 31
-R26
+R33
 !s107 mux2_sim.vwf.vt|
 !s90 -work|work|mux2_sim.vwf.vt|
 !i113 1
-R10
-R11
+R16
+R27
 vmux_dual
-Z30 !s110 1767432426
+Z43 !s110 1767432426
 !i10b 1
 !s100 >0_B5J[c_eZGN]m<cKFUk1
 IIM[geFMIWkdzID0:RQJ=Z1
-R2
+R24
 R0
 w1767432425
-R3
-R4
-R5
-R6
+R30
+R31
+R32
+R26
 r1
 !s85 0
 31
-Z31 !s108 1767432426.000000
-R8
-R9
+Z44 !s108 1767432426.000000
+R34
+R35
 !i113 1
-R10
-R11
+R16
+R27
 vmux_dual_vlg_vec_tst
-R30
+R43
 !i10b 1
 !s100 KK@;ai5G@1CPWl<3m]HH<0
 I`f`M7dJUH4hc>eVRMV48b2
-R2
+R24
 R0
 w1767432424
 8mux_dual.vwf.vt
 Fmux_dual.vwf.vt
-R23
-R6
+R25
+R26
 r1
 !s85 0
 31
-R31
+R44
 !s107 mux_dual.vwf.vt|
 !s90 -work|work|mux_dual.vwf.vt|
 !i113 1
-R10
-R11
+R16
+R27

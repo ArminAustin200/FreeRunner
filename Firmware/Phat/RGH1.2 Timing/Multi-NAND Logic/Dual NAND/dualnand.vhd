@@ -9,7 +9,9 @@ entity dualnand is
 		RST : in STD_LOGIC;
 		BUT : in STD_LOGIC;
 		CLK : in STD_LOGIC;
-		S : out STD_LOGIC := '0'; --MUX select pin
+		CE_IN : IN STD_LOGIC;
+		CES : out STD_LOGIC := '1';
+		CED : out STD_LOGIC := '1';
 		SMC : out STD_LOGIC := 'Z';
 		DBG : out STD_LOGIC := '0'
 	);
@@ -17,13 +19,30 @@ end dualnand;
 
 architecture arch of dualnand is
 
-signal counter : integer range 0 to 10 := 0; --10 works for me
+signal counter : integer range 0 to 7 := 0;
 signal counter_smc : integer range 0 to 1 := 0;
 signal counter_dbg : unsigned(3 downto 0) := (others => '0');
 signal switch : STD_LOGIC := '1';
 signal pre_sw : STD_LOGIC := '1';
+signal m_CES : STD_LOGIC := '1';
+signal m_CED : STD_LOGIC := '0';
 
 begin
+
+process (m_CES, m_CED) is
+begin
+	if (m_CES = '0') then
+		CES <= '1';
+	else
+		CES <= CE_IN;
+	end if;
+	
+	if (m_CED = '0') then
+		CED <= '1';
+	else
+		CED <= CE_IN;
+	end if;
+end process;
 
 process (CLK, counter_dbg) is
 begin
@@ -47,11 +66,13 @@ begin
 		-- blinking processing
 		if (pre_sw /= switch) then
 			if (switch = '0') then
-				S <= '1';
+				m_CED <= '1';
+				m_CES <= '0';
 				counter_dbg <= b"1111";
 				counter_smc <= 1;
 			else
-				S <= '0';
+				m_CED <= '0';
+				m_CES <= '1';
 				counter_dbg <= b"0111";
 				counter_smc <= 1;
 			end if;
