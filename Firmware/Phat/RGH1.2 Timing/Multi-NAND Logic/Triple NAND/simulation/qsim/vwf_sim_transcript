@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off overall -c main --vector_source="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/triplenand_sim.vwf" --testbench_file="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/triplenand_sim.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off overall -c main --vector_source="C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/triplenand_sim.vwf" --testbench_file="C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/triplenand_sim.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,17 +26,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Sun Jan 04 18:24:47 2026
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off overall -c main --vector_source="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/triplenand_sim.vwf" --testbench_file="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/triplenand_sim.vwf.vt"
+    Info: Processing started: Mon Jan 05 12:36:18 2026
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off overall -c main --vector_source="C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/triplenand_sim.vwf" --testbench_file="C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/triplenand_sim.vwf.vht"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-
-Completed successfully. 
 
 Completed successfully. 
 
 **** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/" overall -c main
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/" overall -c main
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -55,21 +53,21 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Sun Jan 04 18:24:48 2026
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/" overall -c main
+    Info: Processing started: Mon Jan 05 12:36:21 2026
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/" overall -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file main.vo in folder "F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file main.vho in folder "C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4616 megabytes
-    Info: Processing ended: Sun Jan 04 18:24:49 2026
+    Info: Peak virtual memory: 4615 megabytes
+    Info: Processing ended: Mon Jan 05 12:36:22 2026
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 Completed successfully. 
 
 **** Generating the ModelSim .do script ****
 
-F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/overall.do generated.
+C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/overall.do generated.
 
 Completed successfully. 
 
@@ -81,55 +79,72 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 
 # 10.5b
 
+
 # do overall.do
 
 # ** Warning: (vlib-34) Library already exists at "work".
 
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:24:49 on Jan 04,2026
-# vlog -work work main.vo 
-# -- Compiling module triplenand
-# 
-# Top level modules:
-# 	triplenand
-# End time: 18:24:49 on Jan 04,2026, Elapsed time: 0:00:00
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:36:25 on Jan 05,2026
+# vcom -work work main.vho 
+
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Loading package maxv_components
+# -- Compiling entity triplenand
+
+# -- Compiling architecture structure of triplenand
+# End time: 12:36:25 on Jan 05,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:24:49 on Jan 04,2026
-# vlog -work work triplenand_sim.vwf.vt 
-# -- Compiling module triplenand_vlg_vec_tst
-# 
-# Top level modules:
-# 	triplenand_vlg_vec_tst
-# End time: 18:24:49 on Jan 04,2026, Elapsed time: 0:00:00
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:36:25 on Jan 05,2026
+# vcom -work work triplenand_sim.vwf.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity triplenand_vhd_vec_tst
+# -- Compiling architecture triplenand_arch of triplenand_vhd_vec_tst
+
+# End time: 12:36:26 on Jan 05,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
-# vsim -novopt -c -t 1ps -L maxv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.triplenand_vlg_vec_tst 
-# Start time: 18:24:50 on Jan 04,2026
-# Loading work.triplenand_vlg_vec_tst
-# Loading work.triplenand
-# Loading maxv_ver.maxv_io
-# Loading maxv_ver.maxv_lcell
-# Loading maxv_ver.maxv_asynch_lcell
-# Loading maxv_ver.maxv_lcell_register
-# after#25
-# ** Note: $finish    : triplenand_sim.vwf.vt(59)
-#    Time: 1 us  Iteration: 0  Instance: /triplenand_vlg_vec_tst
-# End time: 18:24:50 on Jan 04,2026, Elapsed time: 0:00:00
+# vsim -novopt -c -t 1ps -L maxv -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.triplenand_vhd_vec_tst 
+# Start time: 12:36:26 on Jan 05,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.triplenand_vhd_vec_tst(triplenand_arch)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxv.maxv_atom_pack(body)
+# Loading maxv.maxv_components
+# Loading work.triplenand(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading maxv.maxv_io(behave)
+# Loading maxv.maxv_lcell(vital_le_atom)
+# Loading maxv.maxv_asynch_lcell(vital_le)
+# Loading maxv.maxv_lcell_register(vital_le_reg)
+# after#31
+
+# End time: 12:36:27 on Jan 05,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/triplenand_sim.vwf...
+Reading C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/triplenand_sim.vwf...
 
-Reading F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/overall.msim.vcd...
+Reading C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/overall.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/overall_20260104182450.sim.vwf
+Writing the resulting VWF to C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/overall_20260105123627.sim.vwf
 
 Finished VCD to VWF conversion.
 

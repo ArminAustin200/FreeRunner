@@ -1,16 +1,16 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off overall -c main --vector_source="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/triplenand_sim.vwf" --testbench_file="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/triplenand_sim.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off overall -c main --vector_source="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/triplenand_sim.vwf" --testbench_file="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/triplenand_sim.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/" overall -c main</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="F:/Austin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/" overall -c main</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off overall -c main --vector_source="C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/triplenand_sim.vwf" --testbench_file="C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/triplenand_sim.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off overall -c main --vector_source="C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/triplenand_sim.vwf" --testbench_file="C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/triplenand_sim.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/" overall -c main</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim/" overall -c main</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
-vlog -work work main.vo
-vlog -work work triplenand_sim.vwf.vt
-vsim -novopt -c -t 1ps -L maxv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.triplenand_vlg_vec_tst
+vcom -work work main.vho
+vcom -work work triplenand_sim.vwf.vht
+vsim -novopt -c -t 1ps -L maxv -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.triplenand_vhd_vec_tst
 vcd file -direction overall.msim.vcd
-vcd add -internal triplenand_vlg_vec_tst/*
-vcd add -internal triplenand_vlg_vec_tst/i1/*
+vcd add -internal triplenand_vhd_vec_tst/*
+vcd add -internal triplenand_vhd_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -20,17 +20,15 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
-vlog -work work main.vo
-vlog -work work triplenand_sim.vwf.vt
-vsim -novopt -c -t 1ps -L maxv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.triplenand_vlg_vec_tst
+vcom -work work main.vho
+vcom -work work triplenand_sim.vwf.vht
+vsim -novopt -c -t 1ps -sdfmax triplenand_vhd_vec_tst/i1=main_vhd.sdo -L maxv -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.triplenand_vhd_vec_tst
 vcd file -direction overall.msim.vcd
-vcd add -internal triplenand_vlg_vec_tst/*
-vcd add -internal triplenand_vlg_vec_tst/i1/*
+vcd add -internal triplenand_vhd_vec_tst/*
+vcd add -internal triplenand_vhd_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -40,10 +38,8 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
 </modelsim_script_timing>
-<hdl_lang>verilog</hdl_lang>
+<hdl_lang>vhdl</hdl_lang>
 </simulation_settings>*/
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text

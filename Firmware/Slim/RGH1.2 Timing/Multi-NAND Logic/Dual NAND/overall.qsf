@@ -73,3 +73,5 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG0
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CES
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CED
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to BUTTON
+set_location_assignment PIN_30 -to PLL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PLL

@@ -92,29 +92,94 @@ R13
 !i113 1
 R8
 R9
-vtriplenand
-Z14 !s110 1767569089
+Etriplenand
+Z14 w1767634582
+Z15 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z16 DPx4 maxv 14 maxv_atom_pack 0 22 39g:CI3G^iCAkQ?1ZZ[]c0
+Z17 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z18 DPx4 maxv 15 maxv_components 0 22 :UQ<8e<ZCQKb;[hYM6T`K2
+Z19 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z20 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z21 dC:/Users/Armin/Documents/GitHub/FreeRunner/Firmware/Phat/RGH1.2 Timing/Multi-NAND Logic/Triple NAND/simulation/qsim
+Z22 8main.vho
+Z23 Fmain.vho
+l0
+L35
+VHa10UOI=VQ8CA5@mZZE470
+!s100 jM8o8Gl?DeWaRn7WI`D`20
+Z24 OV;C;10.5b;63
+32
+Z25 !s110 1767634585
 !i10b 1
-!s100 X41g_=AdEkRz_A_EQ;TeZ2
-IYRAE@:2HN81_KH;M=MhD=1
-R1
-R0
-w1767569089
-R2
-R3
-R4
-R5
-r1
-!s85 0
-31
-Z15 !s108 1767569089.000000
-R6
-R7
+Z26 !s108 1767634585.000000
+Z27 !s90 -work|work|main.vho|
+Z28 !s107 main.vho|
 !i113 1
 R8
-R9
+Z29 tExplicit 1 CvgOpt 0
+Astructure
+R15
+R16
+R17
+R18
+R19
+R20
+DEx4 work 10 triplenand 0 22 Ha10UOI=VQ8CA5@mZZE470
+l114
+L52
+V3HKNn[6dHQgMCM2U1e3a11
+!s100 @7^R`KA_UzcU^l0G:<f]g1
+R24
+32
+R25
+!i10b 1
+R26
+R27
+R28
+!i113 1
+R8
+R29
+Etriplenand_vhd_vec_tst
+Z30 w1767634580
+R19
+R20
+R21
+Z31 8triplenand_sim.vwf.vht
+Z32 Ftriplenand_sim.vwf.vht
+l0
+L32
+V:^CFf`a1jgUgDEhn<8]PD1
+!s100 QXeVP]VIOP7n3G95E2>Mo2
+R24
+32
+Z33 !s110 1767634586
+!i10b 1
+R26
+Z34 !s90 -work|work|triplenand_sim.vwf.vht|
+Z35 !s107 triplenand_sim.vwf.vht|
+!i113 1
+R8
+R29
+Atriplenand_arch
+R19
+R20
+DEx4 work 22 triplenand_vhd_vec_tst 0 22 :^CFf`a1jgUgDEhn<8]PD1
+l59
+L34
+V^0VDH@]>998KU?limfc@e3
+!s100 OM5JH@CD0eX_kfg8GcK`j0
+R24
+32
+R33
+!i10b 1
+R26
+R34
+R35
+!i113 1
+R8
+R29
 vtriplenand_vlg_vec_tst
-R14
+!s110 1767569089
 !i10b 1
 !s100 MzXm6[Obc`QGE[NfmXSCN1
 Iaod=ZQ[]A7RI0^7zKA[h61
@@ -128,7 +193,7 @@ R5
 r1
 !s85 0
 31
-R15
+!s108 1767569089.000000
 !s107 triplenand_sim.vwf.vt|
 !s90 -work|work|triplenand_sim.vwf.vt|
 !i113 1
