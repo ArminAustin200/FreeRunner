@@ -61,6 +61,6 @@ set_instance_assignment -name IO_STANDARD "1.8 V" -to RST1
 set_location_assignment PIN_36 -to RST0
 set_location_assignment PIN_37 -to RST1
 set_location_assignment PIN_64 -to DBG0
-set_location_assignment PIN_2 -to DBG1
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG0
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG1
+set_location_assignment PIN_1 -to DBG2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG2

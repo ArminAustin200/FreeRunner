@@ -54,9 +54,9 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 792 200 968 216)
+	(rect 792 216 968 232)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "DBG1" (rect 90 0 119 12)(font "Arial" ))
+	(text "DBG0" (rect 90 0 117 17)(font "Intel Clear" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -70,9 +70,9 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 792 216 968 232)
+	(rect 792 200 968 216)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "DBG0" (rect 90 0 117 17)(font "Intel Clear" ))
+	(text "DBG2" (rect 90 0 119 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
