@@ -24,7 +24,7 @@ agreement for further details.
 	(input)
 	(rect 88 192 256 208)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "POST" (rect 5 0 34 12)(font "Arial" ))
+	(text "POST" (rect 5 0 33 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -40,7 +40,7 @@ agreement for further details.
 	(input)
 	(rect 88 208 256 224)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "CLK" (rect 5 0 26 17)(font "Intel Clear" ))
+	(text "CLK" (rect 5 0 25 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -56,7 +56,7 @@ agreement for further details.
 	(input)
 	(rect 560 416 728 432)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "BUTTON" (rect 5 0 49 12)(font "Arial" ))
+	(text "BUTTON" (rect 5 0 48 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -70,7 +70,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 496 192 672 208)
+	(rect 504 192 680 208)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "DBG0" (rect 90 0 117 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -198,7 +198,7 @@ agreement for further details.
 )
 (pin
 	(bidir)
-	(rect 496 208 672 224)
+	(rect 504 208 680 224)
 	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "RST0" (rect 90 0 114 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -215,7 +215,7 @@ agreement for further details.
 )
 (pin
 	(bidir)
-	(rect 496 224 672 240)
+	(rect 504 224 680 240)
 	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "RST1" (rect 90 0 114 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -471,10 +471,6 @@ agreement for further details.
 	)
 )
 (connector
-	(pt 448 200)
-	(pt 496 200)
-)
-(connector
 	(pt 712 184)
 	(pt 448 184)
 )
@@ -583,28 +579,12 @@ agreement for further details.
 	(pt 488 216)
 )
 (connector
-	(pt 496 216)
-	(pt 488 216)
-)
-(connector
-	(pt 488 216)
-	(pt 448 216)
-)
-(connector
 	(pt 608 392)
 	(pt 472 392)
 )
 (connector
 	(pt 472 392)
 	(pt 472 232)
-)
-(connector
-	(pt 448 232)
-	(pt 472 232)
-)
-(connector
-	(pt 472 232)
-	(pt 496 232)
 )
 (connector
 	(pt 888 408)
@@ -629,6 +609,26 @@ agreement for further details.
 (connector
 	(pt 888 488)
 	(pt 904 488)
+)
+(connector
+	(pt 448 216)
+	(pt 488 216)
+)
+(connector
+	(pt 448 232)
+	(pt 472 232)
+)
+(connector
+	(pt 448 200)
+	(pt 504 200)
+)
+(connector
+	(pt 488 216)
+	(pt 504 216)
+)
+(connector
+	(pt 472 232)
+	(pt 504 232)
 )
 (junction (pt 272 216))
 (junction (pt 456 328))
