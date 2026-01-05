@@ -70,7 +70,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 496 232 672 248)
+	(rect 504 232 680 248)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "DBG0" (rect 90 0 119 12)(font "Arial" ))
 	(pt 0 8)
@@ -166,7 +166,7 @@ agreement for further details.
 )
 (pin
 	(bidir)
-	(rect 496 248 672 264)
+	(rect 504 248 680 264)
 	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "RST0" (rect 90 0 117 12)(font "Arial" ))
 	(pt 0 8)
@@ -183,7 +183,7 @@ agreement for further details.
 )
 (pin
 	(bidir)
-	(rect 496 264 672 280)
+	(rect 504 264 680 280)
 	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "RST1" (rect 90 0 114 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -477,10 +477,6 @@ agreement for further details.
 	(pt 712 240)
 )
 (connector
-	(pt 456 240)
-	(pt 496 240)
-)
-(connector
 	(pt 280 432)
 	(pt 280 480)
 )
@@ -533,22 +529,6 @@ agreement for further details.
 	(pt 872 496)
 )
 (connector
-	(pt 472 432)
-	(pt 584 432)
-)
-(connector
-	(pt 472 272)
-	(pt 472 432)
-)
-(connector
-	(pt 488 416)
-	(pt 584 416)
-)
-(connector
-	(pt 488 256)
-	(pt 488 416)
-)
-(connector
 	(pt 672 424)
 	(pt 648 424)
 )
@@ -557,26 +537,46 @@ agreement for further details.
 	(pt 672 424)
 )
 (connector
-	(pt 456 272)
-	(pt 472 272)
-)
-(connector
-	(pt 472 272)
-	(pt 496 272)
-)
-(connector
-	(pt 456 256)
-	(pt 488 256)
-)
-(connector
-	(pt 488 256)
-	(pt 496 256)
-)
-(connector
 	(pt 904 240)
 	(pt 888 240)
 )
+(connector
+	(pt 456 240)
+	(pt 504 240)
+)
+(connector
+	(pt 584 416)
+	(pt 496 416)
+)
+(connector
+	(pt 496 256)
+	(pt 496 416)
+)
+(connector
+	(pt 456 256)
+	(pt 496 256)
+)
+(connector
+	(pt 496 256)
+	(pt 504 256)
+)
+(connector
+	(pt 584 432)
+	(pt 480 432)
+)
+(connector
+	(pt 480 272)
+	(pt 480 432)
+)
+(connector
+	(pt 456 272)
+	(pt 480 272)
+)
+(connector
+	(pt 480 272)
+	(pt 504 272)
+)
 (junction (pt 280 256))
 (junction (pt 464 368))
-(junction (pt 472 272))
-(junction (pt 488 256))
+(junction (pt 496 256))
+(junction (pt 480 272))

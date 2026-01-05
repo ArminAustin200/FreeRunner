@@ -31,7 +31,6 @@ constant post_s_max : integer := 15;
 signal post_r_cnt : integer range 0 to post_s_max := 0; --Creating a constant to count all rising edges of POST
 signal post_f_cnt : integer range 0 to post_s_max := 0; --Creating a constant to count all falling edges of POST
 signal cnt : integer range 0 to T_END := 0;
-signal post_cnt : integer range 0 to post_s_max := 0;
 signal timeout : STD_LOGIC := '0';
 
 begin
