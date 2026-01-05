@@ -24,7 +24,7 @@ agreement for further details.
 	(input)
 	(rect 16 200 184 216)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "POST" (rect 5 0 34 12)(font "Arial" ))
+	(text "POST" (rect 5 0 33 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -40,7 +40,7 @@ agreement for further details.
 	(input)
 	(rect 16 216 184 232)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "CLK" (rect 5 0 26 17)(font "Intel Clear" ))
+	(text "CLK" (rect 5 0 25 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -56,7 +56,7 @@ agreement for further details.
 	(input)
 	(rect 432 424 600 440)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "BUTTON" (rect 5 0 47 17)(font "Intel Clear" ))
+	(text "BUTTON" (rect 5 0 46 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -70,7 +70,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 424 200 600 216)
+	(rect 440 200 616 216)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "DBG0" (rect 90 0 119 12)(font "Arial" ))
 	(pt 0 8)
@@ -86,7 +86,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 808 200 984 216)
+	(rect 824 200 1000 216)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "PLL" (rect 90 0 108 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -182,7 +182,7 @@ agreement for further details.
 )
 (pin
 	(bidir)
-	(rect 424 216 600 232)
+	(rect 440 216 616 232)
 	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "RST0" (rect 90 0 114 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -199,7 +199,7 @@ agreement for further details.
 )
 (pin
 	(bidir)
-	(rect 424 232 600 248)
+	(rect 440 232 616 248)
 	(text "BIDIR" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "RST1" (rect 90 0 114 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -215,7 +215,7 @@ agreement for further details.
 	(text "VCC" (rect 4 7 24 17)(font "Arial" (font_size 6)))
 )
 (symbol
-	(rect 632 160 792 240)
+	(rect 648 160 808 240)
 	(text "slower" (rect 5 0 35 12)(font "Arial" ))
 	(text "inst2" (rect 8 64 30 81)(font "Intel Clear" ))
 	(port
@@ -496,72 +496,12 @@ agreement for further details.
 	(pt 584 416)
 )
 (connector
-	(pt 616 336)
-	(pt 616 208)
-)
-(connector
-	(pt 376 336)
-	(pt 392 336)
-)
-(connector
-	(pt 392 336)
-	(pt 616 336)
-)
-(connector
-	(pt 376 192)
-	(pt 632 192)
-)
-(connector
-	(pt 616 208)
-	(pt 632 208)
-)
-(connector
-	(pt 792 208)
-	(pt 808 208)
-)
-(connector
-	(pt 376 208)
-	(pt 424 208)
-)
-(connector
 	(pt 584 416)
 	(pt 584 400)
 )
 (connector
 	(pt 584 400)
 	(pt 568 400)
-)
-(connector
-	(pt 416 224)
-	(pt 416 392)
-)
-(connector
-	(pt 400 240)
-	(pt 400 408)
-)
-(connector
-	(pt 376 224)
-	(pt 416 224)
-)
-(connector
-	(pt 416 224)
-	(pt 424 224)
-)
-(connector
-	(pt 376 240)
-	(pt 400 240)
-)
-(connector
-	(pt 400 240)
-	(pt 424 240)
-)
-(connector
-	(pt 416 392)
-	(pt 504 392)
-)
-(connector
-	(pt 400 408)
-	(pt 504 408)
 )
 (connector
 	(pt 760 416)
@@ -588,22 +528,82 @@ agreement for further details.
 	(pt 192 192)
 )
 (connector
+	(pt 632 336)
+	(pt 632 208)
+)
+(connector
 	(pt 192 192)
 	(pt 192 144)
 )
 (connector
 	(pt 192 144)
-	(pt 808 144)
-)
-(connector
-	(pt 792 192)
-	(pt 808 192)
+	(pt 824 144)
 )
 (connector
 	(pt 808 192)
-	(pt 808 144)
+	(pt 824 192)
+)
+(connector
+	(pt 824 192)
+	(pt 824 144)
+)
+(connector
+	(pt 376 336)
+	(pt 392 336)
+)
+(connector
+	(pt 392 336)
+	(pt 632 336)
+)
+(connector
+	(pt 376 192)
+	(pt 648 192)
+)
+(connector
+	(pt 632 208)
+	(pt 648 208)
+)
+(connector
+	(pt 808 208)
+	(pt 824 208)
+)
+(connector
+	(pt 376 208)
+	(pt 440 208)
+)
+(connector
+	(pt 408 240)
+	(pt 408 408)
+)
+(connector
+	(pt 504 408)
+	(pt 408 408)
+)
+(connector
+	(pt 376 240)
+	(pt 408 240)
+)
+(connector
+	(pt 408 240)
+	(pt 440 240)
+)
+(connector
+	(pt 424 224)
+	(pt 424 392)
+)
+(connector
+	(pt 504 392)
+	(pt 424 392)
+)
+(connector
+	(pt 376 224)
+	(pt 424 224)
+)
+(connector
+	(pt 424 224)
+	(pt 440 224)
 )
 (junction (pt 200 224))
 (junction (pt 392 336))
-(junction (pt 416 224))
-(junction (pt 400 240))
+(junction (pt 408 240))
+(junction (pt 424 224))
