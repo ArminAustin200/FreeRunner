@@ -91,7 +91,7 @@ begin
 end process;
 
 -- slowdown
-process (post_cnt, timeout) is
+process (post_r_cnt, post_f_cnt, timeout) is
 begin
 	if (post_r_cnt + post_f_cnt >= post_rgh - 1 and timeout = '0') then
 		to_slow <= '1';
