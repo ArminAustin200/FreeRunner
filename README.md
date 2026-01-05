@@ -1,5 +1,5 @@
 # FreeRunner
-The FreeRunner Project aims to replace old glitch Xilinx based glitch chips with a more modern Altera MAXV based CPLD
+The FreeRunner Project aims to replace Xilinx CoolRunner/CoolRunner II based chips with a more modern Altera MAXV CPLD replacement
 
 ## FreeRunner CPLD Pinout:
 <ins>**Main GPIO Pins:**</ins>  
