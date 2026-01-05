@@ -70,7 +70,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 608 432 776 448)
+	(rect 608 496 776 512)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "DBG2" (rect 5 0 34 12)(font "Arial" ))
 	(pt 168 8)
@@ -118,7 +118,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 968 432 1144 448)
+	(rect 968 448 1144 464)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "CES" (rect 90 0 108 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -134,7 +134,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 968 448 1144 464)
+	(rect 968 464 1144 480)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "CED" (rect 90 0 110 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -150,7 +150,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 968 464 1144 480)
+	(rect 968 480 1144 496)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "CET" (rect 90 0 108 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -166,7 +166,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 968 480 1144 496)
+	(rect 968 496 1144 512)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "SMC_RST" (rect 90 0 137 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -182,7 +182,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 968 496 1144 512)
+	(rect 968 512 1144 528)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "DBG1" (rect 90 0 117 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -294,7 +294,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 800 408 952 552)
+	(rect 800 424 952 568)
 	(text "triplenand" (rect 5 0 52 12)(font "Arial" ))
 	(text "inst5" (rect 8 128 30 145)(font "Intel Clear" ))
 	(port
@@ -459,20 +459,8 @@ agreement for further details.
 	(pt 712 376)
 )
 (connector
-	(pt 488 488)
-	(pt 800 488)
-)
-(connector
-	(pt 776 472)
-	(pt 800 472)
-)
-(connector
 	(pt 488 248)
 	(pt 520 248)
-)
-(connector
-	(pt 800 456)
-	(pt 512 456)
 )
 (connector
 	(pt 512 264)
@@ -523,14 +511,6 @@ agreement for further details.
 	(pt 312 184)
 )
 (connector
-	(pt 776 440)
-	(pt 800 440)
-)
-(connector
-	(pt 952 440)
-	(pt 968 440)
-)
-(connector
 	(pt 952 456)
 	(pt 968 456)
 )
@@ -545,6 +525,26 @@ agreement for further details.
 (connector
 	(pt 952 504)
 	(pt 968 504)
+)
+(connector
+	(pt 952 520)
+	(pt 968 520)
+)
+(connector
+	(pt 800 488)
+	(pt 488 488)
+)
+(connector
+	(pt 512 456)
+	(pt 800 456)
+)
+(connector
+	(pt 776 472)
+	(pt 800 472)
+)
+(connector
+	(pt 776 504)
+	(pt 800 504)
 )
 (junction (pt 312 264))
 (junction (pt 504 376))
