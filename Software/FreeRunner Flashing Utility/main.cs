@@ -1,4 +1,5 @@
-﻿using LibUsbDotNet.WinUsb;
+﻿using FreeRunner_Flashing_Utility.Properties;
+using LibUsbDotNet.WinUsb;
 using System.IO;
 using System.Management;
 
@@ -52,6 +53,8 @@ namespace FreeRunner_Flashing_Utility
         public main()
         {
             InitializeComponent();
+            //Centering pictureBox1
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
 
             // Timer to debounce / delay USB rescans after plug events
             usbChangeTimer = new System.Windows.Forms.Timer();
@@ -82,10 +85,10 @@ namespace FreeRunner_Flashing_Utility
                 rbFJ17, rbFJ18, rbFJ19, rbFJ20, rbFJ21, rbFJ22, rbFJ23, rbFJ24,
 
                 //Xenon EXT_CLK Timing
-                rbX96_1, rbX96_2, rbX192_1, rbX192_2,
+                rbX_96, rbX_192,
 
                 //Zephyr EXT_CLK Timing
-                rbZ96_1, rbZ96_2, rbZ192_1, rbZ192_2
+                rbZ_96, rbZ_192
             };
 
             //Adding all slim radio buttons to a list
@@ -146,7 +149,7 @@ namespace FreeRunner_Flashing_Utility
 
             if (category.Contains("Xenon") || category.Contains("Zephyr"))
             {
-                Log($"Selected timing file: {category}MHz {selected.Text}");
+                Log($"Selected timing file: {category} {selected.Text}");
             }
             else
             {
@@ -411,14 +414,23 @@ namespace FreeRunner_Flashing_Utility
 
             if (IsUsbDeviceConnected("7001", "600D")) // PicoFlasher
             {
-                //nTools.setImage(Properties.Resources.picoflasher);
-                //PicoFlasherToolStripMenuItem.Visible = true;
+                setImage(Properties.Resources.picoflasher); //Update the image to PicoFlasher
                 device = DEVICE.PICOFLASHER;
+
+                if (previousDevice != DEVICE.PICOFLASHER)
+                    Log("PicoFlasher Connected!");
+            }
+
+            else if (IsUsbDeviceConnected("8338", "11D4")) {  // JR-Programme
+                setImage(Properties.Resources.jrp);
+
+                if (previousDevice != DEVICE.JR_PROGRAMMER)
+                    Log("JRP Connected!");
+
             }
             else if (IsUsbDeviceConnected("6010", "0403")) // xFlasher SPI
             {
-                //nTools.setImage(Properties.Resources.xflash_spi);
-                //xFlasherToolStripMenuItem.Visible = true;
+                setImage(Properties.Resources.xflash_spi); //Update the image to xFlasher
                 device = DEVICE.XFLASHER_SPI;
                 xflasher.ready = true; // Skip init
 
@@ -428,18 +440,22 @@ namespace FreeRunner_Flashing_Utility
             }
             else if (IsUsbDeviceConnected("8334", "11D4")) // JR-Programmer Bootloader
             {
-                //nTools.setImage(Properties.Resources.usb);
-                //jRPBLToolStripMenuItem.Visible = true;
+                setImage(Properties.Resources.jrp); //Update the image to JR-Programmer
                 device = DEVICE.JR_PROGRAMMER_BOOTLOADER;
+
+                if (previousDevice != DEVICE.JR_PROGRAMMER_BOOTLOADER)
+                    Log("JRP-Bootloader Connected!");
             }
 
             if (device == DEVICE.NO_DEVICE) // Must check this after everything else
             {
                 if (IsUsbDeviceConnected("AAAA", "8816") || IsUsbDeviceConnected("05E3", "0751")) // xFlasher eMMC
                 {
-                    //nTools.setImage(Properties.Resources.xflash_emmc);
-                    //xFlasherToolStripMenuItem.Visible = true;
+                    setImage(Properties.Resources.xflash_emmc); //Update the image to xFlasher eMMC
                     device = DEVICE.XFLASHER_EMMC;
+
+                    if(previousDevice != DEVICE.XFLASHER_EMMC)
+                        Log("XFlasher eMMC Connected!");
                 }
             }
 
@@ -480,5 +496,43 @@ namespace FreeRunner_Flashing_Utility
             }
         }
 
+        private void setImage(Image m) {
+            pictureBox1.Image = m;
+        }
+        int count = 0;
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (count == 0) {
+                pictureBox1.Image = Properties.Resources.jrp;
+            }
+
+            if (count == 1) {
+                pictureBox1.Image = Properties.Resources.nandx;
+            }
+
+            if (count == 2)
+            {
+                pictureBox1.Image = Properties.Resources.xflash_spi;
+            }
+
+            if (count == 3)
+            {
+                pictureBox1.Image = Properties.Resources.xflash_emmc;
+            }
+
+            if (count == 4)
+            {
+                pictureBox1.Image = Properties.Resources.picoflasher;
+                count = -1;
+            }
+
+            count++;
+
+            //MessageBox.Show(
+            //    "STOP CLICKING ME!!!!!",
+            //    "You're Annoying",
+            //    MessageBoxButtons.OK,
+            //    MessageBoxIcon.Warning);
+        }
     }
 }

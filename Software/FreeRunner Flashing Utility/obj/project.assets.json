@@ -88,15 +88,6 @@
           }
         }
       },
-      "PresentationFramework/4.6.0": {
-        "type": "package",
-        "compile": {
-          "lib/PresentationFramework.dll": {}
-        },
-        "runtime": {
-          "lib/PresentationFramework.dll": {}
-        }
-      },
       "System.CodeDom/10.0.1": {
         "type": "package",
         "compile": {
@@ -315,18 +306,6 @@
         "version.txt"
       ]
     },
-    "PresentationFramework/4.6.0": {
-      "sha512": "37FpU6XcB1Hgr5X03MgUOxvzWLJYKJP72J3g5hnZHi/DXsTxpJEu4brCGW+TmplVWfntuysO/uRcZcPS9YK0Bw==",
-      "type": "package",
-      "path": "presentationframework/4.6.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/PresentationFramework.dll",
-        "presentationframework.4.6.0.nupkg.sha512",
-        "presentationframework.nuspec"
-      ]
-    },
     "System.CodeDom/10.0.1": {
       "sha512": "owy+NlWSBRNLZO8CZ7IguuaPHHiAivjstTciM7YlXyDDqBY26FMl3F9Nw04n8Dog1JaxFlZiEIEXKPaigRmkNg==",
       "type": "package",
@@ -496,7 +475,6 @@
       "Huddly.LibUsbDotNet >= 2.2.34",
       "LibUsbDfu >= 1.1.4",
       "LibUsbDotNet >= 2.2.75",
-      "PresentationFramework >= 4.6.0",
       "System.Management >= 10.0.1"
     ]
   },
@@ -522,7 +500,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0-windows"
+        "net8.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -530,7 +508,7 @@
       },
       "frameworks": {
         "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
+          "targetAlias": "net8.0-windows7.0",
           "projectReferences": {}
         }
       },
@@ -548,7 +526,7 @@
     },
     "frameworks": {
       "net8.0-windows7.0": {
-        "targetAlias": "net8.0-windows",
+        "targetAlias": "net8.0-windows7.0",
         "dependencies": {
           "Huddly.LibUsbDotNet": {
             "target": "Package",
@@ -561,10 +539,6 @@
           "LibUsbDotNet": {
             "target": "Package",
             "version": "[2.2.75, )"
-          },
-          "PresentationFramework": {
-            "target": "Package",
-            "version": "[4.6.0, )"
           },
           "System.Management": {
             "target": "Package",
@@ -590,20 +564,8 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'PresentationFramework 4.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "PresentationFramework",
-      "targetGraphs": [
-        "net8.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }
