@@ -9,6 +9,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <PackageIcon>taskbarIcon.png</PackageIcon>
   </PropertyGroup>
 
 	<ItemGroup>
@@ -42,6 +43,13 @@
 
   <ItemGroup>
     <Folder Include="Utility\common\xFlasher\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Downloads\taskbarIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

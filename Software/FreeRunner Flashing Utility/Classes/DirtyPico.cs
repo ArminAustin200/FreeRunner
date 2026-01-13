@@ -54,7 +54,7 @@ namespace JRunner
                 if (Process.GetProcessesByName("jtagDirtyPico").Length > 0)
                 {
                     //Console.WriteLine("DirtyPico: SVF software is already running!");
-                    main.Instance.Log("DirtyPico: SVF software is already running!");
+                    mainForm.Instance.Log("DirtyPico: SVF software is already running!");
                     return;
                 }
 
@@ -65,13 +65,13 @@ namespace JRunner
                         if (!File.Exists(filename))
                         {
                             //Console.WriteLine("DirtyPico: File Not Found: {0}", filename);
-                            main.Instance.Log($"DirtyPico: File Not Found: {filename}");
+                            mainForm.Instance.Log($"DirtyPico: File Not Found: {filename}");
                             return;
                         }
                         if (Path.GetExtension(filename) != ".svf")
                         {
                             //Console.WriteLine("DirtyPico: Wrong File Type: {0}", filename);
-                            main.Instance.Log($"DirtyPico: Wrong File Type: {filename}");
+                            mainForm.Instance.Log($"DirtyPico: Wrong File Type: {filename}");
                             return;
                         }
 
@@ -87,14 +87,14 @@ namespace JRunner
                         catch
                         {
                             //Console.WriteLine("DirtyPico: Could not open temporary file for flashing");
-                            main.Instance.Log("DirtyPico: Could not open temporary file for flashing");
+                            mainForm.Instance.Log("DirtyPico: Could not open temporary file for flashing");
                             //Console.WriteLine("DirtyPico: {0} is locked by another process", svfPath);
-                            main.Instance.Log($"DirtyPico: {svfPath} is locked by another process");
+                            mainForm.Instance.Log($"DirtyPico: {svfPath} is locked by another process");
                             return;
                         }
 
                         //Console.WriteLine("DirtyPico: Flashing {0} via JTAG", Path.GetFileName(filename));
-                        main.Instance.Log($"DirtyPico: Flashing {Path.GetFileName(filename)} via JTAG");
+                        mainForm.Instance.Log($"DirtyPico: Flashing {Path.GetFileName(filename)} via JTAG");
 
                         Process psi = new Process();
                         psi.StartInfo.FileName = @"common/dirtypico/jtagDirtyPico.exe";
@@ -139,19 +139,19 @@ namespace JRunner
                             if (start <= 0 || end <= 0)
                             {
                                 //Console.WriteLine("DirtyPico: Failed to detect CPLD type");
-                                main.Instance.Log("DirtyPico: Failed to detect CPLD type");
+                                mainForm.Instance.Log("DirtyPico: Failed to detect CPLD type");
                             }
                             else
                             {
                                 jtagdevice = str.Substring(start, end).Trim().Replace("\r\n", "");
                                 //Console.WriteLine("DirtyPico: {0} Detected", jtagdevice);
-                                main.Instance.Log($"DirtyPico: {jtagdevice} Detected");
+                                mainForm.Instance.Log($"DirtyPico: {jtagdevice} Detected");
                             }
 
                             //Console.WriteLine("DirtyPico: SVF Flash Successful!");
-                            main.Instance.Log("DirtyPico: SVF Flash Successful!");
+                            mainForm.Instance.Log("DirtyPico: SVF Flash Successful!");
                             Console.WriteLine("");
-                            main.Instance.Log("");
+                            mainForm.Instance.Log("");
 
                             //if (variables.playSuccess)
                             //{
@@ -169,19 +169,19 @@ namespace JRunner
                             if (start <= 0 || end <= 0)
                             {
                                 //Console.WriteLine("DirtyPico: Failed to detect CPLD type");
-                                main.Instance.Log("DirtyPico: Failed to detect CPLD type");
+                                mainForm.Instance.Log("DirtyPico: Failed to detect CPLD type");
                             }
                             else
                             {
                                 jtagdevice = str.Substring(start, end).Trim().Replace("\r\n", "");
                                 //Console.WriteLine("DirtyPico: {0} Detected", jtagdevice);
-                                main.Instance.Log($"DirtyPico: {jtagdevice} Detected");
+                                mainForm.Instance.Log($"DirtyPico: {jtagdevice} Detected");
                             }
 
                             //Console.WriteLine("DirtyPico: SVF Flash Successful!");
-                            main.Instance.Log("DirtyPico: SVF Flash Successful!");
+                            mainForm.Instance.Log("DirtyPico: SVF Flash Successful!");
                             Console.WriteLine("");
-                            main.Instance.Log("");
+                            mainForm.Instance.Log("");
 
                             //if (variables.playSuccess)
                             //{
@@ -193,26 +193,26 @@ namespace JRunner
                         else if (strLower.Contains("chain without any parts") == true)
                         {
                             //Console.WriteLine("DirtyPico: Could not connect to CPLD");
-                            main.Instance.Log("DirtyPico: Could not connect to CPLD");
+                            mainForm.Instance.Log("DirtyPico: Could not connect to CPLD");
                             //Console.WriteLine("");
-                            main.Instance.Log("");
+                            mainForm.Instance.Log("");
                         }
 
                         else if (strLower.Contains("stuck at"))
                         {
                             //Console.WriteLine("DirtyPico: TDO stuck at 0");
-                            main.Instance.Log("DirtyPico: TDO stuck at 0");
+                            mainForm.Instance.Log("DirtyPico: TDO stuck at 0");
                             //Console.WriteLine("Check wiring or power cycle glitch chip");
-                            main.Instance.Log("Check wiring or power cycle glitch chip");
+                            mainForm.Instance.Log("Check wiring or power cycle glitch chip");
                             //Console.WriteLine("");
-                            main.Instance.Log("");
+                            mainForm.Instance.Log("");
                         }
                         else
                         {
                             //Console.WriteLine("DirtyPico: SVF Flash Failed");
-                            main.Instance.Log("DirtyPico: SVF Flash Failed");
+                            mainForm.Instance.Log("DirtyPico: SVF Flash Failed");
                             //Console.WriteLine("");
-                            main.Instance.Log("");
+                            mainForm.Instance.Log("");
                         }
 
                         if (File.Exists(svfPath))
@@ -225,12 +225,12 @@ namespace JRunner
                         inUse = false;
 
                         //Console.WriteLine(ex.Message);
-                        main.Instance.Log(ex.Message);
-                        if (main.Instance.debug) 
+                        mainForm.Instance.Log(ex.Message);
+                        if (mainForm.Instance.debug) 
                             //Console.WriteLine(ex.ToString());
-                            main.Instance.Log(ex.ToString());
+                            mainForm.Instance.Log(ex.ToString());
                         //Console.WriteLine("");
-                        main.Instance.Log("");
+                        mainForm.Instance.Log("");
                     }
                 });
                 urJtagThread.Start();

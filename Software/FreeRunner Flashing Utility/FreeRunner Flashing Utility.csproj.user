@@ -4,7 +4,7 @@
     <_LastSelectedProfileId>F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="main.cs">
+    <Compile Update="mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

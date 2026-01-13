@@ -1,6 +1,6 @@
 ﻿namespace FreeRunner_Flashing_Utility
 {
-    partial class main
+    partial class mainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             debugConsole = new RichTextBox();
             progressPanel = new TableLayoutPanel();
             labelPercent = new Label();
@@ -70,6 +71,7 @@
             rbZ_192 = new RadioButton();
             splitContainer1 = new SplitContainer();
             tabPage2 = new TabPage();
+            groupBox5 = new GroupBox();
             label1 = new Label();
             groupBox4 = new GroupBox();
             label10 = new Label();
@@ -113,7 +115,6 @@
             programBtn = new Button();
             pictureBox1 = new PictureBox();
             label14 = new Label();
-            groupBox5 = new GroupBox();
             progressPanel.SuspendLayout();
             optionsPanel.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -130,6 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.SuspendLayout();
             tabPage2.SuspendLayout();
+            groupBox5.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
@@ -138,7 +140,6 @@
             groupBox1.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // debugConsole
@@ -715,6 +716,15 @@
             tabPage2.Text = "Slim Timings";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(label1);
+            groupBox5.Location = new Point(147, 371);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(180, 65);
+            groupBox5.TabIndex = 22;
+            groupBox5.TabStop = false;
+            // 
             // label1
             // 
             label1.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
@@ -1265,16 +1275,7 @@
             label14.Text = "Programmer:";
             label14.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // groupBox5
-            // 
-            groupBox5.Controls.Add(label1);
-            groupBox5.Location = new Point(147, 371);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(180, 65);
-            groupBox5.TabIndex = 22;
-            groupBox5.TabStop = false;
-            // 
-            // main
+            // mainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -1286,9 +1287,10 @@
             Controls.Add(progressPanel);
             Controls.Add(debugConsole);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
-            Name = "main";
+            Name = "mainForm";
             Text = "FreeRunner Flashing Utility";
             Load += main_Load;
             progressPanel.ResumeLayout(false);
@@ -1312,6 +1314,7 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             tableLayoutPanel7.ResumeLayout(false);
@@ -1323,7 +1326,6 @@
             tableLayoutPanel5.ResumeLayout(false);
             tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            groupBox5.ResumeLayout(false);
             ResumeLayout(false);
         }
 

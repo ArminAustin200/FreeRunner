@@ -75,48 +75,33 @@ namespace FreeRunner_Flashing_Utility.Classes
 
             onStatus?.Invoke("Installing update...");
 
-            
-            string oldExePath = currentExePath + ".old";
-            try
-            {
-                if (File.Exists(oldExePath)) File.Delete(oldExePath);
+            string stageDir = Path.Combine(appDir, "_update_tmp");
+            string cmdPath = Path.Combine(appDir, "_apply_update.cmd");
 
-                File.Move(currentExePath, oldExePath);
+            if (Directory.Exists(stageDir))
+                Directory.Delete(stageDir, true);
 
-                using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(zipPath))
-                {
-                    zip.ExtractAll(appDir, ExtractExistingFileAction.OverwriteSilently);
-                }
-                File.Delete(zipPath);
+            Directory.CreateDirectory(stageDir);
 
-                // Relaunch the updated EXE (now extracted)
-                string newExePath = Path.Combine(appDir, currentExeName);
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = newExePath,
-                    WorkingDirectory = appDir,
-                    UseShellExecute = true
-                });
-
-                Environment.Exit(0);
-                return true;
+            // Extract ZIP into staging(NOT appDir)
+            using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(zipPath)) {
+                zip.ExtractAll(stageDir, ExtractExistingFileAction.OverwriteSilently);
             }
-            catch
-            {
-                // Best-effort rollback
-                try
-                {
-                    if (File.Exists(currentExePath)) File.Delete(currentExePath);
-                    if (File.Exists(oldExePath)) File.Move(oldExePath, currentExePath);
-                }
-                catch { /* ignore */ }
+            File.Delete(zipPath);
 
-                throw;
-            }
-            finally
-            {
-                try { if (File.Exists(zipPath)) File.Delete(zipPath); } catch { }
-            }
+            // Write + run apply script (copies folders too)
+            WriteApplyScript(cmdPath, appDir, stageDir, currentExeName);
+
+            Process.Start(new ProcessStartInfo {
+                FileName = cmdPath,
+                WorkingDirectory = appDir,
+                UseShellExecute = true,
+                CreateNoWindow = true
+            });
+
+            // Exit so nothing is locked
+            Environment.Exit(0);
+            return true;
         }
 
         private static string ComputeMD5(string filePath)
@@ -125,6 +110,38 @@ namespace FreeRunner_Flashing_Utility.Classes
             using var stream = File.OpenRead(filePath);
             var hash = md5.ComputeHash(stream);
             return Convert.ToHexString(hash);
+        }
+
+        static void WriteApplyScript(string cmdPath, string appDir, string stageDir, string exeName)
+        {
+            // Exclude files/folders you never want overwritten (edit as needed)
+            // Example: keep user config, logs, or NAND dumps
+            string excludeFiles = "user.config settings.json";
+            string excludeDirs = "Logs Dumps";
+
+            string script =
+            $@"@echo off
+            setlocal
+            cd /d ""{appDir}""
+
+                REM wait a moment for the app to fully exit
+                timeout /t 2 /nobreak >nul
+
+                REM Copy everything (folders included) from staging into the app folder
+                REM /E = include subdirs, /R /W = retry settings, /NFL /NDL = quieter output
+                robocopy ""{stageDir}"" ""{appDir}"" /E /R:2 /W:1 /NFL /NDL /NP /NJH /NJS ^
+                    /XF {excludeFiles} ^
+                    /XD {excludeDirs}
+
+                REM cleanup staging
+                rmdir /s /q ""{stageDir}""
+
+                REM restart updated app
+                start """" ""{Path.Combine(appDir, exeName)}""
+                endlocal
+            ";
+
+            File.WriteAllText(cmdPath, script);
         }
     }
 }

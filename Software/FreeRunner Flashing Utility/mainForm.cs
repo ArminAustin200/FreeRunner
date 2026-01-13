@@ -8,7 +8,7 @@ using System.Management;
 
 namespace FreeRunner_Flashing_Utility
 {
-    public partial class main : Form
+    public partial class mainForm : Form
     {
         public enum DEVICE
         {
@@ -61,8 +61,8 @@ namespace FreeRunner_Flashing_Utility
         private String welcomeText = "Welcome to FreeRunner Flashing Utility!\n" +
                                      "By: ArminAustin200";
 
-        public static main Instance {get; private set;}
-        public main()
+        public static mainForm Instance {get; private set;}
+        public mainForm()
         {
             //Initializing main window
             InitializeComponent();
