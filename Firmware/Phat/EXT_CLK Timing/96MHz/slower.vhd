@@ -15,7 +15,7 @@ end slower;
 
 architecture arch of slower is
 
-constant delay_val : integer := 4475; -- 65nm: 4425, 90nm: 4475
+constant delay_val : integer := 4475; -- 65nm: 4425, 90nm: 4475 (CB_B 5772)/ 3860 (CB_B 4577)
 signal cnt : integer range 0 to delay_val := 0;
 signal slow : STD_LOGIC := '0';
 
