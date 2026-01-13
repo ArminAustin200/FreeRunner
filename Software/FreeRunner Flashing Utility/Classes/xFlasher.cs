@@ -10,25 +10,27 @@ namespace FreeRunner_Flashing_Utility
 {
     public class xFlasher
     {
-        [DllImport(@"common\xflasher\xFlasher.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [DllImport(@"Utility/common\xFlasher\xFlasher.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)] //Changed from @"common\xflasher\xFlasher.dll"
         public static extern int spi(int mode, int size, string file, int startblock = 0, int length = 0);
 
-        [DllImport(@"common\xflasher\xFlasher.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [DllImport(@"Utility/common\xFlasher\xFlasher.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)] //Changed from @"common\xflasher\xFlasher.dll"
         public static extern int spiGetBlocks();
 
-        [DllImport(@"common\xflasher\xFlasher.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [DllImport(@"Utility/common\xFlasher\xFlasher.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)] //Changed from @"common\xflasher\xFlasher.dll"
         public static extern int spiGetConfig();
 
-        [DllImport(@"common\xflasher\xFlasher.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [DllImport(@"Utility/common\xFlasher\xFlasher.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)] //Changed from @"common\xflasher\xFlasher.dll"
         public static extern void spiStop();
 
-        public string svfPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"SVF\TimingSvfTemp.svf");
-        public string svfRoot = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"SVF");
+        private readonly string baseDir = AppContext.BaseDirectory;
+        //public string svfPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"SVF\TimingSvfTemp.svf");
+        public string svfRoot => Path.Combine(baseDir, "Utility", "common", "xFlasher", "SVF");
+        //public string svfRoot = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"SVF");
+        public string svfPath => Path.Combine(svfRoot, "TimingSvfTemp.svf");
 
         public bool ready = false;
         public bool inUse = false;
         public bool waiting = false;
-        private string flashconf = "";
         private string jtagdevice = "";
         public int selType = 0;
 
@@ -95,7 +97,6 @@ namespace FreeRunner_Flashing_Utility
 
             if (Process.GetProcessesByName("jtag").Length > 0)
             {
-                //Console.WriteLine("xFlasher: SVF software is already running!");
                 main.Instance.Log("xFlasher: SVF software is already running!");
                 return;
             }
@@ -107,7 +108,6 @@ namespace FreeRunner_Flashing_Utility
                     if (!ready)
                     {
                         waiting = true;
-                        //MainForm.mainForm.xFlasherBusy(-2);
                         main.Instance.Log("xFlasher: Waiting for device to become ready");
                     }
                     while (!ready)
@@ -117,13 +117,11 @@ namespace FreeRunner_Flashing_Utility
 
                     if (!File.Exists(filename))
                     {
-                        //Console.WriteLine("xFlasher: File Not Found: {0}", filename);
                         main.Instance.Log($"xFlasher: File Not Found: {filename}");
                         return;
                     }
                     if (Path.GetExtension(filename) != ".svf")
                     {
-                        //Console.WriteLine("xFlasher: Wrong File Type: {0}", filename);
                         main.Instance.Log($"xFlasher: Wrong File Type: {filename}");
                         return;
                     }
@@ -139,18 +137,15 @@ namespace FreeRunner_Flashing_Utility
                     }
                     catch
                     {
-                        //Console.WriteLine("xFlasher: Could not open temporary file for flashing");
                         main.Instance.Log("xFlasher: Could not open temporary file for flashing");
-                        //Console.WriteLine("xFlasher: {0} is locked by another process", svfPath);
                         main.Instance.Log($"xFlasher: {svfPath} is locked by another process");
                         return;
                     }
 
-                    //Console.WriteLine("xFlasher: Flashing {0} via JTAG", Path.GetFileName(filename));
                     main.Instance.Log($"xFlasher: Flashing {Path.GetFileName(filename)} via JTAG");
 
                     Process psi = new Process();
-                    psi.StartInfo.FileName = @"common/xflasher/jtag.exe";
+                    psi.StartInfo.FileName = @"Utility/common/xFlasher/jtag.exe"; //Changed this from common/xflasher/jtag.exe
                     psi.StartInfo.CreateNoWindow = true;
                     psi.StartInfo.UseShellExecute = false;
                     psi.StartInfo.RedirectStandardOutput = true;

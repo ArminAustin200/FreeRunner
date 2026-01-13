@@ -113,6 +113,7 @@
             programBtn = new Button();
             pictureBox1 = new PictureBox();
             label14 = new Label();
+            groupBox5 = new GroupBox();
             progressPanel.SuspendLayout();
             optionsPanel.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -137,6 +138,7 @@
             groupBox1.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // debugConsole
@@ -696,7 +698,7 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(label1);
+            tabPage2.Controls.Add(groupBox5);
             tabPage2.Controls.Add(groupBox4);
             tabPage2.Controls.Add(groupBox3);
             tabPage2.Controls.Add(groupBox2);
@@ -716,7 +718,7 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
-            label1.Location = new Point(147, 395);
+            label1.Location = new Point(0, 15);
             label1.Name = "label1";
             label1.Size = new Size(178, 41);
             label1.TabIndex = 12;
@@ -1263,6 +1265,15 @@
             label14.Text = "Programmer:";
             label14.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(label1);
+            groupBox5.Location = new Point(147, 371);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(180, 65);
+            groupBox5.TabIndex = 22;
+            groupBox5.TabStop = false;
+            // 
             // main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1312,6 +1323,7 @@
             tableLayoutPanel5.ResumeLayout(false);
             tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1401,5 +1413,6 @@
         private RadioButton multiNAND31;
         private RadioButton multiNAND61;
         private RichTextBox debugConsole;
+        private GroupBox groupBox5;
     }
 }

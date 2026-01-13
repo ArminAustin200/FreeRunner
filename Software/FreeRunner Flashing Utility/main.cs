@@ -1,5 +1,6 @@
 ﻿using FreeRunner_Flashing_Utility.Classes;
 using FreeRunner_Flashing_Utility.Properties;
+using JRunner;
 using LibUsbDotNet.WinUsb;
 using Microsoft.VisualBasic.Logging;
 using System.IO;
@@ -18,9 +19,11 @@ namespace FreeRunner_Flashing_Utility
             XFLASHER_SPI = 3,
             XFLASHER_EMMC = 4,
             PICOFLASHER = 5,
+            DIRTYPICO = 6,
         }
 
         public xFlasher xflasher = new xFlasher();
+        public DirtyPico dirtypico = new DirtyPico();
 
         // Windows device-change messages (for USB plug/unplug detection)
         private const int WM_DEVICECHANGE = 0x0219;
@@ -33,7 +36,7 @@ namespace FreeRunner_Flashing_Utility
 
 
         //DEBUG BOOLEAN
-        private bool debug = false;
+        public bool debug = false;
 
         //Creating list to hold all phatTimingButtons
         private List<RadioButton> phatTimingButtons;
@@ -55,7 +58,8 @@ namespace FreeRunner_Flashing_Utility
 
         public DEVICE device = DEVICE.NO_DEVICE;
 
-        private String welcomeText = "Welcome to FreeRunner Flashing Utility!";
+        private String welcomeText = "Welcome to FreeRunner Flashing Utility!\n" +
+                                     "By: ArminAustin200";
 
         public static main Instance {get; private set;}
         public main()
@@ -181,7 +185,7 @@ namespace FreeRunner_Flashing_Utility
                 multiNAND1.Checked = true;
 
                 //Set filename
-                filename = $"maxv_{selected.Text}_{category}";
+                filename = $"maxv_ext_clk_{selected.Text.ToLower()}_{category.ToLower()}.svf";
             }
             else
             {
@@ -239,7 +243,7 @@ namespace FreeRunner_Flashing_Utility
                 filename = filename + $"{selected.Text}_rgh12.svf";
 
                 if (debug)
-                    Log(filename);
+                    Log($"Filename: {filename}");
             }
         }
 
@@ -314,7 +318,7 @@ namespace FreeRunner_Flashing_Utility
                 filename = filename + $"{timing}_rgh12.svf";
 
                 if (debug)
-                    Log(filename);
+                    Log($"Filename: {filename}");
             }
         }
 
@@ -545,8 +549,17 @@ namespace FreeRunner_Flashing_Utility
                     Log($"{device} Connected!");
             }
 
+            else if (IsUsbDeviceConnected("C0CA", "1209")) // DirtyPico
+            {
+                setImage(Properties.Resources.dirtypico);
+                device = DEVICE.DIRTYPICO;
+
+                if (previousDevice != DEVICE.DIRTYPICO)
+                    Log($"{device} Connected!");
+            }
+
             else if (IsUsbDeviceConnected("8338", "11D4"))
-            {  // JR-Programme
+            {  // JR-Programmer
                 setImage(Properties.Resources.jrp);
 
                 if (previousDevice != DEVICE.JR_PROGRAMMER)
@@ -559,7 +572,6 @@ namespace FreeRunner_Flashing_Utility
                 device = DEVICE.XFLASHER_SPI;
                 xflasher.ready = true; // Skip init
 
-                // Only log when we *enter* the xFlasher state
                 if (previousDevice != DEVICE.XFLASHER_SPI)
                     Log($"{device} Connected!");
             }
@@ -648,7 +660,7 @@ namespace FreeRunner_Flashing_Utility
             ///else if (device == DEVICE.DIRTYPICO){
             ///
             /// }
-            /// 
+            
 
             //If SVF Program is attempted with PicoFlasher
             else if (device == DEVICE.PICOFLASHER)
