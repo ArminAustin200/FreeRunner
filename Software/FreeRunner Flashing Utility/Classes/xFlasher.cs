@@ -95,7 +95,8 @@ namespace FreeRunner_Flashing_Utility
 
             if (Process.GetProcessesByName("jtag").Length > 0)
             {
-                Console.WriteLine("xFlasher: SVF software is already running!");
+                //Console.WriteLine("xFlasher: SVF software is already running!");
+                main.Instance.Log("xFlasher: SVF software is already running!");
                 return;
             }
 
@@ -103,12 +104,11 @@ namespace FreeRunner_Flashing_Utility
             {
                 try
                 {
-
                     if (!ready)
                     {
                         waiting = true;
                         //MainForm.mainForm.xFlasherBusy(-2);
-                        Console.WriteLine("xFlasher: Waiting for device to become ready");
+                        main.Instance.Log("xFlasher: Waiting for device to become ready");
                     }
                     while (!ready)
                     {
@@ -117,12 +117,14 @@ namespace FreeRunner_Flashing_Utility
 
                     if (!File.Exists(filename))
                     {
-                        Console.WriteLine("xFlasher: File Not Found: {0}", filename);
+                        //Console.WriteLine("xFlasher: File Not Found: {0}", filename);
+                        main.Instance.Log($"xFlasher: File Not Found: {filename}");
                         return;
                     }
                     if (Path.GetExtension(filename) != ".svf")
                     {
-                        Console.WriteLine("xFlasher: Wrong File Type: {0}", filename);
+                        //Console.WriteLine("xFlasher: Wrong File Type: {0}", filename);
+                        main.Instance.Log($"xFlasher: Wrong File Type: {filename}");
                         return;
                     }
 
@@ -137,12 +139,15 @@ namespace FreeRunner_Flashing_Utility
                     }
                     catch
                     {
-                        Console.WriteLine("xFlasher: Could not open temporary file for flashing");
-                        Console.WriteLine("xFlasher: {0} is locked by another process", svfPath);
+                        //Console.WriteLine("xFlasher: Could not open temporary file for flashing");
+                        main.Instance.Log("xFlasher: Could not open temporary file for flashing");
+                        //Console.WriteLine("xFlasher: {0} is locked by another process", svfPath);
+                        main.Instance.Log($"xFlasher: {svfPath} is locked by another process");
                         return;
                     }
 
-                    Console.WriteLine("xFlasher: Flashing {0} via JTAG", Path.GetFileName(filename));
+                    //Console.WriteLine("xFlasher: Flashing {0} via JTAG", Path.GetFileName(filename));
+                    main.Instance.Log($"xFlasher: Flashing {Path.GetFileName(filename)} via JTAG");
 
                     Process psi = new Process();
                     psi.StartInfo.FileName = @"common/xflasher/jtag.exe";
@@ -184,16 +189,20 @@ namespace FreeRunner_Flashing_Utility
 
                         if (start <= 0 || end <= 0)
                         {
-                            Console.WriteLine("xFlasher: Failed to detect CPLD type");
+                            //Console.WriteLine("xFlasher: Failed to detect CPLD type");
+                            main.Instance.Log("xFlasher: Failed to detect CPLD type");
                         }
                         else
                         {
                             jtagdevice = str.Substring(start, end).Trim().Replace("\r\n", "");
-                            Console.WriteLine("xFlasher: {0} Detected", jtagdevice);
+                            //Console.WriteLine("xFlasher: {0} Detected", jtagdevice);
+                            main.Instance.Log($"xFlasher: {jtagdevice} Detected");
                         }
 
-                        Console.WriteLine("xFlasher: SVF Flash Successful!");
-                        Console.WriteLine("");
+                        //Console.WriteLine("xFlasher: SVF Flash Successful!");
+                        main.Instance.Log("xFlasher: SVF Flash Successful!");
+                        //Console.WriteLine("");
+                        main.Instance.Log("");
 
                         //if (variables.playSuccess)
                         //{
@@ -203,13 +212,17 @@ namespace FreeRunner_Flashing_Utility
                     }
                     else if (strLower.Contains("chain without any parts") == true)
                     {
-                        Console.WriteLine("xFlasher: Could not connect to CPLD");
-                        Console.WriteLine("");
+                        //Console.WriteLine("xFlasher: Could not connect to CPLD");
+                        main.Instance.Log("xFlasher: Could not connect to CPLD");
+                        //Console.WriteLine("");
+                        main.Instance.Log("");
                     }
                     else
                     {
-                        Console.WriteLine("xFlasher: SVF Flash Failed");
-                        Console.WriteLine("");
+                        //Console.WriteLine("xFlasher: SVF Flash Failed");
+                        main.Instance.Log("xFlasher: SVF Flash Failed");
+                        //Console.WriteLine("");
+                        main.Instance.Log("");
                     }
 
                     if (File.Exists(svfPath))
@@ -221,9 +234,11 @@ namespace FreeRunner_Flashing_Utility
                 {
                     inUse = false;
 
-                    Console.WriteLine(ex.Message);
+                    //Console.WriteLine(ex.Message);
+                    main.Instance.Log(ex.Message);
                     //if (variables.debugMode) Console.WriteLine(ex.ToString());
-                    Console.WriteLine("");
+                    //Console.WriteLine("");
+                    main.Instance.Log("");
                 }
             });
             urJtagThread.Start();

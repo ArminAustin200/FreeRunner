@@ -1,6 +1,7 @@
 ﻿using FreeRunner_Flashing_Utility.Classes;
 using FreeRunner_Flashing_Utility.Properties;
 using LibUsbDotNet.WinUsb;
+using Microsoft.VisualBasic.Logging;
 using System.IO;
 using System.Management;
 
@@ -49,13 +50,19 @@ namespace FreeRunner_Flashing_Utility
         //Creating a variable to store the board type
         private string boardType = "";
 
+        //Creating a variable to store the filename
+        private String filename;
+
         public DEVICE device = DEVICE.NO_DEVICE;
 
         private String welcomeText = "Welcome to FreeRunner Flashing Utility!";
+
+        public static main Instance {get; private set;}
         public main()
         {
             //Initializing main window
             InitializeComponent();
+            Instance = this;
 
             //Centering pictureBox1
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -132,12 +139,23 @@ namespace FreeRunner_Flashing_Utility
                 rb.CheckedChanged += checkMultiNAND;
             }
         }
+
         private void TimingRadio_CheckedChanged(object sender, EventArgs e)
         {
             //If the value null or is a currently selected button
             var selected = sender as RadioButton;
             if (selected == null || !selected.Checked)
                 return;
+            //Disable slim board types
+            boardTr.Enabled = false;
+            boardCor.Enabled = false;
+            boardCorWB.Enabled = false;
+
+            //Uncheck all slim buttons
+            foreach (var rb in slimTimingButtons) {
+                if (rb.Checked)
+                    rb.Checked = false; ;
+            }
 
             // Uncheck all other timing radios
             foreach (var rb in phatTimingButtons)
@@ -151,17 +169,47 @@ namespace FreeRunner_Flashing_Utility
 
             if (category.Contains("Xenon") || category.Contains("Zephyr"))
             {
-                Log($"Selected timing file: {category} {selected.Text}");
+                //Disable multi-NAND
+                multiNAND1.Enabled = false;
+                multiNAND2.Enabled = false;
+                multiNAND3.Enabled = false;
+                multiNAND4.Enabled = false;
+                multiNAND5.Enabled = false;
+                multiNAND6.Enabled = false;
+
+                //Forcing no multi-NAND
+                multiNAND1.Checked = true;
+
+                //Set filename
+                filename = $"maxv_{selected.Text}_{category}";
             }
             else
             {
-                Log($"Selected timing file: {category} {selected.Text}");
-            }
-        }
+                //Enable multi-NAND
+                multiNAND1.Enabled = true;
+                multiNAND2.Enabled = true;
+                multiNAND3.Enabled = true;
+                multiNAND4.Enabled = true;
+                multiNAND5.Enabled = true;
+                multiNAND6.Enabled = true;
 
+                //Set filename
+                filename = "maxv_fj_" + selected.Text +"_rgh12.svf";
+            }
+
+            if(debug)
+                Log($"Filename: {filename}");
+        }
 
         private void SlimTimingRadio_CheckChanged(object sender, EventArgs e)
         {
+            //Uncheck all phat buttons
+            foreach (var rb in phatTimingButtons)
+            {
+                if (rb.Checked)
+                    rb.Checked = false; ;
+            }
+
             var selected = sender as RadioButton;
             //If the value null or is a currently selected button
             if (selected == null || !selected.Checked)
@@ -169,14 +217,29 @@ namespace FreeRunner_Flashing_Utility
 
             else
             {
+                //Enabling board type buttons
                 boardTr.Enabled = true;
                 boardCor.Enabled = true;
                 boardCorWB.Enabled = true;
 
-                string category = selected.Tag?.ToString() ?? "Uknown";
                 string timing = selected.Text;
 
-                Log($"Selected timing file: {category} {selected.Text}");
+                //Setting filename
+                if (boardType.Equals("Trinity"))
+                {
+                    filename = "maxv_tr_";
+                }
+                else if (boardType.Equals("Corona"))
+                {
+                    filename = "maxv_cr_";
+                }
+                else 
+                    filename = "maxv_cr_wb_";
+
+                filename = filename + $"{selected.Text}_rgh12.svf";
+
+                if (debug)
+                    Log(filename);
             }
         }
 
@@ -187,7 +250,6 @@ namespace FreeRunner_Flashing_Utility
             //If the value null or is a currently selected button
             if (selected == null || !selected.Checked)
                 return;
-
 
             //If the None button is selected
             if (selected.Text == "None")
@@ -213,9 +275,8 @@ namespace FreeRunner_Flashing_Utility
             }
 
             if (debug)
-            {
                 Log("Multi-NAND: " + multiNAND);
-            }
+            
         }
 
         private void boardTypeSelect(object sender, EventArgs e)
@@ -230,10 +291,30 @@ namespace FreeRunner_Flashing_Utility
             {
                 boardType = selected.Text;
 
-                if (debug)
-                {
-                    Log("Board Type: " + boardType);
+                String timing = "";
+
+                foreach (var rb in slimTimingButtons) {
+                    if (rb.Checked) { 
+                        timing = rb.Text;
+                    }
                 }
+
+                //Setting filename
+                if (boardType.Equals("Trinity"))
+                {
+                    filename = "maxv_tr_";
+                }
+                else if (boardType.Equals("Corona"))
+                {
+                    filename = "maxv_cr_";
+                }
+                else
+                    filename = "maxv_cr_wb_";
+
+                filename = filename + $"{timing}_rgh12.svf";
+
+                if (debug)
+                    Log(filename);
             }
         }
 
@@ -256,7 +337,7 @@ namespace FreeRunner_Flashing_Utility
         }
 
         //Creating log updater method
-        private void Log(String message)
+        public void Log(String message)
         {
             debugConsole.AppendText(message + Environment.NewLine);
             debugConsole.ScrollToCaret();
@@ -296,12 +377,12 @@ namespace FreeRunner_Flashing_Utility
 
             try
             {
-                // you decide how you store currentRevision
-                int currentRevision = 1;
+                //Current program revision
+                int currentVersion = 1;
 
                 await update.CheckAndUpdateFullAsync(
                     "https://raw.githubusercontent.com/ArminAustin200/FreeRunner-Flash-Utility-Updater/refs/heads/main/autoupdate.json", //Update JSON URL
-                    currentRevision,
+                    currentVersion,
                     onProgress: p => UpdateProgress(p),
                     onStatus: msg => Log(msg)
                 );

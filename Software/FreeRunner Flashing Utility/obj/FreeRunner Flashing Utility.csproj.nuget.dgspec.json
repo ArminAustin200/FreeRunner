@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj": {}
+    "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj": {}
   },
   "projects": {
-    "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj": {
+    "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
+        "projectUniqueName": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
         "projectName": "FreeRunner Flashing Utility",
-        "projectPath": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
-        "packagesPath": "C:\\Users\\Austin\\.nuget\\packages\\",
-        "outputPath": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\obj\\",
+        "projectPath": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
+        "packagesPath": "C:\\Users\\Armin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Austin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Armin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -90,7 +90,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
