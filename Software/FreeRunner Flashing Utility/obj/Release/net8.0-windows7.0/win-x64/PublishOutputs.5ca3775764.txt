@@ -1,0 +1,2 @@
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\win-x64\FreeRunner Flashing Utility.pdb
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\win-x64\FreeRunner Flashing Utility.exe

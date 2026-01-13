@@ -2,11 +2,9 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.IO.Compression;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace FreeRunner_Flashing_Utility.Classes
 {
@@ -63,7 +61,7 @@ namespace FreeRunner_Flashing_Utility.Classes
                 await wc.DownloadFileTaskAsync(new Uri(manifest.zipUrl), zipPath);
             }
 
-            // MD5 check (matches J-Runner behavior) :contentReference[oaicite:4]{index=4}
+            // MD5 check 
             if (!string.IsNullOrWhiteSpace(manifest.md5))
             {
                 onStatus?.Invoke("Verifying package...");

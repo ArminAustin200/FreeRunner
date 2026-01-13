@@ -1,0 +1,13 @@
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\FreeRunner Flashing Utility.exe
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\FreeRunner Flashing Utility.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\FreeRunner Flashing Utility.deps.json
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\FreeRunner Flashing Utility.runtimeconfig.json
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\FreeRunner Flashing Utility.pdb
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\DeviceProgramming.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\Huddly.LibUsbDotNet.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\Ionic.Zip.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\LibUsbDfu.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\LibUsbDotNet.LibUsbDotNet.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\System.CodeDom.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\System.Management.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\publish\runtimes\win\lib\net8.0\System.Management.dll

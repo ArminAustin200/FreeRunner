@@ -54,9 +54,12 @@ namespace FreeRunner_Flashing_Utility
         private String welcomeText = "Welcome to FreeRunner Flashing Utility!";
         public main()
         {
+            //Initializing main window
             InitializeComponent();
+
             //Centering pictureBox1
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
 
             // Timer to debounce / delay USB rescans after plug events
             usbChangeTimer = new System.Windows.Forms.Timer();
@@ -68,9 +71,7 @@ namespace FreeRunner_Flashing_Utility
             };
 
             //Clearing the console
-            debugConsole.Clear();
-
-            //debugConsole.AppendText("Welcome to FreeRunner Flashing Utility!" + Environment.NewLine);
+            Log_Clear();
 
             //Setting min value
             progressBar1.Minimum = 0;
@@ -261,19 +262,18 @@ namespace FreeRunner_Flashing_Utility
             debugConsole.ScrollToCaret();
         }
 
-        private void progressPanel_Click_1(object sender, EventArgs e)
-        {
-            UpdateProgress(100);
+        //Creating log clear method
+        private void Log_Clear() { 
+            debugConsole.Clear();
         }
 
         private void clrBtn_Click(object sender, EventArgs e)
         {
             //Clearing the console
-            debugConsole.Clear();
+            Log_Clear();
 
             //Resetting welcome text
             Log(welcomeText);
-            //debugConsole.AppendText("Welcome to FreeRunner Flashing Utility!" + Environment.NewLine);
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -292,21 +292,30 @@ namespace FreeRunner_Flashing_Utility
 
         private async void main_Load(object sender, EventArgs e)
         {
+            bool updFail = false;
+
             try
             {
                 // you decide how you store currentRevision
-                int currentRevision = 100;
+                int currentRevision = 1;
 
                 await update.CheckAndUpdateFullAsync(
-                    "https://raw.githubusercontent.com/USER/REPO/main/update.json",
+                    "https://raw.githubusercontent.com/ArminAustin200/FreeRunner-Flash-Utility-Updater/refs/heads/main/autoupdate.json", //Update JSON URL
                     currentRevision,
-                    onProgress: p => progressBar1.Value = p,
-                    onStatus: msg => debugConsole.AppendText(msg + Environment.NewLine)
+                    onProgress: p => UpdateProgress(p),
+                    onStatus: msg => Log(msg)
                 );
             }
             catch (Exception ex)
             {
-                Log("Update Failed: "+ ex.Message);
+                Log("Update Failed: " + ex.Message);
+
+                updFail = true;
+            }
+
+            if (!updFail) {
+                await Task.Delay(1000);
+                Log_Clear();
             }
 
             //Resetting welcome text
@@ -435,8 +444,10 @@ namespace FreeRunner_Flashing_Utility
             device = DEVICE.NO_DEVICE;
 
             //If a valid device was unplugged
-            if (previousDevice != DEVICE.NO_DEVICE && device == DEVICE.NO_DEVICE) {
-                if (debug) {
+            if (previousDevice != DEVICE.NO_DEVICE && device == DEVICE.NO_DEVICE)
+            {
+                if (debug)
+                {
                     Log($"{previousDevice} disconnected!");
                 }
 
@@ -450,14 +461,15 @@ namespace FreeRunner_Flashing_Utility
                 device = DEVICE.PICOFLASHER;
 
                 if (previousDevice != DEVICE.PICOFLASHER)
-                    Log("PicoFlasher Connected!");
+                    Log($"{device} Connected!");
             }
 
-            else if (IsUsbDeviceConnected("8338", "11D4")) {  // JR-Programme
+            else if (IsUsbDeviceConnected("8338", "11D4"))
+            {  // JR-Programme
                 setImage(Properties.Resources.jrp);
 
                 if (previousDevice != DEVICE.JR_PROGRAMMER)
-                    Log("JRP Connected!");
+                    Log($"{device} Connected!");
 
             }
             else if (IsUsbDeviceConnected("6010", "0403")) // xFlasher SPI
@@ -468,7 +480,7 @@ namespace FreeRunner_Flashing_Utility
 
                 // Only log when we *enter* the xFlasher state
                 if (previousDevice != DEVICE.XFLASHER_SPI)
-                    Log("XFlasher Connected!");
+                    Log($"{device} Connected!");
             }
             else if (IsUsbDeviceConnected("8334", "11D4")) // JR-Programmer Bootloader
             {
@@ -476,7 +488,7 @@ namespace FreeRunner_Flashing_Utility
                 device = DEVICE.JR_PROGRAMMER_BOOTLOADER;
 
                 if (previousDevice != DEVICE.JR_PROGRAMMER_BOOTLOADER)
-                    Log("JRP-Bootloader Connected!");
+                    Log($"{device} Connected!");
             }
 
             if (device == DEVICE.NO_DEVICE) // Must check this after everything else
@@ -486,8 +498,8 @@ namespace FreeRunner_Flashing_Utility
                     setImage(Properties.Resources.xflash_emmc); //Update the image to xFlasher eMMC
                     device = DEVICE.XFLASHER_EMMC;
 
-                    if(previousDevice != DEVICE.XFLASHER_EMMC)
-                        Log("XFlasher eMMC Connected!");
+                    if (previousDevice != DEVICE.XFLASHER_EMMC)
+                        Log($"{device} Connected!");
                 }
             }
 
@@ -528,43 +540,53 @@ namespace FreeRunner_Flashing_Utility
             }
         }
 
-        private void setImage(Image m) {
+        private void setImage(Image m)
+        {
             pictureBox1.Image = m;
         }
-        int count = 0;
-        private void pictureBox1_Click(object sender, EventArgs e)
+
+        private void programBtn_pressed(object sender, EventArgs e)
         {
-            if (count == 0) {
-                pictureBox1.Image = Properties.Resources.jrp;
-            }
-
-            if (count == 1) {
-                pictureBox1.Image = Properties.Resources.nandx;
-            }
-
-            if (count == 2)
+            //If a SVF Program is attempted in eMMC mode (xFlasher_eMMC)
+            if (device == DEVICE.XFLASHER_EMMC)
             {
-                pictureBox1.Image = Properties.Resources.xflash_spi;
+                MessageBox.Show(
+                    "Please switch to SPI mode before continuing.",
+                    "Wrong Mode Selected",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
 
-            if (count == 3)
+            //If SVF Program is attempted with xFlasher
+            else if (device == DEVICE.XFLASHER_SPI)
             {
-                pictureBox1.Image = Properties.Resources.xflash_emmc;
+              
             }
 
-            if (count == 4)
+            ///////ADD DIRTYPICO SUPPORT AS WELL\\\\\\\\\\\
+            ///else if (device == DEVICE.DIRTYPICO){
+            ///
+            /// }
+            /// 
+
+            //If SVF Program is attempted with PicoFlasher
+            else if (device == DEVICE.PICOFLASHER)
             {
-                pictureBox1.Image = Properties.Resources.picoflasher;
-                count = -1;
+                MessageBox.Show(
+                    "PicoFlasher firmware is not supported. Please use DirtyPico360 firmware instead.",
+                    "Unsupported Flasher Detected!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
 
-            count++;
-
-            //MessageBox.Show(
-            //    "STOP CLICKING ME!!!!!",
-            //    "You're Annoying",
-            //    MessageBoxButtons.OK,
-            //    MessageBoxIcon.Warning);
+            //If SVF Program is attempted with JRP or NANDX 
+            else if (device == DEVICE.JR_PROGRAMMER || device == DEVICE.NAND_X) { 
+                MessageBox.Show(
+                    "The JR-Programmer/NAND-X are not yet supported, but don't worry, we're working on adding support for those very soon :)",
+                    "Unsupported Flasher Detected!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
         }
     }
 }

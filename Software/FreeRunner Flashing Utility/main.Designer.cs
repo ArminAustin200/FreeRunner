@@ -110,7 +110,7 @@
             exitButton1 = new Button();
             clearButton1 = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            button1 = new Button();
+            programBtn = new Button();
             pictureBox1 = new PictureBox();
             label14 = new Label();
             progressPanel.SuspendLayout();
@@ -144,12 +144,11 @@
             debugConsole.BackColor = SystemColors.ActiveCaptionText;
             debugConsole.Font = new Font("Consolas", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             debugConsole.ForeColor = SystemColors.Window;
-            debugConsole.Location = new Point(14, 185);
-            debugConsole.Margin = new Padding(3, 4, 3, 4);
+            debugConsole.Location = new Point(12, 139);
             debugConsole.Name = "debugConsole";
             debugConsole.ReadOnly = true;
             debugConsole.ScrollBars = RichTextBoxScrollBars.Vertical;
-            debugConsole.Size = new Size(545, 397);
+            debugConsole.Size = new Size(477, 299);
             debugConsole.TabIndex = 0;
             debugConsole.Text = "";
             // 
@@ -161,45 +160,42 @@
             progressPanel.ColumnStyles.Add(new ColumnStyle());
             progressPanel.Controls.Add(labelPercent, 1, 0);
             progressPanel.Controls.Add(progressBar1, 0, 0);
-            progressPanel.Location = new Point(14, 141);
-            progressPanel.Margin = new Padding(3, 4, 3, 4);
+            progressPanel.Location = new Point(12, 106);
             progressPanel.Name = "progressPanel";
             progressPanel.RowCount = 1;
-            progressPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            progressPanel.Size = new Size(545, 36);
+            progressPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            progressPanel.Size = new Size(477, 27);
             progressPanel.TabIndex = 6;
-            progressPanel.Click += progressPanel_Click_1;
+          
             // 
             // labelPercent
             // 
             labelPercent.AutoSize = true;
             labelPercent.Dock = DockStyle.Right;
             labelPercent.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelPercent.Location = new Point(513, 0);
+            labelPercent.Location = new Point(451, 0);
             labelPercent.Name = "labelPercent";
-            labelPercent.Padding = new Padding(0, 7, 0, 0);
-            labelPercent.Size = new Size(29, 36);
+            labelPercent.Padding = new Padding(0, 5, 0, 0);
+            labelPercent.Size = new Size(23, 27);
             labelPercent.TabIndex = 6;
             labelPercent.Text = "0%";
             // 
             // progressBar1
             // 
             progressBar1.Dock = DockStyle.Left;
-            progressBar1.Location = new Point(3, 4);
-            progressBar1.Margin = new Padding(3, 4, 3, 4);
+            progressBar1.Location = new Point(3, 3);
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(498, 28);
+            progressBar1.Size = new Size(436, 21);
             progressBar1.TabIndex = 5;
             // 
             // optionsPanel
             // 
             optionsPanel.Controls.Add(tabPage1);
             optionsPanel.Controls.Add(tabPage2);
-            optionsPanel.Location = new Point(566, 8);
-            optionsPanel.Margin = new Padding(3, 4, 3, 4);
+            optionsPanel.Location = new Point(495, 6);
             optionsPanel.Name = "optionsPanel";
             optionsPanel.SelectedIndex = 0;
-            optionsPanel.Size = new Size(344, 585);
+            optionsPanel.Size = new Size(301, 439);
             optionsPanel.TabIndex = 7;
             // 
             // tabPage1
@@ -211,11 +207,11 @@
             tabPage1.Controls.Add(exitButton);
             tabPage1.Controls.Add(clearButton);
             tabPage1.Controls.Add(tableLayoutPanel8);
-            tabPage1.Location = new Point(4, 29);
+            tabPage1.Location = new Point(4, 24);
             tabPage1.Margin = new Padding(1);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(336, 552);
+            tabPage1.Padding = new Padding(3, 2, 3, 2);
+            tabPage1.Size = new Size(293, 411);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Phat Timings";
             tabPage1.UseVisualStyleBackColor = true;
@@ -223,9 +219,9 @@
             // label5
             // 
             label5.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
-            label5.Location = new Point(147, 394);
+            label5.Location = new Point(129, 296);
             label5.Name = "label5";
-            label5.Size = new Size(178, 41);
+            label5.Size = new Size(156, 31);
             label5.TabIndex = 5;
             label5.Text = "Select None if you are not using NAND-wich";
             label5.TextAlign = ContentAlignment.TopCenter;
@@ -233,11 +229,9 @@
             // nandSelection
             // 
             nandSelection.Controls.Add(tableLayoutPanel3);
-            nandSelection.Location = new Point(10, 430);
-            nandSelection.Margin = new Padding(3, 4, 3, 4);
+            nandSelection.Location = new Point(9, 322);
             nandSelection.Name = "nandSelection";
-            nandSelection.Padding = new Padding(3, 4, 3, 4);
-            nandSelection.Size = new Size(315, 71);
+            nandSelection.Size = new Size(276, 53);
             nandSelection.TabIndex = 3;
             nandSelection.TabStop = false;
             nandSelection.Text = "Multi-NAND";
@@ -245,33 +239,31 @@
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.ColumnCount = 6;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 75F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 75F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 66F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 66F));
             tableLayoutPanel3.Controls.Add(multiNAND5, 4, 0);
             tableLayoutPanel3.Controls.Add(multiNAND1, 0, 0);
             tableLayoutPanel3.Controls.Add(multiNAND4, 3, 0);
             tableLayoutPanel3.Controls.Add(multiNAND2, 1, 0);
             tableLayoutPanel3.Controls.Add(multiNAND3, 2, 0);
             tableLayoutPanel3.Controls.Add(multiNAND6, 5, 0);
-            tableLayoutPanel3.Location = new Point(6, 28);
-            tableLayoutPanel3.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel3.Location = new Point(5, 21);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel3.Size = new Size(305, 40);
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel3.Size = new Size(267, 30);
             tableLayoutPanel3.TabIndex = 0;
             // 
             // multiNAND5
             // 
             multiNAND5.AutoSize = true;
-            multiNAND5.Location = new Point(198, 4);
-            multiNAND5.Margin = new Padding(3, 4, 3, 4);
+            multiNAND5.Location = new Point(174, 3);
             multiNAND5.Name = "multiNAND5";
-            multiNAND5.Size = new Size(34, 24);
+            multiNAND5.Size = new Size(29, 19);
             multiNAND5.TabIndex = 4;
             multiNAND5.Text = "5";
             multiNAND5.UseVisualStyleBackColor = true;
@@ -280,10 +272,9 @@
             // 
             multiNAND1.AutoSize = true;
             multiNAND1.Checked = true;
-            multiNAND1.Location = new Point(3, 4);
-            multiNAND1.Margin = new Padding(3, 4, 3, 4);
+            multiNAND1.Location = new Point(3, 3);
             multiNAND1.Name = "multiNAND1";
-            multiNAND1.Size = new Size(66, 24);
+            multiNAND1.Size = new Size(54, 19);
             multiNAND1.TabIndex = 0;
             multiNAND1.TabStop = true;
             multiNAND1.Text = "None";
@@ -292,10 +283,9 @@
             // multiNAND4
             // 
             multiNAND4.AutoSize = true;
-            multiNAND4.Location = new Point(158, 4);
-            multiNAND4.Margin = new Padding(3, 4, 3, 4);
+            multiNAND4.Location = new Point(139, 3);
             multiNAND4.Name = "multiNAND4";
-            multiNAND4.Size = new Size(34, 24);
+            multiNAND4.Size = new Size(29, 19);
             multiNAND4.TabIndex = 3;
             multiNAND4.Text = "4";
             multiNAND4.UseVisualStyleBackColor = true;
@@ -303,10 +293,9 @@
             // multiNAND2
             // 
             multiNAND2.AutoSize = true;
-            multiNAND2.Location = new Point(78, 4);
-            multiNAND2.Margin = new Padding(3, 4, 3, 4);
+            multiNAND2.Location = new Point(69, 3);
             multiNAND2.Name = "multiNAND2";
-            multiNAND2.Size = new Size(34, 24);
+            multiNAND2.Size = new Size(29, 19);
             multiNAND2.TabIndex = 1;
             multiNAND2.Text = "2";
             multiNAND2.UseVisualStyleBackColor = true;
@@ -314,10 +303,9 @@
             // multiNAND3
             // 
             multiNAND3.AutoSize = true;
-            multiNAND3.Location = new Point(118, 4);
-            multiNAND3.Margin = new Padding(3, 4, 3, 4);
+            multiNAND3.Location = new Point(104, 3);
             multiNAND3.Name = "multiNAND3";
-            multiNAND3.Size = new Size(34, 24);
+            multiNAND3.Size = new Size(29, 19);
             multiNAND3.TabIndex = 2;
             multiNAND3.Text = "3";
             multiNAND3.UseVisualStyleBackColor = true;
@@ -325,10 +313,9 @@
             // multiNAND6
             // 
             multiNAND6.AutoSize = true;
-            multiNAND6.Location = new Point(238, 4);
-            multiNAND6.Margin = new Padding(3, 4, 3, 4);
+            multiNAND6.Location = new Point(209, 3);
             multiNAND6.Name = "multiNAND6";
-            multiNAND6.Size = new Size(62, 24);
+            multiNAND6.Size = new Size(51, 19);
             multiNAND6.TabIndex = 5;
             multiNAND6.TabStop = true;
             multiNAND6.Text = "MAX";
@@ -338,9 +325,9 @@
             // 
             label6.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
             label6.ForeColor = SystemColors.ControlText;
-            label6.Location = new Point(11, 315);
+            label6.Location = new Point(10, 236);
             label6.Name = "label6";
-            label6.Size = new Size(105, 45);
+            label6.Size = new Size(92, 34);
             label6.TabIndex = 6;
             label6.Text = "Recommended Timing: 18-21 for RGH1.2";
             label6.TextAlign = ContentAlignment.TopCenter;
@@ -351,12 +338,13 @@
             tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel9.Controls.Add(label8, 0, 0);
             tableLayoutPanel9.Controls.Add(fjTimings, 0, 1);
-            tableLayoutPanel9.Location = new Point(3, 3);
+            tableLayoutPanel9.Location = new Point(3, 2);
+            tableLayoutPanel9.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel9.Name = "tableLayoutPanel9";
             tableLayoutPanel9.RowCount = 2;
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Absolute, 285F));
-            tableLayoutPanel9.Size = new Size(120, 310);
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Absolute, 19F));
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Absolute, 214F));
+            tableLayoutPanel9.Size = new Size(105, 232);
             tableLayoutPanel9.TabIndex = 12;
             // 
             // label8
@@ -364,7 +352,7 @@
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             label8.Location = new Point(3, 0);
             label8.Name = "label8";
-            label8.Size = new Size(112, 23);
+            label8.Size = new Size(98, 17);
             label8.TabIndex = 8;
             label8.Text = "RGH1.2 Timings";
             label8.TextAlign = ContentAlignment.TopCenter;
@@ -374,11 +362,9 @@
             fjTimings.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             fjTimings.Controls.Add(tableLayoutPanel1);
             fjTimings.Font = new Font("Segoe UI", 9F);
-            fjTimings.Location = new Point(3, 29);
-            fjTimings.Margin = new Padding(3, 4, 3, 4);
+            fjTimings.Location = new Point(3, 22);
             fjTimings.Name = "fjTimings";
-            fjTimings.Padding = new Padding(3, 4, 3, 4);
-            fjTimings.Size = new Size(112, 277);
+            fjTimings.Size = new Size(98, 208);
             fjTimings.TabIndex = 1;
             fjTimings.TabStop = false;
             fjTimings.Text = "Falcon/Jasper";
@@ -398,29 +384,27 @@
             tableLayoutPanel1.Controls.Add(rbFJ18, 0, 1);
             tableLayoutPanel1.Controls.Add(rbFJ17, 0, 0);
             tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
-            tableLayoutPanel1.Location = new Point(26, 29);
-            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel1.Location = new Point(23, 22);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 8;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel1.Size = new Size(58, 245);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel1.Size = new Size(51, 184);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // rbFJ24
             // 
             rbFJ24.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             rbFJ24.AutoSize = true;
-            rbFJ24.Location = new Point(6, 221);
-            rbFJ24.Margin = new Padding(3, 4, 3, 4);
+            rbFJ24.Location = new Point(7, 164);
             rbFJ24.Name = "rbFJ24";
-            rbFJ24.Size = new Size(46, 23);
+            rbFJ24.Size = new Size(37, 17);
             rbFJ24.TabIndex = 7;
             rbFJ24.TabStop = true;
             rbFJ24.Tag = "Falcon/Jasper";
@@ -431,10 +415,9 @@
             // 
             rbFJ23.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             rbFJ23.AutoSize = true;
-            rbFJ23.Location = new Point(6, 190);
-            rbFJ23.Margin = new Padding(3, 4, 3, 4);
+            rbFJ23.Location = new Point(7, 141);
             rbFJ23.Name = "rbFJ23";
-            rbFJ23.Size = new Size(46, 23);
+            rbFJ23.Size = new Size(37, 17);
             rbFJ23.TabIndex = 6;
             rbFJ23.TabStop = true;
             rbFJ23.Tag = "Falcon/Jasper";
@@ -445,10 +428,9 @@
             // 
             rbFJ22.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             rbFJ22.AutoSize = true;
-            rbFJ22.Location = new Point(6, 159);
-            rbFJ22.Margin = new Padding(3, 4, 3, 4);
+            rbFJ22.Location = new Point(7, 118);
             rbFJ22.Name = "rbFJ22";
-            rbFJ22.Size = new Size(46, 23);
+            rbFJ22.Size = new Size(37, 17);
             rbFJ22.TabIndex = 5;
             rbFJ22.TabStop = true;
             rbFJ22.Tag = "Falcon/Jasper";
@@ -459,10 +441,9 @@
             // 
             rbFJ21.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             rbFJ21.AutoSize = true;
-            rbFJ21.Location = new Point(6, 128);
-            rbFJ21.Margin = new Padding(3, 4, 3, 4);
+            rbFJ21.Location = new Point(7, 95);
             rbFJ21.Name = "rbFJ21";
-            rbFJ21.Size = new Size(46, 23);
+            rbFJ21.Size = new Size(37, 17);
             rbFJ21.TabIndex = 4;
             rbFJ21.TabStop = true;
             rbFJ21.Tag = "Falcon/Jasper";
@@ -473,10 +454,9 @@
             // 
             rbFJ20.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             rbFJ20.AutoSize = true;
-            rbFJ20.Location = new Point(6, 97);
-            rbFJ20.Margin = new Padding(3, 4, 3, 4);
+            rbFJ20.Location = new Point(7, 72);
             rbFJ20.Name = "rbFJ20";
-            rbFJ20.Size = new Size(46, 23);
+            rbFJ20.Size = new Size(37, 17);
             rbFJ20.TabIndex = 3;
             rbFJ20.TabStop = true;
             rbFJ20.Tag = "Falcon/Jasper";
@@ -487,10 +467,9 @@
             // 
             rbFJ19.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             rbFJ19.AutoSize = true;
-            rbFJ19.Location = new Point(6, 66);
-            rbFJ19.Margin = new Padding(3, 4, 3, 4);
+            rbFJ19.Location = new Point(7, 49);
             rbFJ19.Name = "rbFJ19";
-            rbFJ19.Size = new Size(46, 23);
+            rbFJ19.Size = new Size(37, 17);
             rbFJ19.TabIndex = 2;
             rbFJ19.TabStop = true;
             rbFJ19.Tag = "Falcon/Jasper";
@@ -501,10 +480,9 @@
             // 
             rbFJ18.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             rbFJ18.AutoSize = true;
-            rbFJ18.Location = new Point(6, 35);
-            rbFJ18.Margin = new Padding(3, 4, 3, 4);
+            rbFJ18.Location = new Point(7, 26);
             rbFJ18.Name = "rbFJ18";
-            rbFJ18.Size = new Size(46, 23);
+            rbFJ18.Size = new Size(37, 17);
             rbFJ18.TabIndex = 1;
             rbFJ18.TabStop = true;
             rbFJ18.Tag = "Falcon/Jasper";
@@ -515,10 +493,9 @@
             // 
             rbFJ17.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             rbFJ17.AutoSize = true;
-            rbFJ17.Location = new Point(6, 4);
-            rbFJ17.Margin = new Padding(3, 4, 3, 4);
+            rbFJ17.Location = new Point(7, 3);
             rbFJ17.Name = "rbFJ17";
-            rbFJ17.Size = new Size(46, 23);
+            rbFJ17.Size = new Size(37, 17);
             rbFJ17.TabIndex = 0;
             rbFJ17.TabStop = true;
             rbFJ17.Tag = "Falcon/Jasper";
@@ -527,10 +504,9 @@
             // 
             // exitButton
             // 
-            exitButton.Location = new Point(96, 509);
-            exitButton.Margin = new Padding(3, 4, 3, 4);
+            exitButton.Location = new Point(84, 382);
             exitButton.Name = "exitButton";
-            exitButton.Size = new Size(86, 31);
+            exitButton.Size = new Size(75, 23);
             exitButton.TabIndex = 10;
             exitButton.Text = "Exit";
             exitButton.UseVisualStyleBackColor = true;
@@ -538,10 +514,9 @@
             // 
             // clearButton
             // 
-            clearButton.Location = new Point(3, 509);
-            clearButton.Margin = new Padding(3, 4, 3, 4);
+            clearButton.Location = new Point(3, 382);
             clearButton.Name = "clearButton";
-            clearButton.Size = new Size(86, 31);
+            clearButton.Size = new Size(75, 23);
             clearButton.TabIndex = 9;
             clearButton.Text = "Clear";
             clearButton.UseVisualStyleBackColor = true;
@@ -554,13 +529,14 @@
             tableLayoutPanel8.Controls.Add(label7, 0, 0);
             tableLayoutPanel8.Controls.Add(xenonTimings, 0, 1);
             tableLayoutPanel8.Controls.Add(zephyrTimings, 0, 2);
-            tableLayoutPanel8.Location = new Point(223, 3);
+            tableLayoutPanel8.Location = new Point(195, 2);
+            tableLayoutPanel8.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
             tableLayoutPanel8.RowCount = 3;
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 125F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 125F));
-            tableLayoutPanel8.Size = new Size(110, 275);
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 19F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 94F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 94F));
+            tableLayoutPanel8.Size = new Size(96, 206);
             tableLayoutPanel8.TabIndex = 3;
             // 
             // label7
@@ -568,7 +544,7 @@
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             label7.Location = new Point(3, 0);
             label7.Name = "label7";
-            label7.Size = new Size(98, 20);
+            label7.Size = new Size(86, 15);
             label7.TabIndex = 7;
             label7.Text = "EXT_CLK";
             label7.TextAlign = ContentAlignment.TopCenter;
@@ -577,11 +553,9 @@
             // 
             xenonTimings.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             xenonTimings.Controls.Add(tableLayoutPanel2);
-            xenonTimings.Location = new Point(3, 29);
-            xenonTimings.Margin = new Padding(3, 4, 3, 4);
+            xenonTimings.Location = new Point(3, 22);
             xenonTimings.Name = "xenonTimings";
-            xenonTimings.Padding = new Padding(3, 4, 3, 4);
-            xenonTimings.Size = new Size(104, 110);
+            xenonTimings.Size = new Size(90, 82);
             xenonTimings.TabIndex = 2;
             xenonTimings.TabStop = false;
             xenonTimings.Text = "Xenon";
@@ -593,22 +567,22 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(rbX_96, 0, 0);
             tableLayoutPanel2.Controls.Add(rbX_192, 0, 1);
-            tableLayoutPanel2.Location = new Point(5, 23);
-            tableLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel2.Location = new Point(4, 17);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel2.Size = new Size(95, 80);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel2.Size = new Size(83, 60);
             tableLayoutPanel2.TabIndex = 0;
             // 
             // rbX_96
             // 
             rbX_96.AutoSize = true;
-            rbX_96.Location = new Point(3, 3);
+            rbX_96.Location = new Point(3, 2);
+            rbX_96.Margin = new Padding(3, 2, 3, 2);
             rbX_96.Name = "rbX_96";
-            rbX_96.Padding = new Padding(0, 3, 0, 0);
-            rbX_96.Size = new Size(77, 27);
+            rbX_96.Padding = new Padding(0, 2, 0, 0);
+            rbX_96.Size = new Size(62, 21);
             rbX_96.TabIndex = 0;
             rbX_96.TabStop = true;
             rbX_96.Tag = "Xenon";
@@ -618,10 +592,11 @@
             // rbX_192
             // 
             rbX_192.AutoSize = true;
-            rbX_192.Location = new Point(3, 43);
+            rbX_192.Location = new Point(3, 32);
+            rbX_192.Margin = new Padding(3, 2, 3, 2);
             rbX_192.Name = "rbX_192";
-            rbX_192.Padding = new Padding(0, 3, 0, 0);
-            rbX_192.Size = new Size(85, 27);
+            rbX_192.Padding = new Padding(0, 2, 0, 0);
+            rbX_192.Size = new Size(68, 21);
             rbX_192.TabIndex = 1;
             rbX_192.TabStop = true;
             rbX_192.Tag = "Xenon";
@@ -632,11 +607,9 @@
             // 
             zephyrTimings.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             zephyrTimings.Controls.Add(tableLayoutPanel4);
-            zephyrTimings.Location = new Point(3, 154);
-            zephyrTimings.Margin = new Padding(3, 4, 3, 4);
+            zephyrTimings.Location = new Point(3, 116);
             zephyrTimings.Name = "zephyrTimings";
-            zephyrTimings.Padding = new Padding(3, 4, 3, 4);
-            zephyrTimings.Size = new Size(104, 110);
+            zephyrTimings.Size = new Size(90, 82);
             zephyrTimings.TabIndex = 4;
             zephyrTimings.TabStop = false;
             zephyrTimings.Text = "Zephyr";
@@ -649,24 +622,24 @@
             tableLayoutPanel4.Controls.Add(rbZ_96, 0, 0);
             tableLayoutPanel4.Controls.Add(rbZ_192, 0, 1);
             tableLayoutPanel4.Controls.Add(splitContainer1, 0, 2);
-            tableLayoutPanel4.Location = new Point(5, 23);
-            tableLayoutPanel4.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel4.Location = new Point(4, 17);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 4;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel4.Size = new Size(95, 80);
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel4.Size = new Size(83, 60);
             tableLayoutPanel4.TabIndex = 0;
             // 
             // rbZ_96
             // 
             rbZ_96.AutoSize = true;
-            rbZ_96.Location = new Point(3, 3);
+            rbZ_96.Location = new Point(3, 2);
+            rbZ_96.Margin = new Padding(3, 2, 3, 2);
             rbZ_96.Name = "rbZ_96";
-            rbZ_96.Padding = new Padding(0, 3, 0, 0);
-            rbZ_96.Size = new Size(77, 27);
+            rbZ_96.Padding = new Padding(0, 2, 0, 0);
+            rbZ_96.Size = new Size(62, 21);
             rbZ_96.TabIndex = 0;
             rbZ_96.TabStop = true;
             rbZ_96.Tag = "Zephyr";
@@ -676,10 +649,11 @@
             // rbZ_192
             // 
             rbZ_192.AutoSize = true;
-            rbZ_192.Location = new Point(3, 43);
+            rbZ_192.Location = new Point(3, 32);
+            rbZ_192.Margin = new Padding(3, 2, 3, 2);
             rbZ_192.Name = "rbZ_192";
-            rbZ_192.Padding = new Padding(0, 3, 0, 0);
-            rbZ_192.Size = new Size(85, 27);
+            rbZ_192.Padding = new Padding(0, 2, 0, 0);
+            rbZ_192.Size = new Size(68, 21);
             rbZ_192.TabIndex = 1;
             rbZ_192.TabStop = true;
             rbZ_192.Tag = "Zephyr";
@@ -688,10 +662,11 @@
             // 
             // splitContainer1
             // 
-            splitContainer1.Location = new Point(3, 83);
+            splitContainer1.Location = new Point(3, 62);
+            splitContainer1.Margin = new Padding(3, 2, 3, 2);
             splitContainer1.Name = "splitContainer1";
-            splitContainer1.Size = new Size(89, 14);
-            splitContainer1.SplitterDistance = 29;
+            splitContainer1.Size = new Size(77, 10);
+            splitContainer1.SplitterDistance = 25;
             splitContainer1.TabIndex = 2;
             // 
             // tabPage2
@@ -704,11 +679,10 @@
             tabPage2.Controls.Add(groupBox1);
             tabPage2.Controls.Add(exitButton1);
             tabPage2.Controls.Add(clearButton1);
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Margin = new Padding(3, 4, 3, 4);
+            tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(336, 552);
+            tabPage2.Padding = new Padding(3, 3, 3, 3);
+            tabPage2.Size = new Size(293, 411);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Slim Timings";
             tabPage2.UseVisualStyleBackColor = true;
@@ -716,9 +690,9 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
-            label1.Location = new Point(147, 394);
+            label1.Location = new Point(129, 296);
             label1.Name = "label1";
-            label1.Size = new Size(178, 41);
+            label1.Size = new Size(156, 31);
             label1.TabIndex = 12;
             label1.Text = "Select None if you are not using NAND-wich";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -729,20 +703,18 @@
             groupBox4.Controls.Add(label10);
             groupBox4.Controls.Add(label13);
             groupBox4.Controls.Add(label11);
-            groupBox4.Location = new Point(135, 3);
-            groupBox4.Margin = new Padding(3, 4, 3, 4);
+            groupBox4.Location = new Point(118, 2);
             groupBox4.Name = "groupBox4";
-            groupBox4.Padding = new Padding(3, 4, 3, 4);
-            groupBox4.Size = new Size(149, 178);
+            groupBox4.Size = new Size(130, 134);
             groupBox4.TabIndex = 21;
             groupBox4.TabStop = false;
             // 
             // label10
             // 
             label10.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
-            label10.Location = new Point(3, 25);
+            label10.Location = new Point(3, 19);
             label10.Name = "label10";
-            label10.Size = new Size(147, 76);
+            label10.Size = new Size(129, 57);
             label10.TabIndex = 16;
             label10.Text = "Note: Waitsburg/Stingray motherboards fall under \"Corona\"";
             label10.TextAlign = ContentAlignment.TopCenter;
@@ -750,9 +722,9 @@
             // label13
             // 
             label13.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
-            label13.Location = new Point(3, 137);
+            label13.Location = new Point(3, 103);
             label13.Name = "label13";
-            label13.Size = new Size(147, 38);
+            label13.Size = new Size(129, 28);
             label13.TabIndex = 20;
             label13.Text = "Use WB if your system has WB2K RAM";
             label13.TextAlign = ContentAlignment.TopCenter;
@@ -760,9 +732,9 @@
             // label11
             // 
             label11.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
-            label11.Location = new Point(3, 102);
+            label11.Location = new Point(3, 76);
             label11.Name = "label11";
-            label11.Size = new Size(147, 38);
+            label11.Size = new Size(129, 28);
             label11.TabIndex = 17;
             label11.Text = "This is due to a UI size constraint :)";
             label11.TextAlign = ContentAlignment.TopCenter;
@@ -770,11 +742,9 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(tableLayoutPanel7);
-            groupBox3.Location = new Point(10, 430);
-            groupBox3.Margin = new Padding(3, 4, 3, 4);
+            groupBox3.Location = new Point(9, 322);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(3, 4, 3, 4);
-            groupBox3.Size = new Size(315, 71);
+            groupBox3.Size = new Size(276, 53);
             groupBox3.TabIndex = 11;
             groupBox3.TabStop = false;
             groupBox3.Text = "Multi-NAND";
@@ -782,33 +752,31 @@
             // tableLayoutPanel7
             // 
             tableLayoutPanel7.ColumnCount = 6;
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 75F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 75F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 66F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 66F));
             tableLayoutPanel7.Controls.Add(multiNAND51, 4, 0);
             tableLayoutPanel7.Controls.Add(multiNAND11, 0, 0);
             tableLayoutPanel7.Controls.Add(multiNAND41, 3, 0);
             tableLayoutPanel7.Controls.Add(multiNAND21, 1, 0);
             tableLayoutPanel7.Controls.Add(multiNAND31, 2, 0);
             tableLayoutPanel7.Controls.Add(multiNAND61, 5, 0);
-            tableLayoutPanel7.Location = new Point(6, 28);
-            tableLayoutPanel7.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel7.Location = new Point(5, 21);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 1;
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel7.Size = new Size(305, 40);
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel7.Size = new Size(267, 30);
             tableLayoutPanel7.TabIndex = 0;
             // 
             // multiNAND51
             // 
             multiNAND51.AutoSize = true;
-            multiNAND51.Location = new Point(198, 4);
-            multiNAND51.Margin = new Padding(3, 4, 3, 4);
+            multiNAND51.Location = new Point(174, 3);
             multiNAND51.Name = "multiNAND51";
-            multiNAND51.Size = new Size(34, 24);
+            multiNAND51.Size = new Size(29, 19);
             multiNAND51.TabIndex = 4;
             multiNAND51.Text = "5";
             multiNAND51.UseVisualStyleBackColor = true;
@@ -817,10 +785,9 @@
             // 
             multiNAND11.AutoSize = true;
             multiNAND11.Checked = true;
-            multiNAND11.Location = new Point(3, 4);
-            multiNAND11.Margin = new Padding(3, 4, 3, 4);
+            multiNAND11.Location = new Point(3, 3);
             multiNAND11.Name = "multiNAND11";
-            multiNAND11.Size = new Size(66, 24);
+            multiNAND11.Size = new Size(54, 19);
             multiNAND11.TabIndex = 0;
             multiNAND11.TabStop = true;
             multiNAND11.Text = "None";
@@ -829,10 +796,9 @@
             // multiNAND41
             // 
             multiNAND41.AutoSize = true;
-            multiNAND41.Location = new Point(158, 4);
-            multiNAND41.Margin = new Padding(3, 4, 3, 4);
+            multiNAND41.Location = new Point(139, 3);
             multiNAND41.Name = "multiNAND41";
-            multiNAND41.Size = new Size(34, 24);
+            multiNAND41.Size = new Size(29, 19);
             multiNAND41.TabIndex = 3;
             multiNAND41.Text = "4";
             multiNAND41.UseVisualStyleBackColor = true;
@@ -840,10 +806,9 @@
             // multiNAND21
             // 
             multiNAND21.AutoSize = true;
-            multiNAND21.Location = new Point(78, 4);
-            multiNAND21.Margin = new Padding(3, 4, 3, 4);
+            multiNAND21.Location = new Point(69, 3);
             multiNAND21.Name = "multiNAND21";
-            multiNAND21.Size = new Size(34, 24);
+            multiNAND21.Size = new Size(29, 19);
             multiNAND21.TabIndex = 1;
             multiNAND21.Text = "2";
             multiNAND21.UseVisualStyleBackColor = true;
@@ -851,10 +816,9 @@
             // multiNAND31
             // 
             multiNAND31.AutoSize = true;
-            multiNAND31.Location = new Point(118, 4);
-            multiNAND31.Margin = new Padding(3, 4, 3, 4);
+            multiNAND31.Location = new Point(104, 3);
             multiNAND31.Name = "multiNAND31";
-            multiNAND31.Size = new Size(34, 24);
+            multiNAND31.Size = new Size(29, 19);
             multiNAND31.TabIndex = 2;
             multiNAND31.Text = "3";
             multiNAND31.UseVisualStyleBackColor = true;
@@ -862,10 +826,9 @@
             // multiNAND61
             // 
             multiNAND61.AutoSize = true;
-            multiNAND61.Location = new Point(238, 4);
-            multiNAND61.Margin = new Padding(3, 4, 3, 4);
+            multiNAND61.Location = new Point(209, 3);
             multiNAND61.Name = "multiNAND61";
-            multiNAND61.Size = new Size(62, 24);
+            multiNAND61.Size = new Size(51, 19);
             multiNAND61.TabIndex = 5;
             multiNAND61.TabStop = true;
             multiNAND61.Text = "MAX";
@@ -874,11 +837,9 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(tableLayoutPanel6);
-            groupBox2.Location = new Point(135, 183);
-            groupBox2.Margin = new Padding(3, 4, 3, 4);
+            groupBox2.Location = new Point(118, 137);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(117, 127);
+            groupBox2.Size = new Size(102, 95);
             groupBox2.TabIndex = 15;
             groupBox2.TabStop = false;
             groupBox2.Text = "Board Type";
@@ -890,14 +851,13 @@
             tableLayoutPanel6.Controls.Add(boardTr, 0, 0);
             tableLayoutPanel6.Controls.Add(boardCor, 0, 1);
             tableLayoutPanel6.Controls.Add(boardCorWB, 0, 2);
-            tableLayoutPanel6.Location = new Point(6, 19);
-            tableLayoutPanel6.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel6.Location = new Point(5, 14);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 3;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
-            tableLayoutPanel6.Size = new Size(105, 100);
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel6.Size = new Size(92, 75);
             tableLayoutPanel6.TabIndex = 0;
             // 
             // boardTr
@@ -905,10 +865,9 @@
             boardTr.AutoSize = true;
             boardTr.Checked = true;
             boardTr.Enabled = false;
-            boardTr.Location = new Point(3, 4);
-            boardTr.Margin = new Padding(3, 4, 3, 4);
+            boardTr.Location = new Point(3, 3);
             boardTr.Name = "boardTr";
-            boardTr.Size = new Size(70, 24);
+            boardTr.Size = new Size(58, 19);
             boardTr.TabIndex = 0;
             boardTr.TabStop = true;
             boardTr.Text = "Trinity";
@@ -919,10 +878,9 @@
             // 
             boardCor.AutoSize = true;
             boardCor.Enabled = false;
-            boardCor.Location = new Point(3, 37);
-            boardCor.Margin = new Padding(3, 4, 3, 4);
+            boardCor.Location = new Point(3, 28);
             boardCor.Name = "boardCor";
-            boardCor.Size = new Size(78, 24);
+            boardCor.Size = new Size(64, 19);
             boardCor.TabIndex = 1;
             boardCor.Text = "Corona";
             boardCor.UseVisualStyleBackColor = true;
@@ -932,10 +890,9 @@
             // 
             boardCorWB.AutoSize = true;
             boardCorWB.Enabled = false;
-            boardCorWB.Location = new Point(3, 70);
-            boardCorWB.Margin = new Padding(3, 4, 3, 4);
+            boardCorWB.Location = new Point(3, 53);
             boardCorWB.Name = "boardCorWB";
-            boardCorWB.Size = new Size(99, 24);
+            boardCorWB.Size = new Size(85, 19);
             boardCorWB.TabIndex = 2;
             boardCorWB.Text = "Corona WB";
             boardCorWB.UseVisualStyleBackColor = true;
@@ -944,9 +901,9 @@
             // label9
             // 
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label9.Location = new Point(7, 4);
+            label9.Location = new Point(6, 3);
             label9.Name = "label9";
-            label9.Size = new Size(112, 23);
+            label9.Size = new Size(98, 17);
             label9.TabIndex = 14;
             label9.Text = "RGH1.2 Timings";
             label9.TextAlign = ContentAlignment.TopCenter;
@@ -954,11 +911,9 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(tableLayoutPanel5);
-            groupBox1.Location = new Point(2, 24);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(2, 18);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(126, 280);
+            groupBox1.Size = new Size(110, 210);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             groupBox1.Text = "Trinity/Corona";
@@ -966,8 +921,8 @@
             // tableLayoutPanel5
             // 
             tableLayoutPanel5.ColumnCount = 2;
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 57F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 57F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
             tableLayoutPanel5.Controls.Add(slim100, 1, 0);
             tableLayoutPanel5.Controls.Add(slim105, 1, 1);
             tableLayoutPanel5.Controls.Add(slim110, 1, 2);
@@ -984,28 +939,26 @@
             tableLayoutPanel5.Controls.Add(slim85, 0, 5);
             tableLayoutPanel5.Controls.Add(slim90, 0, 6);
             tableLayoutPanel5.Controls.Add(slim95, 0, 7);
-            tableLayoutPanel5.Location = new Point(7, 27);
-            tableLayoutPanel5.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel5.Location = new Point(6, 20);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 8;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
-            tableLayoutPanel5.Size = new Size(114, 245);
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel5.Size = new Size(100, 184);
             tableLayoutPanel5.TabIndex = 0;
             // 
             // slim100
             // 
             slim100.AutoSize = true;
-            slim100.Location = new Point(60, 4);
-            slim100.Margin = new Padding(3, 4, 3, 4);
+            slim100.Location = new Point(53, 3);
             slim100.Name = "slim100";
-            slim100.Size = new Size(51, 23);
+            slim100.Size = new Size(43, 17);
             slim100.TabIndex = 8;
             slim100.TabStop = true;
             slim100.Tag = "Slim";
@@ -1015,10 +968,9 @@
             // slim105
             // 
             slim105.AutoSize = true;
-            slim105.Location = new Point(60, 35);
-            slim105.Margin = new Padding(3, 4, 3, 4);
+            slim105.Location = new Point(53, 26);
             slim105.Name = "slim105";
-            slim105.Size = new Size(51, 23);
+            slim105.Size = new Size(43, 17);
             slim105.TabIndex = 9;
             slim105.TabStop = true;
             slim105.Tag = "Slim";
@@ -1028,10 +980,9 @@
             // slim110
             // 
             slim110.AutoSize = true;
-            slim110.Location = new Point(60, 66);
-            slim110.Margin = new Padding(3, 4, 3, 4);
+            slim110.Location = new Point(53, 49);
             slim110.Name = "slim110";
-            slim110.Size = new Size(51, 23);
+            slim110.Size = new Size(43, 17);
             slim110.TabIndex = 10;
             slim110.TabStop = true;
             slim110.Tag = "Slim";
@@ -1041,10 +992,9 @@
             // slim115
             // 
             slim115.AutoSize = true;
-            slim115.Location = new Point(60, 97);
-            slim115.Margin = new Padding(3, 4, 3, 4);
+            slim115.Location = new Point(53, 72);
             slim115.Name = "slim115";
-            slim115.Size = new Size(51, 23);
+            slim115.Size = new Size(43, 17);
             slim115.TabIndex = 11;
             slim115.TabStop = true;
             slim115.Tag = "Slim";
@@ -1054,10 +1004,9 @@
             // slim120
             // 
             slim120.AutoSize = true;
-            slim120.Location = new Point(60, 128);
-            slim120.Margin = new Padding(3, 4, 3, 4);
+            slim120.Location = new Point(53, 95);
             slim120.Name = "slim120";
-            slim120.Size = new Size(51, 23);
+            slim120.Size = new Size(43, 17);
             slim120.TabIndex = 12;
             slim120.TabStop = true;
             slim120.Tag = "Slim";
@@ -1067,10 +1016,9 @@
             // slim125
             // 
             slim125.AutoSize = true;
-            slim125.Location = new Point(60, 159);
-            slim125.Margin = new Padding(3, 4, 3, 4);
+            slim125.Location = new Point(53, 118);
             slim125.Name = "slim125";
-            slim125.Size = new Size(51, 23);
+            slim125.Size = new Size(43, 17);
             slim125.TabIndex = 13;
             slim125.TabStop = true;
             slim125.Tag = "Slim";
@@ -1080,10 +1028,9 @@
             // slim130
             // 
             slim130.AutoSize = true;
-            slim130.Location = new Point(60, 190);
-            slim130.Margin = new Padding(3, 4, 3, 4);
+            slim130.Location = new Point(53, 141);
             slim130.Name = "slim130";
-            slim130.Size = new Size(51, 23);
+            slim130.Size = new Size(43, 17);
             slim130.TabIndex = 14;
             slim130.TabStop = true;
             slim130.Tag = "Slim";
@@ -1093,10 +1040,9 @@
             // slim135
             // 
             slim135.AutoSize = true;
-            slim135.Location = new Point(60, 221);
-            slim135.Margin = new Padding(3, 4, 3, 4);
+            slim135.Location = new Point(53, 164);
             slim135.Name = "slim135";
-            slim135.Size = new Size(51, 23);
+            slim135.Size = new Size(43, 17);
             slim135.TabIndex = 15;
             slim135.TabStop = true;
             slim135.Tag = "Slim";
@@ -1106,10 +1052,9 @@
             // slim60
             // 
             slim60.AutoSize = true;
-            slim60.Location = new Point(3, 4);
-            slim60.Margin = new Padding(3, 4, 3, 4);
+            slim60.Location = new Point(3, 3);
             slim60.Name = "slim60";
-            slim60.Size = new Size(46, 23);
+            slim60.Size = new Size(37, 17);
             slim60.TabIndex = 16;
             slim60.TabStop = true;
             slim60.Tag = "Slim";
@@ -1119,10 +1064,9 @@
             // slim65
             // 
             slim65.AutoSize = true;
-            slim65.Location = new Point(3, 35);
-            slim65.Margin = new Padding(3, 4, 3, 4);
+            slim65.Location = new Point(3, 26);
             slim65.Name = "slim65";
-            slim65.Size = new Size(46, 23);
+            slim65.Size = new Size(37, 17);
             slim65.TabIndex = 17;
             slim65.TabStop = true;
             slim65.Tag = "Slim";
@@ -1132,10 +1076,9 @@
             // slim70
             // 
             slim70.AutoSize = true;
-            slim70.Location = new Point(3, 66);
-            slim70.Margin = new Padding(3, 4, 3, 4);
+            slim70.Location = new Point(3, 49);
             slim70.Name = "slim70";
-            slim70.Size = new Size(46, 23);
+            slim70.Size = new Size(37, 17);
             slim70.TabIndex = 18;
             slim70.TabStop = true;
             slim70.Tag = "Slim";
@@ -1145,10 +1088,9 @@
             // slim75
             // 
             slim75.AutoSize = true;
-            slim75.Location = new Point(3, 97);
-            slim75.Margin = new Padding(3, 4, 3, 4);
+            slim75.Location = new Point(3, 72);
             slim75.Name = "slim75";
-            slim75.Size = new Size(46, 23);
+            slim75.Size = new Size(37, 17);
             slim75.TabIndex = 19;
             slim75.TabStop = true;
             slim75.Tag = "Slim";
@@ -1158,10 +1100,9 @@
             // slim80
             // 
             slim80.AutoSize = true;
-            slim80.Location = new Point(3, 128);
-            slim80.Margin = new Padding(3, 4, 3, 4);
+            slim80.Location = new Point(3, 95);
             slim80.Name = "slim80";
-            slim80.Size = new Size(46, 23);
+            slim80.Size = new Size(37, 17);
             slim80.TabIndex = 20;
             slim80.TabStop = true;
             slim80.Tag = "Slim";
@@ -1171,10 +1112,9 @@
             // slim85
             // 
             slim85.AutoSize = true;
-            slim85.Location = new Point(3, 159);
-            slim85.Margin = new Padding(3, 4, 3, 4);
+            slim85.Location = new Point(3, 118);
             slim85.Name = "slim85";
-            slim85.Size = new Size(46, 23);
+            slim85.Size = new Size(37, 17);
             slim85.TabIndex = 21;
             slim85.TabStop = true;
             slim85.Tag = "Slim";
@@ -1184,10 +1124,9 @@
             // slim90
             // 
             slim90.AutoSize = true;
-            slim90.Location = new Point(3, 190);
-            slim90.Margin = new Padding(3, 4, 3, 4);
+            slim90.Location = new Point(3, 141);
             slim90.Name = "slim90";
-            slim90.Size = new Size(46, 23);
+            slim90.Size = new Size(37, 17);
             slim90.TabIndex = 22;
             slim90.TabStop = true;
             slim90.Tag = "Slim";
@@ -1197,10 +1136,9 @@
             // slim95
             // 
             slim95.AutoSize = true;
-            slim95.Location = new Point(3, 221);
-            slim95.Margin = new Padding(3, 4, 3, 4);
+            slim95.Location = new Point(3, 164);
             slim95.Name = "slim95";
-            slim95.Size = new Size(46, 23);
+            slim95.Size = new Size(37, 17);
             slim95.TabIndex = 23;
             slim95.TabStop = true;
             slim95.Tag = "Slim";
@@ -1209,10 +1147,9 @@
             // 
             // exitButton1
             // 
-            exitButton1.Location = new Point(96, 509);
-            exitButton1.Margin = new Padding(3, 4, 3, 4);
+            exitButton1.Location = new Point(84, 382);
             exitButton1.Name = "exitButton1";
-            exitButton1.Size = new Size(86, 31);
+            exitButton1.Size = new Size(75, 23);
             exitButton1.TabIndex = 12;
             exitButton1.Text = "Exit";
             exitButton1.UseVisualStyleBackColor = true;
@@ -1220,61 +1157,58 @@
             // 
             // clearButton1
             // 
-            clearButton1.Location = new Point(3, 509);
-            clearButton1.Margin = new Padding(3, 4, 3, 4);
+            clearButton1.Location = new Point(3, 382);
             clearButton1.Name = "clearButton1";
-            clearButton1.Size = new Size(86, 31);
+            clearButton1.Size = new Size(75, 23);
             clearButton1.TabIndex = 11;
             clearButton1.Text = "Clear";
             clearButton1.UseVisualStyleBackColor = true;
             clearButton1.Click += clrBtn_Click;
             // 
-            // button1
+            // programBtn
             // 
-            button1.Location = new Point(473, 27);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(80, 93);
-            button1.TabIndex = 8;
-            button1.Text = "Program Timing File";
-            button1.UseVisualStyleBackColor = true;
+            programBtn.Location = new Point(414, 20);
+            programBtn.Name = "programBtn";
+            programBtn.Size = new Size(70, 70);
+            programBtn.TabIndex = 8;
+            programBtn.Text = "Program Timing File";
+            programBtn.UseVisualStyleBackColor = true;
+            programBtn.Click += programBtn_pressed;
             // 
             // pictureBox1
             // 
             pictureBox1.ImageLocation = "";
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(17, 41);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Location = new Point(15, 31);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(135, 85);
+            pictureBox1.Size = new Size(118, 64);
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            
             // 
             // label14
             // 
             label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.Location = new Point(34, 17);
+            label14.Location = new Point(30, 13);
             label14.Margin = new Padding(0);
             label14.Name = "label14";
-            label14.Size = new Size(100, 20);
+            label14.Size = new Size(88, 15);
             label14.TabIndex = 10;
             label14.Text = "Programmer:";
             label14.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // main
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(918, 601);
+            ClientSize = new Size(803, 451);
             Controls.Add(label14);
             Controls.Add(pictureBox1);
-            Controls.Add(button1);
+            Controls.Add(programBtn);
             Controls.Add(optionsPanel);
             Controls.Add(progressPanel);
             Controls.Add(debugConsole);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "main";
             Text = "FreeRunner Flashing Utility";
@@ -1336,7 +1270,7 @@
         private GroupBox fjTimings;
         private GroupBox xenonTimings;
         private TableLayoutPanel tableLayoutPanel2;
-        private Button button1;
+        private Button programBtn;
         private GroupBox nandSelection;
         private TableLayoutPanel tableLayoutPanel3;
         private RadioButton multiNAND1;
