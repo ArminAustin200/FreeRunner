@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[2.2.34, )"
             },
+            "Ionic.Zip": {
+              "target": "Package",
+              "version": "[1.9.1.8, )"
+            },
             "LibUsbDfu": {
               "target": "Package",
               "version": "[1.1.4, )"

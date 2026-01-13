@@ -9,6 +9,7 @@
       "FreeRunner Flashing Utility/1.0.0": {
         "dependencies": {
           "Huddly.LibUsbDotNet": "2.2.34",
+          "Ionic.Zip": "1.9.1.8",
           "LibUsbDfu": "1.1.4",
           "LibUsbDotNet": "2.2.75",
           "System.Management": "10.0.1"
@@ -33,6 +34,14 @@
           "lib/net8.0/Huddly.LibUsbDotNet.dll": {
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.34.3"
+          }
+        }
+      },
+      "Ionic.Zip/1.9.1.8": {
+        "runtime": {
+          "lib/Ionic.Zip.dll": {
+            "assemblyVersion": "1.9.1.8",
+            "fileVersion": "1.9.1.8"
           }
         }
       },
@@ -121,6 +130,13 @@
       "sha512": "sha512-qi7I78JqApQ6+5YLglbSRuyO9DgtUqU2V88alY56uu61sQl9lLqtiMsTKT3izMW1rXYARS7jKgPFGSQdFg8ctA==",
       "path": "huddly.libusbdotnet/2.2.34",
       "hashPath": "huddly.libusbdotnet.2.2.34.nupkg.sha512"
+    },
+    "Ionic.Zip/1.9.1.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-E77NU0+mXFsiJG/CikkINVD/2ugIgjqRZf41pixpAArRzOUrn/2gCL4G2PBREvRVOy+wU8ZbG/UBLcH4Tkw1gg==",
+      "path": "ionic.zip/1.9.1.8",
+      "hashPath": "ionic.zip.1.9.1.8.nupkg.sha512"
     },
     "LibUsbDfu/1.1.4": {
       "type": "package",

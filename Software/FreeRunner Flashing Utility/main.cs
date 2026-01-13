@@ -1,4 +1,5 @@
-﻿using FreeRunner_Flashing_Utility.Properties;
+﻿using FreeRunner_Flashing_Utility.Classes;
+using FreeRunner_Flashing_Utility.Properties;
 using LibUsbDotNet.WinUsb;
 using System.IO;
 using System.Management;
@@ -50,6 +51,7 @@ namespace FreeRunner_Flashing_Utility
 
         public DEVICE device = DEVICE.NO_DEVICE;
 
+        private String welcomeText = "Welcome to FreeRunner Flashing Utility!";
         public main()
         {
             InitializeComponent();
@@ -68,8 +70,7 @@ namespace FreeRunner_Flashing_Utility
             //Clearing the console
             debugConsole.Clear();
 
-            //Resetting welcome text
-            debugConsole.AppendText("Welcome to FreeRunner Flashing Utility!" + Environment.NewLine);
+            //debugConsole.AppendText("Welcome to FreeRunner Flashing Utility!" + Environment.NewLine);
 
             //Setting min value
             progressBar1.Minimum = 0;
@@ -271,7 +272,8 @@ namespace FreeRunner_Flashing_Utility
             debugConsole.Clear();
 
             //Resetting welcome text
-            debugConsole.AppendText("Welcome to FreeRunner Flashing Utility!" + Environment.NewLine);
+            Log(welcomeText);
+            //debugConsole.AppendText("Welcome to FreeRunner Flashing Utility!" + Environment.NewLine);
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -288,8 +290,28 @@ namespace FreeRunner_Flashing_Utility
             }
         }
 
-        private void main_Load(object sender, EventArgs e)
+        private async void main_Load(object sender, EventArgs e)
         {
+            try
+            {
+                // you decide how you store currentRevision
+                int currentRevision = 100;
+
+                await update.CheckAndUpdateFullAsync(
+                    "https://raw.githubusercontent.com/USER/REPO/main/update.json",
+                    currentRevision,
+                    onProgress: p => progressBar1.Value = p,
+                    onStatus: msg => debugConsole.AppendText(msg + Environment.NewLine)
+                );
+            }
+            catch (Exception ex)
+            {
+                Log("Update Failed: "+ ex.Message);
+            }
+
+            //Resetting welcome text
+            Log(welcomeText);
+
             //Generate path to the config file
             string filePath = Path.Combine(Application.StartupPath, "config.cfg");
 
@@ -411,6 +433,16 @@ namespace FreeRunner_Flashing_Utility
 
             // Reset and re-detect from scratch
             device = DEVICE.NO_DEVICE;
+
+            //If a valid device was unplugged
+            if (previousDevice != DEVICE.NO_DEVICE && device == DEVICE.NO_DEVICE) {
+                if (debug) {
+                    Log($"{previousDevice} disconnected!");
+                }
+
+                //Clearing the image
+                setImage(null);
+            }
 
             if (IsUsbDeviceConnected("7001", "600D")) // PicoFlasher
             {

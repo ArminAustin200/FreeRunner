@@ -27,6 +27,15 @@
           }
         }
       },
+      "Ionic.Zip/1.9.1.8": {
+        "type": "package",
+        "compile": {
+          "lib/Ionic.Zip.dll": {}
+        },
+        "runtime": {
+          "lib/Ionic.Zip.dll": {}
+        }
+      },
       "LibUsbDfu/1.1.4": {
         "type": "package",
         "dependencies": {
@@ -209,6 +218,19 @@
         "lib/net8.0/Huddly.LibUsbDotNet.pdb",
         "lib/netstandard2.0/Huddly.LibUsbDotNet.dll",
         "lib/netstandard2.0/Huddly.LibUsbDotNet.pdb"
+      ]
+    },
+    "Ionic.Zip/1.9.1.8": {
+      "sha512": "E77NU0+mXFsiJG/CikkINVD/2ugIgjqRZf41pixpAArRzOUrn/2gCL4G2PBREvRVOy+wU8ZbG/UBLcH4Tkw1gg==",
+      "type": "package",
+      "path": "ionic.zip/1.9.1.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ionic.zip.1.9.1.8.nupkg.sha512",
+        "ionic.zip.nuspec",
+        "lib/Ionic.Zip.dll",
+        "nuget.bat"
       ]
     },
     "LibUsbDfu/1.1.4": {
@@ -473,6 +495,7 @@
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "Huddly.LibUsbDotNet >= 2.2.34",
+      "Ionic.Zip >= 1.9.1.8",
       "LibUsbDfu >= 1.1.4",
       "LibUsbDotNet >= 2.2.75",
       "System.Management >= 10.0.1"
@@ -532,6 +555,10 @@
             "target": "Package",
             "version": "[2.2.34, )"
           },
+          "Ionic.Zip": {
+            "target": "Package",
+            "version": "[1.9.1.8, )"
+          },
           "LibUsbDfu": {
             "target": "Package",
             "version": "[1.1.4, )"
@@ -567,5 +594,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Ionic.Zip 1.9.1.8' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Ionic.Zip",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }
