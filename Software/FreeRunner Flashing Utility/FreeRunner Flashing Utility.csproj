@@ -12,12 +12,6 @@
     <PackageIcon>taskbarIcon.png</PackageIcon>
   </PropertyGroup>
 
-	<ItemGroup>
-		<Content Include="Utility\**\*.*">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-	</ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Huddly.LibUsbDotNet" Version="2.2.34" />
     <PackageReference Include="Ionic.Zip" Version="1.9.1.8" />
@@ -32,6 +26,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -42,13 +41,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Utility\common\xFlasher\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\..\..\..\..\Downloads\taskbarIcon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

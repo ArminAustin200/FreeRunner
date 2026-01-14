@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FreeRunner Flashing Utility": {
+      "commandName": "Project",
+      "workingDirectory": "$(ProjectDir)"
+    }
+  }
+}

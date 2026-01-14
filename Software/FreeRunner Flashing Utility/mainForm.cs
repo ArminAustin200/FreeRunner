@@ -5,6 +5,7 @@ using LibUsbDotNet.WinUsb;
 using Microsoft.VisualBasic.Logging;
 using System.IO;
 using System.Management;
+using System.Media;
 
 namespace FreeRunner_Flashing_Utility
 {
@@ -142,6 +143,9 @@ namespace FreeRunner_Flashing_Utility
             {
                 rb.CheckedChanged += checkMultiNAND;
             }
+
+            //Resetting filename on startup
+            filename = "";
         }
 
         private void TimingRadio_CheckedChanged(object sender, EventArgs e)
@@ -343,13 +347,29 @@ namespace FreeRunner_Flashing_Utility
         //Creating log updater method
         public void Log(String message)
         {
-            debugConsole.AppendText(message + Environment.NewLine);
-            debugConsole.ScrollToCaret();
+            if (IsDisposed) return;
+
+            void Write()
+            {
+                debugConsole.AppendText(message + Environment.NewLine);
+                debugConsole.ScrollToCaret();
+            }
+
+            if (debugConsole.InvokeRequired)
+                debugConsole.BeginInvoke((Action)Write);
+            else
+                Write();
         }
 
         //Creating log clear method
         private void Log_Clear() { 
             debugConsole.Clear();
+        }
+
+        //Creating application path getter method
+        private String getPath()
+        {
+            return Path.Combine(Environment.CurrentDirectory, "common", "SVF");
         }
 
         private void clrBtn_Click(object sender, EventArgs e)
@@ -474,7 +494,14 @@ namespace FreeRunner_Flashing_Utility
                 Log("MAX Multi-NAND Enabled: " + enableMax);
                 Log("Multi-NAND: " + multiNAND);
                 Log("Board Type: " + boardType);
+
+                await Task.Delay(2500); //Wait 2.5s
+                Log_Clear();
+                Log(welcomeText);
             }
+
+            //Check for USB devices
+            deviceinit();
         }
 
         public bool IsUsbDeviceConnected(string pid, string vid)
@@ -545,7 +572,7 @@ namespace FreeRunner_Flashing_Utility
                 setImage(Properties.Resources.picoflasher); //Update the image to PicoFlasher
                 device = DEVICE.PICOFLASHER;
 
-                if (previousDevice != DEVICE.PICOFLASHER)
+                if (previousDevice != DEVICE.PICOFLASHER && debug)
                     Log($"{device} Connected!");
             }
 
@@ -554,7 +581,7 @@ namespace FreeRunner_Flashing_Utility
                 setImage(Properties.Resources.dirtypico);
                 device = DEVICE.DIRTYPICO;
 
-                if (previousDevice != DEVICE.DIRTYPICO)
+                if (previousDevice != DEVICE.DIRTYPICO && debug)
                     Log($"{device} Connected!");
             }
 
@@ -562,7 +589,7 @@ namespace FreeRunner_Flashing_Utility
             {  // JR-Programmer
                 setImage(Properties.Resources.jrp);
 
-                if (previousDevice != DEVICE.JR_PROGRAMMER)
+                if (previousDevice != DEVICE.JR_PROGRAMMER && debug)
                     Log($"{device} Connected!");
 
             }
@@ -572,7 +599,7 @@ namespace FreeRunner_Flashing_Utility
                 device = DEVICE.XFLASHER_SPI;
                 xflasher.ready = true; // Skip init
 
-                if (previousDevice != DEVICE.XFLASHER_SPI)
+                if (previousDevice != DEVICE.XFLASHER_SPI && debug)
                     Log($"{device} Connected!");
             }
             else if (IsUsbDeviceConnected("8334", "11D4")) // JR-Programmer Bootloader
@@ -580,7 +607,7 @@ namespace FreeRunner_Flashing_Utility
                 setImage(Properties.Resources.jrp); //Update the image to JR-Programmer
                 device = DEVICE.JR_PROGRAMMER_BOOTLOADER;
 
-                if (previousDevice != DEVICE.JR_PROGRAMMER_BOOTLOADER)
+                if (previousDevice != DEVICE.JR_PROGRAMMER_BOOTLOADER && debug)
                     Log($"{device} Connected!");
             }
 
@@ -591,7 +618,7 @@ namespace FreeRunner_Flashing_Utility
                     setImage(Properties.Resources.xflash_emmc); //Update the image to xFlasher eMMC
                     device = DEVICE.XFLASHER_EMMC;
 
-                    if (previousDevice != DEVICE.XFLASHER_EMMC)
+                    if (previousDevice != DEVICE.XFLASHER_EMMC && debug)
                         Log($"{device} Connected!");
                 }
             }
@@ -640,8 +667,15 @@ namespace FreeRunner_Flashing_Utility
 
         private void programBtn_pressed(object sender, EventArgs e)
         {
+            //If a SVF Program is attempted with no device attached
+            if (device == DEVICE.NO_DEVICE)
+            { 
+                Log("Please attach a valid programmer before continuing!");
+                SystemSounds.Asterisk.Play(); //Notify user
+            }
+
             //If a SVF Program is attempted in eMMC mode (xFlasher_eMMC)
-            if (device == DEVICE.XFLASHER_EMMC)
+            else if (device == DEVICE.XFLASHER_EMMC)
             {
                 MessageBox.Show(
                     "Please switch to SPI mode before continuing.",
@@ -653,14 +687,15 @@ namespace FreeRunner_Flashing_Utility
             //If SVF Program is attempted with xFlasher
             else if (device == DEVICE.XFLASHER_SPI)
             {
-              
+                if (filename != null && filename != "")
+                    xflasher.flashSvf(Path.Combine(getPath(), filename));
             }
 
             ///////ADD DIRTYPICO SUPPORT AS WELL\\\\\\\\\\\
             ///else if (device == DEVICE.DIRTYPICO){
             ///
             /// }
-            
+
 
             //If SVF Program is attempted with PicoFlasher
             else if (device == DEVICE.PICOFLASHER)
@@ -673,7 +708,8 @@ namespace FreeRunner_Flashing_Utility
             }
 
             //If SVF Program is attempted with JRP or NANDX 
-            else if (device == DEVICE.JR_PROGRAMMER || device == DEVICE.NAND_X) { 
+            else if (device == DEVICE.JR_PROGRAMMER || device == DEVICE.NAND_X)
+            {
                 MessageBox.Show(
                     "The JR-Programmer/NAND-X are not yet supported, but don't worry, we're working on adding support for those very soon :)",
                     "Unsupported Flasher Detected!",
