@@ -44,50 +44,6 @@ namespace FreeRunner_Flashing_Utility
         private static readonly Regex _percentRx =
             new Regex(@"\(\s*(\d{1,3})%\)", RegexOptions.Compiled);
 
-        // Libraries
-        public void initTimerSetup()
-        {
-            initTimer = new System.Windows.Threading.DispatcherTimer();
-            initTimer.Interval = new TimeSpan(0, 0, 0, 0, 300);
-            initTimer.Tick += initTimerUpd;
-        }
-
-        public void initDevice()
-        {
-            initTimer.Stop();
-            initCount = 0;
-            ready = false;
-            initTimer.Start();
-        }
-
-        private void initTimerUpd(object source, EventArgs e)
-        {
-            if (initCount < 16)
-            {
-                initCount++;
-            }
-            else
-            {
-                initTimer.Stop();
-                waiting = false;
-                ready = true; // Last
-            }
-        }
-
-        public void inUseTimerSetup()
-        {
-            inUseTimer = new System.Timers.Timer(1000);
-            inUseTimer.Elapsed += inUseTimerUpd;
-        }
-
-        private void inUseTimerUpd(object source, EventArgs e)
-        {
-            inUseCount++;
-
-            if (inUseCount > 59) xFlasherTimeString = TimeSpan.FromSeconds(inUseCount).ToString(@"m\:ss") + " min(s)";
-            else if (inUseCount >= 0) xFlasherTimeString = inUseCount + " sec(s)";
-        }
-
         // SVF Flashing
         public void flashSvf(string filename)
         {

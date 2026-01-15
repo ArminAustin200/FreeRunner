@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Media;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -15,21 +17,13 @@ namespace JRunner
         // with \ in file paths and only accepts \\ or / and previous method echos path with \
 
         private readonly string baseDir = AppContext.BaseDirectory;
-
-        //public string svfPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"SVF\TimingSvfTemp.svf");
-        //public string svfPath = @"Utility/common/DirtyPico360/svftemp/TimingSvfTemp.svf";
-        public string svfRoot => Path.Combine(baseDir, "Utility", "common", "DirtyPico360", "svftemp");
-        //public string svfRoot = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), @"SVF");
-        //public string svfRoot = @"Utility/common/DirtyPico360/svftemp/";
         public string svfPathUnfriendly => Path.Combine(svfRoot, "TimingSvfTemp.svf");
-
         public string svfPath => svfPathUnfriendly.Replace("\\", "/");
-
+        public string svfRoot => Path.Combine(baseDir, "Utility", "common", "DirtyPico360", "svftemp");
 
         public bool ready = false;
         public bool inUse = false;
         public bool waiting = false;
-        //private string flashconf = "";
         private string jtagdevice = "";
         public int selType = 0;
 
@@ -38,6 +32,20 @@ namespace JRunner
         //public static string xFlasherTimeString = "";
         System.Windows.Threading.DispatcherTimer initTimer;
         System.Timers.Timer inUseTimer;
+
+        //Created variables to store CPLD manufacturer and part numbers
+        private string detectedManufacturer;
+        private string detectedPart;
+        private readonly object detectLock = new object();
+        private ManualResetEventSlim detectEvent = new ManualResetEventSlim(false);
+
+        private readonly StringBuilder _outBuf = new StringBuilder();
+        private readonly StringBuilder _errBuf = new StringBuilder();
+        private readonly object _bufLock = new object();
+
+        //Created variable to hold progressbar percentage
+        private static readonly Regex _percentRx =
+            new Regex(@"\(\s*(\d{1,3})%\)", RegexOptions.Compiled);
 
         // SVF Flashing
         // Basically everything here is copied from xFlasher class
