@@ -13,18 +13,6 @@ namespace FreeRunner_Flashing_Utility
 {
     public class xFlasher
     {
-        [DllImport(@"common\xFlasher\xFlasher.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)] //Changed from @"common\xflasher\xFlasher.dll"
-        public static extern int spi(int mode, int size, string file, int startblock = 0, int length = 0);
-
-        [DllImport(@"common\xFlasher\xFlasher.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)] //Changed from @"common\xflasher\xFlasher.dll"
-        public static extern int spiGetBlocks();
-
-        [DllImport(@"common\xFlasher\xFlasher.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)] //Changed from @"common\xflasher\xFlasher.dll"
-        public static extern int spiGetConfig();
-
-        [DllImport(@"common\xFlasher\xFlasher.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)] //Changed from @"common\xflasher\xFlasher.dll"
-        public static extern void spiStop();
-
         private readonly string baseDir = Environment.CurrentDirectory;
         public string svfPath => Path.Combine(svfRoot, "TimingSvfTemp.svf");
 
@@ -98,11 +86,6 @@ namespace FreeRunner_Flashing_Utility
 
             if (inUseCount > 59) xFlasherTimeString = TimeSpan.FromSeconds(inUseCount).ToString(@"m\:ss") + " min(s)";
             else if (inUseCount >= 0) xFlasherTimeString = inUseCount + " sec(s)";
-        }
-
-        public void abort()
-        {
-            spiStop();
         }
 
         // SVF Flashing

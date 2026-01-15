@@ -714,6 +714,9 @@ namespace FreeRunner_Flashing_Utility
                     "Unsupported Flasher Detected!",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+
+                Log($"DirtyPico360 Firmware can be found in: {Path.Combine(Environment.CurrentDirectory, "common", "DirtyPico360")}");
+                SystemSounds.Asterisk.Play();
             }
 
             //If SVF Program is attempted with JRP or NANDX 
