@@ -565,6 +565,9 @@ namespace FreeRunner_Flashing_Utility
 
                 //Clearing the image
                 setImage(null);
+
+                //Resetting progress bar
+                UpdateProgress(0);
             }
 
             if (IsUsbDeviceConnected("7001", "600D")) // PicoFlasher
@@ -687,14 +690,20 @@ namespace FreeRunner_Flashing_Utility
             //If SVF Program is attempted with xFlasher
             else if (device == DEVICE.XFLASHER_SPI)
             {
+                //If there is a valid filename
                 if (filename != null && filename != "")
                     xflasher.flashSvf(Path.Combine(getPath(), filename));
+                else {
+                    Log("Please select a timing before continuing!");
+                    SystemSounds.Asterisk.Play();
+                }
             }
 
             ///////ADD DIRTYPICO SUPPORT AS WELL\\\\\\\\\\\
-            ///else if (device == DEVICE.DIRTYPICO){
-            ///
-            /// }
+            else if (device == DEVICE.DIRTYPICO){
+                Log("Implementation coming soon!");
+                SystemSounds.Asterisk.Play();
+            }
 
 
             //If SVF Program is attempted with PicoFlasher
