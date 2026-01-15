@@ -327,7 +327,7 @@ namespace FreeRunner_Flashing_Utility
         }
 
         //Creating progress bar update method
-        private void UpdateProgress(int percent)
+        public void UpdateProgress(int percent)
         {
             if (percent < progressBar1.Minimum)
             {

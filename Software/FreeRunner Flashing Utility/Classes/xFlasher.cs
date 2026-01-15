@@ -149,7 +149,6 @@ namespace FreeRunner_Flashing_Utility
                     mainForm.Instance.Log($"xFlasher: Flashing {Path.GetFileName(filename)} via JTAG");
 
                     Process psi = new Process();
-                    //psi.StartInfo.FileName = @"Utility/common/xFlasher/jtag.exe"; //Changed this from common/xflasher/jtag.exe
                     psi.StartInfo.FileName = Path.Combine(baseDir, "common", "xFlasher", "jtag.exe");
                     psi.StartInfo.CreateNoWindow = true;
                     psi.StartInfo.UseShellExecute = false;
@@ -165,25 +164,19 @@ namespace FreeRunner_Flashing_Utility
 
                     wr.WriteLine("cable ft2232");
                     wr.WriteLine("detect");
-                    wr.WriteLine("svf " + svfPath + " progress");
-                    wr.WriteLine($"svf \"{svfPath}\" progress");
 
+                    string detect = rr.ReadLine();
+                    mainForm.Instance.Log(detect);
+
+                    wr.WriteLine("svf " + svfPath + " progress");
+                    
                     wr.WriteLine("quit");
                     wr.Flush();
                     wr.Close();
 
-                    // capture BOTH
-                    string stdout = psi.StandardOutput.ReadToEnd();
-                    string stderr = psi.StandardError.ReadToEnd();
-
-                    string str = stdout.Replace("\n", "\r\n") + "\r\n" + stderr.Replace("\n", "\r\n");
-
-                    //string str = "";
-                    //str = "--";
-                    //str += rr.ReadToEnd().Replace("\n", "\r\n");
-
-                    mainForm.Instance.Log(stdout);
-                    mainForm.Instance.Log(stderr);
+                    string str = "";
+                    str = "--";
+                    str += rr.ReadToEnd().Replace("\n", "\r\n");
 
                     if (str.Length >= 4)
                     {

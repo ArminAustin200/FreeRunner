@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OD4/wOryb98=",
+  "dgSpecHash": "zWnnOKHPBdk=",
   "success": true,
-  "projectFilePath": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
+  "projectFilePath": "F:\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Austin\\.nuget\\packages\\deviceprogramming\\1.0.7\\deviceprogramming.1.0.7.nupkg.sha512",
     "C:\\Users\\Austin\\.nuget\\packages\\huddly.libusbdotnet\\2.2.34\\huddly.libusbdotnet.2.2.34.nupkg.sha512",
@@ -21,9 +21,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "Package 'Ionic.Zip 1.9.1.8' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
-      "projectPath": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
+      "projectPath": "F:\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
       "warningLevel": 1,
-      "filePath": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
+      "filePath": "F:\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
       "libraryId": "Ionic.Zip",
       "targetGraphs": [
         "net8.0-windows7.0"

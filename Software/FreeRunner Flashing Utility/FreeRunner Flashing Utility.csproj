@@ -41,13 +41,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\..\Downloads\taskbarIcon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

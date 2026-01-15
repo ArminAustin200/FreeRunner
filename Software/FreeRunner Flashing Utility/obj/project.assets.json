@@ -508,11 +508,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
+      "projectUniqueName": "F:\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
       "projectName": "FreeRunner Flashing Utility",
-      "projectPath": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
+      "projectPath": "F:\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
       "packagesPath": "C:\\Users\\Austin\\.nuget\\packages\\",
-      "outputPath": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\obj\\",
+      "outputPath": "F:\\FreeRunner\\Software\\FreeRunner Flashing Utility\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
