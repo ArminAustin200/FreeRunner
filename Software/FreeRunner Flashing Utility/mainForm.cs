@@ -34,10 +34,6 @@ namespace FreeRunner_Flashing_Utility
         //Timer used to delay USB rescan slightly so WMI can see new devices
         private System.Windows.Forms.Timer usbChangeTimer;
 
-        //How many times we've tried to rescan after a plug event
-        //private int usbScanAttempts;
-
-
 
         //DEBUG BOOLEAN
         public bool debug = false;
@@ -660,33 +656,6 @@ namespace FreeRunner_Flashing_Utility
                 usbChangeTimer.Stop();
             }
         }
-
-        //protected override void WndProc(ref Message m)
-        //{
-        //    if (m.Msg == WM_DEVICECHANGE)
-        //    {
-        //        int wParam = m.WParam.ToInt32();
-
-        //        // Optional debug – helps you see what Windows is sending
-        //        // Log($"WM_DEVICECHANGE wParam = 0x{wParam:X}");
-
-        //        // For any of these events, re-scan USB devices
-        //        if (wParam == DBT_DEVICEARRIVAL ||
-        //            wParam == DBT_DEVICEREMOVECOMPLETE ||
-        //            wParam == DBT_DEVNODES_CHANGED)
-        //        {
-        //            if (usbChangeTimer != null)
-        //            {
-        //                usbChangeTimer.Stop();
-        //                usbChangeTimer.Start();   // will call deviceinit() on Tick
-        //            }
-        //        }
-        //    }
-
-        //    // Let the base class also handle the message
-        //    base.WndProc(ref m);
-        //}
-
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == WM_DEVICECHANGE)
