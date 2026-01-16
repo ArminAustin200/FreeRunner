@@ -1,6 +1,5 @@
 ﻿using FreeRunner_Flashing_Utility.Classes;
 using FreeRunner_Flashing_Utility.Properties;
-using JRunner;
 using LibUsbDotNet.WinUsb;
 using Microsoft.VisualBasic.Logging;
 using System.IO;
@@ -26,13 +25,17 @@ namespace FreeRunner_Flashing_Utility
         public xFlasher xflasher = new xFlasher();
         public DirtyPico dirtypico = new DirtyPico();
 
-        // Windows device-change messages (for USB plug/unplug detection)
+        //Windows device-change messages (for USB plug/unplug detection)
         private const int WM_DEVICECHANGE = 0x0219;
         private const int DBT_DEVICEARRIVAL = 0x8000;
         private const int DBT_DEVICEREMOVECOMPLETE = 0x8004;
+        private const int DBT_DEVNODES_CHANGED = 0x0007;
 
-        // Timer used to delay USB rescan slightly so WMI can see new devices
+        //Timer used to delay USB rescan slightly so WMI can see new devices
         private System.Windows.Forms.Timer usbChangeTimer;
+
+        //How many times we've tried to rescan after a plug event
+        //private int usbScanAttempts;
 
 
 
@@ -75,7 +78,7 @@ namespace FreeRunner_Flashing_Utility
 
             // Timer to debounce / delay USB rescans after plug events
             usbChangeTimer = new System.Windows.Forms.Timer();
-            usbChangeTimer.Interval = 10; // milliseconds
+            usbChangeTimer.Interval = 10; // milliseconds was 10ms
             usbChangeTimer.Tick += (s, e) =>
             {
                 usbChangeTimer.Stop();  // one-shot
@@ -351,6 +354,11 @@ namespace FreeRunner_Flashing_Utility
 
             void Write()
             {
+                if (message.StartsWith("WARNING:", StringComparison.OrdinalIgnoreCase) || message.StartsWith("DirtyPico: Check", StringComparison.OrdinalIgnoreCase))
+                    debugConsole.SelectionColor = Color.Red;
+                else
+                    debugConsole.SelectionColor = debugConsole.ForeColor;
+
                 debugConsole.AppendText(message + Environment.NewLine);
                 debugConsole.ScrollToCaret();
             }
@@ -555,21 +563,6 @@ namespace FreeRunner_Flashing_Utility
             // Reset and re-detect from scratch
             device = DEVICE.NO_DEVICE;
 
-            //If a valid device was unplugged
-            if (previousDevice != DEVICE.NO_DEVICE && device == DEVICE.NO_DEVICE)
-            {
-                if (debug)
-                {
-                    Log($"{previousDevice} disconnected!");
-                }
-
-                //Clearing the image
-                setImage(null);
-
-                //Resetting progress bar
-                UpdateProgress(0);
-            }
-
             if (IsUsbDeviceConnected("7001", "600D")) // PicoFlasher
             {
                 setImage(Properties.Resources.picoflasher); //Update the image to PicoFlasher
@@ -583,6 +576,8 @@ namespace FreeRunner_Flashing_Utility
             {
                 setImage(Properties.Resources.dirtypico);
                 device = DEVICE.DIRTYPICO;
+
+                Log("Creds to ThisIsCheez for creating DirtyPico360 :D");
 
                 if (previousDevice != DEVICE.DIRTYPICO && debug)
                     Log($"{device} Connected!");
@@ -626,6 +621,21 @@ namespace FreeRunner_Flashing_Utility
                 }
             }
 
+            //If a valid device was unplugged
+            if (previousDevice != DEVICE.NO_DEVICE && device == DEVICE.NO_DEVICE)
+            {
+                if (debug)
+                {
+                    Log($"{previousDevice} disconnected!");
+                }
+
+                //Clearing the image
+                setImage(null);
+
+                //Resetting progress bar
+                UpdateProgress(0);
+            }
+
             try // It'll fail if the thing doesn't exist
             {
                 if (updateDevice != null)
@@ -637,30 +647,66 @@ namespace FreeRunner_Flashing_Utility
             }
         }
 
+        private void UsbChangeTimer_Tick(object sender, EventArgs e)
+        {
+            //usbScanAttempts++;
+
+            // Re-scan USB devices
+            deviceinit();
+
+            // Stop if we’ve found something or tried ~5 seconds worth of scans
+            if (device != DEVICE.NO_DEVICE) // || usbScanAttempts >= 10
+            {
+                usbChangeTimer.Stop();
+            }
+        }
+
+        //protected override void WndProc(ref Message m)
+        //{
+        //    if (m.Msg == WM_DEVICECHANGE)
+        //    {
+        //        int wParam = m.WParam.ToInt32();
+
+        //        // Optional debug – helps you see what Windows is sending
+        //        // Log($"WM_DEVICECHANGE wParam = 0x{wParam:X}");
+
+        //        // For any of these events, re-scan USB devices
+        //        if (wParam == DBT_DEVICEARRIVAL ||
+        //            wParam == DBT_DEVICEREMOVECOMPLETE ||
+        //            wParam == DBT_DEVNODES_CHANGED)
+        //        {
+        //            if (usbChangeTimer != null)
+        //            {
+        //                usbChangeTimer.Stop();
+        //                usbChangeTimer.Start();   // will call deviceinit() on Tick
+        //            }
+        //        }
+        //    }
+
+        //    // Let the base class also handle the message
+        //    base.WndProc(ref m);
+        //}
+
         protected override void WndProc(ref Message m)
         {
-            base.WndProc(ref m);
-
             if (m.Msg == WM_DEVICECHANGE)
             {
                 int wParam = m.WParam.ToInt32();
 
-                if (wParam == DBT_DEVICEARRIVAL)
+                // Treat ANY of these as "USB bus changed, rescan after debounce"
+                if (wParam == DBT_DEVICEARRIVAL ||
+                    wParam == DBT_DEVICEREMOVECOMPLETE ||
+                    wParam == DBT_DEVNODES_CHANGED)
                 {
-                    // Device just arrived – wait a bit so Windows finishes enumeration,
-                    // then rescan using deviceinit().
                     if (usbChangeTimer != null)
                     {
-                        usbChangeTimer.Stop();
-                        usbChangeTimer.Start();
+                        usbChangeTimer.Stop();  // reset debounce window
+                        usbChangeTimer.Start(); // deviceinit() will run once after 750ms
                     }
                 }
-                else if (wParam == DBT_DEVICEREMOVECOMPLETE)
-                {
-                    // Device removal is complete – safe to rescan immediately.
-                    deviceinit();
-                }
             }
+
+            base.WndProc(ref m);
         }
 
         private void setImage(Image m)
@@ -701,8 +747,13 @@ namespace FreeRunner_Flashing_Utility
 
             ///////ADD DIRTYPICO SUPPORT AS WELL\\\\\\\\\\\
             else if (device == DEVICE.DIRTYPICO){
-                Log("Implementation coming soon!");
-                SystemSounds.Asterisk.Play();
+                //If there is a valid filename
+                if (filename != null && filename != "")
+                    dirtypico.flashSvf(Path.Combine(getPath(), filename));
+                else {
+                    Log("Please select a timing before continuing!");
+                    SystemSounds.Asterisk.Play();
+                }
             }
 
 

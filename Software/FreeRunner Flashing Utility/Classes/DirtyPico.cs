@@ -9,17 +9,17 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace JRunner
+namespace FreeRunner_Flashing_Utility
 {
     public class DirtyPico
     {
         // Must use static paths to define svfPath and svfRoot. This build of UrJtag does not play nice 
         // with \ in file paths and only accepts \\ or / and previous method echos path with \
 
-        private readonly string baseDir = AppContext.BaseDirectory;
+        private readonly string baseDir = Environment.CurrentDirectory;
         public string svfPathUnfriendly => Path.Combine(svfRoot, "TimingSvfTemp.svf");
         public string svfPath => svfPathUnfriendly.Replace("\\", "/");
-        public string svfRoot => Path.Combine(baseDir, "Utility", "common", "DirtyPico360", "svftemp");
+        public string svfRoot => Path.Combine(baseDir, "common", "DirtyPico360", "svftemp");
 
         public bool ready = false;
         public bool inUse = false;
@@ -43,25 +43,22 @@ namespace JRunner
         private readonly StringBuilder _errBuf = new StringBuilder();
         private readonly object _bufLock = new object();
 
-        //Created variable to hold progressbar percentage
-        private static readonly Regex _percentRx =
-            new Regex(@"\(\s*(\d{1,3})%\)", RegexOptions.Compiled);
-
         // SVF Flashing
         // Basically everything here is copied from xFlasher class
         public void flashSvf(string filename)
 
         {
-            MessageBoxButtons DirtyButtons = MessageBoxButtons.OK;
-            string DirtyMessage = "Check wiring before flashing." + Environment.NewLine + "Watch LEDs on glitch chip during flashing." + Environment.NewLine + "If LEDs change you've had a successful flash!";
-            MessageBox.Show(DirtyMessage, "WARNING", DirtyButtons, MessageBoxIcon.Warning);
+            string DirtyMessage = "DirtyPico: Check wiring before flashing." + Environment.NewLine 
+                + "Watch LEDs on glitch chip during flashing." 
+                + Environment.NewLine + "If LEDs change you've had a successful flash!"
+                + Environment.NewLine + "Flashing will begin in 5s!"
+                + Environment.NewLine + "";
 
             {
                 if (inUse || waiting) return;
 
                 if (Process.GetProcessesByName("jtagDirtyPico").Length > 0)
                 {
-                    //Console.WriteLine("DirtyPico: SVF software is already running!");
                     mainForm.Instance.Log("DirtyPico: SVF software is already running!");
                     return;
                 }
@@ -72,13 +69,11 @@ namespace JRunner
                     {
                         if (!File.Exists(filename))
                         {
-                            //Console.WriteLine("DirtyPico: File Not Found: {0}", filename);
                             mainForm.Instance.Log($"DirtyPico: File Not Found: {filename}");
                             return;
                         }
                         if (Path.GetExtension(filename) != ".svf")
                         {
-                            //Console.WriteLine("DirtyPico: Wrong File Type: {0}", filename);
                             mainForm.Instance.Log($"DirtyPico: Wrong File Type: {filename}");
                             return;
                         }
@@ -94,40 +89,131 @@ namespace JRunner
                         }
                         catch
                         {
-                            //Console.WriteLine("DirtyPico: Could not open temporary file for flashing");
                             mainForm.Instance.Log("DirtyPico: Could not open temporary file for flashing");
-                            //Console.WriteLine("DirtyPico: {0} is locked by another process", svfPath);
                             mainForm.Instance.Log($"DirtyPico: {svfPath} is locked by another process");
                             return;
                         }
 
-                        //Console.WriteLine("DirtyPico: Flashing {0} via JTAG", Path.GetFileName(filename));
+                        //Logging warning messages
+                        mainForm.Instance.Log("WARNING: DIRTYPICO DOES NOT SHOW FLASHING PROGRESS CORRECTLY!!");
+                        mainForm.Instance.Log("");
+                        mainForm.Instance.Log(DirtyMessage);
+                        SystemSounds.Asterisk.Play();
+
+                        //Pausing code execution to allow user to read warnings
+                        Thread.Sleep(5000);
+
                         mainForm.Instance.Log($"DirtyPico: Flashing {Path.GetFileName(filename)} via JTAG");
 
+                        //Setting progress to 0%
+                        mainForm.Instance.UpdateProgress(0);
+
                         Process psi = new Process();
-                        psi.StartInfo.FileName = @"common/dirtypico/jtagDirtyPico.exe";
+                        psi.StartInfo.FileName = Path.Combine(baseDir, "common", "DirtyPico360", "jtagDirtyPico.exe");
                         psi.StartInfo.CreateNoWindow = true;
                         psi.StartInfo.UseShellExecute = false;
                         psi.StartInfo.RedirectStandardOutput = true;
                         psi.StartInfo.RedirectStandardInput = true;
                         psi.StartInfo.RedirectStandardError = true;
 
+                        //Enable synchronous read/write
+                        psi.EnableRaisingEvents = true;
+
+                        psi.OutputDataReceived += (s, e) =>
+                        {
+                            if (string.IsNullOrWhiteSpace(e.Data)) return;
+
+                            var line2 = e.Data;
+
+                            lock (_bufLock)
+                            {
+                                _outBuf.AppendLine(e.Data);
+                            }
+
+                            var line = e.Data.TrimStart();
+
+                            lock (detectLock)
+                            {
+                                if (line.StartsWith("Manufacturer:", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    var raw = line.Split(':', 2)[1].Trim();
+                                    int idx = raw.IndexOf('(');
+                                    detectedManufacturer = (idx > 0 ? raw.Substring(0, idx) : raw).Trim();
+                                }
+
+                                if (line.StartsWith("Part(", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    var raw = line.Split(':', 2)[1].Trim();
+                                    int idx = raw.IndexOf('(');
+                                    detectedPart = (idx > 0 ? raw.Substring(0, idx) : raw).Trim();
+                                }
+
+                                if (!string.IsNullOrEmpty(detectedManufacturer) &&
+                                    !string.IsNullOrEmpty(detectedPart))
+                                    detectEvent.Set();
+                            }
+                        };
+
                         inUse = true;
+
+                        lock (_bufLock)
+                        {
+                            _outBuf.Clear();
+                            _errBuf.Clear();
+                        }
+
                         psi.Start();
 
+                        //Enable asynchronous read/write for terminal
+                        psi.BeginOutputReadLine();
+                        psi.BeginErrorReadLine();
+
                         StreamWriter wr = psi.StandardInput;
-                        StreamReader rr = psi.StandardOutput;
 
                         wr.WriteLine("cable dirtyjtag");
+                        wr.Flush();
+
+                        Thread.Sleep(500);
+
+                        detectedManufacturer = null;
+                        detectedPart = null;
+                        detectEvent.Reset();
+
                         wr.WriteLine("detect");
+                        wr.Flush();
+
+                        Task.Run(() =>
+                        {
+                            if (!detectEvent.Wait(TimeSpan.FromSeconds(15)))
+                            {
+                                mainForm.Instance.BeginInvoke(new Action(() =>
+                                    mainForm.Instance.Log("Detect did not return Manufacturer/Part in time.")
+                                ));
+                                return;
+                            }
+
+                            string m, p;
+                            lock (detectLock)
+                            {
+                                m = detectedManufacturer; //Set manufactuer of CPLD from urJTAG output
+                                p = detectedPart; //Set part number of CPLD from urJTAG output
+                            }
+                            mainForm.Instance.BeginInvoke(new Action(() =>
+                                mainForm.Instance.Log($"DirtyPico: {m} {p} Detected")
+                            ));
+                        });
+
                         wr.WriteLine("svf " + svfPath); // Do not add + " progress" to this like the xFlasher. Unsure if it's an issue with my build of UrJtag or DirtyJtag but the progress argument breaks UrJtag
                         wr.WriteLine("quit");
                         wr.Flush();
+                        psi.WaitForExit();
                         wr.Close();
 
-                        string str = "";
-                        str = "--";
-                        str += rr.ReadToEnd().Replace("\n", "\r\n");
+                        string str;
+                        lock (_bufLock)
+                        {
+                            str = _outBuf.ToString().Replace("\n", "\r\n");
+                        }
 
                         if (str.Length >= 4)
                         {
@@ -137,7 +223,6 @@ namespace JRunner
                         string strLower = str.ToLower();
                         inUse = false;
 
-
                         if (strLower.Contains("between")) // Quick and dirty way to get JRunner to display flash success message. DirtyJtag displays TDO mismatch errors in UrJtag during the verification portion of SVF flashing and progress is broken, so this is the easiest way to know if the flash worked and display a success message.
                         {
 
@@ -146,26 +231,17 @@ namespace JRunner
 
                             if (start <= 0 || end <= 0)
                             {
-                                //Console.WriteLine("DirtyPico: Failed to detect CPLD type");
                                 mainForm.Instance.Log("DirtyPico: Failed to detect CPLD type");
                             }
-                            else
-                            {
-                                jtagdevice = str.Substring(start, end).Trim().Replace("\r\n", "");
-                                //Console.WriteLine("DirtyPico: {0} Detected", jtagdevice);
-                                mainForm.Instance.Log($"DirtyPico: {jtagdevice} Detected");
-                            }
 
-                            //Console.WriteLine("DirtyPico: SVF Flash Successful!");
                             mainForm.Instance.Log("DirtyPico: SVF Flash Successful!");
-                            Console.WriteLine("");
                             mainForm.Instance.Log("");
 
-                            //if (variables.playSuccess)
-                            //{
-                            //    SoundPlayer success = new SoundPlayer(Properties.Resources.chime);
-                            //    success.Play();
-                            //}
+                            //Setting progress to 100%
+                            mainForm.Instance.UpdateProgress(100);
+
+                            SoundPlayer success = new SoundPlayer(Properties.Resources.chime);
+                            success.Play();
                         }
 
                         else if (strLower.Contains("xc2c128") & str.EndsWith("3") | str.EndsWith("0"))
@@ -176,50 +252,36 @@ namespace JRunner
 
                             if (start <= 0 || end <= 0)
                             {
-                                //Console.WriteLine("DirtyPico: Failed to detect CPLD type");
                                 mainForm.Instance.Log("DirtyPico: Failed to detect CPLD type");
                             }
                             else
                             {
                                 jtagdevice = str.Substring(start, end).Trim().Replace("\r\n", "");
-                                //Console.WriteLine("DirtyPico: {0} Detected", jtagdevice);
                                 mainForm.Instance.Log($"DirtyPico: {jtagdevice} Detected");
                             }
 
-                            //Console.WriteLine("DirtyPico: SVF Flash Successful!");
                             mainForm.Instance.Log("DirtyPico: SVF Flash Successful!");
-                            Console.WriteLine("");
                             mainForm.Instance.Log("");
 
-                            //if (variables.playSuccess)
-                            //{
-                            //    SoundPlayer success = new SoundPlayer(Properties.Resources.chime);
-                            //    success.Play();
-                            //}
+                            SoundPlayer success = new SoundPlayer(Properties.Resources.chime);
+                            success.Play();
                         }
 
                         else if (strLower.Contains("chain without any parts") == true)
                         {
-                            //Console.WriteLine("DirtyPico: Could not connect to CPLD");
                             mainForm.Instance.Log("DirtyPico: Could not connect to CPLD");
-                            //Console.WriteLine("");
                             mainForm.Instance.Log("");
                         }
 
                         else if (strLower.Contains("stuck at"))
                         {
-                            //Console.WriteLine("DirtyPico: TDO stuck at 0");
                             mainForm.Instance.Log("DirtyPico: TDO stuck at 0");
-                            //Console.WriteLine("Check wiring or power cycle glitch chip");
                             mainForm.Instance.Log("Check wiring or power cycle glitch chip");
-                            //Console.WriteLine("");
                             mainForm.Instance.Log("");
                         }
                         else
                         {
-                            //Console.WriteLine("DirtyPico: SVF Flash Failed");
                             mainForm.Instance.Log("DirtyPico: SVF Flash Failed");
-                            //Console.WriteLine("");
                             mainForm.Instance.Log("");
                         }
 
@@ -232,12 +294,9 @@ namespace JRunner
                     {
                         inUse = false;
 
-                        //Console.WriteLine(ex.Message);
                         mainForm.Instance.Log(ex.Message);
                         if (mainForm.Instance.debug) 
-                            //Console.WriteLine(ex.ToString());
                             mainForm.Instance.Log(ex.ToString());
-                        //Console.WriteLine("");
                         mainForm.Instance.Log("");
                     }
                 });
