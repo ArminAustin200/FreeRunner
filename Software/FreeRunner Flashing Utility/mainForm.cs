@@ -5,6 +5,7 @@ using Microsoft.VisualBasic.Logging;
 using System.IO;
 using System.Management;
 using System.Media;
+using System.Text;
 
 namespace FreeRunner_Flashing_Utility
 {
@@ -401,12 +402,16 @@ namespace FreeRunner_Flashing_Utility
 
         private async void main_Load(object sender, EventArgs e)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
             bool updFail = false;
 
             try
             {
                 //Current program revision
                 int currentVersion = 1;
+
+                Log($"Application Version: {currentVersion}");
 
                 await update.CheckAndUpdateFullAsync(
                     "https://raw.githubusercontent.com/ArminAustin200/FreeRunner-Flash-Utility-Updater/refs/heads/main/autoupdate.json", //Update JSON URL

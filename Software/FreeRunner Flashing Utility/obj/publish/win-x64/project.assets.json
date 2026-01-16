@@ -65,7 +65,7 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.19": {
+      "Microsoft.NET.ILLink.Tasks/8.0.23": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -255,7 +255,7 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.19": {
+      "Microsoft.NET.ILLink.Tasks/8.0.23": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -434,10 +434,10 @@
         "libusbdotnet.nuspec"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/8.0.19": {
-      "sha512": "IhHf+zeZiaE5EXRyxILd4qM+Hj9cxV3sa8MpzZgeEhpvaG3a1VEGF6UCaPFLO44Kua3JkLKluE0SWVamS50PlA==",
+    "Microsoft.NET.ILLink.Tasks/8.0.23": {
+      "sha512": "GqHiB1HbbODWPbY/lc5xLQH8siEEhNA0ptpJCC6X6adtAYNEzu5ZlqV3YHA3Gh7fuEwgA8XqVwMtH2KNtuQM1Q==",
       "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.19",
+      "path": "microsoft.net.illink.tasks/8.0.23",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -451,7 +451,7 @@
         "build/Microsoft.NET.ILLink.Analyzers.props",
         "build/Microsoft.NET.ILLink.Tasks.props",
         "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.19.nupkg.sha512",
+        "microsoft.net.illink.tasks.8.0.23.nupkg.sha512",
         "microsoft.net.illink.tasks.nuspec",
         "tools/net472/ILLink.Tasks.dll",
         "tools/net472/ILLink.Tasks.dll.config",
@@ -717,28 +717,28 @@
       "Ionic.Zip >= 1.9.1.8",
       "LibUsbDfu >= 1.1.4",
       "LibUsbDotNet >= 2.2.75",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.19",
+      "Microsoft.NET.ILLink.Tasks >= 8.0.23",
       "System.Management >= 10.0.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Austin\\.nuget\\packages\\": {},
+    "C:\\Users\\Armin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
+      "projectUniqueName": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
       "projectName": "FreeRunner Flashing Utility",
-      "projectPath": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
-      "packagesPath": "C:\\Users\\Austin\\.nuget\\packages\\",
-      "outputPath": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\obj\\publish\\win-x64\\",
+      "projectPath": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\FreeRunner Flashing Utility.csproj",
+      "packagesPath": "C:\\Users\\Armin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\obj\\publish\\win-x64\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Austin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Armin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -790,7 +790,7 @@
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[8.0.19, )",
+            "version": "[8.0.23, )",
             "autoReferenced": true
           },
           "System.Management": {
@@ -809,24 +809,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[8.0.19, 8.0.19]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
-            "version": "[8.0.19, 8.0.19]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[8.0.19, 8.0.19]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[8.0.19, 8.0.19]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -835,7 +817,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.309/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
