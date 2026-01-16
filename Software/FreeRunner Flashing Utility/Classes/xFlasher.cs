@@ -15,20 +15,12 @@ namespace FreeRunner_Flashing_Utility
     {
         private readonly string baseDir = Environment.CurrentDirectory;
         public string svfPath => Path.Combine(svfRoot, "TimingSvfTemp.svf");
-
         public string svfRoot => Path.Combine(baseDir, "common", "xFlasher", "SVF");
         
         public bool ready = false;
         public bool inUse = false;
         public bool waiting = false;
-        private string jtagdevice = "";
         public int selType = 0;
-
-        private static int initCount = 0;
-        private static int inUseCount = 0;
-        public static string xFlasherTimeString = "";
-        System.Windows.Threading.DispatcherTimer initTimer;
-        System.Timers.Timer inUseTimer;
 
         //Created variables to store CPLD manufacturer and part numbers
         private string detectedManufacturer;
