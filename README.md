@@ -34,6 +34,10 @@ CE8 - Pin 12
 CE9 - Pin 13  
 CE10 - Pin 18  
 
+
+**Note:** <ins>The total number of available CE pads may change for final release PCB.</ins>     
+
+
 SMC_RST - Pin 29  
 BUTTON - Pin 28  
 
