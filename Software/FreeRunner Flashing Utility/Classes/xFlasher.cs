@@ -13,10 +13,10 @@ namespace FreeRunner_Flashing_Utility
 {
     public class xFlasher
     {
-        private readonly string baseDir = Environment.CurrentDirectory;
+        private readonly string baseDir = AppDomain.CurrentDomain.BaseDirectory;
         public string svfPath => Path.Combine(svfRoot, "TimingSvfTemp.svf");
-        public string svfRoot => Path.Combine(baseDir, "common", "xFlasher", "SVF");
-        
+        public string svfRoot => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "SVF");
+
         public bool ready = false;
         public bool inUse = false;
         public bool waiting = false;
@@ -238,6 +238,9 @@ namespace FreeRunner_Flashing_Utility
                     {
                         mainForm.Instance.Log("xFlasher: SVF Flash Failed");
                         mainForm.Instance.Log("");
+
+                        if (mainForm.Instance.debug)
+                            mainForm.Instance.Log(strLower);
                     }
 
                     if (File.Exists(svfPath))

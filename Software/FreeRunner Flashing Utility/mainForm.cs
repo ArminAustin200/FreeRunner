@@ -329,6 +329,12 @@ namespace FreeRunner_Flashing_Utility
         //Creating progress bar update method
         public void UpdateProgress(int percent)
         {
+            if (progressBar1.InvokeRequired)
+            {
+                progressBar1.BeginInvoke(new Action(() => UpdateProgress(percent)));
+                return;
+            }
+
             if (percent < progressBar1.Minimum)
             {
                 percent = progressBar1.Minimum;
@@ -340,8 +346,8 @@ namespace FreeRunner_Flashing_Utility
 
             progressBar1.Value = percent;
 
-            //Setting progress label text
-            labelPercent.Text = percent.ToString() + "%";
+            ////Setting progress label text
+            labelPercent.Text = percent + "%";
         }
 
         //Creating log updater method
@@ -400,6 +406,26 @@ namespace FreeRunner_Flashing_Utility
             }
         }
 
+        //Checking for .old file
+        private static void CleanupOldExe()
+        {
+            try
+            {
+                //Searing on path
+                string exePath = Application.ExecutablePath;
+                string oldExe = exePath + ".old";
+
+                if (File.Exists(oldExe))
+                {
+                    File.Delete(oldExe); //Deleting the .old file after successful update
+                }
+            }
+            catch
+            {
+                //Do nothing
+            }
+        }
+
         private async void main_Load(object sender, EventArgs e)
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
@@ -408,6 +434,9 @@ namespace FreeRunner_Flashing_Utility
 
             try
             {
+                //Cleanup directories by deleting .old file
+                CleanupOldExe();
+
                 //Current program revision
                 int currentVersion = 1;
 

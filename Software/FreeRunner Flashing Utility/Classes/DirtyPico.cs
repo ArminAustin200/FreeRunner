@@ -15,10 +15,10 @@ namespace FreeRunner_Flashing_Utility
     {
         // Must use static paths to define svfPath and svfRoot. This build of UrJtag does not play nice 
         // with \ in file paths and only accepts \\ or / and previous method echos path with \
-        private readonly string baseDir = Environment.CurrentDirectory;
+        private readonly string baseDir = AppDomain.CurrentDomain.BaseDirectory;
         public string svfPathUnfriendly => Path.Combine(svfRoot, "TimingSvfTemp.svf");
         public string svfPath => svfPathUnfriendly.Replace("\\", "/");
-        public string svfRoot => Path.Combine(baseDir, "common", "DirtyPico360", "svftemp");
+        public string svfRoot => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "svftemp");
 
         public bool ready = false;
         public bool inUse = false;
@@ -276,6 +276,9 @@ namespace FreeRunner_Flashing_Utility
                         {
                             mainForm.Instance.Log("DirtyPico: SVF Flash Failed");
                             mainForm.Instance.Log("");
+
+                            if (mainForm.Instance.debug)
+                                mainForm.Instance.Log(strLower);
                         }
 
                         if (File.Exists(svfPath))

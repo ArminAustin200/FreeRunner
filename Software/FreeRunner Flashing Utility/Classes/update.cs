@@ -14,11 +14,11 @@ namespace FreeRunner_Flashing_Utility.Classes
         {
             public int revision { get; set; }
             public string zipUrl { get; set; } = "";
-            public string md5 { get; set; } = "";         // optional
-            public string? changelog { get; set; }        // optional
+            public string md5 { get; set; } = "";       
+            public string? changelog { get; set; }
         }
 
-        // Call this with your current revision number (hardcoded or from assembly)
+        //Call with current program revision number
         public static async Task<bool> CheckAndUpdateFullAsync(
             string updateJsonUrl,
             int currentRevision,
@@ -61,7 +61,7 @@ namespace FreeRunner_Flashing_Utility.Classes
                 await wc.DownloadFileTaskAsync(new Uri(manifest.zipUrl), zipPath);
             }
 
-            // MD5 check 
+            //MD5 check 
             if (!string.IsNullOrWhiteSpace(manifest.md5))
             {
                 onStatus?.Invoke("Verifying package...");
@@ -75,73 +75,59 @@ namespace FreeRunner_Flashing_Utility.Classes
 
             onStatus?.Invoke("Installing update...");
 
-            string stageDir = Path.Combine(appDir, "_update_tmp");
-            string cmdPath = Path.Combine(appDir, "_apply_update.cmd");
+            //Figure out current exe and paths
+            string exePath = Process.GetCurrentProcess().MainModule!.FileName!;
+            string appDirReal = Path.GetDirectoryName(exePath)!;   // use real dir of the running exe
+            string exeName = Path.GetFileName(exePath);
+            string backupPath = Path.Combine(appDirReal, exeName + ".old");
 
-            if (Directory.Exists(stageDir))
-                Directory.Delete(stageDir, true);
+            try
+            {
+                //1) Backup current EXE
+                if (File.Exists(backupPath))
+                    File.Delete(backupPath);
 
-            Directory.CreateDirectory(stageDir);
+                File.Move(exePath, backupPath);
 
-            // Extract ZIP into staging(NOT appDir)
-            using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(zipPath)) {
-                zip.ExtractAll(stageDir, ExtractExistingFileAction.OverwriteSilently);
+                //2) Extract ZIP directly into app folder, overwriting everything
+                using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(zipPath))
+                {
+                    zip.ExtractAll(appDirReal, ExtractExistingFileAction.OverwriteSilently);
+                }
+
+                //3) Remove the zip
+                File.Delete(zipPath);
+
+                //4) Start the new EXE from the same location
+                onStatus?.Invoke("Update installed. Restarting...");
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = Path.Combine(appDirReal, exeName),
+                    WorkingDirectory = appDirReal,
+                    UseShellExecute = true
+                });
+
+                //5) Exit current process so the new one takes over
+                Environment.Exit(0);
+                return true;
             }
-            File.Delete(zipPath);
+            catch (Exception ex)
+            {
+                try { if (File.Exists(zipPath)) File.Delete(zipPath); } catch { }
 
-            // Write + run apply script (copies folders too)
-            WriteApplyScript(cmdPath, appDir, stageDir, currentExeName);
+                onStatus?.Invoke("Failed to install update: " + ex.Message);
+                return false;
+            }
 
-            Process.Start(new ProcessStartInfo {
-                FileName = cmdPath,
-                WorkingDirectory = appDir,
-                UseShellExecute = true,
-                CreateNoWindow = true
-            });
-
-            // Exit so nothing is locked
-            Environment.Exit(0);
-            return true;
         }
 
+        //Function to compute MD5 hash
         private static string ComputeMD5(string filePath)
         {
             using var md5 = MD5.Create();
             using var stream = File.OpenRead(filePath);
             var hash = md5.ComputeHash(stream);
             return Convert.ToHexString(hash);
-        }
-
-        static void WriteApplyScript(string cmdPath, string appDir, string stageDir, string exeName)
-        {
-            // Exclude files/folders you never want overwritten (edit as needed)
-            // Example: keep user config, logs, or NAND dumps
-            string excludeFiles = "user.config settings.json";
-            string excludeDirs = "Logs Dumps";
-
-            string script =
-            $@"@echo off
-            setlocal
-            cd /d ""{appDir}""
-
-                REM wait a moment for the app to fully exit
-                timeout /t 2 /nobreak >nul
-
-                REM Copy everything (folders included) from staging into the app folder
-                REM /E = include subdirs, /R /W = retry settings, /NFL /NDL = quieter output
-                robocopy ""{stageDir}"" ""{appDir}"" /E /R:2 /W:1 /NFL /NDL /NP /NJH /NJS ^
-                    /XF {excludeFiles} ^
-                    /XD {excludeDirs}
-
-                REM cleanup staging
-                rmdir /s /q ""{stageDir}""
-
-                REM restart updated app
-                start """" ""{Path.Combine(appDir, exeName)}""
-                endlocal
-            ";
-
-            File.WriteAllText(cmdPath, script);
         }
     }
 }

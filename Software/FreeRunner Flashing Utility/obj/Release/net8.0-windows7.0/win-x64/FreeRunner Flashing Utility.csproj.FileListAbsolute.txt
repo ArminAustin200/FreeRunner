@@ -11,7 +11,6 @@ F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\R
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\win-x64\System.CodeDom.dll
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Release\net8.0-windows7.0\win-x64\System.Management.dll
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\win-x64\FreeRunner Flashing Utility.csproj.AssemblyReference.cache
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\win-x64\FreeRunner_Flashing_Utility.main.resources
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\win-x64\FreeRunner_Flashing_Utility.Properties.Resources.resources
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\win-x64\FreeRunner Flashing Utility.csproj.GenerateResource.cache
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\win-x64\FreeRunner Flashing Utility.GeneratedMSBuildEditorConfig.editorconfig
@@ -52,3 +51,4 @@ C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\win-x64\FreeRunner Flashing Utility.pdb
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\win-x64\FreeRunner Flashing Utility.genruntimeconfig.cache
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\win-x64\ref\FreeRunner Flashing Utility.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\win-x64\FreeRunner_Flashing_Utility.mainForm.resources

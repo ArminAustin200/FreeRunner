@@ -26,34 +26,6 @@ F:\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\r
 F:\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.pdb
 F:\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.genruntimeconfig.cache
 F:\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\ref\FreeRunner Flashing Utility.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.exe
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.deps.json
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.runtimeconfig.json
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.pdb
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\DeviceProgramming.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\Huddly.LibUsbDotNet.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\Ionic.Zip.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\LibUsbDfu.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\LibUsbDotNet.LibUsbDotNet.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\System.CodeDom.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\System.Management.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\runtimes\win\lib\net8.0\System.Management.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.csproj.AssemblyReference.cache
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner_Flashing_Utility.mainForm.resources
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner_Flashing_Utility.Properties.Resources.resources
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.csproj.GenerateResource.cache
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.GeneratedMSBuildEditorConfig.editorconfig
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.AssemblyInfoInputs.cache
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.AssemblyInfo.cs
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.csproj.CoreCompileInputs.cache
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.sourcelink.json
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunn.ACD42F51.Up2Date
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\refint\FreeRunner Flashing Utility.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.pdb
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.genruntimeconfig.cache
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\ref\FreeRunner Flashing Utility.dll
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.exe
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.deps.json
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.runtimeconfig.json
@@ -82,3 +54,31 @@ C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.pdb
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.genruntimeconfig.cache
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\ref\FreeRunner Flashing Utility.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.exe
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.deps.json
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.runtimeconfig.json
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.pdb
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\DeviceProgramming.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\Huddly.LibUsbDotNet.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\Ionic.Zip.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\LibUsbDfu.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\LibUsbDotNet.LibUsbDotNet.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\System.CodeDom.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\System.Management.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\runtimes\win\lib\net8.0\System.Management.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.csproj.AssemblyReference.cache
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner_Flashing_Utility.mainForm.resources
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner_Flashing_Utility.Properties.Resources.resources
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.csproj.GenerateResource.cache
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.GeneratedMSBuildEditorConfig.editorconfig
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.AssemblyInfoInputs.cache
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.AssemblyInfo.cs
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.csproj.CoreCompileInputs.cache
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.sourcelink.json
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunn.ACD42F51.Up2Date
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\refint\FreeRunner Flashing Utility.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.pdb
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.genruntimeconfig.cache
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\ref\FreeRunner Flashing Utility.dll
