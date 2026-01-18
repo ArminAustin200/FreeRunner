@@ -124,7 +124,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 808 216 968 296)
+	(rect 808 208 968 288)
 	(text "slower" (rect 5 0 35 12)(font "Arial" ))
 	(text "inst3" (rect 8 64 30 81)(font "Intel Clear" ))
 	(port
@@ -222,28 +222,8 @@ agreement for further details.
 	(pt 1000 200)
 )
 (connector
-	(pt 1000 248)
-	(pt 968 248)
-)
-(connector
-	(pt 1000 200)
-	(pt 1000 248)
-)
-(connector
 	(pt 576 376)
 	(pt 776 376)
-)
-(connector
-	(pt 776 376)
-	(pt 776 264)
-)
-(connector
-	(pt 808 264)
-	(pt 776 264)
-)
-(connector
-	(pt 968 264)
-	(pt 984 264)
 )
 (connector
 	(pt 384 248)
@@ -266,15 +246,51 @@ agreement for further details.
 	(pt 408 280)
 )
 (connector
-	(pt 568 248)
-	(pt 808 248)
-)
-(connector
 	(pt 568 264)
 	(pt 592 264)
 )
 (connector
 	(pt 568 280)
 	(pt 592 280)
+)
+(connector
+	(pt 1000 240)
+	(pt 968 240)
+)
+(connector
+	(pt 1000 200)
+	(pt 1000 240)
+)
+(connector
+	(pt 776 376)
+	(pt 776 256)
+)
+(connector
+	(pt 776 256)
+	(pt 808 256)
+)
+(connector
+	(pt 576 248)
+	(pt 576 240)
+)
+(connector
+	(pt 568 248)
+	(pt 576 248)
+)
+(connector
+	(pt 576 240)
+	(pt 808 240)
+)
+(connector
+	(pt 976 264)
+	(pt 976 256)
+)
+(connector
+	(pt 984 264)
+	(pt 976 264)
+)
+(connector
+	(pt 976 256)
+	(pt 968 256)
 )
 (junction (pt 368 280))

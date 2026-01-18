@@ -75,7 +75,7 @@ namespace FreeRunner_Flashing_Utility
 
             // Timer to debounce / delay USB rescans after plug events
             usbChangeTimer = new System.Windows.Forms.Timer();
-            usbChangeTimer.Interval = 10; // milliseconds was 10ms
+            usbChangeTimer.Interval = 10; //Time in milliseconds --was 10ms
             usbChangeTimer.Tick += (s, e) =>
             {
                 usbChangeTimer.Stop();  // one-shot
@@ -395,6 +395,7 @@ namespace FreeRunner_Flashing_Utility
         private void exitBtn_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show(
+                this,
                 "Are you sure you want to exit?",
                 "Exit?",
                 MessageBoxButtons.YesNo,
@@ -440,7 +441,8 @@ namespace FreeRunner_Flashing_Utility
                 //Current program revision
                 int currentVersion = 1;
 
-                Log($"Application Version: {currentVersion}");
+                if (debug)
+                    Log($"Application Version: {currentVersion}");
 
                 await update.CheckAndUpdateFullAsync(
                     "https://raw.githubusercontent.com/ArminAustin200/FreeRunner-Flash-Utility-Updater/refs/heads/main/autoupdate.json", //Update JSON URL
@@ -457,7 +459,7 @@ namespace FreeRunner_Flashing_Utility
             }
 
             if (!updFail) {
-                await Task.Delay(1000);
+                await Task.Delay(2000);
                 Log_Clear();
             }
 
@@ -616,6 +618,7 @@ namespace FreeRunner_Flashing_Utility
             else if (IsUsbDeviceConnected("8338", "11D4"))
             {  // JR-Programmer
                 setImage(Properties.Resources.jrp);
+                device = DEVICE.JR_PROGRAMMER;
 
                 if (previousDevice != DEVICE.JR_PROGRAMMER && debug)
                     Log($"{device} Connected!");
@@ -679,13 +682,10 @@ namespace FreeRunner_Flashing_Utility
 
         private void UsbChangeTimer_Tick(object sender, EventArgs e)
         {
-            //usbScanAttempts++;
-
             // Re-scan USB devices
             deviceinit();
 
-            // Stop if we’ve found something or tried ~5 seconds worth of scans
-            if (device != DEVICE.NO_DEVICE) // || usbScanAttempts >= 10
+            if (device != DEVICE.NO_DEVICE)
             {
                 usbChangeTimer.Stop();
             }
@@ -726,6 +726,31 @@ namespace FreeRunner_Flashing_Utility
                 SystemSounds.Asterisk.Play(); //Notify user
             }
 
+            //PRE-RELEASE ----- FIX LATER\\
+            if (multiNAND >= 2) {
+                Log("WARNING: Multi-NAND support is coming very soon!\n" +
+                    "Expect to see it in the next update ;)\n" +
+                    "\"NONE\" has been selected for now :)");
+
+                SystemSounds.Hand.Play();
+
+                //Ensuring multi-NAND is disabled
+                multiNAND1.Checked = true;
+                multiNAND11.Checked = true;
+            }
+
+            //PRE-RELEASE ----- FIX LATER\\
+            if (boardType.Contains("Corona")) {
+                Log("WARNING: Corona and Corona WB timings are not yet compiled\n" +
+                    "for this pre-release version of FreeRunner Flashing Utility.\n" +
+                    "Don't worry! They will be coming in the next update!" +
+                    "\n\n");
+
+                SystemSounds.Hand.Play();
+
+                boardTr.Checked = true;
+            }
+
             //If a SVF Program is attempted in eMMC mode (xFlasher_eMMC)
             else if (device == DEVICE.XFLASHER_EMMC)
             {
@@ -742,23 +767,24 @@ namespace FreeRunner_Flashing_Utility
                 //If there is a valid filename
                 if (filename != null && filename != "")
                     xflasher.flashSvf(Path.Combine(getPath(), filename));
-                else {
+                else
+                {
                     Log("Please select a timing before continuing!");
                     SystemSounds.Asterisk.Play();
                 }
             }
 
-            ///////ADD DIRTYPICO SUPPORT AS WELL\\\\\\\\\\\
-            else if (device == DEVICE.DIRTYPICO){
+            else if (device == DEVICE.DIRTYPICO)
+            {
                 //If there is a valid filename
                 if (filename != null && filename != "")
                     dirtypico.flashSvf(Path.Combine(getPath(), filename));
-                else {
+                else
+                {
                     Log("Please select a timing before continuing!");
                     SystemSounds.Asterisk.Play();
                 }
             }
-
 
             //If SVF Program is attempted with PicoFlasher
             else if (device == DEVICE.PICOFLASHER)
