@@ -221,12 +221,6 @@ namespace FreeRunner_Flashing_Utility
 
             //Setting externFile false
             externFile = false;
-
-            if (debug)
-            {
-                Log($"Filename: {filename}");
-                Log($"External File: {externFile}");
-            }
         }
 
         private void SlimTimingRadio_CheckChanged(object sender, EventArgs e)
@@ -269,10 +263,8 @@ namespace FreeRunner_Flashing_Utility
 
                 filename = filename + $"{selected.Text}_rgh12.svf";
 
-                if (debug) { 
+                if (debug) 
                     Log($"Filename: {filename}");
-                    Log($"External File: {externFile}");
-                }
             }
         }
 
@@ -751,8 +743,21 @@ namespace FreeRunner_Flashing_Utility
             //If a SVF Program is attempted with no device attached
             if (device == DEVICE.NO_DEVICE)
             {
-                Log("Please attach a valid programmer before continuing!");
-                SystemSounds.Asterisk.Play(); //Notify user
+                //Debug for confirming file path
+                if (debug) {
+                    if (File.Exists(Path.Combine(getPath(), filename)))
+                        Log("File Path:" +
+                            $"\n{Path.Combine(getPath(), filename)}");
+
+                    else
+                        Log("WARNING: FILE NOT FOUND!");
+                }
+
+                else
+                {
+                    Log("Please attach a valid programmer before continuing!");
+                    SystemSounds.Asterisk.Play(); //Notify user
+                }
             }
 
             //PRE-RELEASE ----- FIX LATER\\
@@ -767,19 +772,6 @@ namespace FreeRunner_Flashing_Utility
                 //Ensuring multi-NAND is disabled
                 multiNAND1.Checked = true;
                 multiNAND11.Checked = true;
-            }
-
-            //PRE-RELEASE ----- FIX LATER\\
-            if (boardType.Contains("Corona"))
-            {
-                Log("WARNING: Corona and Corona WB timings are not yet compiled\n" +
-                    "for this pre-release version of FreeRunner Flashing Utility.\n" +
-                    "Don't worry! They will be coming in the next update!" +
-                    "\n\n");
-
-                SystemSounds.Hand.Play();
-
-                boardTr.Checked = true;
             }
 
             //If a SVF Program is attempted in eMMC mode (xFlasher_eMMC)
