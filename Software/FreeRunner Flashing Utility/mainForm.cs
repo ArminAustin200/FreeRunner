@@ -6,6 +6,7 @@ using System.IO;
 using System.Management;
 using System.Media;
 using System.Text;
+using System.Windows.Forms.Design;
 
 namespace FreeRunner_Flashing_Utility
 {
@@ -62,12 +63,24 @@ namespace FreeRunner_Flashing_Utility
         private String welcomeText = "Welcome to FreeRunner Flashing Utility!\n" +
                                      "By: ArminAustin200";
 
-        public static mainForm Instance {get; private set;}
+        //Creating a flag to determine wether or not an external file was chosen
+        private bool externFile = false;
+
+        public static mainForm Instance { get; private set; }
         public mainForm()
         {
             //Initializing main window
             InitializeComponent();
+            //Setting the current instance
             Instance = this;
+
+            //Adding key combinations to open file button
+            openFileBtn.ShortcutKeys = Keys.Control | Keys.O;
+            openFileBtn.ShowShortcutKeys = true;
+
+            //Adding key combinations to exit program button
+            exitBtn.ShortcutKeys = Keys.Control | Keys.Shift | Keys.X;
+            exitBtn.ShowShortcutKeys = true;
 
             //Centering pictureBox1
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -160,7 +173,8 @@ namespace FreeRunner_Flashing_Utility
             boardCorWB.Enabled = false;
 
             //Uncheck all slim buttons
-            foreach (var rb in slimTimingButtons) {
+            foreach (var rb in slimTimingButtons)
+            {
                 if (rb.Checked)
                     rb.Checked = false; ;
             }
@@ -205,8 +219,14 @@ namespace FreeRunner_Flashing_Utility
                 filename = "maxv_fj_" + selected.Text +"_rgh12.svf";
             }
 
-            if(debug)
+            //Setting externFile false
+            externFile = false;
+
+            if (debug)
+            {
                 Log($"Filename: {filename}");
+                Log($"External File: {externFile}");
+            }
         }
 
         private void SlimTimingRadio_CheckChanged(object sender, EventArgs e)
@@ -225,6 +245,9 @@ namespace FreeRunner_Flashing_Utility
 
             else
             {
+                //Setting externFile false
+                externFile = false;
+
                 //Enabling board type buttons
                 boardTr.Enabled = true;
                 boardCor.Enabled = true;
@@ -241,13 +264,15 @@ namespace FreeRunner_Flashing_Utility
                 {
                     filename = "maxv_cr_";
                 }
-                else 
+                else
                     filename = "maxv_cr_wb_";
 
                 filename = filename + $"{selected.Text}_rgh12.svf";
 
-                if (debug)
+                if (debug) { 
                     Log($"Filename: {filename}");
+                    Log($"External File: {externFile}");
+                }
             }
         }
 
@@ -284,7 +309,7 @@ namespace FreeRunner_Flashing_Utility
 
             if (debug)
                 Log("Multi-NAND: " + multiNAND);
-            
+
         }
 
         private void boardTypeSelect(object sender, EventArgs e)
@@ -301,8 +326,10 @@ namespace FreeRunner_Flashing_Utility
 
                 String timing = "";
 
-                foreach (var rb in slimTimingButtons) {
-                    if (rb.Checked) { 
+                foreach (var rb in slimTimingButtons)
+                {
+                    if (rb.Checked)
+                    {
                         timing = rb.Text;
                     }
                 }
@@ -373,7 +400,8 @@ namespace FreeRunner_Flashing_Utility
         }
 
         //Creating log clear method
-        private void Log_Clear() { 
+        private void Log_Clear()
+        {
             debugConsole.Clear();
         }
 
@@ -458,7 +486,8 @@ namespace FreeRunner_Flashing_Utility
                 updFail = true;
             }
 
-            if (!updFail) {
+            if (!updFail)
+            {
                 await Task.Delay(2000);
                 Log_Clear();
             }
@@ -721,13 +750,14 @@ namespace FreeRunner_Flashing_Utility
         {
             //If a SVF Program is attempted with no device attached
             if (device == DEVICE.NO_DEVICE)
-            { 
+            {
                 Log("Please attach a valid programmer before continuing!");
                 SystemSounds.Asterisk.Play(); //Notify user
             }
 
             //PRE-RELEASE ----- FIX LATER\\
-            if (multiNAND >= 2) {
+            if (multiNAND >= 2)
+            {
                 Log("WARNING: Multi-NAND support is coming very soon!\n" +
                     "Expect to see it in the next update ;)\n" +
                     "\"NONE\" has been selected for now :)");
@@ -740,7 +770,8 @@ namespace FreeRunner_Flashing_Utility
             }
 
             //PRE-RELEASE ----- FIX LATER\\
-            if (boardType.Contains("Corona")) {
+            if (boardType.Contains("Corona"))
+            {
                 Log("WARNING: Corona and Corona WB timings are not yet compiled\n" +
                     "for this pre-release version of FreeRunner Flashing Utility.\n" +
                     "Don't worry! They will be coming in the next update!" +
@@ -765,8 +796,16 @@ namespace FreeRunner_Flashing_Utility
             else if (device == DEVICE.XFLASHER_SPI)
             {
                 //If there is a valid filename
-                if (filename != null && filename != "")
-                    xflasher.flashSvf(Path.Combine(getPath(), filename));
+                if (filename != null && filename != "") {
+                    //If the user is flashing a file built-into the program
+                    if (!externFile)
+                        xflasher.flashSvf(Path.Combine(getPath(), filename));
+                    
+                    //If the user is flashing an external svf file
+                    else 
+                       xflasher.flashSvf(filename);
+                }
+                    
                 else
                 {
                     Log("Please select a timing before continuing!");
@@ -777,8 +816,15 @@ namespace FreeRunner_Flashing_Utility
             else if (device == DEVICE.DIRTYPICO)
             {
                 //If there is a valid filename
-                if (filename != null && filename != "")
-                    dirtypico.flashSvf(Path.Combine(getPath(), filename));
+                if (filename != null && filename != "") {
+                    //If the user is flashing a file built-into the program
+                    if (!externFile)
+                        dirtypico.flashSvf(Path.Combine(getPath(), filename));
+
+                    //If the user is flashing an external svf file
+                    else
+                        dirtypico.flashSvf(filename);
+                }
                 else
                 {
                     Log("Please select a timing before continuing!");
@@ -807,6 +853,44 @@ namespace FreeRunner_Flashing_Utility
                     "Unsupported Flasher Detected!",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+            }
+        }
+
+        private void exitBtn_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void openFileBtn_Click(object sender, EventArgs e)
+        {
+            int size = -1;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            string file = "";
+            DialogResult result = openFileDialog.ShowDialog();
+            if (result == DialogResult.OK) {
+                file = openFileDialog.FileName;
+            }
+
+            //If a file is chosen and the file is not null
+            if (file != null && file != "") {
+                //If the file is not an svf file
+                if (!file.ToLower().Contains(".svf"))
+                {
+                    Log("WARNING: Please only select a valid .svf file.");
+                }
+                //If the file is valid
+                else
+                {
+                    //Setting externFile false
+                    externFile = true;
+
+                    //Setting filename to the file path specified by the user
+                    filename = file;
+
+                    string targetFileName = Path.GetFileName(file);
+                    Log($"{targetFileName} loaded and ready for flash! " +
+                        "\nPress program to continue.");
+                }
             }
         }
     }
