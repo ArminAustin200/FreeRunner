@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,10 +43,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{6d4078d1-5951-4ed1-ac0e-0a8099c1cce5}"
             },
             {
               "$type": "Document",
@@ -82,8 +78,7 @@
               "RelativeToolTip": "Classes\\xFlasher.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAYwD8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-13T01:36:18.803Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-13T01:36:18.803Z"
             },
             {
               "$type": "Document",
@@ -105,7 +100,7 @@
               "RelativeDocumentMoniker": "mainForm.cs",
               "ToolTip": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\mainForm.cs",
               "RelativeToolTip": "mainForm.cs",
-              "ViewState": "AgIAAN4CAAAAAAAAAAAqwPICAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAOYCAAAAAAAAAAAAAPkCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-12T18:39:25.962Z",
               "EditorCaption": ""

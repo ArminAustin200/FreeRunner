@@ -1,0 +1,2 @@
+C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Publish\FreeRunner Flashing Utility.pdb
+C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Publish\FreeRunner Flashing Utility.exe
