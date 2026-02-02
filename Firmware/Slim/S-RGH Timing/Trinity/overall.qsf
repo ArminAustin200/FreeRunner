@@ -19,14 +19,14 @@
 #
 # Quartus Prime
 # Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-# Date created = 13:43:38  June 02, 2025
+# Date created = 22:15:14  February 01, 2026
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		FreeRunner_SRGH_assignment_defaults.qdf
+#		overall_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -39,9 +39,9 @@
 
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE 5M160ZE64C5
-set_global_assignment -name TOP_LEVEL_ENTITY FreeRunner_SRGH
+set_global_assignment -name TOP_LEVEL_ENTITY main
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.0.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:43:38  JUNE 02, 2025"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:15:14  FEBRUARY 01, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.0.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
@@ -49,10 +49,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
 set_global_assignment -name VHDL_FILE delayer.vhd
 set_global_assignment -name VHDL_FILE divider_slow.vhd
+set_global_assignment -name VHDL_FILE divider_slow2.vhd
 set_global_assignment -name VHDL_FILE post_proc.vhd
 set_global_assignment -name VHDL_FILE slower.vhd
-set_global_assignment -name BDF_FILE FreeRunner_SRGH.bdf
-set_global_assignment -name VHDL_FILE divider_slow2.vhd
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
-set_global_assignment -name OPTIMIZATION_MODE BALANCED
-set_global_assignment -name ALLOW_REGISTER_RETIMING OFF
+set_global_assignment -name BDF_FILE main.bdf

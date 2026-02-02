@@ -19,13 +19,13 @@
 #
 # Quartus Prime
 # Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-# Date created = 13:43:38  June 02, 2025
+# Date created = 22:15:14  February 01, 2026
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "17.0"
-DATE = "13:43:38  June 02, 2025"
+DATE = "22:15:14  February 01, 2026"
 
 # Revisions
 
-PROJECT_REVISION = "FreeRunner_SRGH"
+PROJECT_REVISION = "overall"
