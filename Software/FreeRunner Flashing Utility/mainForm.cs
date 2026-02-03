@@ -459,10 +459,9 @@ namespace FreeRunner_Flashing_Utility
                 CleanupOldExe();
 
                 //Current program revision
-                int currentVersion = 2;
+                int currentVersion = 3;
 
-                if (debug)
-                    Log($"Application Version: {currentVersion}");
+                Log($"Application Version: {currentVersion}");
 
                 await update.CheckAndUpdateFullAsync(
                     "https://raw.githubusercontent.com/ArminAustin200/FreeRunner-Flash-Utility-Updater/refs/heads/main/autoupdate.json", //Update JSON URL
