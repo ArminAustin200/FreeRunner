@@ -32,5 +32,10 @@ namespace FreeRunner_Flashing_Utility.Classes
         {
             this.Dispose();
         }
+
+        public void setUserControl(bool status) {
+            this.MinimizeBox = false;
+            this.ControlBox = status;
+        }
     }
 }

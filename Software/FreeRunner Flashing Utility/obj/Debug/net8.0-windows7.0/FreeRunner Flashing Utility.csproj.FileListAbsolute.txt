@@ -54,6 +54,7 @@ F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\D
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.pdb
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.genruntimeconfig.cache
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\ref\FreeRunner Flashing Utility.dll
+F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner_Flashing_Utility.Classes.changelog.resources
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.exe
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.deps.json
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.runtimeconfig.json
@@ -68,6 +69,7 @@ C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\System.Management.dll
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\bin\Debug\net8.0-windows7.0\runtimes\win\lib\net8.0\System.Management.dll
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.csproj.AssemblyReference.cache
+C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner_Flashing_Utility.Classes.changelog.resources
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner_Flashing_Utility.mainForm.resources
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner_Flashing_Utility.Properties.Resources.resources
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.csproj.GenerateResource.cache
@@ -82,4 +84,3 @@ C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.pdb
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner Flashing Utility.genruntimeconfig.cache
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\ref\FreeRunner Flashing Utility.dll
-F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Debug\net8.0-windows7.0\FreeRunner_Flashing_Utility.Classes.changelog.resources

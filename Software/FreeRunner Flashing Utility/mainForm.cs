@@ -66,6 +66,11 @@ namespace FreeRunner_Flashing_Utility
         //Creating a flag to determine wether or not an external file was chosen
         private bool externFile = false;
 
+        //Creating a variable to store the program's current revision number
+        private int currentVersion;
+        //Creating a variable to store the program's changelog
+        private string? cl_log = "";
+
         public static mainForm Instance { get; private set; }
         public mainForm()
         {
@@ -81,6 +86,10 @@ namespace FreeRunner_Flashing_Utility
             //Adding key combinations to exit program button
             exitBtn.ShortcutKeys = Keys.Control | Keys.Shift | Keys.X;
             exitBtn.ShowShortcutKeys = true;
+
+            //Adding key combinations to the changelog button
+            changelogButton.ShortcutKeys = Keys.F2;
+            changelogButton.ShowShortcutKeys = true;
 
             //Centering pictureBox1
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -263,7 +272,7 @@ namespace FreeRunner_Flashing_Utility
 
                 filename = filename + $"{selected.Text}_rgh12.svf";
 
-                if (debug) 
+                if (debug)
                     Log($"Filename: {filename}");
             }
         }
@@ -397,6 +406,10 @@ namespace FreeRunner_Flashing_Utility
             debugConsole.Clear();
         }
 
+        private void setChangelog(String changelog) {
+            cl_log = changelog;
+        }
+
         //Creating application path getter method
         private String getPath()
         {
@@ -459,7 +472,7 @@ namespace FreeRunner_Flashing_Utility
                 CleanupOldExe();
 
                 //Current program revision
-                int currentVersion = 3;
+                currentVersion = 3;
 
                 Log($"Application Version: {currentVersion}");
 
@@ -467,7 +480,8 @@ namespace FreeRunner_Flashing_Utility
                     "https://raw.githubusercontent.com/ArminAustin200/FreeRunner-Flash-Utility-Updater/refs/heads/main/autoupdate.json", //Update JSON URL
                     currentVersion,
                     onProgress: p => UpdateProgress(p),
-                    onStatus: msg => Log(msg)
+                    onStatus: msg => Log(msg),
+                    onChangelog: (cl) => cl_log = cl
                 );
             }
             catch (Exception ex)
@@ -743,7 +757,8 @@ namespace FreeRunner_Flashing_Utility
             if (device == DEVICE.NO_DEVICE)
             {
                 //Debug for confirming file path
-                if (debug) {
+                if (debug)
+                {
                     if (File.Exists(Path.Combine(getPath(), filename)))
                         Log("File Path:" +
                             $"\n{Path.Combine(getPath(), filename)}");
@@ -787,16 +802,17 @@ namespace FreeRunner_Flashing_Utility
             else if (device == DEVICE.XFLASHER_SPI)
             {
                 //If there is a valid filename
-                if (filename != null && filename != "") {
+                if (filename != null && filename != "")
+                {
                     //If the user is flashing a file built-into the program
                     if (!externFile)
                         xflasher.flashSvf(Path.Combine(getPath(), filename));
-                    
+
                     //If the user is flashing an external svf file
-                    else 
-                       xflasher.flashSvf(filename);
+                    else
+                        xflasher.flashSvf(filename);
                 }
-                    
+
                 else
                 {
                     Log("Please select a timing before continuing!");
@@ -807,7 +823,8 @@ namespace FreeRunner_Flashing_Utility
             else if (device == DEVICE.DIRTYPICO)
             {
                 //If there is a valid filename
-                if (filename != null && filename != "") {
+                if (filename != null && filename != "")
+                {
                     //If the user is flashing a file built-into the program
                     if (!externFile)
                         dirtypico.flashSvf(Path.Combine(getPath(), filename));
@@ -858,12 +875,14 @@ namespace FreeRunner_Flashing_Utility
             OpenFileDialog openFileDialog = new OpenFileDialog();
             string file = "";
             DialogResult result = openFileDialog.ShowDialog();
-            if (result == DialogResult.OK) {
+            if (result == DialogResult.OK)
+            {
                 file = openFileDialog.FileName;
             }
 
             //If a file is chosen and the file is not null
-            if (file != null && file != "") {
+            if (file != null && file != "")
+            {
                 //If the file is not an svf file
                 if (!file.ToLower().Contains(".svf"))
                 {
@@ -883,6 +902,15 @@ namespace FreeRunner_Flashing_Utility
                     Log($"{targetFileName} loaded and ready for flash! " +
                         "\nPress program to continue.");
                 }
+            }
+        }
+
+        private void changelog_Click(object sender, EventArgs e)
+        {
+            using (var dlg = new changelog(currentVersion, cl_log))
+            {
+                dlg.setUserControl(true);
+                dlg.ShowDialog();
             }
         }
     }

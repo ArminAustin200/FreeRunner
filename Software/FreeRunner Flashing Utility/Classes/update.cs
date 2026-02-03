@@ -25,7 +25,8 @@ namespace FreeRunner_Flashing_Utility.Classes
             string updateJsonUrl,
             int currentRevision,
             Action<int>? onProgress = null,
-            Action<string>? onStatus = null)
+            Action<string>? onStatus = null,
+            Action<string>? onChangelog = null)
         {
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
 
@@ -44,6 +45,8 @@ namespace FreeRunner_Flashing_Utility.Classes
 
             if (manifest.revision <= currentRevision) {
                 onStatus?.Invoke("Up to date.");
+
+                onChangelog?.Invoke(manifest.changelog ?? "");
                 return false;
             }
 
@@ -53,6 +56,7 @@ namespace FreeRunner_Flashing_Utility.Classes
 
                 //Showing update dialogue
                 using (var dlg = new changelog(manifest.revision, manifest.changelog)) {
+                    dlg.setUserControl(false);
                     dlg.ShowDialog();
                 }
             }
