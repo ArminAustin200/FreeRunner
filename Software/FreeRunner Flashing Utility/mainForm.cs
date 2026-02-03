@@ -459,7 +459,7 @@ namespace FreeRunner_Flashing_Utility
                 CleanupOldExe();
 
                 //Current program revision
-                int currentVersion = 1;
+                int currentVersion = 2;
 
                 if (debug)
                     Log($"Application Version: {currentVersion}");
@@ -869,6 +869,7 @@ namespace FreeRunner_Flashing_Utility
                 if (!file.ToLower().Contains(".svf"))
                 {
                     Log("WARNING: Please only select a valid .svf file.");
+                    SystemSounds.Asterisk.Play();
                 }
                 //If the file is valid
                 else

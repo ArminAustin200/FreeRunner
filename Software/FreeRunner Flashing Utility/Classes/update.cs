@@ -42,10 +42,19 @@ namespace FreeRunner_Flashing_Utility.Classes
                     ?? throw new Exception("Invalid update.json");
             }
 
-            if (manifest.revision <= currentRevision)
-            {
+            if (manifest.revision <= currentRevision) {
                 onStatus?.Invoke("Up to date.");
                 return false;
+            }
+
+            //If the manifest revision is newer than the current
+            if (manifest.revision > currentRevision) {
+                SystemSounds.Asterisk.Play();
+
+                //Showing update dialogue
+                using (var dlg = new changelog(manifest.revision, manifest.changelog)) {
+                    dlg.ShowDialog();
+                }
             }
 
             if (string.IsNullOrWhiteSpace(manifest.zipUrl))
@@ -79,67 +88,49 @@ namespace FreeRunner_Flashing_Utility.Classes
                 }
             }
 
-            SystemSounds.Asterisk.Play();
+            onStatus?.Invoke("Installing update...");
 
-            DialogResult result = MessageBox.Show(
-                "Updates are available for FreeRunner Flashing Utility.\n" +
-                "Would you like to update now?",
-                "Update Now?",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+            //Figure out current exe and paths
+            string exePath = Process.GetCurrentProcess().MainModule!.FileName!;
+            string appDirReal = Path.GetDirectoryName(exePath)!;   //use real dir of the running exe
+            string exeName = Path.GetFileName(exePath);
+            string backupPath = Path.Combine(appDirReal, exeName + ".old");
 
-            if (result == DialogResult.Yes)
+            try
             {
-                onStatus?.Invoke("Installing update...");
+                //1) Backup current EXE
+                if (File.Exists(backupPath))
+                    File.Delete(backupPath);
 
-                //Figure out current exe and paths
-                string exePath = Process.GetCurrentProcess().MainModule!.FileName!;
-                string appDirReal = Path.GetDirectoryName(exePath)!;   //use real dir of the running exe
-                string exeName = Path.GetFileName(exePath);
-                string backupPath = Path.Combine(appDirReal, exeName + ".old");
+                File.Move(exePath, backupPath);
 
-                try
+                //2) Extract ZIP directly into app folder, overwriting everything
+                using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(zipPath))
                 {
-                    //1) Backup current EXE
-                    if (File.Exists(backupPath))
-                        File.Delete(backupPath);
-
-                    File.Move(exePath, backupPath);
-
-                    //2) Extract ZIP directly into app folder, overwriting everything
-                    using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(zipPath))
-                    {
-                        zip.ExtractAll(appDirReal, ExtractExistingFileAction.OverwriteSilently);
-                    }
-
-                    //3) Remove the zip
-                    File.Delete(zipPath);
-
-                    //4) Start the new EXE from the same location
-                    onStatus?.Invoke("Update installed. Restarting...");
-                    Process.Start(new ProcessStartInfo
-                    {
-                        FileName = Path.Combine(appDirReal, exeName),
-                        WorkingDirectory = appDirReal,
-                        UseShellExecute = true
-                    });
-
-                    //5) Exit current process so the new one takes over
-                    Environment.Exit(0);
-                    return true;
+                    zip.ExtractAll(appDirReal, ExtractExistingFileAction.OverwriteSilently);
                 }
-                catch (Exception ex)
+
+                //3) Remove the zip
+                File.Delete(zipPath);
+
+                //4) Start the new EXE from the same location
+                onStatus?.Invoke("Update installed. Restarting...");
+                Process.Start(new ProcessStartInfo
                 {
-                    try { if (File.Exists(zipPath)) File.Delete(zipPath); } catch { }
+                    FileName = Path.Combine(appDirReal, exeName),
+                    WorkingDirectory = appDirReal,
+                    UseShellExecute = true
+                });
 
-                    onStatus?.Invoke("Failed to install update: " + ex.Message);
-                    return false;
-                }
+                //5) Exit current process so the new one takes over
+                Environment.Exit(0);
+                return true;
             }
-            else
+            catch (Exception ex)
             {
-                onStatus?.Invoke("User cancelled update.");
+                try { if (File.Exists(zipPath)) File.Delete(zipPath); } catch { }
+
+                onStatus?.Invoke("Failed to install update: " + ex.Message);
                 return false;
             }
         }
