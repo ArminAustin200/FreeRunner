@@ -72,7 +72,7 @@ agreement for further details.
 	(input)
 	(rect 544 512 712 528)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "DBG_2" (rect 5 0 40 12)(font "Arial" ))
+	(text "DBG2" (rect 5 0 35 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
