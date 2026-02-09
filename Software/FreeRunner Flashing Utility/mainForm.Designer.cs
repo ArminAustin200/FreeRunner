@@ -35,6 +35,12 @@
             progressBar1 = new ProgressBar();
             optionsPanel = new TabControl();
             tabPage1 = new TabPage();
+            tableLayoutPanel11 = new TableLayoutPanel();
+            label3 = new Label();
+            groupBox7 = new GroupBox();
+            tableLayoutPanel12 = new TableLayoutPanel();
+            xdkBuild_yes = new RadioButton();
+            xdkBuild_no = new RadioButton();
             groupBox6 = new GroupBox();
             label2 = new Label();
             nandSelection = new GroupBox();
@@ -58,6 +64,7 @@
             rbFJ19 = new RadioButton();
             rbFJ18 = new RadioButton();
             rbFJ17 = new RadioButton();
+            tableLayoutPanel10 = new TableLayoutPanel();
             exitButton = new Button();
             clearButton = new Button();
             tableLayoutPanel8 = new TableLayoutPanel();
@@ -77,7 +84,6 @@
             groupBox4 = new GroupBox();
             label10 = new Label();
             label13 = new Label();
-            label11 = new Label();
             groupBox3 = new GroupBox();
             tableLayoutPanel7 = new TableLayoutPanel();
             multiNAND51 = new RadioButton();
@@ -125,6 +131,9 @@
             progressPanel.SuspendLayout();
             optionsPanel.SuspendLayout();
             tabPage1.SuspendLayout();
+            tableLayoutPanel11.SuspendLayout();
+            groupBox7.SuspendLayout();
+            tableLayoutPanel12.SuspendLayout();
             groupBox6.SuspendLayout();
             nandSelection.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -215,6 +224,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(tableLayoutPanel11);
             tabPage1.Controls.Add(groupBox6);
             tabPage1.Controls.Add(nandSelection);
             tabPage1.Controls.Add(label6);
@@ -230,6 +240,85 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Phat Timings";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel11
+            // 
+            tableLayoutPanel11.ColumnCount = 1;
+            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel11.Controls.Add(label3, 0, 0);
+            tableLayoutPanel11.Controls.Add(groupBox7, 0, 1);
+            tableLayoutPanel11.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
+            tableLayoutPanel11.Location = new Point(126, 3);
+            tableLayoutPanel11.Name = "tableLayoutPanel11";
+            tableLayoutPanel11.RowCount = 2;
+            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 16.7664661F));
+            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 83.2335358F));
+            tableLayoutPanel11.Size = new Size(90, 115);
+            tableLayoutPanel11.TabIndex = 24;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label3.Location = new Point(3, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(84, 19);
+            label3.TabIndex = 9;
+            label3.Text = "XDKBuild";
+            label3.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(tableLayoutPanel12);
+            groupBox7.Location = new Point(3, 22);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(84, 90);
+            groupBox7.TabIndex = 10;
+            groupBox7.TabStop = false;
+            // 
+            // tableLayoutPanel12
+            // 
+            tableLayoutPanel12.Anchor = AnchorStyles.None;
+            tableLayoutPanel12.ColumnCount = 1;
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel12.Controls.Add(xdkBuild_yes, 0, 0);
+            tableLayoutPanel12.Controls.Add(xdkBuild_no, 0, 1);
+            tableLayoutPanel12.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
+            tableLayoutPanel12.Location = new Point(-3, -2);
+            tableLayoutPanel12.Margin = new Padding(0);
+            tableLayoutPanel12.Name = "tableLayoutPanel12";
+            tableLayoutPanel12.Padding = new Padding(3);
+            tableLayoutPanel12.RowCount = 2;
+            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
+            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 19F));
+            tableLayoutPanel12.Size = new Size(90, 101);
+            tableLayoutPanel12.TabIndex = 11;
+            // 
+            // xdkBuild_yes
+            // 
+            xdkBuild_yes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            xdkBuild_yes.AutoSize = true;
+            xdkBuild_yes.Enabled = false;
+            xdkBuild_yes.Location = new Point(19, 6);
+            xdkBuild_yes.Name = "xdkBuild_yes";
+            xdkBuild_yes.Size = new Size(51, 38);
+            xdkBuild_yes.TabIndex = 0;
+            xdkBuild_yes.TabStop = true;
+            xdkBuild_yes.Text = "Yes";
+            xdkBuild_yes.UseVisualStyleBackColor = true;
+            // 
+            // xdkBuild_no
+            // 
+            xdkBuild_no.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            xdkBuild_no.AutoSize = true;
+            xdkBuild_no.Enabled = false;
+            xdkBuild_no.Location = new Point(20, 50);
+            xdkBuild_no.Name = "xdkBuild_no";
+            xdkBuild_no.Size = new Size(50, 45);
+            xdkBuild_no.TabIndex = 1;
+            xdkBuild_no.TabStop = true;
+            xdkBuild_no.Text = "No";
+            xdkBuild_no.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -371,11 +460,13 @@
             tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel9.Controls.Add(label8, 0, 0);
             tableLayoutPanel9.Controls.Add(fjTimings, 0, 1);
+            tableLayoutPanel9.Controls.Add(tableLayoutPanel10, 0, 2);
             tableLayoutPanel9.Location = new Point(3, 3);
             tableLayoutPanel9.Name = "tableLayoutPanel9";
-            tableLayoutPanel9.RowCount = 2;
+            tableLayoutPanel9.RowCount = 3;
             tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
             tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Absolute, 285F));
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel9.Size = new Size(120, 309);
             tableLayoutPanel9.TabIndex = 12;
             // 
@@ -545,6 +636,19 @@
             rbFJ17.Text = "17";
             rbFJ17.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel10
+            // 
+            tableLayoutPanel10.ColumnCount = 2;
+            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel10.Location = new Point(3, 313);
+            tableLayoutPanel10.Name = "tableLayoutPanel10";
+            tableLayoutPanel10.RowCount = 2;
+            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel10.Size = new Size(114, 14);
+            tableLayoutPanel10.TabIndex = 9;
+            // 
             // exitButton
             // 
             exitButton.Location = new Point(96, 501);
@@ -554,7 +658,7 @@
             exitButton.TabIndex = 10;
             exitButton.Text = "Exit";
             exitButton.UseVisualStyleBackColor = true;
-            exitButton.Click += exitBtn_Click;
+            exitButton.Click += exitBtn_Click_1;
             // 
             // clearButton
             // 
@@ -758,7 +862,6 @@
             groupBox4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             groupBox4.Controls.Add(label10);
             groupBox4.Controls.Add(label13);
-            groupBox4.Controls.Add(label11);
             groupBox4.Location = new Point(135, 3);
             groupBox4.Margin = new Padding(3, 4, 3, 4);
             groupBox4.Name = "groupBox4";
@@ -770,7 +873,7 @@
             // label10
             // 
             label10.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
-            label10.Location = new Point(3, 25);
+            label10.Location = new Point(3, 17);
             label10.Name = "label10";
             label10.Size = new Size(147, 76);
             label10.TabIndex = 16;
@@ -780,22 +883,12 @@
             // label13
             // 
             label13.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
-            label13.Location = new Point(3, 137);
+            label13.Location = new Point(3, 106);
             label13.Name = "label13";
-            label13.Size = new Size(147, 37);
+            label13.Size = new Size(147, 62);
             label13.TabIndex = 20;
             label13.Text = "Use WB if your system has WB2K RAM";
             label13.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label11
-            // 
-            label11.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold);
-            label11.Location = new Point(3, 101);
-            label11.Name = "label11";
-            label11.Size = new Size(147, 37);
-            label11.TabIndex = 17;
-            label11.Text = "This is due to a UI size constraint :)";
-            label11.TextAlign = ContentAlignment.TopCenter;
             // 
             // groupBox3
             // 
@@ -1317,16 +1410,16 @@
             // openFileBtn
             // 
             openFileBtn.Name = "openFileBtn";
-            openFileBtn.Size = new Size(224, 26);
+            openFileBtn.Size = new Size(155, 26);
             openFileBtn.Text = "Open File";
             openFileBtn.Click += openFileBtn_Click;
             // 
             // exitBtn
             // 
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(224, 26);
+            exitBtn.Size = new Size(155, 26);
             exitBtn.Text = "Exit";
-            exitBtn.Click += exitBtn_Click_1;
+            exitBtn.Click += exitBtn_Click;
             // 
             // toolStripDropDownButton1
             // 
@@ -1340,7 +1433,7 @@
             // changelogButton
             // 
             changelogButton.Name = "changelogButton";
-            changelogButton.Size = new Size(224, 26);
+            changelogButton.Size = new Size(164, 26);
             changelogButton.Text = "Changelog";
             changelogButton.Click += changelog_Click;
             // 
@@ -1367,6 +1460,10 @@
             progressPanel.PerformLayout();
             optionsPanel.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            tableLayoutPanel11.ResumeLayout(false);
+            groupBox7.ResumeLayout(false);
+            tableLayoutPanel12.ResumeLayout(false);
+            tableLayoutPanel12.PerformLayout();
             groupBox6.ResumeLayout(false);
             nandSelection.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
@@ -1464,7 +1561,6 @@
         private RadioButton boardCor;
         private RadioButton boardCorWB;
         private Label label10;
-        private Label label11;
         private Label label13;
         private GroupBox groupBox4;
         private PictureBox pictureBox1;
@@ -1496,5 +1592,12 @@
         private ToolStripMenuItem exitBtn;
         private ToolStripDropDownButton toolStripDropDownButton1;
         private ToolStripMenuItem changelogButton;
+        private TableLayoutPanel tableLayoutPanel11;
+        private Label label3;
+        private TableLayoutPanel tableLayoutPanel10;
+        private GroupBox groupBox7;
+        private TableLayoutPanel tableLayoutPanel12;
+        private RadioButton xdkBuild_yes;
+        private RadioButton xdkBuild_no;
     }
 }

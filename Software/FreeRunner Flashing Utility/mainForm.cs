@@ -39,6 +39,7 @@ namespace FreeRunner_Flashing_Utility
 
         //DEBUG BOOLEAN
         public bool debug = false;
+        private bool enableMax = false;
 
         //Creating list to hold all phatTimingButtons
         private List<RadioButton> phatTimingButtons;
@@ -462,6 +463,13 @@ namespace FreeRunner_Flashing_Utility
 
         private async void main_Load(object sender, EventArgs e)
         {
+            //Checking config file
+            checkFile(Path.Combine(Application.StartupPath, "config.cfg"));
+
+            multiNAND6.Enabled = enableMax;
+            multiNAND61.Enabled = enableMax;
+
+            //Checking for updates
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
             bool updFail = false;
@@ -500,18 +508,35 @@ namespace FreeRunner_Flashing_Utility
             //Resetting welcome text
             Log(welcomeText);
 
-            //Generate path to the config file
-            string filePath = Path.Combine(Application.StartupPath, "config.cfg");
+            if ((!enableMax && multiNAND6.Enabled) || (!enableMax && multiNAND61.Enabled))
+            {
+                multiNAND1.Checked = true;
+                multiNAND11.Checked = true;
+            }
 
-            string requiredValue = "PRE_ORDER_GOAT";
+            if (debug)
+            {
+                Log("Debug Enabled: " + debug);
+                Log("MAX Multi-NAND Enabled: " + enableMax);
+                Log("Multi-NAND: " + multiNAND);
+                Log("Board Type: " + boardType);
 
-            bool enableMax = false;
+                await Task.Delay(2500); //Wait 2.5s
+                Log_Clear();
+                Log(welcomeText);
+            }
 
+            //Check for USB devices
+            deviceinit();
+        }
+
+        //Creating a method to check the config file
+        private void checkFile(string path) {
             //Checking if the file exists
-            if (File.Exists(filePath))
+            if (File.Exists(path))
             {
                 //Reading all content of the file
-                foreach (string line in File.ReadAllLines(filePath))
+                foreach (string line in File.ReadAllLines(path))
                 {
                     //If the line is empty or commented
                     if (string.IsNullOrWhiteSpace(line)) continue;
@@ -520,7 +545,7 @@ namespace FreeRunner_Flashing_Utility
                     string trimmed = line.Trim().ToUpper();
 
                     //Looking for target value
-                    if (trimmed.StartsWith(requiredValue))
+                    if (trimmed.StartsWith("PRE_ORDER_GOAT"))
                     {
                         string[] parts = trimmed.Split('=');
 
@@ -552,30 +577,6 @@ namespace FreeRunner_Flashing_Utility
                     }
                 }
             }
-
-            multiNAND6.Enabled = enableMax;
-            multiNAND61.Enabled = enableMax;
-
-            if ((!enableMax && multiNAND6.Enabled) || (!enableMax && multiNAND61.Enabled))
-            {
-                multiNAND1.Checked = true;
-                multiNAND11.Checked = true;
-            }
-
-            if (debug)
-            {
-                Log("Debug Enabled: " + debug);
-                Log("MAX Multi-NAND Enabled: " + enableMax);
-                Log("Multi-NAND: " + multiNAND);
-                Log("Board Type: " + boardType);
-
-                await Task.Delay(2500); //Wait 2.5s
-                Log_Clear();
-                Log(welcomeText);
-            }
-
-            //Check for USB devices
-            deviceinit();
         }
 
         public bool IsUsbDeviceConnected(string pid, string vid)
@@ -588,8 +589,6 @@ namespace FreeRunner_Flashing_Utility
                 {
                     foreach (ManagementObject device in collection)
                     {
-                        // "Dependent" looks like: 
-                        // Win32_PnPEntity.DeviceID="USB\VID_600D&PID_7001\..."
                         var dependent = device["Dependent"]?.ToString();
                         if (string.IsNullOrEmpty(dependent))
                             continue;
@@ -774,10 +773,10 @@ namespace FreeRunner_Flashing_Utility
                 }
             }
 
-            //PRE-RELEASE ----- FIX LATER\\
-            if (multiNAND >= 2)
+            //Final Release will have Penta-NAND support FIX LATER
+            if (multiNAND > 4)
             {
-                Log("WARNING: Multi-NAND support is coming very soon!\n" +
+                Log("WARNING: Penta NAND support is coming very soon!\n" +
                     "Expect to see it in the next update ;)\n" +
                     "\"NONE\" has been selected for now :)");
 
@@ -805,8 +804,23 @@ namespace FreeRunner_Flashing_Utility
                 if (filename != null && filename != "")
                 {
                     //If the user is flashing a file built-into the program
-                    if (!externFile)
-                        xflasher.flashSvf(Path.Combine(getPath(), filename));
+                    if (!externFile) {
+                        //If "None" is selected as the multiNAND choice
+                        if (multiNAND == -1)
+                            xflasher.flashSvf(Path.Combine(getPath(), filename));
+                        
+                        //If the user chooses dual NAND
+                        else if (multiNAND == 2) 
+                            xflasher.flashSvf(Path.Combine(getPath(), "D", filename));
+                        
+                        //If the user chooses triple NAND
+                        else if (multiNAND == 3)
+                            xflasher.flashSvf(Path.Combine(getPath(), "T", filename));
+                        
+                        //If the user chooses quad NAND
+                        else if (multiNAND == 4)
+                            xflasher.flashSvf(Path.Combine(getPath(), "Q", filename));
+                    }
 
                     //If the user is flashing an external svf file
                     else
@@ -826,8 +840,23 @@ namespace FreeRunner_Flashing_Utility
                 if (filename != null && filename != "")
                 {
                     //If the user is flashing a file built-into the program
-                    if (!externFile)
-                        dirtypico.flashSvf(Path.Combine(getPath(), filename));
+                    if (!externFile) {
+                        //If "None" is selected as the multiNAND choice
+                        if (multiNAND == -1)
+                            dirtypico.flashSvf(Path.Combine(getPath(), filename));
+
+                        //If the user chooses dual NAND
+                        else if (multiNAND == 2)
+                            dirtypico.flashSvf(Path.Combine(getPath(), "D", filename));
+
+                        //If the user chooses triple NAND
+                        else if (multiNAND == 3)
+                            dirtypico.flashSvf(Path.Combine(getPath(), "T", filename));
+
+                        //If the user chooses quad NAND
+                        else if (multiNAND == 4)
+                            dirtypico.flashSvf(Path.Combine(getPath(), "Q", filename));
+                    }
 
                     //If the user is flashing an external svf file
                     else

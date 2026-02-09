@@ -10,7 +10,12 @@
     <UseWPF>true</UseWPF>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <PackageIcon>taskbarIcon.png</PackageIcon>
+    <ApplicationIcon>FreeRunner Flashing Utility Icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="FreeRunner Flashing Utility Icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Huddly.LibUsbDotNet" Version="2.2.34" />
