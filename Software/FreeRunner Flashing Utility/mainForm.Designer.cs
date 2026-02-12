@@ -36,11 +36,11 @@
             optionsPanel = new TabControl();
             tabPage1 = new TabPage();
             tableLayoutPanel11 = new TableLayoutPanel();
-            label3 = new Label();
             groupBox7 = new GroupBox();
             tableLayoutPanel12 = new TableLayoutPanel();
             xdkBuild_yes = new RadioButton();
             xdkBuild_no = new RadioButton();
+            label3 = new Label();
             groupBox6 = new GroupBox();
             label2 = new Label();
             nandSelection = new GroupBox();
@@ -79,6 +79,12 @@
             rbZ_192 = new RadioButton();
             splitContainer1 = new SplitContainer();
             tabPage2 = new TabPage();
+            tableLayoutPanel13 = new TableLayoutPanel();
+            groupBox8 = new GroupBox();
+            tableLayoutPanel14 = new TableLayoutPanel();
+            xdkBuild_yes1 = new RadioButton();
+            xdkBuild_no1 = new RadioButton();
+            label4 = new Label();
             groupBox5 = new GroupBox();
             label1 = new Label();
             groupBox4 = new GroupBox();
@@ -148,6 +154,9 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tableLayoutPanel13.SuspendLayout();
+            groupBox8.SuspendLayout();
+            tableLayoutPanel14.SuspendLayout();
             groupBox5.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -246,34 +255,25 @@
             tableLayoutPanel11.ColumnCount = 1;
             tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel11.Controls.Add(label3, 0, 0);
             tableLayoutPanel11.Controls.Add(groupBox7, 0, 1);
+            tableLayoutPanel11.Controls.Add(label3, 0, 0);
             tableLayoutPanel11.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
-            tableLayoutPanel11.Location = new Point(126, 3);
+            tableLayoutPanel11.Location = new Point(128, 3);
             tableLayoutPanel11.Name = "tableLayoutPanel11";
             tableLayoutPanel11.RowCount = 2;
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 16.7664661F));
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 83.2335358F));
-            tableLayoutPanel11.Size = new Size(90, 115);
+            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 21.5517235F));
+            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 78.44827F));
+            tableLayoutPanel11.Size = new Size(90, 116);
             tableLayoutPanel11.TabIndex = 24;
-            // 
-            // label3
-            // 
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label3.Location = new Point(3, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(84, 19);
-            label3.TabIndex = 9;
-            label3.Text = "XDKBuild";
-            label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // groupBox7
             // 
+            groupBox7.AccessibleName = "";
             groupBox7.Controls.Add(tableLayoutPanel12);
-            groupBox7.Location = new Point(3, 22);
+            groupBox7.Location = new Point(3, 28);
             groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(84, 90);
-            groupBox7.TabIndex = 10;
+            groupBox7.Size = new Size(84, 84);
+            groupBox7.TabIndex = 26;
             groupBox7.TabStop = false;
             // 
             // tableLayoutPanel12
@@ -284,41 +284,49 @@
             tableLayoutPanel12.Controls.Add(xdkBuild_yes, 0, 0);
             tableLayoutPanel12.Controls.Add(xdkBuild_no, 0, 1);
             tableLayoutPanel12.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
-            tableLayoutPanel12.Location = new Point(-3, -2);
+            tableLayoutPanel12.Location = new Point(-3, 4);
             tableLayoutPanel12.Margin = new Padding(0);
             tableLayoutPanel12.Name = "tableLayoutPanel12";
             tableLayoutPanel12.Padding = new Padding(3);
             tableLayoutPanel12.RowCount = 2;
-            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
-            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 19F));
-            tableLayoutPanel12.Size = new Size(90, 101);
-            tableLayoutPanel12.TabIndex = 11;
+            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
+            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
+            tableLayoutPanel12.Size = new Size(90, 76);
+            tableLayoutPanel12.TabIndex = 27;
             // 
             // xdkBuild_yes
             // 
             xdkBuild_yes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             xdkBuild_yes.AutoSize = true;
-            xdkBuild_yes.Enabled = false;
             xdkBuild_yes.Location = new Point(19, 6);
             xdkBuild_yes.Name = "xdkBuild_yes";
-            xdkBuild_yes.Size = new Size(51, 38);
+            xdkBuild_yes.Size = new Size(51, 30);
             xdkBuild_yes.TabIndex = 0;
-            xdkBuild_yes.TabStop = true;
             xdkBuild_yes.Text = "Yes";
             xdkBuild_yes.UseVisualStyleBackColor = true;
             // 
             // xdkBuild_no
             // 
-            xdkBuild_no.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            xdkBuild_no.Anchor = AnchorStyles.None;
             xdkBuild_no.AutoSize = true;
-            xdkBuild_no.Enabled = false;
-            xdkBuild_no.Location = new Point(20, 50);
+            xdkBuild_no.Checked = true;
+            xdkBuild_no.Location = new Point(20, 44);
             xdkBuild_no.Name = "xdkBuild_no";
-            xdkBuild_no.Size = new Size(50, 45);
+            xdkBuild_no.Size = new Size(50, 24);
             xdkBuild_no.TabIndex = 1;
             xdkBuild_no.TabStop = true;
             xdkBuild_no.Text = "No";
             xdkBuild_no.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label3.Location = new Point(3, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(84, 19);
+            label3.TabIndex = 9;
+            label3.Text = "XDKBuild";
+            label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // groupBox6
             // 
@@ -821,6 +829,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(tableLayoutPanel13);
             tabPage2.Controls.Add(groupBox5);
             tabPage2.Controls.Add(groupBox4);
             tabPage2.Controls.Add(groupBox3);
@@ -837,6 +846,84 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Slim Timings";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel13
+            // 
+            tableLayoutPanel13.ColumnCount = 1;
+            tableLayoutPanel13.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel13.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel13.Controls.Add(groupBox8, 0, 1);
+            tableLayoutPanel13.Controls.Add(label4, 0, 0);
+            tableLayoutPanel13.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
+            tableLayoutPanel13.Location = new Point(9, 307);
+            tableLayoutPanel13.Name = "tableLayoutPanel13";
+            tableLayoutPanel13.RowCount = 2;
+            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 21.5517235F));
+            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 78.44827F));
+            tableLayoutPanel13.Size = new Size(90, 109);
+            tableLayoutPanel13.TabIndex = 25;
+            // 
+            // groupBox8
+            // 
+            groupBox8.AccessibleName = "";
+            groupBox8.Controls.Add(tableLayoutPanel14);
+            groupBox8.Location = new Point(3, 26);
+            groupBox8.Name = "groupBox8";
+            groupBox8.Size = new Size(84, 80);
+            groupBox8.TabIndex = 26;
+            groupBox8.TabStop = false;
+            // 
+            // tableLayoutPanel14
+            // 
+            tableLayoutPanel14.Anchor = AnchorStyles.None;
+            tableLayoutPanel14.ColumnCount = 1;
+            tableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel14.Controls.Add(xdkBuild_yes1, 0, 0);
+            tableLayoutPanel14.Controls.Add(xdkBuild_no1, 0, 1);
+            tableLayoutPanel14.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
+            tableLayoutPanel14.Location = new Point(-3, 8);
+            tableLayoutPanel14.Margin = new Padding(0);
+            tableLayoutPanel14.Name = "tableLayoutPanel14";
+            tableLayoutPanel14.Padding = new Padding(3);
+            tableLayoutPanel14.RowCount = 2;
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
+            tableLayoutPanel14.Size = new Size(90, 76);
+            tableLayoutPanel14.TabIndex = 27;
+            // 
+            // xdkBuild_yes1
+            // 
+            xdkBuild_yes1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            xdkBuild_yes1.AutoSize = true;
+            xdkBuild_yes1.Location = new Point(19, 6);
+            xdkBuild_yes1.Name = "xdkBuild_yes1";
+            xdkBuild_yes1.Size = new Size(51, 30);
+            xdkBuild_yes1.TabIndex = 0;
+            xdkBuild_yes1.Text = "Yes";
+            xdkBuild_yes1.UseVisualStyleBackColor = true;
+            // 
+            // xdkBuild_no1
+            // 
+            xdkBuild_no1.Anchor = AnchorStyles.None;
+            xdkBuild_no1.AutoSize = true;
+            xdkBuild_no1.Checked = true;
+            xdkBuild_no1.Location = new Point(20, 44);
+            xdkBuild_no1.Name = "xdkBuild_no1";
+            xdkBuild_no1.Size = new Size(50, 24);
+            xdkBuild_no1.TabIndex = 1;
+            xdkBuild_no1.TabStop = true;
+            xdkBuild_no1.Text = "No";
+            xdkBuild_no1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            label4.Location = new Point(3, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(84, 19);
+            label4.TabIndex = 9;
+            label4.Text = "XDKBuild";
+            label4.TextAlign = ContentAlignment.TopCenter;
             // 
             // groupBox5
             // 
@@ -1482,6 +1569,10 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
+            tableLayoutPanel13.ResumeLayout(false);
+            groupBox8.ResumeLayout(false);
+            tableLayoutPanel14.ResumeLayout(false);
+            tableLayoutPanel14.PerformLayout();
             groupBox5.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
@@ -1599,5 +1690,11 @@
         private TableLayoutPanel tableLayoutPanel12;
         private RadioButton xdkBuild_yes;
         private RadioButton xdkBuild_no;
+        private TableLayoutPanel tableLayoutPanel13;
+        private GroupBox groupBox8;
+        private TableLayoutPanel tableLayoutPanel14;
+        private RadioButton xdkBuild_yes1;
+        private RadioButton xdkBuild_no1;
+        private Label label4;
     }
 }

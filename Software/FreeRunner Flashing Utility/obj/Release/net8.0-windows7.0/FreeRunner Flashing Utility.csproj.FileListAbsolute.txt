@@ -55,3 +55,4 @@ C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\
 C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\ref\FreeRunner Flashing Utility.dll
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\FreeRunner_Flashing_Utility.mainForm.resources
 F:\Austin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\FreeRunner_Flashing_Utility.Classes.changelog.resources
+C:\Users\Armin\Documents\GitHub\FreeRunner\Software\FreeRunner Flashing Utility\obj\Release\net8.0-windows7.0\FreeRunner_Flashing_Utility.Classes.changelog.resources

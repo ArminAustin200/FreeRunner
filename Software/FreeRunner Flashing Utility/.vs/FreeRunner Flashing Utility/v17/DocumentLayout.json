@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|c:\\users\\armin\\documents\\github\\freerunner\\software\\freerunner flashing utility\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|c:\\users\\armin\\documents\\github\\freerunner\\software\\freerunner flashing utility\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|c:\\users\\armin\\documents\\github\\freerunner\\software\\freerunner flashing utility\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|c:\\users\\armin\\documents\\github\\freerunner\\software\\freerunner flashing utility\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -64,7 +64,7 @@
               "RelativeDocumentMoniker": "mainForm.Designer.cs",
               "ToolTip": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\mainForm.Designer.cs",
               "RelativeToolTip": "mainForm.Designer.cs",
-              "ViewState": "AgIAAHsCAAAAAAAAAAAhwJQCAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAhwBYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-09T21:24:27.629Z",
               "EditorCaption": ""
@@ -78,8 +78,7 @@
               "ToolTip": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\Classes\\changelog.cs [Design]",
               "RelativeToolTip": "Classes\\changelog.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T05:21:20.872Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-02-03T05:21:20.872Z"
             },
             {
               "$type": "Document",
@@ -91,8 +90,7 @@
               "RelativeToolTip": "Classes\\changelog.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAqwCQAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T05:11:28.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T05:11:28.801Z"
             },
             {
               "$type": "Document",
@@ -104,8 +102,7 @@
               "RelativeToolTip": "Classes\\update.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T22:18:49.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-12T22:18:49.237Z"
             },
             {
               "$type": "Document",
@@ -133,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "mainForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\mainForm.cs",
               "RelativeDocumentMoniker": "mainForm.cs",
@@ -145,13 +142,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "mainForm.cs",
               "DocumentMoniker": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\mainForm.cs",
               "RelativeDocumentMoniker": "mainForm.cs",
               "ToolTip": "C:\\Users\\Armin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\mainForm.cs",
               "RelativeToolTip": "mainForm.cs",
-              "ViewState": "AgIAAG4DAAAAAAAAAAAuwH8DAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAABkCAAAAAAAAAAAAACgCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-12T18:39:25.962Z",
               "EditorCaption": ""

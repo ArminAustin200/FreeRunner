@@ -50,6 +50,12 @@ namespace FreeRunner_Flashing_Utility
         //Creating a list to hold all slimTimingButtons
         private List<RadioButton> slimTimingButtons;
 
+        //Creating a list to hold all slimTimingButtons
+        private List<RadioButton> xdkBuildButtons;
+
+        //Creating a boolean to check if XDKBuild is enabled
+        private bool xdkbuild = false;
+
         //Creating a variable to store multiNAND value
         private int multiNAND;
 
@@ -135,6 +141,7 @@ namespace FreeRunner_Flashing_Utility
                 slim100, slim105, slim110, slim115, slim120, slim125, slim130, slim135
             };
 
+            //Adding all the multi-NAND radio buttons to a list
             multiNANDButtons = new List<RadioButton>
             {
                 //Phat Multi-NAND select
@@ -142,6 +149,15 @@ namespace FreeRunner_Flashing_Utility
 
                 //Slim Multi-NAND select
                 multiNAND11, multiNAND21, multiNAND31, multiNAND41, multiNAND51, multiNAND61
+            };
+
+            //Adding the XDKBuild radio buttons to a list
+            xdkBuildButtons = new List<RadioButton>
+            {
+                //Phat XDKBuild buttons
+                xdkBuild_yes, xdkBuild_no,
+                //Slim XDKBuild buttons
+                xdkBuild_yes1, xdkBuild_no1
             };
 
             //Running at start to set multiNAND value
@@ -165,6 +181,10 @@ namespace FreeRunner_Flashing_Utility
             foreach (var rb in multiNANDButtons)
             {
                 rb.CheckedChanged += checkMultiNAND;
+            }
+            foreach (var rb in xdkBuildButtons)
+            {
+                rb.CheckedChanged += checkXDKBuild;
             }
 
             //Resetting filename on startup
@@ -212,8 +232,14 @@ namespace FreeRunner_Flashing_Utility
                 //Forcing no multi-NAND
                 multiNAND1.Checked = true;
 
-                //Set filename
-                filename = $"maxv_ext_clk_{selected.Text.ToLower()}_{category.ToLower()}.svf";
+                //If XDKBuild is selected
+                if (xdkbuild)
+                    //Set filename
+                    filename = $"maxv_ext_clk_{selected.Text.ToLower()}_{category.ToLower()}_xdk_build.svf";
+                //If XDKBuild is not selected
+                else
+                    //Set filename
+                    filename = $"maxv_ext_clk_{selected.Text.ToLower()}_{category.ToLower()}.svf";
             }
             else
             {
@@ -225,8 +251,14 @@ namespace FreeRunner_Flashing_Utility
                 multiNAND5.Enabled = true;
                 multiNAND6.Enabled = true;
 
-                //Set filename
-                filename = "maxv_fj_" + selected.Text +"_rgh12.svf";
+                //If XDKBuild is selected
+                if (xdkbuild)
+                    //Set filename
+                    filename = "maxv_fj_" + selected.Text +"_rgh12_xdk_build.svf";
+                //If XDKBuild is not selected
+                else
+                    //Set filename
+                    filename = "maxv_fj_" + selected.Text +"_rgh12.svf";
             }
 
             //Setting externFile false
@@ -271,7 +303,15 @@ namespace FreeRunner_Flashing_Utility
                 else
                     filename = "maxv_cr_wb_";
 
-                filename = filename + $"{selected.Text}_rgh12.svf";
+                //If XDKBuild is selected
+                if (xdkbuild)
+                    //Setting filename
+                    filename = filename + $"{selected.Text}_rgh12_xdk_build.svf";
+
+                //If XDKBuild is not selected
+                else
+                    //Setting filename
+                    filename = filename + $"{selected.Text}_rgh12.svf";
 
                 if (debug)
                     Log($"Filename: {filename}");
@@ -314,6 +354,46 @@ namespace FreeRunner_Flashing_Utility
 
         }
 
+        //Creating a XDKBuild check method
+        private void checkXDKBuild(object sender, EventArgs e) 
+        {
+            var selected = sender as RadioButton;
+            //If the value null or is a currently selected button
+            if (selected == null || !selected.Checked)
+                return;
+
+            //If the yes button is selected
+            if (selected.Text == "Yes") {
+                //Enabling xdkbuild
+                xdkbuild = true;
+
+                //Selecting XDKBuild YES on both phat and slim menus
+                xdkBuild_yes.Checked = true;
+                xdkBuild_yes1.Checked = true;
+                //De-selecting XDKBuild NO on both phat and slim menus
+                xdkBuild_no.Checked = false;
+                xdkBuild_no1.Checked = false;
+            }
+
+            //If the no button is selected
+            if (selected.Text == "No")
+            {
+                //Disabling xdkbuild
+                xdkbuild = false;
+
+
+                //De-selecting XDKBuild YES on both phat and slim menus
+                xdkBuild_yes.Checked = false;
+                xdkBuild_yes1.Checked = false;
+                //Selecting XDKBuild NO on both phat and slim menus
+                xdkBuild_no.Checked = true;
+                xdkBuild_no1.Checked = true;
+                
+            }
+
+            if (debug)
+                Log("XDK Build: " + xdkbuild);
+        }
         private void boardTypeSelect(object sender, EventArgs e)
         {
             var selected = sender as RadioButton;
@@ -466,6 +546,11 @@ namespace FreeRunner_Flashing_Utility
             //Checking config file
             checkFile(Path.Combine(Application.StartupPath, "config.cfg"));
 
+            ///////CHANGE THIS ON RELEASE
+            foreach (var rb in xdkBuildButtons) {
+                rb.Enabled = false;
+            }
+
             multiNAND6.Enabled = enableMax;
             multiNAND61.Enabled = enableMax;
 
@@ -507,7 +592,7 @@ namespace FreeRunner_Flashing_Utility
 
             //Resetting welcome text
             Log(welcomeText);
-
+            
             if ((!enableMax && multiNAND6.Enabled) || (!enableMax && multiNAND61.Enabled))
             {
                 multiNAND1.Checked = true;
