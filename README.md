@@ -23,16 +23,16 @@ DBG1 - Pin 2
 DBG2 - Pin 1  
 
 <ins>**Multinand GPIO Pins:**</ins>  
-CE1 - Pin 3  
-CE2 - Pin 4  
-CE3 - Pin 5  
-CE4 - Pin 7  
-CE5 - Pin 9  
-CE6 - Pin 10  
-CE7 - Pin 11  
-CE8 - Pin 12  
-CE9 - Pin 13  
-CE10 - Pin 18  
+TP10 - Pin 3  
+TP9 - Pin 4  
+TP8 - Pin 5  
+TP7 - Pin 7  
+TP6 - Pin 9  
+TP5 - Pin 10  
+TP4 - Pin 11  
+TP3 - Pin 12  
+TP2 - Pin 13  
+TP1 - Pin 18  
 
 
 **Note:** <ins>The total number of available CE pads may change for final release PCB.</ins>     
