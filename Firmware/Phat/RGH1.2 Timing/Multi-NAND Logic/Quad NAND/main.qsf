@@ -65,10 +65,10 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PLL
 set_instance_assignment -name IO_STANDARD "1.5 V" -to POST
 set_instance_assignment -name IO_STANDARD "1.5 V" -to RST
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SMC_RST
-set_location_assignment PIN_4 -to CED
-set_location_assignment PIN_7 -to CEQ
-set_location_assignment PIN_3 -to CES
-set_location_assignment PIN_5 -to CET
+set_location_assignment PIN_13 -to CED
+set_location_assignment PIN_11 -to CEQ
+set_location_assignment PIN_18 -to CES
+set_location_assignment PIN_12 -to CET
 set_location_assignment PIN_32 -to CLK
 set_location_assignment PIN_64 -to DBG0
 set_location_assignment PIN_2 -to DBG1
