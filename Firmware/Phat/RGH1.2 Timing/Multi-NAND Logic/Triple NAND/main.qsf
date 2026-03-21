@@ -54,9 +54,9 @@ set_global_assignment -name VHDL_FILE slower.vhd
 set_global_assignment -name VHDL_FILE triplenand.vhd
 set_global_assignment -name BDF_FILE main.bdf
 set_location_assignment PIN_28 -to BUTTON
-set_location_assignment PIN_4 -to CED
-set_location_assignment PIN_3 -to CES
-set_location_assignment PIN_5 -to CET
+set_location_assignment PIN_13 -to CED
+set_location_assignment PIN_18 -to CES
+set_location_assignment PIN_12 -to CET
 set_location_assignment PIN_32 -to CLK
 set_location_assignment PIN_64 -to DBG0
 set_location_assignment PIN_2 -to DBG1
