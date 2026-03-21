@@ -22,7 +22,7 @@ agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 144 264 312 280)
+	(rect 136 264 304 280)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "POST" (rect 5 0 33 12)(font "Arial" ))
 	(pt 168 8)
@@ -38,7 +38,7 @@ agreement for further details.
 )
 (pin
 	(input)
-	(rect 144 280 312 296)
+	(rect 136 280 304 296)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "CLK" (rect 5 0 25 17)(font "Intel Clear" ))
 	(pt 168 8)
@@ -72,7 +72,7 @@ agreement for further details.
 	(input)
 	(rect 544 512 712 528)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "DBG2" (rect 5 0 35 12)(font "Arial" ))
+	(text "DBG2" (rect 5 0 34 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -404,10 +404,6 @@ agreement for further details.
 	(pt 888 272)
 )
 (connector
-	(pt 312 272)
-	(pt 336 272)
-)
-(connector
 	(pt 336 256)
 	(pt 320 256)
 )
@@ -434,14 +430,6 @@ agreement for further details.
 (connector
 	(pt 320 392)
 	(pt 320 288)
-)
-(connector
-	(pt 312 288)
-	(pt 320 288)
-)
-(connector
-	(pt 320 288)
-	(pt 336 288)
 )
 (connector
 	(pt 712 392)
@@ -518,6 +506,18 @@ agreement for further details.
 (connector
 	(pt 888 472)
 	(pt 904 472)
+)
+(connector
+	(pt 320 288)
+	(pt 336 288)
+)
+(connector
+	(pt 304 272)
+	(pt 336 272)
+)
+(connector
+	(pt 304 288)
+	(pt 320 288)
 )
 (junction (pt 320 288))
 (junction (pt 504 392))
