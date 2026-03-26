@@ -4,6 +4,7 @@ The FreeRunner Project aims to replace Xilinx CoolRunner/CoolRunner II based chi
 <img width="1724" height="930" alt="Image 1" src="https://github.com/user-attachments/assets/c770987f-cb94-438f-b1ea-2c8a5dadad64" />
 <img width="1724" height="930" alt="Image 4" src="https://github.com/user-attachments/assets/cc59b285-4188-48e8-a497-b718ecacf9c9" />
 <img width="1724" height="930" alt="Image 3" src="https://github.com/user-attachments/assets/ae253be8-ab1b-4d97-8e48-e27319123287" />
+<a href="https://www.pcbway.com/project/shareproject/FreeRunner_b015c63f.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
 ## FreeRunner CPLD Pinout:
 <ins>**Main GPIO Pins:**</ins>  
