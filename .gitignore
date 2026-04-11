@@ -1,3 +1,7 @@
+# =========================
+# EXISTING FILE (UNCHANGED)
+# =========================
+
 # Working with Altera Quartus II (Q2) and do proper versioning is not that easy
 # but if you follow some rules it can be accomplished. :)
 # This file should be placed into the main directory where the .qpf file is
@@ -101,3 +105,27 @@ fp-info-cache
 # PCM build files
 build
 espressif-kicad-addon.zip
+
+
+# =========================
+# ADDED: WinForms / .NET SAFE IGNORE
+# =========================
+
+# Build outputs
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Windows system files
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
