@@ -35,6 +35,7 @@ namespace FreeRunner_Flashing_Utility.Classes
 
         public void setUserControl(bool status) {
             this.MinimizeBox = false;
+            this.okButton.Visible = !status;
             this.ControlBox = status;
         }
     }

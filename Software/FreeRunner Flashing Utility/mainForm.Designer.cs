@@ -45,7 +45,6 @@
             label2 = new Label();
             nandSelection = new GroupBox();
             tableLayoutPanel3 = new TableLayoutPanel();
-            multiNAND5 = new RadioButton();
             multiNAND1 = new RadioButton();
             multiNAND4 = new RadioButton();
             multiNAND2 = new RadioButton();
@@ -92,7 +91,6 @@
             label13 = new Label();
             groupBox3 = new GroupBox();
             tableLayoutPanel7 = new TableLayoutPanel();
-            multiNAND51 = new RadioButton();
             multiNAND11 = new RadioButton();
             multiNAND41 = new RadioButton();
             multiNAND21 = new RadioButton();
@@ -368,7 +366,6 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 75F));
-            tableLayoutPanel3.Controls.Add(multiNAND5, 4, 0);
             tableLayoutPanel3.Controls.Add(multiNAND1, 0, 0);
             tableLayoutPanel3.Controls.Add(multiNAND4, 3, 0);
             tableLayoutPanel3.Controls.Add(multiNAND2, 1, 0);
@@ -381,17 +378,6 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             tableLayoutPanel3.Size = new Size(305, 40);
             tableLayoutPanel3.TabIndex = 0;
-            // 
-            // multiNAND5
-            // 
-            multiNAND5.AutoSize = true;
-            multiNAND5.Location = new Point(198, 4);
-            multiNAND5.Margin = new Padding(3, 4, 3, 4);
-            multiNAND5.Name = "multiNAND5";
-            multiNAND5.Size = new Size(34, 24);
-            multiNAND5.TabIndex = 4;
-            multiNAND5.Text = "5";
-            multiNAND5.UseVisualStyleBackColor = true;
             // 
             // multiNAND1
             // 
@@ -450,6 +436,7 @@
             multiNAND6.TabStop = true;
             multiNAND6.Text = "MAX";
             multiNAND6.UseVisualStyleBackColor = true;
+            multiNAND6.Visible = false;
             // 
             // label6
             // 
@@ -998,7 +985,6 @@
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 75F));
-            tableLayoutPanel7.Controls.Add(multiNAND51, 4, 0);
             tableLayoutPanel7.Controls.Add(multiNAND11, 0, 0);
             tableLayoutPanel7.Controls.Add(multiNAND41, 3, 0);
             tableLayoutPanel7.Controls.Add(multiNAND21, 1, 0);
@@ -1011,17 +997,6 @@
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             tableLayoutPanel7.Size = new Size(305, 40);
             tableLayoutPanel7.TabIndex = 0;
-            // 
-            // multiNAND51
-            // 
-            multiNAND51.AutoSize = true;
-            multiNAND51.Location = new Point(198, 4);
-            multiNAND51.Margin = new Padding(3, 4, 3, 4);
-            multiNAND51.Name = "multiNAND51";
-            multiNAND51.Size = new Size(34, 24);
-            multiNAND51.TabIndex = 4;
-            multiNAND51.Text = "5";
-            multiNAND51.UseVisualStyleBackColor = true;
             // 
             // multiNAND11
             // 
@@ -1080,6 +1055,7 @@
             multiNAND61.TabStop = true;
             multiNAND61.Text = "MAX";
             multiNAND61.UseVisualStyleBackColor = true;
+            multiNAND61.Visible = false;
             // 
             // groupBox2
             // 
@@ -1497,14 +1473,14 @@
             // openFileBtn
             // 
             openFileBtn.Name = "openFileBtn";
-            openFileBtn.Size = new Size(155, 26);
-            openFileBtn.Text = "Open File";
+            openFileBtn.Size = new Size(159, 26);
+            openFileBtn.Text = "Select File";
             openFileBtn.Click += openFileBtn_Click;
             // 
             // exitBtn
             // 
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(155, 26);
+            exitBtn.Size = new Size(159, 26);
             exitBtn.Text = "Exit";
             exitBtn.Click += exitBtn_Click;
             // 
@@ -1617,7 +1593,6 @@
         private RadioButton multiNAND2;
         private RadioButton multiNAND3;
         private RadioButton multiNAND4;
-        private RadioButton multiNAND5;
         private GroupBox zephyrTimings;
         private TableLayoutPanel tableLayoutPanel4;
         private Label label6;
@@ -1667,7 +1642,6 @@
         private Label label1;
         private GroupBox groupBox3;
         private TableLayoutPanel tableLayoutPanel7;
-        private RadioButton multiNAND51;
         private RadioButton multiNAND11;
         private RadioButton multiNAND41;
         private RadioButton multiNAND21;

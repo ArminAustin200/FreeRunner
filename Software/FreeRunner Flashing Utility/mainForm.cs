@@ -68,7 +68,7 @@ namespace FreeRunner_Flashing_Utility
         public DEVICE device = DEVICE.NO_DEVICE;
 
         private String welcomeText = "Welcome to FreeRunner Flashing Utility!\n" +
-                                     "By: ArminAustin200";
+                                     "By: ArminAustin200\n";
 
         //Creating a flag to determine wether or not an external file was chosen
         private bool externFile = false;
@@ -145,10 +145,10 @@ namespace FreeRunner_Flashing_Utility
             multiNANDButtons = new List<RadioButton>
             {
                 //Phat Multi-NAND select
-                multiNAND1, multiNAND2, multiNAND3, multiNAND4, multiNAND5, multiNAND6,
+                multiNAND1, multiNAND2, multiNAND3, multiNAND4, multiNAND6,
 
                 //Slim Multi-NAND select
-                multiNAND11, multiNAND21, multiNAND31, multiNAND41, multiNAND51, multiNAND61
+                multiNAND11, multiNAND21, multiNAND31, multiNAND41, multiNAND61
             };
 
             //Adding the XDKBuild radio buttons to a list
@@ -226,7 +226,6 @@ namespace FreeRunner_Flashing_Utility
                 multiNAND2.Enabled = false;
                 multiNAND3.Enabled = false;
                 multiNAND4.Enabled = false;
-                multiNAND5.Enabled = false;
                 multiNAND6.Enabled = false;
 
                 //Forcing no multi-NAND
@@ -248,7 +247,6 @@ namespace FreeRunner_Flashing_Utility
                 multiNAND2.Enabled = true;
                 multiNAND3.Enabled = true;
                 multiNAND4.Enabled = true;
-                multiNAND5.Enabled = true;
                 multiNAND6.Enabled = true;
 
                 //If XDKBuild is selected
@@ -263,6 +261,9 @@ namespace FreeRunner_Flashing_Utility
 
             //Setting externFile false
             externFile = false;
+
+            if (debug)
+                Log($"Filename: {filename}");
         }
 
         private void SlimTimingRadio_CheckChanged(object sender, EventArgs e)
@@ -338,8 +339,6 @@ namespace FreeRunner_Flashing_Utility
             {
                 //Set to a value of 6
                 multiNAND = 6;
-
-                Log("YOU ARE THE GOAT! 🐐");
             }
 
             //If any other button is selected
@@ -565,7 +564,7 @@ namespace FreeRunner_Flashing_Utility
                 CleanupOldExe();
 
                 //Current program revision
-                currentVersion = 3;
+                currentVersion = 5;
 
                 Log($"Application Version: {currentVersion}");
 
@@ -843,19 +842,38 @@ namespace FreeRunner_Flashing_Utility
                 //Debug for confirming file path
                 if (debug)
                 {
-                    if (File.Exists(Path.Combine(getPath(), filename)))
-                        Log("File Path:" +
-                            $"\n{Path.Combine(getPath(), filename)}");
+                    //If the user is flashing a file built-into the program
+                    if (!externFile)
+                    {
+                        //If "None" is selected as the multiNAND choice
+                        if (multiNAND == -1)
+                            Log(Path.Combine(getPath(), filename));
 
-                    else
-                        Log("WARNING: FILE NOT FOUND!");
-                }
+                        //If the user chooses dual NAND
+                        else if (multiNAND == 2)
+                            Log(Path.Combine(getPath(), "D", filename));
 
-                else
-                {
-                    Log("Please attach a valid programmer before continuing!");
-                    SystemSounds.Asterisk.Play(); //Notify user
+                        //If the user chooses triple NAND
+                        else if (multiNAND == 3)
+                            Log(Path.Combine(getPath(), "T", filename));
+
+                        //If the user chooses quad NAND
+                        else if (multiNAND == 4)
+                            Log(Path.Combine(getPath(), "Q", filename));
+                    }
+
+                    else {
+                        if (File.Exists(Path.Combine(getPath(), filename)))
+                            Log("File Path:" +
+                                $"\n{Path.Combine(getPath(), filename)}");
+
+                        else
+                            Log("WARNING: FILE NOT FOUND!");
+                    }
                 }
+                
+                Log("Please attach a valid programmer before continuing!");
+                SystemSounds.Asterisk.Play(); //Notify user
             }
 
             //Final Release will have Penta-NAND support FIX LATER
@@ -1026,6 +1044,22 @@ namespace FreeRunner_Flashing_Utility
                 dlg.setUserControl(true);
                 dlg.ShowDialog();
             }
+        }
+
+        //Creating function to check key combinations while the program is running
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            //If the key combination: CTRL + ALT + F2 is pressed
+            if (keyData == (Keys.Control | Keys.Alt | Keys.F2) && !debug)
+            {
+                //Enabling debug for the rest of the session
+                debug = true;
+                //Informing the user
+                Log("Debug enabled via key combination for the rest of the session!");
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

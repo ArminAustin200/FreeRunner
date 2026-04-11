@@ -29,27 +29,48 @@ namespace FreeRunner_Flashing_Utility.Classes
         /// </summary>
         private void InitializeComponent()
         {
+            tableLayoutPanel1 = new TableLayoutPanel();
             changelogBox = new RichTextBox();
             okButton = new Button();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(changelogBox, 0, 0);
+            tableLayoutPanel1.Controls.Add(okButton, 0, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.Size = new Size(622, 481);
+            tableLayoutPanel1.TabIndex = 2;
             // 
             // changelogBox
             // 
             changelogBox.BackColor = SystemColors.ControlLightLight;
+            changelogBox.Dock = DockStyle.Fill;
             changelogBox.Font = new Font("Consolas", 10.1F);
-            changelogBox.Location = new Point(12, 12);
+            changelogBox.Location = new Point(3, 4);
+            changelogBox.Margin = new Padding(3, 4, 3, 4);
             changelogBox.Name = "changelogBox";
             changelogBox.ReadOnly = true;
-            changelogBox.Size = new Size(520, 310);
-            changelogBox.TabIndex = 0;
+            changelogBox.Size = new Size(616, 432);
+            changelogBox.TabIndex = 3;
             changelogBox.Text = "";
             // 
             // okButton
             // 
-            okButton.Location = new Point(205, 328);
+            okButton.Dock = DockStyle.Fill;
+            okButton.Location = new Point(3, 444);
+            okButton.Margin = new Padding(3, 4, 3, 4);
             okButton.Name = "okButton";
-            okButton.Size = new Size(150, 25);
-            okButton.TabIndex = 1;
+            okButton.Size = new Size(616, 33);
+            okButton.TabIndex = 2;
             okButton.Tag = "Ok";
             okButton.Text = "Confirm and Update";
             okButton.UseVisualStyleBackColor = true;
@@ -57,22 +78,25 @@ namespace FreeRunner_Flashing_Utility.Classes
             // 
             // changelog
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(544, 361);
+            ClientSize = new Size(622, 481);
             ControlBox = false;
-            Controls.Add(okButton);
-            Controls.Add(changelogBox);
+            Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "changelog";
             ShowIcon = false;
             ShowInTaskbar = false;
             Text = "Changelog";
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
+
         #endregion
 
+        private TableLayoutPanel tableLayoutPanel1;
         private RichTextBox changelogBox;
         private Button okButton;
     }
