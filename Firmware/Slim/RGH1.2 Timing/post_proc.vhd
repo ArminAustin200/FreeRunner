@@ -13,7 +13,7 @@ entity post_proc is
 		POST : in STD_LOGIC;
 		CLK : in STD_LOGIC;
 		to_slow : out STD_LOGIC := '0';
-		DBG : out STD_LOGIC := '0';
+		DBG0 : out STD_LOGIC := '0';
 		RST0 : inout STD_LOGIC := 'Z';
 		RST1 : inout STD_LOGIC := 'Z'
 	);
@@ -33,6 +33,7 @@ signal post_f_cnt : integer range 0 to post_s_max := 0; --Creating a constant to
 signal cnt : integer range 0 to T_END := 0;
 signal post_cnt : integer range 0 to post_s_max := 0;
 signal timeout : STD_LOGIC := '0';
+signal DBG_LED : STD_LOGIC := '0';
 
 begin
 
@@ -61,7 +62,9 @@ begin
 		end if;
 	end if;
 	
-	DBG <= POST;
+	--Added variable to stop POST and DBG0 from directly being tied together, fixes no boot issue when external LED is added to DBG_LED0
+	DBG_LED <= POST;
+	DBG0 <= DBG_LED;
 end process;
 
 -- timing counter + reset

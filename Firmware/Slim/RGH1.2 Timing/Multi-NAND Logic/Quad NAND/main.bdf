@@ -416,7 +416,7 @@ agreement for further details.
 (symbol
 	(rect 288 152 448 264)
 	(text "post_proc" (rect 5 0 53 12)(font "Arial" ))
-	(text "inst0" (rect 8 96 31 108)(font "Arial" ))
+	(text "inst7" (rect 8 96 30 113)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -448,8 +448,8 @@ agreement for further details.
 	(port
 		(pt 160 48)
 		(output)
-		(text "DBG" (rect 0 0 23 12)(font "Arial" ))
-		(text "DBG" (rect 120 43 143 55)(font "Arial" ))
+		(text "DBG0" (rect 0 0 29 12)(font "Arial" ))
+		(text "DBG0" (rect 115 43 144 55)(font "Arial" ))
 		(line (pt 160 48)(pt 144 48))
 	)
 	(port

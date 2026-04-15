@@ -55,8 +55,8 @@ agreement for further details.
 	(port
 		(pt 160 48)
 		(output)
-		(text "DBG" (rect 0 0 20 12)(font "Arial" ))
-		(text "DBG" (rect 119 43 139 55)(font "Arial" ))
+		(text "DBG0" (rect 0 0 24 12)(font "Arial" ))
+		(text "DBG0" (rect 115 43 139 55)(font "Arial" ))
 		(line (pt 160 48)(pt 144 48)(line_width 1))
 	)
 	(port
