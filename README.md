@@ -10,7 +10,6 @@ The FreeRunner Project aims to replace Xilinx CoolRunner/CoolRunner II based chi
 - Software/code in this repository is licensed under GPLv3.
 - Hardware files in `/Gerbers` are licensed under CERN-OHL-S v2.
 
-
 ## FreeRunner CPLD Pinout:
 <ins>**Main GPIO Pins:**</ins>  
 A - Pin 31 (PLL) - PLL/EXT_CLK Point for Phat consoles  
