@@ -6,6 +6,11 @@ The FreeRunner Project aims to replace Xilinx CoolRunner/CoolRunner II based chi
 <img width="1724" height="930" alt="Image 3" src="https://github.com/user-attachments/assets/ae253be8-ab1b-4d97-8e48-e27319123287" />
 <a href="https://www.pcbway.com/project/shareproject/FreeRunner_b015c63f.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" alt="PCB from PCBWay" /></a>
 
+## Licensing
+- Software/code in this repository is licensed under GPLv3.
+- Hardware files in `/Gerbers` are licensed under CERN-OHL-S v2.
+
+
 ## FreeRunner CPLD Pinout:
 <ins>**Main GPIO Pins:**</ins>  
 A - Pin 31 (PLL) - PLL/EXT_CLK Point for Phat consoles  
@@ -34,7 +39,6 @@ TP4 - Pin 11
 TP3 - Pin 12  
 TP2 - Pin 13  
 TP1 - Pin 18  
-
 
 **Note:** <ins>The total number of available CE pads may change for final release PCB.</ins>     
 
