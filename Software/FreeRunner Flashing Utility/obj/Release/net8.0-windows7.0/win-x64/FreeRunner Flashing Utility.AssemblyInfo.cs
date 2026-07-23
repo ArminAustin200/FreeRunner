@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FreeRunner Flashing Utility")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28537cfdef982e81d41813c6e2fb8878692000c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+112ecdfaa0f91ef6163146a5c2e45a713573029b")]
 [assembly: System.Reflection.AssemblyProductAttribute("FreeRunner Flashing Utility")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FreeRunner Flashing Utility")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

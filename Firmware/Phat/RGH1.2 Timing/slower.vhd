@@ -15,7 +15,7 @@ end slower;
 
 architecture arch of slower is
 
-constant delay_val : integer := 9600;
+constant delay_val : integer := 9600; -- FreeBoot: 9600, XDKBuild: 4218
 signal cnt : integer range 0 to delay_val := 0;
 signal slow : STD_LOGIC := '0';
 

@@ -78,6 +78,10 @@ namespace FreeRunner_Flashing_Utility
         //Creating a variable to store the program's changelog
         private string? cl_log = "";
 
+        //Creating variable to store selected text (rbutton name)
+        private String selectedText;
+        //Creating a variable to store the selected category (rbutton ext_clk)
+        private String buttonCategory = "";
         public static mainForm Instance { get; private set; }
         public mainForm()
         {
@@ -231,32 +235,25 @@ namespace FreeRunner_Flashing_Utility
                 //Forcing no multi-NAND
                 multiNAND1.Checked = true;
 
-                //If XDKBuild is selected
-                if (xdkbuild)
-                    //Set filename
-                    filename = $"maxv_ext_clk_{selected.Text.ToLower()}_{category.ToLower()}_xdk_build.svf";
-                //If XDKBuild is not selected
-                else
-                    //Set filename
-                    filename = $"maxv_ext_clk_{selected.Text.ToLower()}_{category.ToLower()}.svf";
+                selectedText = selected.Text.ToLower();
+                buttonCategory = category.ToLower();
+
+                filename = filenameMaker(selectedText, buttonCategory, xdkbuild, false);
             }
             else
             {
-                //Enable multi-NAND
-                multiNAND1.Enabled = true;
-                multiNAND2.Enabled = true;
-                multiNAND3.Enabled = true;
-                multiNAND4.Enabled = true;
-                multiNAND6.Enabled = true;
+                if (!xdkbuild) {
+                    //Enable multi-NAND
+                    multiNAND1.Enabled = true;
+                    multiNAND2.Enabled = true;
+                    multiNAND3.Enabled = true;
+                    multiNAND4.Enabled = true;
+                    multiNAND6.Enabled = true;
 
-                //If XDKBuild is selected
-                if (xdkbuild)
-                    //Set filename
-                    filename = "maxv_fj_" + selected.Text +"_rgh12_xdk_build.svf";
-                //If XDKBuild is not selected
-                else
-                    //Set filename
-                    filename = "maxv_fj_" + selected.Text +"_rgh12.svf";
+                    selectedText = selected.Text;
+                }
+
+                filename = filenameMaker(selectedText, "", xdkbuild, false);
             }
 
             //Setting externFile false
@@ -291,28 +288,26 @@ namespace FreeRunner_Flashing_Utility
                 boardCorWB.Enabled = true;
 
                 string timing = selected.Text;
+                String board = "";
 
-                //Setting filename
+                ////Setting filename
                 if (boardType.Equals("Trinity"))
                 {
-                    filename = "maxv_tr_";
+                    //filename = "maxv_tr_";
+                    board = "tr";
                 }
                 else if (boardType.Equals("Corona"))
                 {
-                    filename = "maxv_cr_";
+                    //filename = "maxv_cr_";
+                    board = "cr";
                 }
                 else
-                    filename = "maxv_cr_wb_";
+                {
+                    //filename = "maxv_cr_wb_";
+                    board = "cr_wb";
+                }
 
-                //If XDKBuild is selected
-                if (xdkbuild)
-                    //Setting filename
-                    filename = filename + $"{selected.Text}_rgh12_xdk_build.svf";
-
-                //If XDKBuild is not selected
-                else
-                    //Setting filename
-                    filename = filename + $"{selected.Text}_rgh12.svf";
+                filename = filenameMaker(board, timing, xdkbuild, true);
 
                 if (debug)
                     Log($"Filename: {filename}");
@@ -372,6 +367,23 @@ namespace FreeRunner_Flashing_Utility
                 //De-selecting XDKBuild NO on both phat and slim menus
                 xdkBuild_no.Checked = false;
                 xdkBuild_no1.Checked = false;
+
+                //Disable multi-NAND
+                multiNAND1.Enabled = false;
+                multiNAND2.Enabled = false;
+                multiNAND3.Enabled = false;
+                multiNAND4.Enabled = false;
+                multiNAND6.Enabled = false;
+
+                multiNAND11.Enabled = false;
+                multiNAND21.Enabled = false;
+                multiNAND31.Enabled = false;
+                multiNAND41.Enabled = false;
+                multiNAND61.Enabled = false;
+
+                //Forcing no multi-NAND
+                multiNAND1.Checked = true;
+                multiNAND11.Checked = true;
             }
 
             //If the no button is selected
@@ -387,12 +399,76 @@ namespace FreeRunner_Flashing_Utility
                 //Selecting XDKBuild NO on both phat and slim menus
                 xdkBuild_no.Checked = true;
                 xdkBuild_no1.Checked = true;
-                
+
+                //Enable multi-NAND
+                multiNAND1.Enabled = true;
+                multiNAND2.Enabled = true;
+                multiNAND3.Enabled = true;
+                multiNAND4.Enabled = true;
+                multiNAND6.Enabled = true;
+
+                multiNAND11.Enabled = true;
+                multiNAND21.Enabled = true;
+                multiNAND31.Enabled = true;
+                multiNAND41.Enabled = true;
+                multiNAND61.Enabled = true;
             }
 
-            if (debug)
+            filename = filenameMaker(selectedText, buttonCategory, xdkbuild, false);
+
+            if (debug) {
                 Log("XDK Build: " + xdkbuild);
+                Log($"Filename: {filename}");
+            }
         }
+        //Creating function to generate proper filename
+        private String filenameMaker(String selectedText, String buttonCategory, bool xdkbuild, bool isSlim) {
+            if (isSlim)
+            {
+                if (xdkbuild)
+                {
+                    if (selectedText.Contains("cr") || selectedText.Contains("cr_wb"))
+                    {
+                        return $"maxv_xdkbuild_cr_{buttonCategory}_rgh12.svf";
+                    }
+                    else {
+                        return $"maxv_xdkbuild_tr_{buttonCategory}_rgh12.svf";
+                    }
+                }
+
+                else
+                {
+                    return $"maxv_{selectedText}_{buttonCategory}_rgh12.svf";
+                }
+            }
+            else
+            {
+                if (xdkbuild)
+                {
+                    if (buttonCategory.Contains("xenon") || buttonCategory.Contains("zephyr"))
+                    {
+                        return $"maxv_ext_clk_xdkbuild_{selectedText}_{buttonCategory}.svf";
+                    }
+                    else
+                    {
+                        return "maxv_fj_xdkbuild_" + selectedText + "_rgh12.svf";
+                    }
+                }
+
+                else
+                {
+                    if (buttonCategory.Contains("xenon") || buttonCategory.Contains("zephyr"))
+                    {
+                        return $"maxv_ext_clk_{selectedText}_{buttonCategory}.svf";
+                    }
+                    else
+                    {
+                        return "maxv_fj_" + selectedText + "_rgh12.svf";
+                    }
+                }
+            }
+        }
+
         private void boardTypeSelect(object sender, EventArgs e)
         {
             var selected = sender as RadioButton;
@@ -406,6 +482,7 @@ namespace FreeRunner_Flashing_Utility
                 boardType = selected.Text;
 
                 String timing = "";
+                String board = "";
 
                 foreach (var rb in slimTimingButtons)
                 {
@@ -418,19 +495,27 @@ namespace FreeRunner_Flashing_Utility
                 //Setting filename
                 if (boardType.Equals("Trinity"))
                 {
-                    filename = "maxv_tr_";
+                    //filename = "maxv_tr_";
+                    board = "tr"; ;
                 }
                 else if (boardType.Equals("Corona"))
                 {
-                    filename = "maxv_cr_";
+                    //filename = "maxv_cr_";
+                    board = "cr"; ;
                 }
                 else
-                    filename = "maxv_cr_wb_";
+                {
+                    //filename = "maxv_cr_wb_";
+                    board = "cr_wb"; ;
+                }
 
-                filename = filename + $"{timing}_rgh12.svf";
+                //filename = filename + $"{timing}_rgh12.svf";
+
+                filename = filenameMaker(board, timing, xdkbuild, true);
 
                 if (debug)
                     Log($"Filename: {filename}");
+                
             }
         }
 
@@ -545,11 +630,6 @@ namespace FreeRunner_Flashing_Utility
             //Checking config file
             checkFile(Path.Combine(Application.StartupPath, "config.cfg"));
 
-            ///////CHANGE THIS ON RELEASE
-            foreach (var rb in xdkBuildButtons) {
-                rb.Enabled = false;
-            }
-
             multiNAND6.Enabled = enableMax;
             multiNAND61.Enabled = enableMax;
 
@@ -564,7 +644,7 @@ namespace FreeRunner_Flashing_Utility
                 CleanupOldExe();
 
                 //Current program revision
-                currentVersion = 5;
+                currentVersion = 6;
 
                 Log($"Application Version: {currentVersion}");
 
@@ -1003,7 +1083,6 @@ namespace FreeRunner_Flashing_Utility
 
         private void openFileBtn_Click(object sender, EventArgs e)
         {
-            int size = -1;
             OpenFileDialog openFileDialog = new OpenFileDialog();
             string file = "";
             DialogResult result = openFileDialog.ShowDialog();

@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|f:\\austin\\documents\\github\\freerunner\\software\\freerunner flashing utility\\classes\\dirtypico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:classes\\dirtypico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|f:\\austin\\documents\\github\\freerunner\\software\\freerunner flashing utility\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\classes\\changelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:classes\\changelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -19,16 +31,8 @@
       "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:classes\\update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|f:\\austin\\documents\\github\\freerunner\\software\\freerunner flashing utility\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|f:\\austin\\documents\\github\\freerunner\\software\\freerunner flashing utility\\classes\\dirtypico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|solutionrelative:classes\\dirtypico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88F8636B-55C2-4938-B89B-14EC1F37887E}|FreeRunner Flashing Utility.csproj|f:\\austin\\documents\\github\\freerunner\\software\\freerunner flashing utility\\classes\\xflasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,11 +46,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "mainForm.Designer.cs",
+              "DocumentMoniker": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\mainForm.Designer.cs",
+              "RelativeDocumentMoniker": "mainForm.Designer.cs",
+              "ToolTip": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\mainForm.Designer.cs",
+              "RelativeToolTip": "mainForm.Designer.cs",
+              "ViewState": "AgIAACgBAAAAAAAAAAAAACoBAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T03:19:46.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -58,19 +74,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "changelog.cs [Design]",
               "DocumentMoniker": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\Classes\\changelog.cs",
               "RelativeDocumentMoniker": "Classes\\changelog.cs",
               "ToolTip": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\Classes\\changelog.cs [Design]",
               "RelativeToolTip": "Classes\\changelog.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T05:21:20.872Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-02-03T05:21:20.872Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "changelog.cs",
               "DocumentMoniker": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\Classes\\changelog.cs",
               "RelativeDocumentMoniker": "Classes\\changelog.cs",
@@ -78,12 +93,11 @@
               "RelativeToolTip": "Classes\\changelog.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAwCAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T05:11:28.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T05:11:28.801Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "update.cs",
               "DocumentMoniker": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\Classes\\update.cs",
               "RelativeDocumentMoniker": "Classes\\update.cs",
@@ -96,20 +110,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "DirtyPico.cs",
               "DocumentMoniker": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\Classes\\DirtyPico.cs",
               "RelativeDocumentMoniker": "Classes\\DirtyPico.cs",
               "ToolTip": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\Classes\\DirtyPico.cs",
               "RelativeToolTip": "Classes\\DirtyPico.cs",
-              "ViewState": "AgIAANAAAAAAAAAAAAAWwO4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAjwFwAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-13T17:47:23.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "xFlasher.cs",
               "DocumentMoniker": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\Classes\\xFlasher.cs",
               "RelativeDocumentMoniker": "Classes\\xFlasher.cs",
@@ -122,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "mainForm.cs [Design]",
               "DocumentMoniker": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\mainForm.cs",
               "RelativeDocumentMoniker": "mainForm.cs",
@@ -140,7 +154,7 @@
               "RelativeDocumentMoniker": "mainForm.cs",
               "ToolTip": "F:\\Austin\\Documents\\GitHub\\FreeRunner\\Software\\FreeRunner Flashing Utility\\mainForm.cs",
               "RelativeToolTip": "mainForm.cs",
-              "ViewState": "AgIAACQCAAAAAAAAAAAjwDYCAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAIEBAAAAAAAAAAAYwJoBAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-12T18:39:25.962Z",
               "EditorCaption": ""
