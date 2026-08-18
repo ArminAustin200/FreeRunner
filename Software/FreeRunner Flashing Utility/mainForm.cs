@@ -644,7 +644,7 @@ namespace FreeRunner_Flashing_Utility
                 CleanupOldExe();
 
                 //Current program revision
-                currentVersion = 6;
+                currentVersion = 7;
 
                 Log($"Application Version: {currentVersion}");
 

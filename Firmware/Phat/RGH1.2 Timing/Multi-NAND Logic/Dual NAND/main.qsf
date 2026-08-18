@@ -66,6 +66,13 @@ set_location_assignment PIN_29 -to SMC_RST
 set_global_assignment -name VHDL_FILE mux2.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE mux2_sim.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE dualnand_sim.vwf
+set_global_assignment -name BDF_FILE mux_dual.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE mux_dual.vwf
+set_location_assignment PIN_1 -to DBG2
+set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/MUX_sim.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE "output_files/mux-simulation.vwf"
+set_global_assignment -name VHDL_FILE "C:/Users/Austin/Desktop/MUX_test/divider_slow.vhd"
+set_global_assignment -name VHDL_FILE "C:/Users/Austin/Desktop/MUX_test/divider_dual.vhd"
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to BUTTON
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CED
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CES
@@ -76,7 +83,4 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to PLL
 set_instance_assignment -name IO_STANDARD "1.5 V" -to POST
 set_instance_assignment -name IO_STANDARD "1.5 V" -to RST
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to SMC_RST
-set_global_assignment -name BDF_FILE mux_dual.bdf
-set_global_assignment -name VECTOR_WAVEFORM_FILE mux_dual.vwf
-set_location_assignment PIN_1 -to DBG2
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DBG2

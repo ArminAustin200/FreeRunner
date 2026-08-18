@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
 
--- DATE "01/05/2026 18:13:57"
+-- DATE "08/16/2026 21:59:18"
 
 -- 
 -- Device: Altera 5M160ZE64C5 Package EQFP64
@@ -38,10 +38,10 @@ ENTITY 	dualnand IS
 	BUT : IN std_logic;
 	CLK : IN std_logic;
 	CE_IN : IN std_logic;
-	CES : OUT std_logic;
-	CED : OUT std_logic;
-	SMC : OUT std_logic;
-	DBG : OUT std_logic
+	CES : BUFFER std_logic;
+	CED : BUFFER std_logic;
+	SMC : BUFFER std_logic;
+	DBG : BUFFER std_logic
 	);
 END dualnand;
 
@@ -68,18 +68,18 @@ SIGNAL ww_SMC : std_logic;
 SIGNAL ww_DBG : std_logic;
 SIGNAL \CE_IN~combout\ : std_logic;
 SIGNAL \CLK~combout\ : std_logic;
-SIGNAL \RST~combout\ : std_logic;
 SIGNAL \BUT~combout\ : std_logic;
+SIGNAL \RST~combout\ : std_logic;
+SIGNAL \pre_sw~regout\ : std_logic;
 SIGNAL \process_1~0\ : std_logic;
-SIGNAL \Equal2~0_combout\ : std_logic;
 SIGNAL \Add2~0_combout\ : std_logic;
+SIGNAL \Equal2~0_combout\ : std_logic;
 SIGNAL \Equal2~1_combout\ : std_logic;
 SIGNAL \counter[0]~1_combout\ : std_logic;
 SIGNAL \counter[2]~0_combout\ : std_logic;
 SIGNAL \Add0~0_combout\ : std_logic;
 SIGNAL \Equal1~0_combout\ : std_logic;
 SIGNAL \switch~regout\ : std_logic;
-SIGNAL \pre_sw~regout\ : std_logic;
 SIGNAL \m_CES~regout\ : std_logic;
 SIGNAL \CES~0_combout\ : std_logic;
 SIGNAL \CED~0_combout\ : std_logic;
@@ -104,7 +104,7 @@ ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 \ALT_INV_SMC~en_regout\ <= NOT \SMC~en_regout\;
 
--- Location: PIN_7,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- Location: PIN_21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \CE_IN~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -115,7 +115,7 @@ PORT MAP (
 	padio => ww_CE_IN,
 	combout => \CE_IN~combout\);
 
--- Location: PIN_32,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
+-- Location: PIN_27,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: Default
 \CLK~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -125,6 +125,17 @@ PORT MAP (
 	oe => GND,
 	padio => ww_CLK,
 	combout => \CLK~combout\);
+
+-- Location: PIN_5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\BUT~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_BUT,
+	combout => \BUT~combout\);
 
 -- Location: PIN_35,	 I/O Standard: 1.5 V,	 Current Strength: Default
 \RST~I\ : maxv_io
@@ -137,43 +148,7 @@ PORT MAP (
 	padio => ww_RST,
 	combout => \RST~combout\);
 
--- Location: PIN_2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\BUT~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_BUT,
-	combout => \BUT~combout\);
-
--- Location: LC_X3_Y4_N2
-\counter_dbg[0]\ : maxv_lcell
--- Equation(s):
--- counter_dbg(0) = DFFEAS((\Equal2~1_combout\ & (\pre_sw~regout\ $ ((\switch~regout\)))) # (!\Equal2~1_combout\ & (((!counter_dbg(0))))), GLOBAL(\CLK~combout\), VCC, , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "606f",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK~combout\,
-	dataa => \pre_sw~regout\,
-	datab => \switch~regout\,
-	datac => \Equal2~1_combout\,
-	datad => counter_dbg(0),
-	aclr => GND,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => counter_dbg(0));
-
--- Location: LC_X3_Y4_N8
+-- Location: LC_X3_Y3_N8
 pre_sw : maxv_lcell
 -- Equation(s):
 -- \process_1~0\ = ((pre_sw $ (\switch~regout\)))
@@ -199,10 +174,35 @@ PORT MAP (
 	combout => \process_1~0\,
 	regout => \pre_sw~regout\);
 
--- Location: LC_X3_Y4_N5
+-- Location: LC_X3_Y3_N6
+\counter_dbg[0]\ : maxv_lcell
+-- Equation(s):
+-- counter_dbg(0) = DFFEAS((\Equal2~1_combout\ & ((\pre_sw~regout\ $ (\switch~regout\)))) # (!\Equal2~1_combout\ & (!counter_dbg(0))), GLOBAL(\CLK~combout\), VCC, , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "35c5",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~combout\,
+	dataa => counter_dbg(0),
+	datab => \pre_sw~regout\,
+	datac => \Equal2~1_combout\,
+	datad => \switch~regout\,
+	aclr => GND,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => counter_dbg(0));
+
+-- Location: LC_X3_Y3_N5
 \counter_dbg[1]\ : maxv_lcell
 -- Equation(s):
--- counter_dbg(1) = DFFEAS((\Equal2~1_combout\ & (((\process_1~0\)))) # (!\Equal2~1_combout\ & (counter_dbg(0) $ ((!counter_dbg(1))))), GLOBAL(\CLK~combout\), VCC, , , , , , )
+-- counter_dbg(1) = DFFEAS((\Equal2~1_combout\ & (((\process_1~0\)))) # (!\Equal2~1_combout\ & (counter_dbg(1) $ ((!counter_dbg(0))))), GLOBAL(\CLK~combout\), VCC, , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -215,8 +215,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~combout\,
-	dataa => counter_dbg(0),
-	datab => counter_dbg(1),
+	dataa => counter_dbg(1),
+	datab => counter_dbg(0),
 	datac => \Equal2~1_combout\,
 	datad => \process_1~0\,
 	aclr => GND,
@@ -224,57 +224,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => counter_dbg(1));
 
--- Location: LC_X3_Y4_N9
-\Equal2~0\ : maxv_lcell
--- Equation(s):
--- \Equal2~0_combout\ = ((!counter_dbg(0) & (!counter_dbg(1) & !counter_dbg(2))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0003",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datab => counter_dbg(0),
-	datac => counter_dbg(1),
-	datad => counter_dbg(2),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \Equal2~0_combout\);
-
--- Location: LC_X3_Y4_N3
-\counter_dbg[3]\ : maxv_lcell
--- Equation(s):
--- counter_dbg(3) = DFFEAS((counter_dbg(3) & (((!\Equal2~0_combout\)))) # (!counter_dbg(3) & (!\pre_sw~regout\ & (\switch~regout\ & \Equal2~0_combout\))), GLOBAL(\CLK~combout\), VCC, , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "04f0",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \CLK~combout\,
-	dataa => \pre_sw~regout\,
-	datab => \switch~regout\,
-	datac => counter_dbg(3),
-	datad => \Equal2~0_combout\,
-	aclr => GND,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => counter_dbg(3));
-
--- Location: LC_X3_Y4_N0
+-- Location: LC_X3_Y3_N7
 \Add2~0\ : maxv_lcell
 -- Equation(s):
--- \Add2~0_combout\ = (((!counter_dbg(0) & !counter_dbg(1))))
+-- \Add2~0_combout\ = (((!counter_dbg(1) & !counter_dbg(0))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -286,13 +239,13 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datac => counter_dbg(0),
-	datad => counter_dbg(1),
+	datac => counter_dbg(1),
+	datad => counter_dbg(0),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \Add2~0_combout\);
 
--- Location: LC_X3_Y4_N6
+-- Location: LC_X3_Y3_N3
 \counter_dbg[2]\ : maxv_lcell
 -- Equation(s):
 -- counter_dbg(2) = DFFEAS((counter_dbg(2) & (((!\Add2~0_combout\)))) # (!counter_dbg(2) & (\Add2~0_combout\ & ((counter_dbg(3)) # (\process_1~0\)))), GLOBAL(\CLK~combout\), VCC, , , , , , )
@@ -317,10 +270,57 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => counter_dbg(2));
 
--- Location: LC_X3_Y4_N7
+-- Location: LC_X3_Y3_N2
+\Equal2~0\ : maxv_lcell
+-- Equation(s):
+-- \Equal2~0_combout\ = (!counter_dbg(2) & (((!counter_dbg(1) & !counter_dbg(0)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0005",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => counter_dbg(2),
+	datac => counter_dbg(1),
+	datad => counter_dbg(0),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \Equal2~0_combout\);
+
+-- Location: LC_X3_Y3_N0
+\counter_dbg[3]\ : maxv_lcell
+-- Equation(s):
+-- counter_dbg(3) = DFFEAS((counter_dbg(3) & (((!\Equal2~0_combout\)))) # (!counter_dbg(3) & (\switch~regout\ & (!\pre_sw~regout\ & \Equal2~0_combout\))), GLOBAL(\CLK~combout\), VCC, , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "04aa",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \CLK~combout\,
+	dataa => counter_dbg(3),
+	datab => \switch~regout\,
+	datac => \pre_sw~regout\,
+	datad => \Equal2~0_combout\,
+	aclr => GND,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => counter_dbg(3));
+
+-- Location: LC_X3_Y3_N1
 \Equal2~1\ : maxv_lcell
 -- Equation(s):
--- \Equal2~1_combout\ = (!counter_dbg(2) & (!counter_dbg(0) & (!counter_dbg(1) & !counter_dbg(3))))
+-- \Equal2~1_combout\ = (!counter_dbg(0) & (!counter_dbg(3) & (!counter_dbg(1) & !counter_dbg(2))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -332,22 +332,22 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => counter_dbg(2),
-	datab => counter_dbg(0),
+	dataa => counter_dbg(0),
+	datab => counter_dbg(3),
 	datac => counter_dbg(1),
-	datad => counter_dbg(3),
+	datad => counter_dbg(2),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \Equal2~1_combout\);
 
--- Location: LC_X2_Y4_N5
+-- Location: LC_X2_Y3_N6
 \counter[0]~1\ : maxv_lcell
 -- Equation(s):
 -- \counter[0]~1_combout\ = (\BUT~combout\) # ((!\RST~combout\ & ((\Equal1~0_combout\) # (\Equal2~1_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "dddc",
+	lut_mask => "bbba",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -355,18 +355,18 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \RST~combout\,
-	datab => \BUT~combout\,
+	dataa => \BUT~combout\,
+	datab => \RST~combout\,
 	datac => \Equal1~0_combout\,
 	datad => \Equal2~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \counter[0]~1_combout\);
 
--- Location: LC_X2_Y4_N3
+-- Location: LC_X2_Y3_N3
 \counter[2]~0\ : maxv_lcell
 -- Equation(s):
--- \counter[2]~0_combout\ = (!\RST~combout\ & (!\BUT~combout\ & (!\Equal1~0_combout\ & \Equal2~1_combout\)))
+-- \counter[2]~0_combout\ = (!\BUT~combout\ & (!\RST~combout\ & (!\Equal1~0_combout\ & \Equal2~1_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -378,15 +378,15 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \RST~combout\,
-	datab => \BUT~combout\,
+	dataa => \BUT~combout\,
+	datab => \RST~combout\,
 	datac => \Equal1~0_combout\,
 	datad => \Equal2~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \counter[2]~0_combout\);
 
--- Location: LC_X2_Y4_N4
+-- Location: LC_X2_Y3_N8
 \counter[0]\ : maxv_lcell
 -- Equation(s):
 -- counter(0) = DFFEAS((counter(0) & (((!\counter[0]~1_combout\)))) # (!counter(0) & (((\counter[2]~0_combout\)))), GLOBAL(\CLK~combout\), VCC, , , , , , )
@@ -410,14 +410,14 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => counter(0));
 
--- Location: LC_X2_Y4_N2
+-- Location: LC_X2_Y3_N4
 \counter[1]\ : maxv_lcell
 -- Equation(s):
 -- counter(1) = DFFEAS((counter(1) & (((!counter(0) & \counter[2]~0_combout\)) # (!\counter[0]~1_combout\))) # (!counter(1) & (counter(0) & ((\counter[2]~0_combout\)))), GLOBAL(\CLK~combout\), VCC, , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "6e0c",
+	lut_mask => "6e0a",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -426,8 +426,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~combout\,
-	dataa => counter(0),
-	datab => counter(1),
+	dataa => counter(1),
+	datab => counter(0),
 	datac => \counter[0]~1_combout\,
 	datad => \counter[2]~0_combout\,
 	aclr => GND,
@@ -435,10 +435,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => counter(1));
 
--- Location: LC_X2_Y4_N9
+-- Location: LC_X2_Y3_N1
 \Add0~0\ : maxv_lcell
 -- Equation(s):
--- \Add0~0_combout\ = (((counter(0) & counter(1))))
+-- \Add0~0_combout\ = (((counter(1) & counter(0))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -450,13 +450,13 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datac => counter(0),
-	datad => counter(1),
+	datac => counter(1),
+	datad => counter(0),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \Add0~0_combout\);
 
--- Location: LC_X2_Y4_N6
+-- Location: LC_X2_Y3_N7
 \counter[2]\ : maxv_lcell
 -- Equation(s):
 -- counter(2) = DFFEAS((counter(2) & (((!\Add0~0_combout\ & \counter[2]~0_combout\)) # (!\counter[0]~1_combout\))) # (!counter(2) & (\Add0~0_combout\ & ((\counter[2]~0_combout\)))), GLOBAL(\CLK~combout\), VCC, , , , , , )
@@ -481,10 +481,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => counter(2));
 
--- Location: LC_X2_Y4_N7
+-- Location: LC_X2_Y3_N5
 \Equal1~0\ : maxv_lcell
 -- Equation(s):
--- \Equal1~0_combout\ = ((counter(1) & (counter(2) & counter(0))))
+-- \Equal1~0_combout\ = ((counter(2) & (counter(1) & counter(0))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -496,21 +496,21 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => counter(1),
-	datac => counter(2),
+	datab => counter(2),
+	datac => counter(1),
 	datad => counter(0),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \Equal1~0_combout\);
 
--- Location: LC_X2_Y4_N8
+-- Location: LC_X2_Y3_N2
 switch : maxv_lcell
 -- Equation(s):
--- \switch~regout\ = DFFEAS(\switch~regout\ $ (((!\RST~combout\ & (!\BUT~combout\ & \Equal1~0_combout\)))), GLOBAL(\CLK~combout\), VCC, , , , , , )
+-- \switch~regout\ = DFFEAS(\switch~regout\ $ (((!\BUT~combout\ & (!\RST~combout\ & \Equal1~0_combout\)))), GLOBAL(\CLK~combout\), VCC, , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "e1f0",
+	lut_mask => "ef10",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -519,23 +519,23 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~combout\,
-	dataa => \RST~combout\,
-	datab => \BUT~combout\,
-	datac => \switch~regout\,
-	datad => \Equal1~0_combout\,
+	dataa => \BUT~combout\,
+	datab => \RST~combout\,
+	datac => \Equal1~0_combout\,
+	datad => \switch~regout\,
 	aclr => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \switch~regout\);
 
--- Location: LC_X3_Y4_N4
+-- Location: LC_X3_Y3_N4
 m_CES : maxv_lcell
 -- Equation(s):
--- \m_CES~regout\ = DFFEAS(((\pre_sw~regout\ & (\m_CES~regout\ & \switch~regout\)) # (!\pre_sw~regout\ & ((\m_CES~regout\) # (\switch~regout\)))), GLOBAL(\CLK~combout\), VCC, , , , , , )
+-- \m_CES~regout\ = DFFEAS(((\switch~regout\ & ((\m_CES~regout\) # (!\pre_sw~regout\))) # (!\switch~regout\ & (\m_CES~regout\ & !\pre_sw~regout\))), GLOBAL(\CLK~combout\), VCC, , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "f330",
+	lut_mask => "c0fc",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -544,22 +544,22 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~combout\,
-	datab => \pre_sw~regout\,
+	datab => \switch~regout\,
 	datac => \m_CES~regout\,
-	datad => \switch~regout\,
+	datad => \pre_sw~regout\,
 	aclr => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \m_CES~regout\);
 
--- Location: LC_X2_Y3_N2
+-- Location: LC_X2_Y1_N8
 \CES~0\ : maxv_lcell
 -- Equation(s):
--- \CES~0_combout\ = ((\CE_IN~combout\) # ((\m_CES~regout\)))
+-- \CES~0_combout\ = (((\CE_IN~combout\) # (\m_CES~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "fcfc",
+	lut_mask => "fff0",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -567,20 +567,20 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \CE_IN~combout\,
-	datac => \m_CES~regout\,
+	datac => \CE_IN~combout\,
+	datad => \m_CES~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \CES~0_combout\);
 
--- Location: LC_X2_Y3_N3
+-- Location: LC_X2_Y1_N9
 \CED~0\ : maxv_lcell
 -- Equation(s):
--- \CED~0_combout\ = ((\CE_IN~combout\) # ((!\m_CES~regout\)))
+-- \CED~0_combout\ = (((\CE_IN~combout\) # (!\m_CES~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "cfcf",
+	lut_mask => "f0ff",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -588,20 +588,20 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \CE_IN~combout\,
-	datac => \m_CES~regout\,
+	datac => \CE_IN~combout\,
+	datad => \m_CES~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \CED~0_combout\);
 
--- Location: LC_X2_Y4_N1
+-- Location: LC_X3_Y3_N9
 counter_smc : maxv_lcell
 -- Equation(s):
 -- \counter_smc~regout\ = DFFEAS(((!\counter_smc~regout\ & (\pre_sw~regout\ $ (\switch~regout\)))), GLOBAL(\CLK~combout\), VCC, , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "003c",
+	lut_mask => "0330",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -610,37 +610,38 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~combout\,
-	datab => \pre_sw~regout\,
-	datac => \switch~regout\,
-	datad => \counter_smc~regout\,
+	datab => \counter_smc~regout\,
+	datac => \pre_sw~regout\,
+	datad => \switch~regout\,
 	aclr => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \counter_smc~regout\);
 
--- Location: LC_X2_Y4_N0
+-- Location: LC_X2_Y3_N9
 \SMC~en\ : maxv_lcell
 -- Equation(s):
--- \SMC~en_regout\ = DFFEAS((((\counter_smc~regout\))), GLOBAL(\CLK~combout\), VCC, , , , , , )
+-- \SMC~en_regout\ = DFFEAS(GND, GLOBAL(\CLK~combout\), VCC, , , \counter_smc~regout\, , , VCC)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "ff00",
+	lut_mask => "0000",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
 	sum_lutc_input => "datac",
-	synch_mode => "off")
+	synch_mode => "on")
 -- pragma translate_on
 PORT MAP (
 	clk => \CLK~combout\,
-	datad => \counter_smc~regout\,
+	datac => \counter_smc~regout\,
 	aclr => GND,
+	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \SMC~en_regout\);
 
--- Location: PIN_3,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 8mA
+-- Location: PIN_18,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 8mA
 \CES~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -651,7 +652,7 @@ PORT MAP (
 	oe => VCC,
 	padio => ww_CES);
 
--- Location: PIN_4,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 8mA
+-- Location: PIN_13,	 I/O Standard: 3.3-V LVCMOS,	 Current Strength: 8mA
 \CED~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -662,7 +663,7 @@ PORT MAP (
 	oe => VCC,
 	padio => ww_CED);
 
--- Location: PIN_1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- Location: PIN_7,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 \SMC~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -674,7 +675,7 @@ PORT MAP (
 	oe => VCC,
 	padio => ww_SMC);
 
--- Location: PIN_64,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- Location: PIN_3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 \DBG~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (

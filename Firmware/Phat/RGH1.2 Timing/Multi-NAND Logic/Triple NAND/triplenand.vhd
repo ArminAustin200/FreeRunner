@@ -32,7 +32,7 @@ signal m_CET : STD_LOGIC := '0';
 begin
 
 -- muxing done instead
-process (m_CES, m_CED, m_CET) is
+process (m_CES, m_CED, m_CET, CE_IN) is
 begin
 	if (m_CES = '0') then
 		CES <= '1';

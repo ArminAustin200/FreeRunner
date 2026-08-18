@@ -29,7 +29,7 @@ signal m_CED : STD_LOGIC := '0';
 
 begin
 
-process (m_CES, m_CED) is
+process (m_CES, m_CED, CE_IN) is
 begin
 	if (m_CES = '0') then
 		CES <= '1';
