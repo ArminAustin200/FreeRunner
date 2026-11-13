@@ -47,4 +47,4 @@ BUTTON - Pin 28
 **NOTE:** For SMC RST and BTN used for NAND switching, <ins>3.3V GPIO pins are required</ins>  
 **ALSO NOTE:** <ins>Multinand GPIO pins are not yet finalized and may be subject to change in the future</ins>    
 
-For more info on pinouts click [here]([https://www.intel.com/content/www/us/en/content-details/656843/pin-information-for-the-max-v-5m160z-device-pdf-format.html?wapkw=5m160z](https://docs.altera.com/v/u/docs/656842/pin-information-for-the-max-v-5m160z-device-pdf-format))
+For more info on pinouts click [here]([https://www.intel.com/content/www/us/en/content-details/656843/pin-information-for-the-max-v-5m160z-device-pdf-format.html?wapkw=5m160z](https://docs.altera.com/v/u/docs/656842/pin-information-for-the-max-v-5m160z-device-pdf-format)](https://docs.altera.com/v/u/docs/656842/pin-information-for-the-max-v-5m160z-device-pdf-format))
